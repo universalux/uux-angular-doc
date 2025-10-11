@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:uux-angular-doc": "node dist/uux-angular-doc/server/server.mjs"
+    "serve:ssr:uux-angular-doc": "node dist/uux-angular-doc/server/server.mjs",
+    "prepare": "husky",
+    "test:husky": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "prettier": {
     "overrides": [
@@ -40,6 +42,7 @@
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
