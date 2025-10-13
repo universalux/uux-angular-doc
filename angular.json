@@ -29,6 +29,9 @@
             "styles": [
               "src/styles.scss"
             ],
+            "prerender": {
+              "routesFile": "routes.txt"
+            },
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {

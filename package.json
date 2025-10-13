@@ -9,7 +9,8 @@
     "test": "ng test",
     "serve:ssr:uux-angular-doc": "node dist/uux-angular-doc/server/server.mjs",
     "prepare": "husky",
-    "test:husky": "ng test --watch=false --browsers=ChromeHeadless"
+    "test:husky": "ng test --watch=false --browsers=ChromeHeadless",
+    "server": "ng build & node dist/uux-angular-doc/server/server.mjs"
   },
   "prettier": {
     "overrides": [
