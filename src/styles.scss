@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --header-height: 56px;
+  --total-header-height: 56px;
+}
+
+html{
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body{
+  background-color: aquamarine;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+
+@media screen and (max-width: 720px) {
+  :root{
+    --total-header-height: 112px;
+  }
+}
