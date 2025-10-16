@@ -1,18 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Navbar } from './app-header';
+import { AppHeader } from './app-header';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter, RouterLink } from '@angular/router';
 
-describe('Navbar', () => {
-  let component: Navbar;
-  let fixture: ComponentFixture<Navbar>;
+describe('AppHeader', () => {
+  let component: AppHeader;
+  let fixture: ComponentFixture<AppHeader>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Navbar]
+      imports: [AppHeader, RouterLink],
+      providers: [provideZonelessChangeDetection(), provideRouter([])]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Navbar);
+    fixture = TestBed.createComponent(AppHeader);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

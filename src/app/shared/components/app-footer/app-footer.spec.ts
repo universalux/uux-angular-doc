@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppFooter } from './app-footer';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('AppFooter', () => {
   let component: AppFooter;
@@ -8,7 +9,8 @@ describe('AppFooter', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppFooter]
+      imports: [AppFooter],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
