@@ -25,12 +25,12 @@
 }
 
 .componentsLayout__main{
-  background-color: rgb(199, 53, 138);
+  background-color: black;
 }
 
 @media screen and (max-width: 1024px) {
   .componentsLayout__header{
-    background-color: aqua;
+    background: linear-gradient(to right, var(--color-primary) 30%, var(--color-secondary) 100%);
     height: var(--header-height);
     display: flex;
     align-items: center;
