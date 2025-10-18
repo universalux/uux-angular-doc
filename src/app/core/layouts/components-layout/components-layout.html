@@ -1,0 +1,37 @@
+<header class="componentsLayout__header">
+  <button (click)="toggleMenu()">
+    Menu
+  </button>
+</header>
+
+<div class="componentsLayout__container">
+  <aside
+    class="componentsLayout__asideNav"
+    [class.shown]="menuService.isOpenMenu()"
+  >
+    <nav>
+      <ul>
+        <li>
+          <a>
+            Componente 1
+          </a>
+        </li>
+        <li>
+          <a>
+            Componente 2
+          </a>
+        </li>
+        <li>
+          <a>
+            Componente 3
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="componentsLayout__main">
+    <router-outlet/>
+  </main>
+</div>
+
+<app-footer/>

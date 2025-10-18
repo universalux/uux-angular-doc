@@ -1,0 +1,12 @@
+:host{
+  display: block;
+  height: 100%;
+  max-height: calc(100dvh - var(--total-header-height));
+  background-color: red;
+  margin-top: var(--total-header-height);
+  overflow-y: auto;
+}
+
+.appMain{
+  height: 100%;
+}
