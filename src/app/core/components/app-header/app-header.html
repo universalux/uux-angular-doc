@@ -24,9 +24,6 @@
     </section>
 
     <section class="appHeader__rightHeader">
-      <button (click)="themeService.toggleTheme()">
-        Theme button
-      </button>
 
       <div class="rightHeader__linkContainer">
         <a href="" class="rightHeader__link">
@@ -44,6 +41,17 @@
           <span>GitHub</span>
         </a>
       </div>
+
+      <!-- <button (click)="themeService.toggleTheme()">
+        Theme button
+      </button> -->
+      <div class="rightHeader__themeBtnContainer">
+        <ng-theme-toggle
+          [isDarkSignal]="themeService.isDark"
+          hover="none"
+        />
+      </div>
+
     </section>
 
 </header>

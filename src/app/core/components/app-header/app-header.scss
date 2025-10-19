@@ -44,7 +44,8 @@
 
 .appHeader__rightHeader{
   display: flex;
-  column-gap: 1rem;
+  align-items: center;
+  column-gap: .5rem;
 }
 
 .rightHeader__linkContainer{
@@ -67,8 +68,24 @@
   fill: var(--color-fg);
 }
 
-.rightHeader__link:hover{
+.rightHeader__link:hover,
+.rightHeader__themeBtnContainer:hover{
   background-color: var(--color-bg-trans);
+}
+
+.rightHeader__themeBtnContainer{
+  padding: .5rem;
+  border-radius: 50%;
+}
+
+ng-theme-toggle{
+  // --theme-toggle-color: var(--color-fg);
+  --theme-toggle-color-duration: 0s;
+
+  --theme-toggle-color-dark: var(--color-fg);
+  --theme-toggle-color-light: var(--color-fg);
+  --theme-toggle-size: 27px;
+
 }
 
 @media screen and (max-width: 720px) {

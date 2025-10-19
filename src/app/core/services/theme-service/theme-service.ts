@@ -14,6 +14,7 @@ export class ThemeService {
   /** PROPERTIES */
 
   public theme = signal<'dark' | 'light'>('dark');
+  public isDark = signal<boolean>(false);
   private firstRender = false;
 
    /** LIFE CYCLE */
@@ -22,8 +23,8 @@ export class ThemeService {
     if(this.isBrowser){
       if(!this.firstRender){
         effect(() => {
-          const mode = this.theme();
-          document.documentElement.classList.toggle('light', mode === 'light');
+          const mode = this.isDark();
+          document.documentElement.classList.toggle('light', !mode);
           // this.setThemeColor(mode === 'light' ? '#ffffff' : '#000000');
           this.firstRender = false;
         })
