@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { MenuService } from '@app/core/services/menu-service/menu-service';
 import { AppFooter } from "@app/shared/components/app-footer/app-footer";
 import { RouterOutlet } from '@angular/router';
-import { LinkButton } from '@app/shared/components/link-button/link-button';
+import { LinkButton } from '@app/shared/ui/link-button/link-button';
+import { ComponentData, componentList } from '@app/core/data/components.data';
 
 @Component({
   selector: 'app-components-layout',
@@ -13,6 +14,7 @@ import { LinkButton } from '@app/shared/components/link-button/link-button';
 })
 export class ComponentsLayout {
   menuService = inject(MenuService);
+  components = signal<ComponentData[]>(componentList);
 
   toggleMenu(){
     const currentState = this.menuService.isOpenMenu();

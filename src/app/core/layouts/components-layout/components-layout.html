@@ -11,19 +11,11 @@
   >
     <nav>
       <ul>
-        <li>
-          <app-link-button linkTo="/components/component-one" label="Component One" width="100%"/>
-        </li>
-        <li>
-          <a>
-            Componente 2
-          </a>
-        </li>
-        <li>
-          <a>
-            Componente 3
-          </a>
-        </li>
+        @for (component of components(); track $index) {
+          <li>
+            <app-link-button [linkTo]="component.url" [label]="component.name" width="100%"/>
+          </li>
+        }
       </ul>
     </nav>
   </aside>

@@ -20,7 +20,8 @@
 }
 
 .componentsLayout__asideNav{
-  background-color: green;
+  background-color: var(--color-bg);
+  border-right: .5px solid var(--color-fg-trans);
   width: 240px;
 }
 
@@ -32,6 +33,7 @@ app-link-button{
   // --link-button-width: 100%;
   --link-button-text-align: start;
   --link-button-font-size: 1rem;
+  --link-button-hover: var(--color-primary-trans);
 }
 
 @media screen and (max-width: 1024px) {

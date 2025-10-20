@@ -9,7 +9,8 @@ export const routes: Routes = [
     path: "components",
     component: ComponentsLayout,
     children: [
-      {path: "component-one", component: MainLayout}
+      {path: "menu-button", component: MainLayout},
+      {path: "theme-toggle", component: MainLayout},
     ]
   },
 

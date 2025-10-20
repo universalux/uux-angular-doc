@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-link-button',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterModule],
   templateUrl: './link-button.html',
   styleUrl: './link-button.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

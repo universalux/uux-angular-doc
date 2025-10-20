@@ -3,7 +3,8 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { AppHeader } from "./core/components/app-header/app-header";
 import { MenuService } from './core/services/menu-service/menu-service';
 import { filter } from 'rxjs';
-import { LinkButton } from './shared/components/link-button/link-button';
+import { LinkButton } from './shared/ui/link-button/link-button';
+import { ComponentData, componentList } from './core/data/components.data';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class App implements OnInit {
 
   menuService = inject(MenuService);
   private router = inject(Router);
+  components = signal<ComponentData[]>(componentList);
 
   protected readonly title = signal('uux-angular-doc');
 

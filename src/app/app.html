@@ -6,20 +6,12 @@
 
 <nav class="componentsLayout__asideNav" [class.shown]="menuService.isOpenMenu()">
   <ul>
-    <li>
-      <app-link-button linkTo="/components/component-one" label="Component One"/>
-    </li>
-    <li>
-      <a>
-        Componente 2
-      </a>
-    </li>
-    <li>
-      <a>
-        Componente 3
-      </a>
-    </li>
-  </ul>
+    @for (component of components(); track $index) {
+          <li>
+            <app-link-button [linkTo]="component.url" [label]="component.name" width="100%"/>
+          </li>
+        }
+    </ul>
 </nav>
 
 <!-- @if (menuService.isOpenMenu()) {

@@ -19,6 +19,7 @@
   border-radius: 1rem;
 }
 
-.linkButton:hover{
+.linkButton:hover,
+.linkButton.active{
   background-color: var(--link-button-hover);
 }
