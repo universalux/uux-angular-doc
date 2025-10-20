@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  color: black;
+  // color: var(--theme);
 }
 
 .appHeader{
@@ -23,7 +23,19 @@
 }
 
 .leftHeader__brand{
-  color: inherit;
+  display: flex;
+  align-items: center;
+  padding: .5rem 1rem;
+  border-radius: 1.5rem;
+
+}
+
+.leftHeader__brand:hover{
+  background-color: var(--color-bg-trans);
+}
+
+.leftHeader__brand svg{
+  fill: var(--color-fg);
 }
 
 .leftHeader__navList{
@@ -40,6 +52,52 @@
 
 .resNav{
   display: none;
+}
+
+.appHeader__rightHeader{
+  display: flex;
+  align-items: center;
+
+  column-gap: .3rem;
+}
+
+.rightHeader__linkContainer{
+  display: flex;
+
+  font-weight: 600;
+  font-size: .8rem;
+}
+
+.rightHeader__link{
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+
+  border-radius: 1.5rem;
+  padding: .5rem 1rem;
+}
+
+.rightHeader__linkIcon{
+  fill: var(--color-fg);
+}
+
+.rightHeader__link:hover,
+.rightHeader__themeBtnContainer:hover{
+  background-color: var(--color-bg-trans);
+}
+
+.rightHeader__themeBtnContainer{
+  padding: .5rem;
+  border-radius: 50%;
+}
+
+ng-theme-toggle{
+  --theme-toggle-color-duration: 0s;
+
+  --theme-toggle-color-dark: var(--color-fg);
+  --theme-toggle-color-light: var(--color-fg);
+  --theme-toggle-size: 27px;
+
 }
 
 @media screen and (max-width: 720px) {
@@ -72,5 +130,17 @@
     height: 100%;
     display: flex;
     align-items: center;
+  }
+
+  .rightHeader__link span{
+    display: none;
+  }
+
+  .rightHeader__linkContainer{
+    column-gap: .3rem;
+  }
+
+  .rightHeader__link{
+    padding: .6rem .6rem;
   }
 }

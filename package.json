@@ -33,6 +33,7 @@
     "@angular/router": "^20.1.0",
     "@angular/ssr": "^20.1.1",
     "express": "^5.1.0",
+    "ng-theme-toggle": "^20.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

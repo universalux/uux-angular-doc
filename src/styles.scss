@@ -4,16 +4,34 @@
 
   --color-primary: #30a2fe;
   --color-secondary: #824dfe;
-  --color-fg: #FFF8F8;
-  --color-bg: #020f1a;
+
+  --color-dark: #0b0c0c;
+  --color-light: #FFF8F8;
+  --color-dark-trans: #0b0c0c41;
+  --color-light-trans: #fff8f83d;
+
+  --color-bg: var(--color-dark);
+  --color-fg: var(--color-light);
+  --color-bg-trans: var(--color-dark-trans);
+  --color-fg-trans: var(--color-light-trans);
+
 }
 
 html{
   height: 100dvh;
   overflow: hidden;
+  color: var(--color-fg);
+}
+
+html.light{
+  --color-bg: var(--color-light);
+  --color-fg: var(--color-dark);
+  --color-bg-trans: var(--color-light-trans);
+  --color-fg-trans: var(--color-dark-trans);
 }
 
 body{
+  font-family: 'DejaVu Sans';
   background-color: aquamarine;
 }
 
@@ -25,6 +43,11 @@ body{
 
 ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-fg);
 }
 
 
