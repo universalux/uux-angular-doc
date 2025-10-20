@@ -1,0 +1,24 @@
+:host{
+
+  --link-button-width: auto;
+  --link-button-hover: var(--color-bg-trans);
+  --link-button-text-align: center;
+  --link-button-font-size: .9rem;
+
+  display: block;
+  width: var(--link-button-width);
+}
+
+.linkButton{
+  width: var(--link-button-width);
+  display: block;
+  font-size: var(--link-button-font-size);
+  font-weight: 700;
+  text-align: var(--link-button-text-align);
+  padding: .7rem 1rem;
+  border-radius: 1rem;
+}
+
+.linkButton:hover{
+  background-color: var(--link-button-hover);
+}

@@ -25,7 +25,13 @@
 }
 
 .componentsLayout__main{
-  background-color: black;
+  background-color: var(--color-bg);
+}
+
+app-link-button{
+  // --link-button-width: 100%;
+  --link-button-text-align: start;
+  --link-button-font-size: 1rem;
 }
 
 @media screen and (max-width: 1024px) {

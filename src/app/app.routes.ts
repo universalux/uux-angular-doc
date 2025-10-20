@@ -4,6 +4,14 @@ import { ComponentsLayout } from './core/layouts/components-layout/components-la
 
 export const routes: Routes = [
   {path: "", component: MainLayout},
-  {path: "components", component: ComponentsLayout},
+
+  {
+    path: "components",
+    component: ComponentsLayout,
+    children: [
+      {path: "component-one", component: MainLayout}
+    ]
+  },
+
   {path: "kits", component: ComponentsLayout},
 ];

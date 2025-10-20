@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComponentsLayout } from './components-layout';
+import { LinkButton } from './link-button';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-describe('ComponentsLayout', () => {
-  let component: ComponentsLayout;
-  let fixture: ComponentFixture<ComponentsLayout>;
+describe('LinkButton', () => {
+  let component: LinkButton;
+  let fixture: ComponentFixture<LinkButton>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ComponentsLayout],
+      imports: [LinkButton],
       providers: [provideZonelessChangeDetection(), provideRouter([])]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ComponentsLayout);
+    fixture = TestBed.createComponent(LinkButton);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
