@@ -14,5 +14,5 @@ export const componentList : ComponentData[] = [
     name: "Theme toggle",
     url: "/components/theme-toggle",
     description: "Anuglar theme toggle button"
-  },
+  }
 ]

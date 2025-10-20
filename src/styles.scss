@@ -1,5 +1,6 @@
 :root{
   --header-height: 56px;
+  --header-height-secondary: 48px;
   --total-header-height: 56px;
 
   --color-primary: #30a2fe;
@@ -55,6 +56,6 @@ a {
 
 @media screen and (max-width: 720px) {
   :root{
-    --total-header-height: 112px;
+    --total-header-height: calc(var(--header-height) + var(--header-height-secondary));
   }
 }

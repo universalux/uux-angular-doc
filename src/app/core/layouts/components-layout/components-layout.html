@@ -1,7 +1,11 @@
-<header class="componentsLayout__header">
-  <button (click)="toggleMenu()">
+<header class="componentsLayout__header" >
+  <!-- <button (click)="toggleMenu()">
     Menu
-  </button>
+  </button> -->
+  <ng-menu-button
+    [class.opened]="menuService.isOpenMenu()"
+    [isOpenSignal]="menuService.isOpenMenu"
+  />
 </header>
 
 <div class="componentsLayout__container">

@@ -28,7 +28,10 @@
 }
 app-link-button{
   --link-button-text-align: start;
-  --link-button-hover: var(--color-primary-trans);
+  --link-button-font-size: 1rem;
+  --link-button-font-weight: 500;
+  --link-button-active: var(--color-primary-trans);
+  --link-button-hover: var(--color-secondary-trans);
 }
 
 
@@ -36,16 +39,34 @@ app-link-button{
 @media screen and (max-width: 1024px) {
   .componentsLayout__asideNav{
     background-color: var(--color-bg);
-    width: 240px;
+    width: 320px;
     position: absolute;
     top: 0;
-    left: -240px;
+    left: -320px;
     height: calc(100dvh - var(--total-header-height));
-
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    padding: 16px 8px;
 
     transition: left .3s ease-in-out;
+    overflow-y: auto;
+  }
+
+  .componentsLayout__asideNav::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .componentsLayout__asideNav::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+
+  .componentsLayout__asideNav::-webkit-scrollbar-button {
+    height: 0;
+    display: none;
+  }
+
+  .componentsLayout__asideNav::-webkit-scrollbar-thumb {
+    background-color: var(--color-fg);
+    border-radius: 10px;
+    border: 2px solid transparent;
   }
 
   .componentsLayout__asideNav.shown{
