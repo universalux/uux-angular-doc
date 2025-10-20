@@ -6,7 +6,7 @@ import { NgThemeToggle } from 'ng-theme-toggle';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, NgThemeToggle],
+  imports: [ RouterLink, NgThemeToggle ],
   templateUrl: './app-header.html',
   styleUrl: './app-header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -14,7 +14,7 @@ export class ThemeService {
   /** PROPERTIES */
 
   public theme = signal<'dark' | 'light'>('dark');
-  public isDark = signal<boolean>(false);
+  public isDark = signal<boolean>(true);
   private firstRender = false;
 
    /** LIFE CYCLE */

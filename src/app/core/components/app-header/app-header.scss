@@ -23,7 +23,19 @@
 }
 
 .leftHeader__brand{
-  color: inherit;
+  display: flex;
+  align-items: center;
+  padding: .5rem 1rem;
+  border-radius: 1.5rem;
+
+}
+
+.leftHeader__brand:hover{
+  background-color: var(--color-bg-trans);
+}
+
+.leftHeader__brand svg{
+  fill: var(--color-fg);
 }
 
 .leftHeader__navList{
@@ -45,7 +57,8 @@
 .appHeader__rightHeader{
   display: flex;
   align-items: center;
-  column-gap: .5rem;
+
+  column-gap: .3rem;
 }
 
 .rightHeader__linkContainer{
@@ -60,7 +73,7 @@
   align-items: center;
   column-gap: .5rem;
 
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   padding: .5rem 1rem;
 }
 
@@ -79,7 +92,6 @@
 }
 
 ng-theme-toggle{
-  // --theme-toggle-color: var(--color-fg);
   --theme-toggle-color-duration: 0s;
 
   --theme-toggle-color-dark: var(--color-fg);
@@ -118,5 +130,17 @@ ng-theme-toggle{
     height: 100%;
     display: flex;
     align-items: center;
+  }
+
+  .rightHeader__link span{
+    display: none;
+  }
+
+  .rightHeader__linkContainer{
+    column-gap: .3rem;
+  }
+
+  .rightHeader__link{
+    padding: .6rem .6rem;
   }
 }
