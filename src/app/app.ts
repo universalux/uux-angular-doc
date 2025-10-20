@@ -3,10 +3,11 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { AppHeader } from "./core/components/app-header/app-header";
 import { MenuService } from './core/services/menu-service/menu-service';
 import { filter } from 'rxjs';
+import { LinkButton } from './shared/components/link-button/link-button';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AppHeader],
+  imports: [RouterOutlet, AppHeader, LinkButton],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
