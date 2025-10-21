@@ -7,12 +7,10 @@ import { componentList } from './core/data/components.data';
 import { CatalogItem } from './core/data/data.types';
 import { kitList } from './core/data/kits.data';
 import { ResponsiveMenu } from "./core/components/responsive-menu/responsive-menu";
-import { LinkButton } from './shared/ui/link-button/link-button';
-import { AppFooter } from './core/components/app-footer/app-footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AppHeader, ResponsiveMenu, LinkButton, AppFooter],
+  imports: [RouterOutlet, AppHeader, ResponsiveMenu],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

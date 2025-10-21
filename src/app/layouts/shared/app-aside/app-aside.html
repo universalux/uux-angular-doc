@@ -1,0 +1,13 @@
+<aside
+    class="appAside"
+  >
+    <nav>
+      <ul>
+        @for (component of menuItems(); track $index) {
+          <li>
+            <app-link-button [linkTo]="component.url" [label]="component.name" width="100%"/>
+          </li>
+        }
+      </ul>
+    </nav>
+  </aside>

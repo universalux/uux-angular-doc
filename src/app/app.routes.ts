@@ -1,20 +1,38 @@
 import { Routes } from '@angular/router';
-import { MainLayout } from './core/layouts/main-layout/main-layout';
-import { ComponentsLayout } from './core/layouts/components-layout/components-layout';
+import { MainLayout } from './layouts/main-layout/main-layout';
+import { ComponentsLayout } from './layouts/components-layout/components-layout';
+import { ComponentsPage } from './features/components/components-page/components-page';
+import { HomePage } from './features/home-page/home-page';
+import { KitsLayout } from './layouts/kits-layout/kits-layout';
+import { KitsPage } from './features/kits/kits-page/kits-page';
 
 export const routes: Routes = [
-  {path: "", component: MainLayout},
+  {
+    path: "",
+    component: MainLayout,
+    children: [
+      { path: "", component: HomePage },
+      { path: "contribute", component: HomePage },
+    ],
+  },
 
   {
     path: "components",
     component: ComponentsLayout,
     children: [
-      {path: "menu-button", component: MainLayout},
-      {path: "theme-toggle", component: MainLayout},
+      {path: "", component: ComponentsPage},
+      {path: "menu-button", component: ComponentsPage},
+      {path: "theme-toggle", component: ComponentsPage},
     ]
   },
 
-  {path: "kits", component: ComponentsLayout},
+  {
+    path: "kits",
+    component: KitsLayout,
+    children: [
+      {path: "", component: KitsPage},
+    ]
+  },
 ];
 
 // export const routes: Routes = [

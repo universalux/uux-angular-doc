@@ -1,0 +1,59 @@
+
+@use '../../shared/styles/scrollbar' as *;
+
+:host{
+  display: block;
+  height: 100%;
+  max-height: calc(100dvh - var(--total-header-height));
+  overflow-y: auto;
+
+  position: relative;
+
+  @include custom-scrollbar;
+}
+
+// :host::-webkit-scrollbar {
+//   width: 8px;
+// }
+
+// :host::-webkit-scrollbar-track {
+//   background: var(--color-bg);
+// }
+
+// :host::-webkit-scrollbar-button {
+//   height: 0;
+//   display: none;
+// }
+
+// :host::-webkit-scrollbar-thumb {
+//   background-color: var(--color-fg);
+//   border-radius: 10px;
+//   border: 2px solid transparent;
+// }
+
+.componentsLayout__header{
+  display: none;
+}
+
+.componentsLayout__container{
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.componentsLayout__main{
+  background-color: var(--color-bg);
+  padding: 30px 20px 100px 20px;
+}
+
+@media screen and (max-width: 960px) {
+
+  .componentsLayout__container{
+    grid-template-columns: 1fr;
+  }
+
+  app-aside{
+    display: none;
+  }
+
+}

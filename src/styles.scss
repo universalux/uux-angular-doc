@@ -57,6 +57,7 @@ a {
   color: var(--color-fg);
 }
 
+
 @media screen and (max-width: 960px) {
   :root{
     --total-header-height: calc(var(--header-height-up) + var(--header-height-tertiary));

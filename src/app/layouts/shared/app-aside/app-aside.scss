@@ -1,0 +1,43 @@
+:host{
+  display: block;
+}
+
+.appAside{
+  position: sticky;
+  top: 0;
+  z-index: 888;
+  background-color: var(--color-bg);
+  border-right: .5px solid var(--color-fg-trans);
+  width: 240px;
+  padding: 16px 8px;
+  height: calc(100dvh - var(--total-header-height));
+  overflow-y: auto;
+
+  // scrollbar-color: initial;
+}
+
+.appAside::-webkit-scrollbar {
+  width: 8px;
+}
+
+.appAside::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+.appAside::-webkit-scrollbar-button {
+  display: none;
+}
+
+.appAside::-webkit-scrollbar-thumb {
+  background-color: var(--color-fg);
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+app-link-button{
+  --link-button-text-align: start;
+  --link-button-font-size: 1rem;
+  --link-button-font-weight: 500;
+  --link-button-active: var(--color-primary-trans);
+  --link-button-hover: var(--color-secondary-trans);
+}
