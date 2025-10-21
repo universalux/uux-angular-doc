@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { KitsPage } from './kits-page';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('KitsPage', () => {
   let component: KitsPage;
@@ -8,7 +9,8 @@ describe('KitsPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KitsPage]
+      imports: [KitsPage],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResponsiveMenu } from './responsive-menu';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('ResponsiveMenu', () => {
   let component: ResponsiveMenu;
@@ -8,7 +9,8 @@ describe('ResponsiveMenu', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ResponsiveMenu]
+      imports: [ResponsiveMenu],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

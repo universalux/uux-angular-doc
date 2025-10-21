@@ -1,3 +1,5 @@
+@use '../../shared/styles/scrollbar' as *;
+
 :host{
   display: block;
   height: 100%;
@@ -5,25 +7,8 @@
   overflow-y: auto;
 
   position: relative;
-}
 
-:host::-webkit-scrollbar {
-  width: 8px;
-}
-
-:host::-webkit-scrollbar-track {
-  background: var(--color-bg);
-}
-
-:host::-webkit-scrollbar-button {
-  height: 0;
-  display: none;
-}
-
-:host::-webkit-scrollbar-thumb {
-  background-color: var(--color-fg);
-  border-radius: 10px;
-  border: 2px solid transparent;
+  @include custom-scrollbar;
 }
 
 .componentsLayout__header{
