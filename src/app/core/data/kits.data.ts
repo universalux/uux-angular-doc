@@ -1,4 +1,6 @@
-export const kits = [
+import { CatalogItem } from "./data.types";
+
+export const kitList : CatalogItem[] = [
   {
     name: "Togglers",
     url: "/kits/togglers",

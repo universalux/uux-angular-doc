@@ -1,9 +1,9 @@
 :host{
   display: block;
   height: 100%;
-  max-height: calc(100dvh - var(--total-header-height));
+  max-height: calc(100dvh - var(--header-height-up));
   background-color: var(--color-bg);
-  margin-top: var(--total-header-height);
+  margin-top: var(--header-height-up);
   overflow-y: auto;
 }
 

@@ -1,23 +1,7 @@
 <app-header />
+@if (renderMenu()) {
+  <app-responsive-menu
+    [menuItems]="menuItems()"
+  />
+}
 <router-outlet />
-
-<div (click)="menuService.isOpenMenu.set(false)" class="modal-wrapper" [class.hidden]="!menuService.isOpenMenu()">
-</div>
-
-<nav class="componentsLayout__asideNav" [class.shown]="menuService.isOpenMenu()">
-  <ul>
-    @for (component of components(); track $index) {
-          <li>
-            <app-link-button [linkTo]="component.url" [label]="component.name" width="100%"/>
-          </li>
-        }
-    </ul>
-</nav>
-
-<!-- @if (menuService.isOpenMenu()) {
-  <div
-    (click)="menuService.isOpenMenu.set(false)"
-    class="modal-wrapper"
-  >
-  </div>
-} -->

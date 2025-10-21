@@ -3,7 +3,7 @@
   height: 100%;
   max-height: calc(100dvh - var(--total-header-height));
   background-color: red;
-  margin-top: var(--total-header-height);
+  // margin-top: var(--total-header-height);
   overflow-y: auto;
 
   position: relative;
@@ -63,29 +63,29 @@ app-link-button{
   --link-button-hover: var(--color-secondary-trans);
 }
 
-@media screen and (max-width: 1024px) {
-  .componentsLayout__header{
-    background: linear-gradient(to right, var(--color-primary) 30%, var(--color-secondary) 100%);
-    height: var(--header-height-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media screen and (max-width: 960px) {
+  // .componentsLayout__header{
+  //   background: linear-gradient(to right, var(--color-primary) 30%, var(--color-secondary) 100%);
+  //   height: var(--header-height-secondary);
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
 
-    position: relative;
-  }
+  //   position: relative;
+  // }
 
-  .componentsLayout__header ng-menu-button.opened{
-    left: calc(100% - 52px);
-  }
+  // .componentsLayout__header ng-menu-button.opened{
+  //   left: calc(100% - 52px);
+  // }
 
-  .componentsLayout__header ng-menu-button{
-    transition: left .3s ease-in-out;
-    left: calc(50% - 28px);
-    position: absolute;
-    margin: 0 .8rem;
-    --menu-button-color: var(--color-fg);
-    --menu-button-size: 28px;
-  }
+  // .componentsLayout__header ng-menu-button{
+  //   transition: left .3s ease-in-out;
+  //   left: calc(50% - 28px);
+  //   position: absolute;
+  //   margin: 0 .8rem;
+  //   --menu-button-color: var(--color-fg);
+  //   --menu-button-size: 28px;
+  // }
 
   .componentsLayout__container{
     grid-template-columns: 1fr;

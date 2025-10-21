@@ -1,6 +1,10 @@
 :root{
   --header-height: 56px;
   --header-height-secondary: 48px;
+  --header-height-up: 56px;
+
+  --header-height-tertiary: 48px;
+
   --total-header-height: 56px;
 
   --color-primary: #30a2fe;
@@ -35,7 +39,7 @@ html.light{
 
 body{
   font-family: 'DejaVu Sans';
-  background-color: aquamarine;
+  background-color: var(--color-bg);
 }
 
 * {
@@ -53,9 +57,16 @@ a {
   color: var(--color-fg);
 }
 
+@media screen and (max-width: 960px) {
+  :root{
+    --total-header-height: calc(var(--header-height-up) + var(--header-height-tertiary));
+  }
+}
 
 @media screen and (max-width: 720px) {
   :root{
-    --total-header-height: calc(var(--header-height) + var(--header-height-secondary));
+    --header-height-up: calc(var(--header-height) + var(--header-height-secondary));
   }
 }
+
+

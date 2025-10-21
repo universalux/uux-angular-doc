@@ -1,0 +1,108 @@
+:host{
+  display: block;
+  margin-top: var(--header-height-up);
+  height: auto;
+}
+
+.resMenu__header{
+  display: none;
+}
+
+.resMenu__wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-fg);
+  opacity: .5;
+  z-index: 888;
+
+  // transition: opacity .3s ease-in-out, z-index .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+.resMenu__wrapper.hidden{
+  transition: opacity .3s ease-in-out, z-index 0s .3s ease-in-out;
+  // transition: opacity .3s ease-in-out, z-index .3s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+
+app-link-button{
+  --link-button-text-align: start;
+  --link-button-font-size: 1rem;
+  --link-button-font-weight: 500;
+  --link-button-active: var(--color-primary-trans);
+  --link-button-hover: var(--color-secondary-trans);
+}
+
+.resMenu__asideNav{
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+
+  .resMenu__header{
+    background: linear-gradient(to right, var(--color-primary) 30%, var(--color-secondary) 100%);
+    height: var(--header-height-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+  }
+
+  .resMenu__header ng-menu-button.opened{
+    left: calc(100% - 52px);
+  }
+
+  .resMenu__header ng-menu-button{
+    transition: left .3s ease-in-out;
+    left: calc(50% - 28px);
+    position: absolute;
+    margin: 0 .8rem;
+    --menu-button-color: var(--color-fg);
+    --menu-button-size: 28px;
+  }
+
+  .resMenu__asideNav{
+    display: block;
+    background-color: var(--color-bg);
+    width: 320px;
+    position: absolute;
+    top: 0;
+    left: -320px;
+    height: calc(100dvh - var(--header-height-up));
+    padding: 16px 8px;
+
+    transition: left .2s ease-in-out;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .resMenu__asideNav::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .resMenu__asideNav::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+
+  .resMenu__asideNav::-webkit-scrollbar-button {
+    height: 0;
+    display: none;
+  }
+
+  .resMenu__asideNav::-webkit-scrollbar-thumb {
+    background-color: var(--color-fg);
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+
+  .resMenu__asideNav.shown{
+    transition: left .3s ease-in-out;
+    left: 0;
+  }
+}

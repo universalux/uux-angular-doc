@@ -1,10 +1,6 @@
-export interface ComponentData {
-  name: string;
-  url: string;
-  description: string;
-}
+import { CatalogItem } from "./data.types";
 
-export const componentList : ComponentData[] = [
+export const componentList : CatalogItem[] = [
   {
     name: "Menu Button",
     url: "/components/menu-button",
