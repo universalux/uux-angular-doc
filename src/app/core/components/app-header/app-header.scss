@@ -1,12 +1,10 @@
 :host{
   display: block;
   background: linear-gradient(to right, var(--color-primary) 30%, var(--color-secondary) 100%);
-  // height: var(--nav-height);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  // color: var(--theme);
 }
 
 .appHeader{
@@ -42,6 +40,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+  column-gap: .3rem;
 }
 
 .leftHeader__navList a{
@@ -105,8 +104,8 @@ ng-theme-toggle{
   }
 
   .resNav{
-    padding: 8px 16px;
-    height: var(--header-height);
+    padding: 0px 16px 0px 16px;
+    height: var(--header-height-secondary);
 
     display: flex;
     justify-content: center;

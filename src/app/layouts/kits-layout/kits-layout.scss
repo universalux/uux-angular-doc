@@ -1,0 +1,38 @@
+@use '../../shared/styles/scrollbar' as *;
+
+:host{
+  display: block;
+  height: 100%;
+  max-height: calc(100dvh - var(--total-header-height));
+  overflow-y: auto;
+
+  position: relative;
+
+  @include custom-scrollbar;
+}
+
+.componentsLayout__header{
+  display: none;
+}
+
+.componentsLayout__container{
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.componentsLayout__main{
+  background-color: var(--color-bg);
+}
+
+@media screen and (max-width: 960px) {
+
+  .componentsLayout__container{
+    grid-template-columns: 1fr;
+  }
+
+  app-aside{
+    display: none;
+  }
+
+}

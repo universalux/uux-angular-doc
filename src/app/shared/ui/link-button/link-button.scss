@@ -2,8 +2,10 @@
 
   --link-button-width: auto;
   --link-button-hover: var(--color-bg-trans);
+  --link-button-active: var(--color-bg-trans);
   --link-button-text-align: center;
   --link-button-font-size: .9rem;
+  --link-button-font-weight: 700;
 
   display: block;
   width: var(--link-button-width);
@@ -13,7 +15,7 @@
   width: var(--link-button-width);
   display: block;
   font-size: var(--link-button-font-size);
-  font-weight: 700;
+  font-weight: var(--link-button-font-weight);
   text-align: var(--link-button-text-align);
   padding: .7rem 1rem;
   border-radius: 1rem;
@@ -21,4 +23,8 @@
 
 .linkButton:hover{
   background-color: var(--link-button-hover);
+}
+
+.linkButton.active{
+  background-color: var(--link-button-active);
 }

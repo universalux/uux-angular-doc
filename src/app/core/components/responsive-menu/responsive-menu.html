@@ -1,0 +1,22 @@
+<header class="resMenu__header" >
+  <ng-menu-button
+    [class.opened]="menuService.isOpenMenu()"
+    [isOpenSignal]="menuService.isOpenMenu"
+  />
+</header>
+<div
+  (click)="menuService.isOpenMenu.set(false)"
+  class="resMenu__wrapper"
+  [class.hidden]="!menuService.isOpenMenu() "
+>
+</div>
+
+<nav class="resMenu__asideNav" [class.shown]="menuService.isOpenMenu()">
+  <ul>
+    @for (component of menuItems(); track $index) {
+          <li>
+            <app-link-button [linkTo]="component.url" [label]="component.name" width="100%"/>
+          </li>
+        }
+    </ul>
+</nav>
