@@ -9,4 +9,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class AppFooter {
 
+  currentYear : number = new Date().getFullYear();
+
 }

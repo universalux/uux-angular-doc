@@ -1,15 +1,47 @@
 :host{
   display: block;
   background: var(--color-bg);
-  padding: 8px 16px;
+  padding: 16px;
   border-top: 1px solid var(--color-fg-trans);
 }
 
 .appFooter{
   margin: 1rem 0;
   display: flex;
+  justify-content: space-between;
 }
 
 .appFooter__leftFooter{
-padding-left: 1rem;
+  padding-left: 1rem;
+}
+
+.appFooter__rightFooter{
+  padding-right: .3rem;
+  display: flex;
+  flex-direction: column;
+  font-size: .8rem;
+  text-align: end;
+}
+
+.appFooter__rightFooter a:hover{
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media screen and (max-width: 560px) {
+  .appFooter{
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .appFooter__leftFooter{
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .appFooter__rightFooter{
+    text-align: center;
+  }
 }
