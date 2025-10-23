@@ -1,6 +1,8 @@
 :host{
 
   --link-button-width: auto;
+  --link-button-bg: transparent;
+  --link-button-color: inherit;
   --link-button-hover: var(--color-bg-trans);
   --link-button-active: var(--color-bg-trans);
   --link-button-text-align: center;
@@ -17,6 +19,8 @@
   font-size: var(--link-button-font-size);
   font-weight: var(--link-button-font-weight);
   text-align: var(--link-button-text-align);
+  background: var(--link-button-bg);
+  color: var(--link-button-color);
   padding: .7rem 1rem;
   border-radius: 1rem;
 }

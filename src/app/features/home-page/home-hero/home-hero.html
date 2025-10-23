@@ -1,0 +1,38 @@
+<ng-hero-carousel
+    [slides]="carouselItems()"
+    [transitionTime]="1000"
+    [hasAutoplay]="false"
+    [hasCounter]="false"
+    [hasOverlay]="false"
+    [autoplayTime]="7000"
+    [autoplayResumeTime]="15000"
+    indicators="bars"
+    arrowsPlacement="auto"
+>
+
+    <ng-template #outerContent>
+      <div style="display: flex; align-items: center; justify-content: center; position: absolute; top: 100px; width: 100%; height: fit-content; font-size: 1.3rem;">
+        <h1 style="margin-bottom: 0rem;">Universal UX</h1>
+      </div>
+    </ng-template>
+
+    <ng-template [slideFor]="0">
+      <h2>Hola soy la descripción del slide 1</h2>
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center; margin-top: 2rem;">
+
+        <app-link-button linkTo="/components" label="Hola"/>
+            <button style="background-color: red; color: white; padding: .5rem; border-radius: .5rem; border: none; font-size: 1.2rem; max-width: 200px; width: 100%;">
+                Link 1
+            </button>
+            <button style="background-color: rgb(66, 207, 61); color: white; padding: .5rem; border-radius: .5rem; border: none; font-size: 1.2rem; max-width: 200px; width: 100%;">
+                Link 2
+            </button>
+        </div>
+    </ng-template>
+
+
+
+    <!-- <ng-template [slideFor]="1">
+    </ng-template> -->
+
+</ng-hero-carousel>

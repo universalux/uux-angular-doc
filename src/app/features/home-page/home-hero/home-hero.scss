@@ -1,0 +1,24 @@
+:host{
+  display: block;
+  background: linear-gradient(to right, var(--color-primary) 30%, var(--color-secondary) 100%);
+  height: 400px;
+}
+
+ng-hero-carousel{
+  --carousel-bg: transparent;
+  --carousel-height: 100%;
+}
+
+app-link-button{
+  --link-button-bg: var(--color-light);
+  --link-button-color: var(--color-dark);
+  --link-button-hover: rgba(189, 189, 189, 0.678);
+}
+
+@media screen and (max-width: 1200px) {
+  :host{
+    display: block;
+    background: linear-gradient(to right, var(--color-primary) 30%, var(--color-secondary) 100%);
+    height: 330px;
+  }
+}
