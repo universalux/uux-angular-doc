@@ -1,0 +1,32 @@
+:host{
+  display: block;
+  background: linear-gradient(to right, var(--color-primary) 30%, var(--color-secondary) 100%);
+  // min-height: 400px;
+  // height: 400px;
+}
+
+ng-hero-carousel{
+  --carousel-bg: transparent;
+  --carousel-height: 300px;
+  --carousel-title-size: 1.3rem;
+  --carousel-transition-translate-y: 0;
+
+}
+
+app-link-button{
+  min-width: 100px;
+  --link-button-bg: var(--color-fg);
+  --link-button-color: var(--color-bg);
+  --link-button-hover: color-mix(in srgb, var(--color-fg) 90%, rgb(85, 85, 85));
+  --link-button-hover-shadow: 2px 2px 5px rgb(49, 49, 49);
+}
+
+// ::ng-deep app-link-button .linkButton{
+//     box-shadow: 1px 1px 5px rgb(255, 255, 255);
+//   }
+
+@media screen and (max-width: 1200px) {
+  :host{
+    // height: 330px;
+  }
+}

@@ -1,0 +1,54 @@
+<!-- <h1 style="position: absolute; width: 100%; text-align: center; top: 50px; font-size: 2rem;">Universal UX</h1> -->
+<ng-hero-carousel
+    [slides]="carouselItems()"
+    [transitionTime]="1000"
+    [hasAutoplay]="false"
+    [hasCounter]="false"
+    [hasOverlay]="false"
+    [autoplayTime]="7000"
+    [autoplayResumeTime]="15000"
+    indicators="bars"
+    arrowsPlacement="auto"
+>
+
+    <ng-template #outerContent>
+
+        <h1 style="position: absolute; width: 100%; text-align: center; top: 50px; font-size: 2rem;">Universal UX</h1>
+
+    </ng-template>
+
+    <ng-template [slideFor]="0">
+      <div style="margin-top: 1.8rem;">
+        <h2 style="text-align: center; margin-bottom: 1.3rem; font-weight: 500;">Angular components library</h2>
+      <div style="display: flex; column-gap: 2rem; row-gap: 1rem; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center;">
+        <app-link-button linkTo="/components" label="View Featured"/>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template [slideFor]="1">
+      <div style="margin-top: 1.8rem;">
+        <h2 style="text-align: center; margin-bottom: 1.3rem; font-weight: 500;">Check our entire catalog</h2>
+      <div style="display: flex; column-gap: 2rem; row-gap: 1rem; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center;">
+
+        <app-link-button linkTo="/components" label="Components"/>
+        <app-link-button linkTo="/kits" label="Kits"/>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template [slideFor]="2">
+      <div style="margin-top: 1.8rem;">
+        <h2 style="text-align: center; margin-bottom: 1.3rem; font-weight: 500;">Do you want to contribute?</h2>
+      <div style="display: flex; column-gap: 2rem; row-gap: 1rem; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center;">
+        <app-link-button linkTo="/contribute" label="Learn how"/>
+        </div>
+      </div>
+    </ng-template>
+
+
+
+    <!-- <ng-template [slideFor]="1">
+    </ng-template> -->
+
+</ng-hero-carousel>

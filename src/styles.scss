@@ -58,6 +58,10 @@ a {
   color: var(--color-fg);
 }
 
+button{
+  cursor: pointer;
+}
+
 
 @media screen and (max-width: 960px) {
   :root{
