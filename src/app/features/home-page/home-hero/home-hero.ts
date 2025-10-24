@@ -4,8 +4,8 @@ import { CarouselItem, NgHeroCarousel, SlideForDirective } from 'ng-hero-carouse
 
 const slides : CarouselItem[] = [
   {
-    // title: 'Slide 1',
-    // subtitle: 'Slide 1 description'
+    // title: 'Angular components library',
+    // subtitle: 'Angular components libreary'
   },
   {
     // title: 'Slide 2',

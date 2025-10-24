@@ -4,6 +4,7 @@
   --link-button-bg: transparent;
   --link-button-color: inherit;
   --link-button-hover: var(--color-bg-trans);
+  --link-button-hover-shadow: none;
   --link-button-active: var(--color-bg-trans);
   --link-button-text-align: center;
   --link-button-font-size: .9rem;
@@ -27,6 +28,7 @@
 
 .linkButton:hover{
   background-color: var(--link-button-hover);
+  box-shadow: var(--link-button-hover-shadow);
 }
 
 .linkButton.active{

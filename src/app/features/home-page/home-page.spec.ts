@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomePage } from './home-page';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -10,7 +11,7 @@ describe('HomePage', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HomePage],
-      providers: [provideZonelessChangeDetection()]
+      providers: [provideZonelessChangeDetection(), provideRouter([])]
     })
     .compileComponents();
 

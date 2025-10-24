@@ -1,3 +1,4 @@
+<!-- <h1 style="position: absolute; width: 100%; text-align: center; top: 50px; font-size: 2rem;">Universal UX</h1> -->
 <ng-hero-carousel
     [slides]="carouselItems()"
     [transitionTime]="1000"
@@ -11,23 +12,38 @@
 >
 
     <ng-template #outerContent>
-      <div style="display: flex; align-items: center; justify-content: center; position: absolute; top: 100px; width: 100%; height: fit-content; font-size: 1.3rem;">
-        <h1 style="margin-bottom: 0rem;">Universal UX</h1>
-      </div>
+
+        <h1 style="position: absolute; width: 100%; text-align: center; top: 50px; font-size: 2rem;">Universal UX</h1>
+
     </ng-template>
 
     <ng-template [slideFor]="0">
-      <h2>Hola soy la descripción del slide 1</h2>
-      <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center; margin-top: 2rem;">
-
-        <app-link-button linkTo="/components" label="Hola"/>
-            <button style="background-color: red; color: white; padding: .5rem; border-radius: .5rem; border: none; font-size: 1.2rem; max-width: 200px; width: 100%;">
-                Link 1
-            </button>
-            <button style="background-color: rgb(66, 207, 61); color: white; padding: .5rem; border-radius: .5rem; border: none; font-size: 1.2rem; max-width: 200px; width: 100%;">
-                Link 2
-            </button>
+      <div style="margin-top: 1.8rem;">
+        <h2 style="text-align: center; margin-bottom: 1.3rem; font-weight: 500;">Angular components library</h2>
+      <div style="display: flex; column-gap: 2rem; row-gap: 1rem; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center;">
+        <app-link-button linkTo="/components" label="View Featured"/>
         </div>
+      </div>
+    </ng-template>
+
+    <ng-template [slideFor]="1">
+      <div style="margin-top: 1.8rem;">
+        <h2 style="text-align: center; margin-bottom: 1.3rem; font-weight: 500;">Check our entire catalog</h2>
+      <div style="display: flex; column-gap: 2rem; row-gap: 1rem; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center;">
+
+        <app-link-button linkTo="/components" label="Components"/>
+        <app-link-button linkTo="/kits" label="Kits"/>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template [slideFor]="2">
+      <div style="margin-top: 1.8rem;">
+        <h2 style="text-align: center; margin-bottom: 1.3rem; font-weight: 500;">Do you want to contribute?</h2>
+      <div style="display: flex; column-gap: 2rem; row-gap: 1rem; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center;">
+        <app-link-button linkTo="/contribute" label="Learn how"/>
+        </div>
+      </div>
     </ng-template>
 
 
