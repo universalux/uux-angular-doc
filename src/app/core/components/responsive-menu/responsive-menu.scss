@@ -54,17 +54,17 @@ app-link-button{
     position: relative;
   }
 
-  .resMenu__header ng-menu-button.opened{
+  .resMenu__header ng-menu-toggle.opened{
     left: calc(100% - 52px);
   }
 
-  .resMenu__header ng-menu-button{
+  .resMenu__header ng-menu-toggle{
     transition: left .3s ease-in-out;
     left: calc(50% - 28px);
     position: absolute;
     margin: 0 .8rem;
-    --menu-button-color: var(--color-fg);
-    --menu-button-size: 28px;
+    --menu-toggle-color: var(--color-fg);
+    --menu-toggle-size: 28px;
   }
 
   .resMenu__asideNav{

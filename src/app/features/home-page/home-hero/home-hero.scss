@@ -20,13 +20,3 @@ app-link-button{
   --link-button-hover: color-mix(in srgb, var(--color-fg) 90%, rgb(85, 85, 85));
   --link-button-hover-shadow: 2px 2px 5px rgb(49, 49, 49);
 }
-
-// ::ng-deep app-link-button .linkButton{
-//     box-shadow: 1px 1px 5px rgb(255, 255, 255);
-//   }
-
-@media screen and (max-width: 1200px) {
-  :host{
-    // height: 330px;
-  }
-}
