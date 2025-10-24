@@ -1,7 +1,8 @@
 <header class="resMenu__header" >
-  <ng-menu-button
+  <ng-menu-toggle
     [class.opened]="menuService.isOpenMenu()"
     [isOpenSignal]="menuService.isOpenMenu"
+    animation="rotateX"
   />
 </header>
 <div
