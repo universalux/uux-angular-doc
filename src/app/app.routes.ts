@@ -21,8 +21,10 @@ export const routes: Routes = [
     component: ComponentsLayout,
     children: [
       {path: "", component: ComponentsPage},
-      {path: "menu-button", component: ComponentsPage},
+      {path: "menu-toggle", component: ComponentsPage},
       {path: "theme-toggle", component: ComponentsPage},
+      {path: "image-card", component: ComponentsPage},
+      {path: "hero-carousel", component: ComponentsPage},
     ]
   },
 
