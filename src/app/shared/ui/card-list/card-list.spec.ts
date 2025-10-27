@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KitsPage } from './kits-page';
+import { CardList } from './card-list';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-describe('KitsPage', () => {
-  let component: KitsPage;
-  let fixture: ComponentFixture<KitsPage>;
+describe('CardList', () => {
+  let component: CardList;
+  let fixture: ComponentFixture<CardList>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KitsPage],
+      imports: [CardList],
       providers: [provideZonelessChangeDetection(), provideRouter([])]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(KitsPage);
+    fixture = TestBed.createComponent(CardList);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

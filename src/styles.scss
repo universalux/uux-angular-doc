@@ -7,6 +7,8 @@
 
   --total-header-height: 56px;
 
+  --main-gradient: linear-gradient(to right, var(--color-primary) 30%, var(--color-secondary) 100%);
+
   --color-primary: #30a2fe;
   --color-secondary: #824dfe;
   --color-primary-trans: #30a1fe52;
@@ -62,6 +64,18 @@ button{
   cursor: pointer;
 }
 
+.pageTitle__gradient{
+  margin: 0 auto;
+  width: fit-content;
+  background: linear-gradient(to right, var(--color-primary) 20%, var(--color-secondary) 100%);
+  background-clip: text;
+  -webkit-background-clip: text; /* necesario para Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* necesario para Safari */
+  font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
 
 @media screen and (max-width: 960px) {
   :root{
