@@ -1,0 +1,22 @@
+<section class="homeFeatComponents">
+
+  <header class="homeFeatComponents__header">
+    <h2>Featured components</h2>
+    <app-link-button label="View all components" linkTo="/components"/>
+  </header>
+
+  <ng-content-carousel advanceMode="single" [hideArrowsOnEdges]="false">
+    @for (component of featuredComponents(); track $index) {
+        <a carouselItem href="/">
+          <ng-image-card hover="color">
+            <section card-image>
+              <img class="scaleHover" [src]="component.image" alt="Dog">
+            </section>
+            <section card-footer>
+              {{component.name}}
+            </section>
+          </ng-image-card>
+        </a>
+    }
+  </ng-content-carousel>
+  </section>
