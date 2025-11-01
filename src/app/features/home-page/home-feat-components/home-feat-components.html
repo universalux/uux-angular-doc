@@ -5,6 +5,7 @@
     <app-link-button label="View all components" linkTo="/components"/>
   </header>
 
+  @if (featuredComponents()) {
   <ng-content-carousel advanceMode="single" [hideArrowsOnEdges]="false">
     @for (component of featuredComponents(); track $index) {
         <a carouselItem href="/">
@@ -19,4 +20,5 @@
         </a>
     }
   </ng-content-carousel>
+  }
   </section>

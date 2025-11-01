@@ -13,5 +13,5 @@ import { LinkButton } from "@app/shared/ui/link-button/link-button";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeFeatComponents {
-  featuredComponents = signal<CatalogItem[]>(componentList);
+  featuredComponents = signal<CatalogItem[] | null>(componentList);
 }

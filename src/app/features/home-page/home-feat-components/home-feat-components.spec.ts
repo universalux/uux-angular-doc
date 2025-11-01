@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeFeatComponents } from './home-feat-components';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { componentList } from '@app/core/data/components.data';
 
 describe('HomeFeatComponents', () => {
   let component: HomeFeatComponents;
@@ -8,13 +11,15 @@ describe('HomeFeatComponents', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeFeatComponents]
+      imports: [HomeFeatComponents],
+      providers: [provideZonelessChangeDetection(), provideRouter([])]
     })
     .compileComponents();
 
     fixture = TestBed.createComponent(HomeFeatComponents);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    component.featuredComponents.set(componentList);
+    fixture.whenStable();
   });
 
   it('should create', () => {
