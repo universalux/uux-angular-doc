@@ -1,22 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomePage } from './home-page';
+import { HomeFeatComponents } from './home-feat-components';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { componentList } from '@app/core/data/components.data';
 
-describe('HomePage', () => {
-  let component: HomePage;
-  let fixture: ComponentFixture<HomePage>;
+describe('HomeFeatComponents', () => {
+  let component: HomeFeatComponents;
+  let fixture: ComponentFixture<HomeFeatComponents>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomePage],
+      imports: [HomeFeatComponents],
       providers: [provideZonelessChangeDetection(), provideRouter([])]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomePage);
+    fixture = TestBed.createComponent(HomeFeatComponents);
     component = fixture.componentInstance;
+    component.featuredComponents.set(componentList);
     fixture.whenStable();
   });
 
