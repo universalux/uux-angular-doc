@@ -15,7 +15,10 @@
     <nav class="leftHeader__nav">
       <ul class="leftHeader__navList">
         <li class="leftHeader__navItem">
-          <app-link-button linkTo="components" label="Components"/>
+          <!-- <app-link-button linkTo="components" label="Components"/> -->
+           <ng-link-button type="minimal" routerLink="components" ariaLabel="Go to components">
+            Components
+           </ng-link-button>
         </li>
         <li>
           <app-link-button linkTo="kits" label="Kits"/>
