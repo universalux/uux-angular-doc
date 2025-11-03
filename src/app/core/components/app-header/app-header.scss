@@ -43,6 +43,13 @@
   column-gap: .3rem;
 }
 
+ng-link-button{
+  font-weight: 700;
+  font-size: .9;
+  --link-button-padding: .7rem 1rem;
+  --link-button-hover-bg: var(--color-bg-trans);
+}
+
 .leftHeader__navList a{
   color: inherit;
 }
