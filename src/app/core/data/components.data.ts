@@ -2,7 +2,14 @@ import { CatalogItem } from "./data.types";
 
 export const componentList : CatalogItem[] = [
   {
-    name: "Menu Toggle",
+    name: "Link button",
+    url: "/components/link-button",
+    description: "Customizable and easy-to-use link button",
+    image: "images/components/ng-link-button-static-cover.png",
+    featured: true
+  },
+  {
+    name: "Menu toggle",
     url: "/components/menu-toggle",
     description: "Customizable and easy-to-use menu toggle",
     image: "images/components/ng-menu-toggle-static-cover.png",
@@ -33,7 +40,7 @@ export const componentList : CatalogItem[] = [
     name: "Content Carousel",
     url: "/components/content-carousel",
     description: "Anuglar content carousel",
-    image: "images/components/ng-hero-carousel-static-cover.png",
+    image: "images/components/ng-content-carousel-static-cover.png",
     featured: true
   },
 ]
