@@ -4,10 +4,11 @@ import { NgImageCard } from 'ng-image-card';
 import { CatalogItem } from '@app/core/data/data.types';
 import { componentList } from '@app/core/data/components.data';
 import { NgLinkButton } from "ng-link-button";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-home-feat-components',
-  imports: [NgContentCarousel, CarouselItemDirective, NgImageCard, NgLinkButton],
+  imports: [NgContentCarousel, CarouselItemDirective, NgImageCard, NgLinkButton, RouterLink],
   templateUrl: './home-feat-components.html',
   styleUrl: './home-feat-components.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
