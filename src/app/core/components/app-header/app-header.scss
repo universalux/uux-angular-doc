@@ -17,7 +17,16 @@
 
 .appHeader__leftHeader{
   display: flex;
+  align-items: center;
   column-gap: .8rem;
+}
+
+ng-link-button.brandLink{
+  --link-button-padding: .5rem 1rem;
+}
+
+ng-link-button.brandLink svg{
+  fill: var(--color-fg);
 }
 
 .leftHeader__brand{
@@ -25,7 +34,6 @@
   align-items: center;
   padding: .5rem 1rem;
   border-radius: 1.5rem;
-
 }
 
 .leftHeader__brand:hover{
@@ -46,6 +54,7 @@
 ng-link-button{
   font-weight: 700;
   font-size: .9;
+
   --link-button-padding: .7rem 1rem;
   --link-button-hover-bg: var(--color-bg-trans);
 }
@@ -67,31 +76,26 @@ ng-link-button{
 
 .rightHeader__linkContainer{
   display: flex;
-
+  align-items: center;
   font-weight: 600;
   font-size: .8rem;
 }
 
-.rightHeader__link{
-  display: flex;
-  align-items: center;
-  column-gap: .5rem;
-
-  border-radius: 1.5rem;
-  padding: .5rem 1rem;
+ng-link-button.extLink{
+  --link-button-padding: .5rem 1rem;
 }
 
-.rightHeader__linkIcon{
+ng-link-button.extLink .linkIcon{
   fill: var(--color-fg);
 }
 
-.rightHeader__link:hover,
 .rightHeader__themeBtnContainer:hover{
   background-color: var(--color-bg-trans);
 }
 
 .rightHeader__themeBtnContainer{
-  padding: .5rem;
+  padding: .4rem;
+  margin: 0 .2rem;
   border-radius: 50%;
 }
 
@@ -125,7 +129,6 @@ ng-theme-toggle{
   .resNav__navList{
     display: flex;
     height: 100%;
-    // justify-content: space-evenly;
     column-gap: 1rem;
   }
 
@@ -137,11 +140,11 @@ ng-theme-toggle{
     align-items: center;
   }
 
-  .resNav__navItem app-link-button{
+  .resNav__navItem ng-link-button{
     --link-button-width: 100%;
   }
 
-  .rightHeader__link span{
+  ng-link-button.extLink span{
     display: none;
   }
 
@@ -149,7 +152,7 @@ ng-theme-toggle{
     column-gap: .3rem;
   }
 
-  .rightHeader__link{
-    padding: .6rem .6rem;
+  ng-link-button.extLink{
+    --link-button-padding: .6rem .6rem;
   }
 }

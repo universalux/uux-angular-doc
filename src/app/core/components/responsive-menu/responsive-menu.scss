@@ -30,12 +30,13 @@
   z-index: -1;
 }
 
-app-link-button{
-  --link-button-text-align: start;
-  --link-button-font-size: 1rem;
-  --link-button-font-weight: 500;
-  --link-button-active: var(--color-primary-trans);
-  --link-button-hover: var(--color-secondary-trans);
+ng-link-button{
+  font-size: 1rem;
+  --link-button-width: 100%;
+  --link-button-padding: .8rem 1rem;
+  --link-button-justify-content: start;
+  --link-button-hover-bg: var(--color-secondary-trans);
+  --link-button-active-bg: var(--color-primary-trans);
 }
 
 .resMenu__asideNav{
