@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { CatalogItem } from '@app/core/data/data.types';
 import { MenuService } from '@app/core/services/menu-service/menu-service';
-import { LinkButton } from '@app/shared/ui/link-button/link-button';
 import { NgMenuToggle } from 'ng-menu-toggle';
+import { NgLinkButton } from "ng-link-button";
 
 @Component({
   selector: 'app-responsive-menu',
-  imports: [LinkButton, NgMenuToggle],
+  imports: [NgMenuToggle, NgLinkButton],
   templateUrl: './responsive-menu.html',
   styleUrl: './responsive-menu.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

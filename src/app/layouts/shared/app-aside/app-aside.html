@@ -5,7 +5,9 @@
       <ul>
         @for (component of menuItems(); track $index) {
           <li>
-            <app-link-button [linkTo]="component.url" [label]="component.name" width="100%"/>
+            <ng-link-button type="minimal" [routerLink]="component.url" [ariaLabel]="'Go to ' + component.name + ' page'">
+              {{component.name}}
+            </ng-link-button>
           </li>
         }
       </ul>

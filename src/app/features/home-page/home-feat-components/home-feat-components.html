@@ -1,8 +1,10 @@
 <section class="homeFeatComponents">
 
-  <header class="homeFeatComponents__header">
+  <header id="featured" class="homeFeatComponents__header">
     <h2>Featured components</h2>
-    <app-link-button label="View all components" linkTo="/components"/>
+    <ng-link-button type="minimal" hover="outline" routerLink="components" ariaLabel="Go to components page">
+      View all components
+    </ng-link-button>
   </header>
 
   @if (featuredComponents()) {

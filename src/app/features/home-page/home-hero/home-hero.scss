@@ -13,10 +13,22 @@ ng-hero-carousel{
 
 }
 
-app-link-button{
-  min-width: 100px;
+ng-link-button{
+  font-size: .9rem;
+  font-weight: 700;
+
   --link-button-bg: var(--color-fg);
   --link-button-color: var(--color-bg);
-  --link-button-hover: color-mix(in srgb, var(--color-fg) 90%, rgb(85, 85, 85));
-  --link-button-hover-shadow: 2px 2px 5px rgb(49, 49, 49);
+  --link-button-padding: .7rem 1rem;
+  --link-button-hover-bg: color-mix(in srgb, var(--color-fg) 90%, rgb(85, 85, 85));
+  --link-button-transition-duration: 0;
+}
+
+ng-link-button.kitsLink{
+  max-width: 100px;
+  --link-button-width: 100%;
+}
+
+ng-link-button:hover{
+  box-shadow: 2px 2px 5px rgb(49, 49, 49);
 }

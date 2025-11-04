@@ -16,9 +16,10 @@
   align-items: center;
 }
 
-app-link-button{
-  color: var(--color-primary);
-  --link-button-hover: var(--color-fg-trans);
+ng-link-button{
+  font-weight: 700;
+  --link-button-color: var(--color-primary);
+  --link-button-hover-outline: 2px solid var(--color-primary);
 }
 
 ng-image-card{
