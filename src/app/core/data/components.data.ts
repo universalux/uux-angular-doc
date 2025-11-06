@@ -2,10 +2,17 @@ import { CatalogItem } from "./data.types";
 
 export const componentList : CatalogItem[] = [
   {
+    name: "Simple button",
+    url: "/components/simple-button",
+    description: "Customizable and easy-to-use simple button",
+    image: "images/components/ng-buttons-static-cover.png",
+    featured: false
+  },
+  {
     name: "Link button",
     url: "/components/link-button",
     description: "Customizable and easy-to-use link button",
-    image: "images/components/ng-link-button-static-cover.png",
+    image: "images/components/ng-buttons-static-cover.png",
     featured: true
   },
   {
