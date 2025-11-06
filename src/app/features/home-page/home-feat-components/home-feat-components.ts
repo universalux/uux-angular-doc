@@ -14,5 +14,5 @@ import { RouterLink } from "@angular/router";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeFeatComponents {
-  featuredComponents = signal<CatalogItem[] | null>(componentList);
+  featuredComponents = signal<CatalogItem[] | null>(componentList.filter(c => c.featured).reverse());
 }
