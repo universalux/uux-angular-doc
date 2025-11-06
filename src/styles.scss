@@ -64,6 +64,10 @@ button{
   cursor: pointer;
 }
 
+ng-link-button{
+  --link-button-transition-duration: 0;
+}
+
 .pageTitle__gradient{
   margin: 0 auto;
   width: fit-content;
