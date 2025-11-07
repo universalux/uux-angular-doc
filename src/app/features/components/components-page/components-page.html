@@ -1,4 +1,21 @@
 <h1 class="pageTitle__gradient">Component List</h1>
 
-<app-card-list [catalogItems]="components()"/>
-
+@if (components()) {
+  <section class="componentsPage__cardList">
+  @for (component of components(); track $index) {
+    <a [routerLink]="component.url" class="cardList__itemLink">
+      <ng-image-card hover="color">
+        <section card-image>
+          <img class="scaleHover" [src]="component.image" [alt]="'Universal UX ' + component.name + ' cover image'">
+        </section>
+        <section card-body>
+          <h3>{{component.name}}</h3>
+        </section>
+        <footer card-footer>
+          <p>{{component.description}}</p>
+        </footer>
+      </ng-image-card>
+    </a>
+  }
+  </section>
+}

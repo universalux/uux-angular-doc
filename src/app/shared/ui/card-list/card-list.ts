@@ -12,4 +12,5 @@ import { NgImageCard } from 'ng-image-card';
 })
 export class CardList {
   catalogItems = input<CatalogItem[] | null>();
+
 }

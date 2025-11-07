@@ -2,13 +2,23 @@ import { CatalogItem } from "./data.types";
 
 export const kitList : CatalogItem[] = [
   {
-    name: "Togglers",
+    name: "Togglers Kit",
     url: "/kits/togglers",
-    description: "Angular theme and menu toggle buttons kit"
+    description: "Angular toggle buttons kit"
   },
   {
-    name: "Other kits",
-    url: "/kits/other",
-    description: "Other kits example"
+    name: "Buttons Kit",
+    url: "/kits/togglers",
+    description: "Angular multiple buttons kit"
+  },
+  {
+    name: "Carousels Kit",
+    url: "/kits/carousels",
+    description: "Angular multiple carousels kit"
+  },
+  {
+    name: "Full collection",
+    url: "/kits/complete-collection",
+    description: "UUX Angular complete collection"
   },
 ]

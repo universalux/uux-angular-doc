@@ -1,4 +1,36 @@
 :host{
-  display: block;
   height: 100%;
+}
+
+.kitsPage__cardList{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.cardList__itemLink{
+  flex-basis: calc(40% - 10px);
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+}
+
+ng-image-card{
+  width: 100%;
+  transition: color 0s ease-in-out;
+  height: 100%;
+  min-width: 280px;
+  border: 1px solid var(--color-fg-trans);
+
+  --card-fg: var(--color-fg);
+  --card-bg: var(--color-bg);
+  --card-shadow: 1px 1px 10px var(--color-fg-trans);
+  --card-hover-bg: var(--color-primary-trans);
+}
+
+ng-image-card [card-footer]{
+  min-height: 2.4rem;
+  padding-top: 0;
 }
