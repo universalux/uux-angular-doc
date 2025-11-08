@@ -6,7 +6,7 @@ const slides : CarouselItem[] = [
   {},
   {},
   {},
-]
+];
 
 @Component({
   selector: 'app-home-hero',

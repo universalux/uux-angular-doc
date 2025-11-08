@@ -18,9 +18,10 @@
 }
 
 ng-image-card{
-  width: 100%;
+  width: 100% !important;
   transition: color 0s ease-in-out;
   height: 100%;
+  max-width: 100%;
   min-width: 280px;
   border: 1px solid var(--color-fg-trans);
 

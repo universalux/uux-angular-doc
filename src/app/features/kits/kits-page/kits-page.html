@@ -1,7 +1,5 @@
 <h1 class="pageTitle__gradient">Kit List</h1>
 
-<!-- <app-card-list [catalogItems]="kits()"/> -->
-
 @if (kits()) {
 <section class="kitsPage__cardList">
   @for (kit of kits(); track $index) {
