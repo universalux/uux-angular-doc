@@ -1,0 +1,59 @@
+:host{
+  display: block;
+  // width: 100%;
+}
+
+.homeFeatKits{
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeFeatKits__header{
+  margin: 1rem 2rem .5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ng-link-button{
+  font-weight: 700;
+  --link-button-color: var(--color-primary);
+  --link-button-hover-outline: 2px solid var(--color-primary);
+}
+
+ng-image-card{
+  min-width: 280px;
+  min-height: 150px;
+}
+
+ng-image-card [card-header]{
+  font-size: 1rem;
+  background: var(--main-gradient);
+  color: var(--color-fg);
+}
+
+ng-image-card [card-footer]{
+  font-size: 1rem;
+  text-wrap: pretty;
+}
+
+@media screen and (max-width: 1100px) {
+  ng-image-card{
+    min-width: 220px;
+    height: auto;
+  }
+
+  ng-image-card [card-image]{
+    min-height: unset !important;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .homeFeatKits__header{
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

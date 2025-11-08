@@ -1,3 +1,23 @@
 <h1 class="pageTitle__gradient">Kit List</h1>
 
-<app-card-list [catalogItems]="kits()"/>
+@if (kits()) {
+<section class="kitsPage__cardList">
+  @for (kit of kits(); track $index) {
+  <a
+    carouselItem
+    [routerLink]="kit.url"
+    [aria-label]="'Go to ' + kit.name + ' page'"
+    class="cardList__itemLink"
+  >
+    <ng-image-card hover="color">
+      <section card-header>
+        <h3>{{kit.name}}</h3>
+      </section>
+      <section card-footer>
+        <p>{{kit.description}}</p>
+      </section>
+    </ng-image-card>
+  </a>
+  }
+</section>
+}
