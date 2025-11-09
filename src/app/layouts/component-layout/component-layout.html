@@ -1,0 +1,25 @@
+<nav class="componentLayout__nav">
+  <ng-link-button
+    routerLink="playground"
+    [relativeTo]="activatedRoute"
+    [square]="true"
+  >
+    PLAYGROUND
+  </ng-link-button>
+
+  <ng-link-button
+    routerLink="documentation"
+    [relativeTo]="activatedRoute"
+    [square]="true"
+  >
+    DOCUMENTATION
+  </ng-link-button>
+  <div class="componentLayout__navIndicator"></div>
+</nav>
+<div class="componentLayout__content" [class.separeFromAside]="isDoc()">
+  <router-outlet/>
+</div>
+@if (isDoc()) {
+  <app-doc-nav [component]="currentComponent()!"/>
+}
+
