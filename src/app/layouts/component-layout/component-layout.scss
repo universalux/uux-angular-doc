@@ -7,6 +7,8 @@
   height: 100%;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr auto;
+
+  padding: 0 1rem;
 }
 
 .componentLayout__nav{
@@ -19,7 +21,12 @@
   display: flex;
   align-items: center;
 
-  position: relative;
+  // position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  background-color: var(--color-bg);
 }
 
 .componentLayout__nav ng-link-button{
@@ -61,10 +68,21 @@ ng-link-button ::ng-deep .linkButton.active::after {
   // border: 1px solid #cdd653;
 }
 
-.componentLayout__aside{
-  margin-left: 2rem;
-  width: 280px;
-  height: 100%;
-  grid-area: aside;
-  // border: 1px solid #e74fe0;
+.componentLayout__content.separeFromAside{
+  margin-right: 2rem;
+}
+
+app-doc-nav{
+  grid-area: 'aside';
+}
+
+@media screen and (max-width: 1200px) {
+
+  .componentLayout__content.separeFromAside{
+    margin-right: 0rem;
+  }
+
+  app-doc-nav{
+    display: none;
+  }
 }

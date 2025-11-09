@@ -16,9 +16,10 @@
   </ng-link-button>
   <div class="componentLayout__navIndicator"></div>
 </nav>
-<section class="componentLayout__content">
+<div class="componentLayout__content" [class.separeFromAside]="isDoc()">
   <router-outlet/>
-</section>
-<aside class="componentLayout__aside">
+</div>
+@if (isDoc()) {
+  <app-doc-nav [component]="currentComponent()!"/>
+}
 
-</aside>

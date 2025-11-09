@@ -7,6 +7,7 @@ import { KitsLayout } from './layouts/kits-layout/kits-layout';
 import { KitsPage } from './features/kits/kits-page/kits-page';
 import { ComponentLayout } from './layouts/component-layout/component-layout';
 import { SimpleButtonPlayground } from './features/components/simple-button/simple-button-playground/simple-button-playground';
+import { SimpleButtonDoc } from './features/components/simple-button/simple-button-doc/simple-button-doc';
 
 export const routes: Routes = [
   {
@@ -17,7 +18,6 @@ export const routes: Routes = [
       { path: "contribute", component: HomePage },
     ],
   },
-
   {
     path: "components",
     component: ComponentsLayout,
@@ -38,7 +38,26 @@ export const routes: Routes = [
           },
           {
             path: 'documentation',
+            component: SimpleButtonDoc
+          }
+        ]
+      },
+      {
+        path: "link-button",
+        component: ComponentLayout,
+        children: [
+          {
+            path: '',
+            redirectTo: 'playground',
+            pathMatch: 'full'
+          },
+          {
+            path: 'playground',
             component: SimpleButtonPlayground
+          },
+          {
+            path: 'documentation',
+            component: SimpleButtonDoc
           }
         ]
       },

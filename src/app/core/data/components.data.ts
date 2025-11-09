@@ -50,4 +50,40 @@ export const componentList : CatalogItem[] = [
     image: "images/components/ng-content-carousel-static-cover.png",
     featured: true
   },
-]
+];
+
+export type DocSectionItem = {
+  name: string;
+  code: string;
+}
+
+export const docSectionList : DocSectionItem[] = [
+  {
+    name: "Installation",
+    code: "inst"
+  },
+  {
+    name: "Overview",
+    code: "ovw"
+  },
+  {
+    name: "Functionality",
+    code: "func"
+  },
+  {
+    name: "Inputs and Outputs",
+    code: "io"
+  },
+  {
+    name: "Styling",
+    code: "sty"
+  },
+  {
+    name: "Accessibility",
+    code: "acc"
+  },
+  {
+    name: "Contribute or report",
+    code: "rep"
+  }
+];

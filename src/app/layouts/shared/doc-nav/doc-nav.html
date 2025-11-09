@@ -1,0 +1,14 @@
+<nav class="docNav">
+  @for (section of docSections(); track $index) {
+    <ng-link-button
+      routerLink="documentation"
+      [relativeTo]="activatedRoute"
+      [fragment]="component() + '-' + section.code"
+      [activatedRoute]="false"
+      type="minimal"
+      hover="tone"
+    >
+      {{section.name}}
+    </ng-link-button>
+  }
+</nav>
