@@ -1,0 +1,24 @@
+<nav class="componentLayout__nav">
+  <ng-link-button
+    routerLink="playground"
+    [relativeTo]="activatedRoute"
+    [square]="true"
+  >
+    PLAYGROUND
+  </ng-link-button>
+
+  <ng-link-button
+    routerLink="documentation"
+    [relativeTo]="activatedRoute"
+    [square]="true"
+  >
+    DOCUMENTATION
+  </ng-link-button>
+  <div class="componentLayout__navIndicator"></div>
+</nav>
+<section class="componentLayout__content">
+  <router-outlet/>
+</section>
+<aside class="componentLayout__aside">
+
+</aside>

@@ -1,0 +1,70 @@
+:host{
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+    "content aside"
+    "content aside";
+  height: 100%;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr auto;
+}
+
+.componentLayout__nav{
+  grid-area: nav;
+  height: 48px;
+  margin-bottom: 2rem;
+
+  border-bottom: 1px solid var(--color-fg-trans);
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.componentLayout__nav ng-link-button{
+  max-width: 180px;
+  --link-button-width: 100%;
+  --link-button-height: 100%;
+  --link-button-padding: 0 16px;
+  --link-button-hover-bg: var(--color-secondary-trans);
+  --link-button-bg: transparent;
+  --link-button-color: var(--color-fg);
+  --link-button-active-bg: transparent;
+
+}
+
+ng-link-button ::ng-deep .linkButton.active{
+  position: relative;
+}
+
+ng-link-button ::ng-deep .linkButton::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 180px;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transform-origin: center;
+  transition: transform .3s ease-in-out;
+  transform: scaleX(0);
+}
+
+ng-link-button ::ng-deep .linkButton.active::after {
+  transform: scaleX(1);
+}
+
+
+.componentLayout__content{
+  height: 100%;
+  grid-area: content;
+  // border: 1px solid #cdd653;
+}
+
+.componentLayout__aside{
+  margin-left: 2rem;
+  width: 280px;
+  height: 100%;
+  grid-area: aside;
+  // border: 1px solid #e74fe0;
+}

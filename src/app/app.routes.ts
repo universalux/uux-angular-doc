@@ -5,6 +5,8 @@ import { ComponentsPage } from './features/components/components-page/components
 import { HomePage } from './features/home-page/home-page';
 import { KitsLayout } from './layouts/kits-layout/kits-layout';
 import { KitsPage } from './features/kits/kits-page/kits-page';
+import { ComponentLayout } from './layouts/component-layout/component-layout';
+import { SimpleButtonPlayground } from './features/components/simple-button/simple-button-playground/simple-button-playground';
 
 export const routes: Routes = [
   {
@@ -21,7 +23,25 @@ export const routes: Routes = [
     component: ComponentsLayout,
     children: [
       {path: "", component: ComponentsPage},
-      {path: "link-button", component: ComponentsPage},
+      {
+        path: "simple-button",
+        component: ComponentLayout,
+        children: [
+          {
+            path: '',
+            redirectTo: 'playground',
+            pathMatch: 'full'
+          },
+          {
+            path: 'playground',
+            component: SimpleButtonPlayground
+          },
+          {
+            path: 'documentation',
+            component: SimpleButtonPlayground
+          }
+        ]
+      },
       {path: "menu-toggle", component: ComponentsPage},
       {path: "theme-toggle", component: ComponentsPage},
       {path: "image-card", component: ComponentsPage},
