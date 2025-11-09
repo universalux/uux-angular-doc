@@ -70,6 +70,7 @@ ng-link-button{
 .appHeader__rightHeader{
   display: flex;
   align-items: center;
+  margin-right: .2rem;
 
   column-gap: .3rem;
 }
@@ -89,22 +90,25 @@ ng-link-button.extLink .linkIcon{
   fill: var(--color-fg);
 }
 
-.rightHeader__themeBtnContainer:hover{
-  background-color: var(--color-bg-trans);
-}
+// .rightHeader__themeBtnContainer:hover{
+//   background-color: var(--color-bg-trans);
+// }
 
-.rightHeader__themeBtnContainer{
-  padding: .4rem;
-  margin: 0 .2rem;
-  border-radius: 50%;
-}
+// .rightHeader__themeBtnContainer{
+//   padding: .4rem;
+//   margin: 0 .2rem;
+//   border-radius: 50%;
+// }
 
 ng-theme-toggle{
-  --theme-toggle-color-duration: 0s;
+  --theme-toggle-hover-transition: 0s linear;
+  --theme-toggle-color-transition: 0s linear;
 
-  --theme-toggle-color-dark: var(--color-fg);
-  --theme-toggle-color-light: var(--color-fg);
-  --theme-toggle-size: 27px;
+  --theme-toggle-color: var(--color-fg);
+  --theme-toggle-size: 40px;
+  --theme-toggle-padding: 8px;
+  --theme-toggle-bg: transparent;
+  --theme-toggle-hover-bg: var(--color-bg-trans);
 
 }
 
