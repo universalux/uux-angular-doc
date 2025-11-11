@@ -86,3 +86,9 @@ app-doc-nav{
     display: none;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .componentLayout__nav{
+    overflow-x: auto;
+  }
+}

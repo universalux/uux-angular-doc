@@ -2,7 +2,7 @@
 
   <header id="featured" class="homeFeatKits__header">
     <h2>Featured kits</h2>
-    <ng-link-button type="minimal" hover="stroke" routerLink="kits" ariaLabel="Go to components page">
+    <ng-link-button class="viewAll" type="minimal" hover="stroke" routerLink="kits" ariaLabel="Go to components page">
       View all kits
     </ng-link-button>
   </header>
@@ -10,16 +10,16 @@
   @if (featuredKits()) {
   <ng-content-carousel advanceMode="single" [hideArrowsOnEdges]="false">
     @for (kit of featuredKits(); track $index) {
-        <a carouselItem [routerLink]="kit.url" [aria-label]="'Go to ' + kit.name + ' page'">
-          <ng-image-card hover="color">
+        <ng-link-button contentCarouselItem [routerLink]="kit.url" [aria-label]="'Go to ' + kit.name + ' page'" hover="none" type="minimal">
+          <ng-content-card hover="tone">
             <section card-header>
               <h3>{{kit.name}}</h3>
             </section>
             <section card-footer>
               <p>{{kit.description}}</p>
             </section>
-          </ng-image-card>
-        </a>
+          </ng-content-card>
+        </ng-link-button>
     }
   </ng-content-carousel>
   }

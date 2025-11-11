@@ -16,35 +16,44 @@
   align-items: center;
 }
 
-ng-link-button{
+ng-link-button.viewAll{
   font-weight: 700;
   --link-button-color: var(--color-primary);
   --link-button-hover-outline: 2px solid var(--color-primary);
 }
 
-ng-image-card{
+ng-link-button.carousel-item{
+  --link-button-justify-content: start;
+  --link-button-padding: 0;
+  --link-button-bg: transparent;
+  --link-button-focus-ring: 3px solid var(--color-fg);
+  --link-button-radius: 1rem;
+}
+
+ng-content-card{
+  text-align: left;
   min-width: 280px;
   min-height: 150px;
 }
 
-ng-image-card [card-header]{
+ng-content-card [card-header]{
   font-size: 1rem;
   background: var(--main-gradient);
   color: var(--color-fg);
 }
 
-ng-image-card [card-footer]{
+ng-content-card [card-footer]{
   font-size: 1rem;
   text-wrap: pretty;
 }
 
 @media screen and (max-width: 1100px) {
-  ng-image-card{
+  ng-content-card{
     min-width: 220px;
     height: auto;
   }
 
-  ng-image-card [card-image]{
+  ng-content-card [card-image]{
     min-height: unset !important;
     height: auto;
   }
