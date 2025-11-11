@@ -9,14 +9,14 @@
     [aria-label]="'Go to ' + kit.name + ' page'"
     class="cardList__itemLink"
   >
-    <ng-image-card hover="color">
+    <ng-content-card hover="tone">
       <section card-header>
         <h3>{{kit.name}}</h3>
       </section>
       <section card-footer>
         <p>{{kit.description}}</p>
       </section>
-    </ng-image-card>
+    </ng-content-card>
   </a>
   }
 </section>

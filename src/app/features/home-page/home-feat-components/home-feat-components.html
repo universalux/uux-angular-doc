@@ -2,7 +2,7 @@
 
   <header id="featured" class="homeFeatComponents__header">
     <h2>Featured components</h2>
-    <ng-link-button type="minimal" hover="stroke" routerLink="components" ariaLabel="Go to components page">
+    <ng-link-button class="viewAll" type="minimal" hover="stroke" routerLink="components" ariaLabel="Go to components page">
       View all components
     </ng-link-button>
   </header>
@@ -10,16 +10,16 @@
   @if (featuredComponents()) {
   <ng-content-carousel advanceMode="single" [hideArrowsOnEdges]="false">
     @for (component of featuredComponents(); track $index) {
-        <a carouselItem [routerLink]="component.url" [aria-label]="'Go to ' + component.name + ' page'">
-          <ng-image-card hover="color">
+        <ng-link-button contentCarouselItem [routerLink]="component.url" [aria-label]="'Go to ' + component.name + ' page'" hover="none" type="minimal">
+          <ng-content-card hover="tone">
             <section card-image>
               <img class="scaleHover" [src]="component.image" [alt]="component.name + ' image'">
             </section>
             <section card-footer>
               {{component.name}}
             </section>
-          </ng-image-card>
-        </a>
+          </ng-content-card>
+        </ng-link-button>
     }
   </ng-content-carousel>
   }

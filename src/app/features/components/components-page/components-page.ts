@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { componentList } from '@app/core/data/components.data';
 import { CatalogItem } from '@app/core/data/data.types';
-import { NgImageCard } from 'ng-image-card';
+import { NgContentCard } from 'ng-content-card';
 
 @Component({
   selector: 'app-components-page',
-  imports: [NgImageCard, RouterLink],
+  imports: [NgContentCard, RouterLink],
   templateUrl: './components-page.html',
   styleUrl: './components-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

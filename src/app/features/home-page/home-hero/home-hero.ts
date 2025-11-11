@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { CarouselItem, NgHeroCarousel, SlideForDirective } from 'ng-hero-carousel';
+import { HeroCarouselItem, NgHeroCarousel, SlideForDirective } from 'ng-hero-carousel';
 import { NgLinkButton } from "ng-link-button";
 
-const slides : CarouselItem[] = [
+const slides : HeroCarouselItem[] = [
   {},
   {},
   {},
@@ -17,6 +17,6 @@ const slides : CarouselItem[] = [
 })
 export class HomeHero {
 
-  carouselItems = signal<CarouselItem[]>(slides);
+  carouselItems = signal<HeroCarouselItem[]>(slides);
 
 }

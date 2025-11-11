@@ -63,7 +63,7 @@ export const routes: Routes = [
       },
       {path: "menu-toggle", component: ComponentsPage},
       {path: "theme-toggle", component: ComponentsPage},
-      {path: "image-card", component: ComponentsPage},
+      {path: "content-card", component: ComponentsPage},
       {path: "hero-carousel", component: ComponentsPage},
       {path: "content-carousel", component: ComponentsPage},
     ]

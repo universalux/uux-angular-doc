@@ -30,10 +30,10 @@ export const componentList : CatalogItem[] = [
     featured: true
   },
   {
-    name: "Image Card",
-    url: "/components/image-card",
+    name: "Content Card",
+    url: "/components/content-card",
     description: "Easy-to-use customizable card",
-    image: "images/components/ng-image-card-static-cover.png",
+    image: "images/components/ng-content-card-static-cover.png",
     featured: true
   },
   {
