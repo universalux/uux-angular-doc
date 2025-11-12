@@ -6,9 +6,9 @@ import { DocService } from '@app/core/services/doc-service/doc-service';
   selector: 'doc-section-title',
   imports: [],
   template: `
-    <h3 [id]="componentService.currentComponent() + '-' + sectionCode()">
+    <h2 [id]="componentService.currentComponent() + '-' + sectionCode()">
       {{sectionName()}}
-    </h3>
+    </h2>
   `,
   styleUrl: './doc-section-title.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

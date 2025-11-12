@@ -2,10 +2,23 @@
   margin: 16px 0;
 }
 
+.docs h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 16px 0;
+}
+
 .docs p {
   font-size: 1rem;
   margin-bottom: .5rem;
   line-height: 1.5rem;
+}
+
+.docs p a,
+.docs li a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .docs p em,
