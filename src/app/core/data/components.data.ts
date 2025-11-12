@@ -1,4 +1,4 @@
-import { CatalogItem } from "./data.types";
+import { CatalogItem, DocSectionItem } from "./data.types";
 
 export const componentList : CatalogItem[] = [
   {
@@ -59,12 +59,13 @@ export const componentList : CatalogItem[] = [
   },
 ];
 
-export type DocSectionItem = {
-  name: string;
-  code: string;
-}
+
 
 export const docSectionList : DocSectionItem[] = [
+  {
+    name: "Introduction",
+    code: "intro"
+  },
   {
     name: "Installation",
     code: "inst"

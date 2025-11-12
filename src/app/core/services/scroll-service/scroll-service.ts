@@ -14,6 +14,8 @@ export class ScrollService {
       | 'app-components-layout'
       | 'app-kits-layout' = 'app-components-layout'
   ) {
+    const margin = layout === 'app-main-layout' ? 0 : 64;
+
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -23,7 +25,7 @@ export class ScrollService {
           const container = document.querySelector(layout);
           if (el && container) {
             container.scrollTo({
-              top: el.offsetTop,
+              top: el.offsetTop - margin,
               behavior: 'smooth',
             });
           }

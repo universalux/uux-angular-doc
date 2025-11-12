@@ -1,13 +1,129 @@
 
-<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestiae nesciunt beatae, vero debitis exercitationem doloremque, est nulla quae qui sed ipsam voluptate modi quod magni minus ipsum quibusdam obcaecati? Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, nobis reprehenderit doloribus sed, quo nostrum minima tenetur quibusdam facere et ipsa illo distinctio error saepe, voluptatem rem eveniet! Beatae, sit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloremque unde architecto voluptatem, ullam soluta. Esse, modi? In, beatae nam. Fugiat facilis dicta inventore dolore adipisci saepe exercitationem voluptatibus modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolores odit veniam voluptates repellendus magnam, doloremque, dolor similique consectetur sapiente optio facere dolorem adipisci ullam tempora minus eligendi illo vel.</h2>
+<h1>{{'ng-' + componentService.currentComponent()}}</h1>
 
-<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestiae nesciunt beatae, vero debitis exercitationem doloremque, est nulla quae qui sed ipsam voluptate modi quod magni minus ipsum quibusdam obcaecati? Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, nobis reprehenderit doloribus sed, quo nostrum minima tenetur quibusdam facere et ipsa illo distinctio error saepe, voluptatem rem eveniet! Beatae, sit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloremque unde architecto voluptatem, ullam soluta. Esse, modi? In, beatae nam. Fugiat facilis dicta inventore dolore adipisci saepe exercitationem voluptatibus modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolores odit veniam voluptates repellendus magnam, doloremque, dolor similique consectetur sapiente optio facere dolorem adipisci ullam tempora minus eligendi illo vel.</h2>
+<doc-section-title sectionCode="intro"/>
 
+<p>
+  <em>ng-simple-button</em> is a <em>standalone, reusable and customizable component</em> for Angular 18, 19 and 20.
+</p>
+<p>
+  It is designed to work with <em>signals</em> and Angular <em>zoneless</em>, providing a lightweight, flexible, and accessible simple button. It is also fully compatible with <em>SSR</em>, <em>CSR</em> and <em>prerender</em>.
+</p>
 
-<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestiae nesciunt beatae, vero debitis exercitationem doloremque, est nulla quae qui sed ipsam voluptate modi quod magni minus ipsum quibusdam obcaecati? Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, nobis reprehenderit doloribus sed, quo nostrum minima tenetur quibusdam facere et ipsa illo distinctio error saepe, voluptatem rem eveniet! Beatae, sit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloremque unde architecto voluptatem, ullam soluta. Esse, modi? In, beatae nam. Fugiat facilis dicta inventore dolore adipisci saepe exercitationem voluptatibus modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolores odit veniam voluptates repellendus magnam, doloremque, dolor similique consectetur sapiente optio facere dolorem adipisci ullam tempora minus eligendi illo vel.</h2>
+<doc-section-title sectionCode="inst"/>
 
+<p>If you want to install the latest version (currently 20):</p>
 
-<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestiae nesciunt beatae, vero debitis exercitationem doloremque, est nulla quae qui sed ipsam voluptate modi quod magni minus ipsum quibusdam obcaecati? Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, nobis reprehenderit doloribus sed, quo nostrum minima tenetur quibusdam facere et ipsa illo distinctio error saepe, voluptatem rem eveniet! Beatae, sit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloremque unde architecto voluptatem, ullam soluta. Esse, modi? In, beatae nam. Fugiat facilis dicta inventore dolore adipisci saepe exercitationem voluptatibus modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolores odit veniam voluptates repellendus magnam, doloremque, dolor similique consectetur sapiente optio facere dolorem adipisci ullam tempora minus eligendi illo vel.</h2>
+<pre><code>npm install ng-simple-button</code></pre>
 
+<p>Angular 19:</p>
 
-<h2 id="simple-button-rep"> AQUI ESTA EL ID!!!! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestiae nesciunt beatae, vero debitis exercitationem doloremque, est nulla quae qui sed ipsam voluptate modi quod magni minus ipsum quibusdam obcaecati? Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, nobis reprehenderit doloribus sed, quo nostrum minima tenetur quibusdam facere et ipsa illo distinctio error saepe, voluptatem rem eveniet! Beatae, sit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloremque unde architecto voluptatem, ullam soluta. Esse, modi? In, beatae nam. Fugiat facilis dicta inventore dolore adipisci saepe exercitationem voluptatibus modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolores odit veniam voluptates repellendus magnam, doloremque, dolor similique consectetur sapiente optio facere dolorem adipisci ullam tempora minus eligendi illo vel.</h2>
+<pre><code>npm install ng-simple-button@v19-lts</code></pre>
+
+<p>Angular 18:</p>
+
+<pre><code>npm install ng-simple-button@v18-lts</code></pre>
+
+<doc-section-title
+  sectionCode="ovw"
+/>
+
+<p>Using <em>ng-simple-button</em> is easy:</p>
+<ul>
+  <li>Define the component’s functionality through the <em>(onClick)</em> output.</li>
+  <li>Configure its type, shape, hover behavior, and accessibility using inputs..</li>
+  <li>Style it with customizable CSS variables to match your design needs.</li>
+</ul>
+
+<p>Here’s a basic usage example:</p>
+
+<h1>HERE GOES CODE</h1>
+
+<doc-section-title
+  sectionCode="func"
+/>
+
+<p>As you can see in the example bellow, you can use the <em>(onClick)</em> output to assign the action you want the button to execute.</p>
+
+<p>You can also access the native <em>MouseEvent</em> if you need to handle event data:</p>
+
+<h1>HERE GOES CODE</h1>
+
+<h1>HERE GOES CODE</h1>
+
+<doc-section-title
+  sectionCode="io"
+/>
+
+<p>Here is a list of all input/ouput:</p>
+
+<doc-section-title
+  sectionCode="sty"
+/>
+<p>You can easily customize the component’s appearance using the CSS variables listed below.</p>
+
+<h1>HERE GOES CODE</h1>
+
+<h3>Layout & Spacing</h3>
+
+<h1>HERE GOES TABLE</h1>
+
+<h3>Style & Visuals</h3>
+
+<h1>HERE GOES TABLE</h1>
+
+<h3>Hover Effects</h3>
+
+<h1>HERE GOES TABLE</h1>
+
+<h3>Styling considerations:</h3>
+
+<p>You can apply styles to a specific button type as follows:</p>
+
+<h1>HERE GOES CODE</h1>
+
+<p>If you have multiple buttons and need different custom styles, you can also add a class to target them more precisely:</p>
+
+<h1>HERE GOES CODE</h1>
+
+<doc-section-title
+  sectionCode="acc"
+/>
+
+<p>You can configure the accessibility of the component using the accessibility inputs explained in the inputs/outputs section: <a routerLink="." fragment="simple-button-io">Accessibility Inputs</a></p>
+
+<doc-section-title
+  sectionCode="rep"
+/>
+
+<p>Choose the form that best fits your case:</p>
+
+<ul>
+  <li>
+    🐞
+    <a
+      href="https://github.com/universalux/uux-hub/issues/new?assignees=aldaydev&labels=bug&template=angular_bug_report.yml" target="_blank" rel="noreferrer noopener">
+        Report a bug
+    </a>
+  </li>
+  <li>
+    ✨
+    <a
+      href="https://github.com/universalux/uux-hub/issues/new?assignees=aldaydev&labels=bug&template=angular_feature_request.yml" target="_blank" rel="noreferrer noopener">
+        Request an improvement for an existing component
+    </a>
+  </li>
+  <li>
+    🧩
+    <a
+      href="https://github.com/universalux/uux-hub/issues/new?assignees=aldaydev&labels=bug&template=new_component_request.yml" target="_blank" rel="noreferrer noopener">
+        Suggest a new component
+    </a>
+  </li>
+</ul>
+
+<p>👉 Or go to the
+  <a href="https://github.com/universalux/uux-hub/issues/new/choose" target="_blank" rel="noreferrer noopener">
+    form selector.
+  </a>
+</p>

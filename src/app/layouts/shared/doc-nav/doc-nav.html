@@ -1,5 +1,5 @@
 <nav class="docNav">
-  @for (section of docSections(); track $index) {
+  @for (section of docService.docSections(); track $index) {
     <ng-link-button
       routerLink="documentation"
       [relativeTo]="activatedRoute"

@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SimpleButtonDoc } from './simple-button-doc';
+import { DocSectionTitle } from './doc-section-title';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
 
-describe('SimpleButtonDoc', () => {
-  let component: SimpleButtonDoc;
-  let fixture: ComponentFixture<SimpleButtonDoc>;
+describe('DocSectionTitle', () => {
+  let component: DocSectionTitle;
+  let fixture: ComponentFixture<DocSectionTitle>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SimpleButtonDoc],
-      providers: [provideZonelessChangeDetection(), provideRouter([])]
+      imports: [DocSectionTitle],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SimpleButtonDoc);
+    fixture = TestBed.createComponent(DocSectionTitle);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
