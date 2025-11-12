@@ -66,6 +66,7 @@ export const routes: Routes = [
       {path: "content-card", component: ComponentsPage},
       {path: "hero-carousel", component: ComponentsPage},
       {path: "content-carousel", component: ComponentsPage},
+      {path: "scroll-nav", component: ComponentsPage},
     ]
   },
 

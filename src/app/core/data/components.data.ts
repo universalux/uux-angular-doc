@@ -50,6 +50,13 @@ export const componentList : CatalogItem[] = [
     image: "images/components/ng-content-carousel-static-cover.png",
     featured: true
   },
+  {
+    name: "Scroll Nav",
+    url: "/components/scroll-nav",
+    description: "Anuglar scrollabe nav",
+    image: "images/components/ng-scroll-nav-static-cover.png",
+    featured: true
+  },
 ];
 
 export type DocSectionItem = {
