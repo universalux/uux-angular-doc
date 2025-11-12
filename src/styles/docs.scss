@@ -1,0 +1,42 @@
+.docs h1 {
+  margin: 16px 0;
+}
+
+.docs p {
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  line-height: 1.5rem;
+}
+
+.docs p em,
+.docs li em {
+  color: var(--color-primary);
+}
+
+.docs p strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.docs pre{
+  background-color: var(--color-primary-trans);
+  color: var(--color-fg);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: .3rem;
+  font-size: 1rem;
+  max-width: calc(100dvw - 40px);
+  width: 100%;
+  overflow-x: auto;
+}
+
+.docs ul{
+  margin-bottom: 1rem;
+}
+
+.docs li{
+  list-style-type: circle;
+  font-size: 1rem;
+  margin-left: 1rem;
+  line-height: 1.5rem;
+}

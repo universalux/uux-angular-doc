@@ -4,4 +4,9 @@ export interface CatalogItem {
   description: string;
   image?: string;
   featured?: boolean;
-}
+};
+
+export type DocSectionItem = {
+  name: string;
+  code: string;
+};
