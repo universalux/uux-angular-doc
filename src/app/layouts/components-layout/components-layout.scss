@@ -24,7 +24,7 @@
 
 .componentsLayout__main{
   background-color: var(--color-bg);
-  padding: 30px 20px 100px 20px;
+  padding: 1rem 20px 100px 20px;
 }
 
 @media screen and (max-width: 960px) {
@@ -37,4 +37,10 @@
     display: none;
   }
 
+}
+
+@media screen and (max-width: 720px) {
+  .componentsLayout__main{
+    padding-top: 0;
+  }
 }
