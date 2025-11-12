@@ -29,29 +29,43 @@
   background-color: var(--color-bg);
 }
 
-.componentLayout__nav ng-link-button{
-  max-width: 180px;
-  --link-button-width: 100%;
+ng-scroll-nav{
+  grid-area: nav;
+  margin-bottom: 1.5rem;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  --scroll-nav-bg: var(--color-bg);
+}
+
+ng-scroll-nav ng-link-button{
+  font-weight: 500;
+
+  // max-width: 156px;
+  --link-button-width: 156px;
   --link-button-height: 100%;
-  --link-button-padding: 0 16px;
+  --link-button-padding: 16px;
   --link-button-hover-bg: var(--color-secondary-trans);
   --link-button-bg: transparent;
   --link-button-color: var(--color-fg);
-  --link-button-active-bg: transparent;
+  --link-button-active-bg: var(--color-primary-trans);
 
 }
 
 ng-link-button ::ng-deep .linkButton.active{
   position: relative;
+  // border-bottom: 3px solid var(--color-primary);
 }
 
 ng-link-button ::ng-deep .linkButton::after {
   content: "";
   position: absolute;
   bottom: 0;
-  width: 180px;
-  height: 2px;
-  background-color: var(--color-secondary);
+  width: 0%;
+  height: 3px;
+  background-color: var(--color-primary);
   transform-origin: center;
   transition: transform .3s ease-in-out;
   transform: scaleX(0);
@@ -59,8 +73,8 @@ ng-link-button ::ng-deep .linkButton::after {
 
 ng-link-button ::ng-deep .linkButton.active::after {
   transform: scaleX(1);
+  width: 100%;
 }
-
 
 .componentLayout__content{
   height: 100%;
@@ -90,5 +104,9 @@ app-doc-nav{
 @media screen and (max-width: 500px) {
   .componentLayout__nav{
     overflow-x: auto;
+  }
+
+  :host{
+    padding: 0;
   }
 }

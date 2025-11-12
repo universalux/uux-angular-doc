@@ -6,7 +6,7 @@
 
 .docNav{
   // position: relative;
-  padding: 1rem .5rem .5rem .5rem;
+  padding: 1rem .5rem .5rem 1rem;
   position: sticky;
   top: 48px;
   left: 0;
@@ -18,10 +18,10 @@
   left: 0;
   width: .3rem;
   height: 92%;
-  background-color: var(--color-secondary-trans);
+  background-color: var(--color-primary-trans);
 }
 
 ng-link-button{
   --link-button-hover-bg: transparent;
-  --link-button-hover-color: var(--color-secondary);
+  --link-button-hover-color: var(--color-primary);
 }

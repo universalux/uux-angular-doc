@@ -1,4 +1,28 @@
-<nav class="componentLayout__nav">
+<ng-scroll-nav [scrollStep]="160">
+  <ng-link-button
+    routerLink="playground"
+    [relativeTo]="activatedRoute"
+    [square]="true"
+  >
+    PLAYGROUND
+  </ng-link-button>
+
+  <ng-link-button
+    routerLink="documentation"
+    [relativeTo]="activatedRoute"
+    [square]="true"
+  >
+    DOCUMENTATION
+  </ng-link-button>
+
+  <ng-link-button
+    routerLink="/contribute"
+    [square]="true"
+  >
+    CONTRIBUTE
+  </ng-link-button>
+</ng-scroll-nav>
+<!-- <nav class="componentLayout__nav">
   <ng-link-button
     routerLink="playground"
     [relativeTo]="activatedRoute"
@@ -15,7 +39,7 @@
     DOCUMENTATION
   </ng-link-button>
   <div class="componentLayout__navIndicator"></div>
-</nav>
+</nav> -->
 <div class="componentLayout__content" [class.separeFromAside]="isDoc()">
   <router-outlet/>
 </div>
