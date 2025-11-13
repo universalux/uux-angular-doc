@@ -14,10 +14,7 @@ hljs.registerLanguage('bash', bash);
 @Component({
   selector: 'app-code-block',
   imports: [],
-  template: `
-    <pre><code [class]="'language-' + language()">{{code()}}</code></pre>
-    <button (click)="copyCode()">Copy</button>
-  `,
+  templateUrl: './code-block.html',
   styleUrl: './code-block.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

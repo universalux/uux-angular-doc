@@ -1,10 +1,37 @@
 :host{
   display: block;
   position: relative;
+
+  overflow-x: hidden;
+
+  max-width: 100%;
 }
 
-button{
+pre{
+  padding: 1rem 0 !important;
+  overflow-x: auto !important;
+  max-width: 100%;
+  contain: content;
+}
+
+pre code{
+  border: 1px solid var(--color-fg-trans);
+  max-width: 100%;
+}
+
+.codeBlock__copyContainer{
   position: absolute;
-  top: 1rem;
+  top: 0;
   right: 0;
+}
+
+.codeBlock__copyButton{
+  background-color: transparent;
+  border: none;
+}
+
+@media screen and (max-width: 500px) {
+  :host{
+    max-width: calc(100dvw - 70px);
+  }
 }
