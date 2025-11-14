@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CodeBlock } from './code-block';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('CodeBlock', () => {
   let component: CodeBlock;
@@ -8,7 +9,8 @@ describe('CodeBlock', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CodeBlock]
+      imports: [CodeBlock],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

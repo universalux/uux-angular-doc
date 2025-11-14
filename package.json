@@ -10,7 +10,8 @@
     "serve:ssr:uux-angular-doc": "node dist/uux-angular-doc/server/server.mjs",
     "prepare": "husky",
     "test:husky": "ng test --watch=false --browsers=ChromeHeadless",
-    "server": "ng build & node dist/uux-angular-doc/server/server.mjs"
+    "server": "ng build & node dist/uux-angular-doc/server/server.mjs",
+    "share": "ng serve --host 0.0.0.0 --port 4200"
   },
   "prettier": {
     "overrides": [
