@@ -1,0 +1,122 @@
+
+<h1>{{'ng-' + componentService.currentComponent()}}</h1>
+
+<doc-section-title sectionCode="intro"/>
+
+<p>
+  <em>ng-content-card</em> is a <em>standalone, reusable and customizable component</em> for Angular 18, 19 and 20.
+</p>
+<p>
+  It is designed to work with <em>signals</em> and Angular <em>zoneless</em>, providing a lightweight, flexible, and accessible content card. It is also fully compatible with <em>SSR</em>, <em>CSR</em> and <em>prerender</em>.
+</p>
+
+<doc-section-title sectionCode="inst"/>
+
+<p>If you want to install the latest version (currently 20):</p>
+
+<app-code-block
+  [language]="docCode().installationCode_1.language"
+  [code]="docCode().installationCode_1.code"
+/>
+
+<p>Angular 19:</p>
+
+<app-code-block
+  [language]="docCode().installationCode_2.language"
+  [code]="docCode().installationCode_2.code"
+/>
+
+<p>Angular 18:</p>
+
+<app-code-block
+  [language]="docCode().installationCode_3.language"
+  [code]="docCode().installationCode_3.code"
+/>
+
+<doc-section-title
+  sectionCode="ovw"
+/>
+
+<p>Using <em>ng-content-card</em> is easy:</p>
+<ul>
+  <li>You can add only the sections you need (using the projection attribute, such as card-header, card-image, etc.) and the card will render accordingly.</li>
+  <li>Configure its style, behavior, and accessibility using inputs..</li>
+  <li>Style it with customizable CSS variables to match your design needs.</li>
+</ul>
+
+<p>Here’s a basic usage example:</p>
+
+<app-code-block
+  [language]="docCode().overviewCode_1.language"
+  [code]="docCode().overviewCode_1.code"
+/>
+
+<doc-section-title
+  sectionCode="func"
+/>
+
+<p>As shown in the example above, you can use the [isOpenSignal] input to manage your open state signal.</p>
+
+<p>As shown in the example below, you just have to add content using the projection attributes: <em>card-header</em>, <em>card-image</em>, <em>card-body</em>, <em>card-footer</em> and <em>absolute-content</em>.</p>
+
+<p>You can add only sections needed (e.g only card-image and card-footer).</p>
+
+<app-data-table
+  [tableData]="docTables().funcTable_1"
+/>
+
+<p>For the main image inside card-image, you can use the provided scaleHover class for a smooth scale transition when hovering over the card.</p>
+
+<app-code-block
+  [language]="docCode().funcCode_1.language"
+  [code]="docCode().funcCode_1.code"
+/>
+
+<doc-section-title
+  sectionCode="io"
+/>
+
+<p>Here is a list of all input/ouput:</p>
+
+<h3>Functionality Input</h3>
+
+<app-data-table
+  [tableData]="docTables().ioTable_1"
+/>
+
+<doc-section-title
+  sectionCode="sty"
+/>
+
+<p>You can customize styles in three different ways:</p>
+
+<h3>1. Directly on the host tag</h3>
+
+<app-code-block
+  [language]="docCode().stylingCode_1.language"
+  [code]="docCode().stylingCode_1.code"
+/>
+
+<h3>2. Using CSS variables</h3>
+
+<app-code-block
+  [language]="docCode().stylingCode_2.language"
+  [code]="docCode().stylingCode_2.code"
+/>
+
+<app-data-table
+  [tableData]="docTables().styTable_1"
+/>
+
+<h3>3. Styling sections directly</h3>
+
+<app-code-block
+  [language]="docCode().stylingCode_3.language"
+  [code]="docCode().stylingCode_3.code"
+/>
+
+<doc-section-title
+  sectionCode="acc"
+/>
+
+<p>Since the content within the card is entered externally, you must manage the accessibility of the entered items yourself, if necessary.</p>
