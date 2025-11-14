@@ -1,4 +1,4 @@
-export const singleButtonDocCode = {
+export const simpleButtonDocCode = {
   installationCode_1: {
     language: 'bash',
     code: `npm install ng-simple-button`,
@@ -13,36 +13,34 @@ export const singleButtonDocCode = {
   },
   overviewCode_1: {
     language: 'ts',
-    code: `
-    import { Component, signal } from '@angular/core';
-    import { NgSimpleButton } from 'ng-simple-button';
-
-    @Component({
-      selector: 'app',
-      standalone: true,
-      imports: [NgSimpleButton],
-      template: \`
-        <ng-simple-button
-          (onClick)="clickFunction()"
-          type="solid"
-          [square]="true"
-          hover="shadow"
-          ariaLabel="Custom aria label"
-        >
-          Simple button inner content
-        </ng-simple-button>
-
-        <p>Clicked {{ count() }} times</p>
-      \`,
-    })
-    export class App {
-      count = signal<number>(1);
-
-      clickFunction() {
-        const current = this.count();
-        this.count.set(current + 1);
-      }
-    };`,
+    code:
+`
+import { Component, signal } from '@angular/core';
+import { NgSimpleButton } from 'ng-simple-button'
+@Component({
+  selector: 'app',
+  standalone: true,
+  imports: [NgSimpleButton],
+  template: \`
+    <ng-simple-button
+      (onClick)="clickFunction()"
+      type="solid"
+      [square]="true"
+      hover="shadow"
+      ariaLabel="Custom aria label"
+    >
+      Simple button inner content
+    </ng-simple-button
+    <p>Clicked {{ count() }} times</p>
+  \`,
+})
+export class App {
+  count = signal<number>(1)
+  clickFunction() {
+    const current = this.count();
+    this.count.set(current + 1);
+  }
+};`,
   },
   functionalityCode_1: {
     language: 'html',
@@ -51,7 +49,7 @@ export const singleButtonDocCode = {
         Click me
       </ng-simple-button>
     `
-  } ,
+  },
   functionalityCode_2: {
     language: 'ts',
     code: `
@@ -59,7 +57,7 @@ export const singleButtonDocCode = {
       console.log(event.clientX, event.clientY);
     }
     `
-  } ,
+  },
   stylingCode_1: {
     language: 'css',
     code: `
@@ -87,4 +85,4 @@ export const singleButtonDocCode = {
   }
 } as const;
 
-export type SingleButtonDocCode = typeof singleButtonDocCode;
+export type SimpleButtonDocCode = typeof simpleButtonDocCode;
