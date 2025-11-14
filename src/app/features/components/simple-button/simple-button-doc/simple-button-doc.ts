@@ -5,8 +5,7 @@ import { RouterLink } from '@angular/router';
 import { CodeBlock } from '@app/shared/ui/code-block/code-block';
 import { SimpleButtonDocCode, simpleButtonDocCode } from './simple-button-doc-code';
 import { DataTable } from '@app/shared/ui/data-table/data-table';
-import { SimpleButtonDocTables, simpleButtonDocTables } from './simple-button-doc-tables';
-import { DataTableDataList } from '@app/shared/ui/data-table/data-table.types';
+import { simpleButtonDocTables } from './simple-button-doc-tables';
 
 @Component({
   selector: 'app-simple-button-doc',
