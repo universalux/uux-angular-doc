@@ -1,5 +1,5 @@
 import { DataTableDataList } from '@app/shared/ui/data-table/data-table.types';
-import { docTableHeaders } from '../../shared/doc/doc-table-headers';
+import { docTableHeaders } from '@app/core/data/docs.data';
 
 export const simpleButtonDocTables = {
   ioTable_1: {

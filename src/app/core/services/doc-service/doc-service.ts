@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { docSectionList } from '@app/core/data/components.data';
+import { docSectionList } from '@app/core/data/docs.data';
 import { DocSectionItem } from '@app/core/data/data.types';
 
 @Injectable({

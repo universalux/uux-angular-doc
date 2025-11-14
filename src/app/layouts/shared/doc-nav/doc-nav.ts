@@ -1,7 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { docSectionList } from '@app/core/data/components.data';
-import { DocSectionItem } from '@app/core/data/data.types';
 import { DocService } from '@app/core/services/doc-service/doc-service';
 import { NgLinkButton } from 'ng-link-button';
 
@@ -18,7 +16,6 @@ export class DocNav {
 
   component = input<string>();
 
-  // docSections = signal<DocSectionItem[]>(docSectionList);
   docService = inject(DocService);
 
 }
