@@ -13,39 +13,41 @@ export const simpleButtonDocCode = {
   },
   overviewCode_1: {
     language: 'ts',
-    code:
-`
-import { Component, signal } from '@angular/core';
-import { NgSimpleButton } from 'ng-simple-button'
-@Component({
-  selector: 'app',
-  standalone: true,
-  imports: [NgSimpleButton],
-  template: \`
-    <ng-simple-button
-      (onClick)="clickFunction()"
-      type="solid"
-      [square]="true"
-      hover="shadow"
-      ariaLabel="Custom aria label"
-    >
-      Simple button inner content
-    </ng-simple-button
-    <p>Clicked {{ count() }} times</p>
-  \`,
-})
-export class App {
-  count = signal<number>(1)
-  clickFunction() {
-    const current = this.count();
-    this.count.set(current + 1);
-  }
-};`,
+    code: `
+    import { Component, signal } from '@angular/core';
+      import { NgSimpleButton } from 'ng-simple-button';
+
+      @Component({
+        selector: 'app',
+        standalone: true,
+        imports: [NgSimpleButton],
+        template: \`
+          <ng-simple-button
+            (onClick)="clickFunction()"
+            type="solid"
+            [square]="true"
+            hover="shadow"
+            ariaLabel="Custom aria label"
+          >
+            Simple button inner content
+          </ng-simple-button>
+
+          <p>Clicked {{ count() }} times</p>
+        \`,
+      })
+      export class App {
+        count = signal<number>(1);
+
+        clickFunction() {
+          const current = this.count();
+          this.count.set(current + 1);
+        }
+      };`,
   },
   functionalityCode_1: {
     language: 'html',
     code: `
-      <ng-simple-button (onClick)="handleClick($event)">
+    <ng-simple-button (onClick)="handleClick($event)">
         Click me
       </ng-simple-button>
     `
@@ -54,14 +56,14 @@ export class App {
     language: 'ts',
     code: `
     handleClick(event: MouseEvent) {
-      console.log(event.clientX, event.clientY);
-    }
+        console.log(event.clientX, event.clientY);
+      }
     `
   },
   stylingCode_1: {
     language: 'css',
     code: `
-      ng-simple-button {
+    ng-simple-button {
         --simple-button-bg: orange;
         --simple-button-hover-bg: red;
       }
@@ -70,7 +72,7 @@ export class App {
   stylingCode_2: {
     language: 'css',
     code: `
-      ng-simple-button[type="solid"] {
+    ng-simple-button[type="solid"] {
         --simple-button-bg: orange;
       }
     `
@@ -78,7 +80,7 @@ export class App {
   stylingCode_3: {
     language: 'css',
     code: `
-      ng-simple-button.myClass {
+    ng-simple-button.myClass {
         --simple-button-outline: 2px solid orange;
       }
     `

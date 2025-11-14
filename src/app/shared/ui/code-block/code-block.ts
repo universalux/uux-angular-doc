@@ -5,6 +5,7 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import html from 'highlight.js/lib/languages/xml';
 import css from 'highlight.js/lib/languages/css';
 import bash from 'highlight.js/lib/languages/bash';
+import dedent from 'dedent';
 
 hljs.registerLanguage('ts', typescript);
 hljs.registerLanguage('html', html);
@@ -22,6 +23,10 @@ export class CodeBlock implements AfterViewInit {
 
   language = input<string>('typescript');
   code = input<string>('');
+
+  dedentCode(){
+    return dedent(this.code())
+  }
 
   private el = inject(ElementRef);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
