@@ -10,6 +10,8 @@ import { SimpleButtonPlayground } from './features/components/simple-button/simp
 import { SimpleButtonDoc } from './features/components/simple-button/simple-button-doc/simple-button-doc';
 import { LinkButtonPlayground } from './features/components/link-button/link-button-playground/link-button-playground';
 import { LinkButtonDoc } from './features/components/link-button/link-button-doc/link-button-doc';
+import { MenuTogglePlayground } from './features/components/menu-toggle/menu-toggle-playground/menu-toggle-playground';
+import { MenuToggleDoc } from './features/components/menu-toggle/menu-toggle-doc/menu-toggle-doc';
 
 export const routes: Routes = [
   {
@@ -25,8 +27,7 @@ export const routes: Routes = [
     component: ComponentsLayout,
     children: [
       {path: "", component: ComponentsPage},
-      {
-        path: "simple-button",
+      { path: "simple-button",
         component: ComponentLayout,
         children: [
           {
@@ -44,8 +45,7 @@ export const routes: Routes = [
           }
         ]
       },
-      {
-        path: "link-button",
+      { path: "link-button",
         component: ComponentLayout,
         children: [
           {
@@ -63,7 +63,24 @@ export const routes: Routes = [
           }
         ]
       },
-      {path: "menu-toggle", component: ComponentsPage},
+      { path: "menu-toggle",
+        component: ComponentLayout,
+        children: [
+          {
+            path: '',
+            redirectTo: 'playground',
+            pathMatch: 'full'
+          },
+          {
+            path: 'playground',
+            component: MenuTogglePlayground
+          },
+          {
+            path: 'documentation',
+            component: MenuToggleDoc
+          }
+        ]
+      },
       {path: "theme-toggle", component: ComponentsPage},
       {path: "content-card", component: ComponentsPage},
       {path: "hero-carousel", component: ComponentsPage},
