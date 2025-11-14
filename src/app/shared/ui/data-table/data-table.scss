@@ -1,7 +1,7 @@
 :host{
   display: block;
   width: 100%;
-  // max-width: calc(100% - 50px);
+  max-width: calc(100dvw - 50px);
   overflow-x: auto;
 }
 
@@ -24,6 +24,7 @@ table td{
 
 table td:first-child{
   font-weight: 700;
+  text-wrap: nowrap;
 }
 
 table th, table tr, table td {

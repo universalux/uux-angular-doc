@@ -33,6 +33,7 @@
     "@angular/platform-server": "^20.1.0",
     "@angular/router": "^20.1.0",
     "@angular/ssr": "^20.1.1",
+    "dedent": "^1.7.0",
     "express": "^5.1.0",
     "highlight.js": "^11.11.1",
     "ng-content-card": "^20.0.0",
