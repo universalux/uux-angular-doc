@@ -1,0 +1,25 @@
+
+<table>
+  <thead>
+    <tr>
+      @for (headerField of tableData()?.tableHeader; track $index) {
+        <th>{{headerField}}</th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+
+      @for (tableRow of tableData()?.tableRows; track $index) {
+        <tr>
+          @for (field of tableRow; track $index) {
+            <td>
+              {{field}}
+            </td>
+          }
+        </tr>
+      }
+
+  </tbody>
+</table>
+
+

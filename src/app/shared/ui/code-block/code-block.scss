@@ -50,13 +50,16 @@ pre code{
   align-items: center;
 }
 
+#text{
+  width: fit-content;
+}
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   :host{
     max-width: calc(100dvw - 50px);
   }
 
-  pre code{
-    padding: 1.5rem 1rem 1.5rem 0 !important;
-  }
+  // pre code{
+  //   padding: 1.5rem 1rem 1.5rem 0 !important;
+  // }
 }

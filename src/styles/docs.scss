@@ -5,7 +5,7 @@
 .docs h3 {
   font-size: 1.2rem;
   font-weight: 500;
-  margin: 16px 0;
+  margin: 1.4rem 0 16px 0;
 }
 
 .docs p {
@@ -31,31 +31,15 @@
   font-weight: 700;
 }
 
-.docs pre{
-  padding: 1rem 0 !important;
-
-}
-
-.docs pre code{
-  border: 1px solid var(--color-fg-trans);
-}
-
 // .docs pre{
-//   padding: 0 !important;
-//   margin: 1rem 0;
-//   // box-shadow: 1px 1px 7px var(--color-fg-trans);
-//   border: 2px solid var(--color-fg-trans);
-// }
-
-// .docs pre.bash code{
-//   padding: 1rem !important;
-// }
-
-// .docs pre code {
-//   background-color:var(--color-dark);
-//   padding: 0rem 1rem !important;
+//   padding: 1rem 0 !important;
 
 // }
+
+// .docs pre code{
+//   border: 1px solid var(--color-fg-trans);
+// }
+
 
 .docs ul{
   margin-bottom: 1rem;

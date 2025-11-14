@@ -1,18 +1,22 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { ComponentService } from '@app/core/services/component-service/component-service';
-import { DocSectionTitle } from '../../shared/doc-ui/doc-section-title/doc-section-title';
+import { DocSectionTitle } from '../../shared/doc/doc-section-title/doc-section-title';
 import { RouterLink } from '@angular/router';
 import { CodeBlock } from '@app/shared/ui/code-block/code-block';
-import { SingleButtonDocCode, singleButtonDocCode } from './single-button-doc-code';
+import { SimpleButtonDocCode, simpleButtonDocCode } from './simple-button-doc-code';
+import { DataTable } from '@app/shared/ui/data-table/data-table';
+import { SimpleButtonDocTables, simpleButtonDocTables } from './simple-button-doc-tables';
+import { DataTableDataList } from '@app/shared/ui/data-table/data-table.types';
 
 @Component({
   selector: 'app-simple-button-doc',
-  imports: [DocSectionTitle, CodeBlock ,RouterLink],
+  imports: [DocSectionTitle, CodeBlock, DataTable, RouterLink],
   templateUrl: './simple-button-doc.html',
   styleUrl: './simple-button-doc.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SimpleButtonDoc {
   componentService = inject(ComponentService);
-  docCode = signal<SingleButtonDocCode>(singleButtonDocCode);
+  docCode = signal<SimpleButtonDocCode>(simpleButtonDocCode);
+  docTables = signal(simpleButtonDocTables);
 }
