@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, inject, input, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, inject, input, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import hljs from 'highlight.js/lib/core';
 import typescript from 'highlight.js/lib/languages/typescript';
@@ -26,6 +26,8 @@ export class CodeBlock implements AfterViewInit {
   private el = inject(ElementRef);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
+  copied = signal<'copied' | 'copy error' | null>(null);
+
   ngAfterViewInit(): void {
     if(this.isBrowser){
       const codeEl = this.el.nativeElement.querySelector('code');
@@ -38,10 +40,21 @@ export class CodeBlock implements AfterViewInit {
 
     if (navigator.clipboard) {
       navigator.clipboard.writeText(this.code())
-        .then(() => console.log('Código copiado al portapapeles'))
-        .catch(err => console.error('Error copiando:', err));
+        .then(() => {
+          this.copied.set('copied');
+          setTimeout(() => {
+            this.copied.set(null);
+          }, 3000)
+        })
+        .catch(err => {
+          this.copied.set('copy error');
+          setTimeout(() => {
+            this.copied.set(null);
+          }, 3000)
+          console.error('Copy error:', err)
+        });
     } else {
-      console.warn('Clipboard API no soportada en este navegador');
+      console.warn('Clipboard API not supported in this browser');
     }
   }
 }
