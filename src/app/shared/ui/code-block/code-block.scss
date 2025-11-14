@@ -1,0 +1,62 @@
+:host{
+  display: block;
+  position: relative;
+
+  overflow-x: hidden;
+
+  max-width: 100%;
+}
+
+pre{
+  padding: 1rem 0 !important;
+  overflow-x: auto !important;
+  max-width: 100%;
+  contain: content;
+  padding-bottom: 1.5rem;
+
+}
+
+pre code{
+  border: 1px solid var(--color-fg-trans);
+  padding: 1rem!important;
+  max-width: 100%;
+  text-align: start !important;
+  font-size: 1rem;
+  padding-bottom: 1.5rem !important;
+}
+
+.codeBlock__copyContainer{
+  position: absolute;
+  top: 1.7rem;
+  right: 1rem;
+
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.codeBlock__copyMessage{
+  color: white;
+  font-size: .8rem;
+  border: 1px solid white;
+  padding: 3px 5px;
+}
+
+.codeBlock__copyButton{
+  background-color: transparent;
+  border: none;
+
+  display: flex;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 500px) {
+  :host{
+    max-width: calc(100dvw - 50px);
+  }
+
+  pre code{
+    padding: 1.5rem 1rem 1.5rem 0 !important;
+  }
+}

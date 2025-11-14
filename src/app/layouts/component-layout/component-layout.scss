@@ -38,6 +38,8 @@ ng-scroll-nav{
   left: 0;
 
   --scroll-nav-bg: var(--color-bg);
+
+  z-index: 20;
 }
 
 ng-scroll-nav ng-link-button{
@@ -99,6 +101,7 @@ app-doc-nav{
   app-doc-nav{
     display: none;
   }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -109,4 +112,5 @@ app-doc-nav{
   :host{
     padding: 0;
   }
+
 }

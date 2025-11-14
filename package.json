@@ -10,7 +10,8 @@
     "serve:ssr:uux-angular-doc": "node dist/uux-angular-doc/server/server.mjs",
     "prepare": "husky",
     "test:husky": "ng test --watch=false --browsers=ChromeHeadless",
-    "server": "ng build & node dist/uux-angular-doc/server/server.mjs"
+    "server": "ng build & node dist/uux-angular-doc/server/server.mjs",
+    "share": "ng serve --host 0.0.0.0 --port 4200"
   },
   "prettier": {
     "overrides": [
@@ -33,6 +34,7 @@
     "@angular/router": "^20.1.0",
     "@angular/ssr": "^20.1.1",
     "express": "^5.1.0",
+    "highlight.js": "^11.11.1",
     "ng-content-card": "^20.0.0",
     "ng-content-carousel": "^20.0.1",
     "ng-hero-carousel": "^20.0.2",
