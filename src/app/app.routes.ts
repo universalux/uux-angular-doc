@@ -8,6 +8,8 @@ import { KitsPage } from './features/kits/kits-page/kits-page';
 import { ComponentLayout } from './layouts/component-layout/component-layout';
 import { SimpleButtonPlayground } from './features/components/simple-button/simple-button-playground/simple-button-playground';
 import { SimpleButtonDoc } from './features/components/simple-button/simple-button-doc/simple-button-doc';
+import { LinkButtonPlayground } from './features/components/link-button/link-button-playground/link-button-playground';
+import { LinkButtonDoc } from './features/components/link-button/link-button-doc/link-button-doc';
 
 export const routes: Routes = [
   {
@@ -53,11 +55,11 @@ export const routes: Routes = [
           },
           {
             path: 'playground',
-            component: SimpleButtonPlayground
+            component: LinkButtonPlayground
           },
           {
             path: 'documentation',
-            component: SimpleButtonDoc
+            component: LinkButtonDoc
           }
         ]
       },
