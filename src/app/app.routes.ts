@@ -12,6 +12,8 @@ import { LinkButtonPlayground } from './features/components/link-button/link-but
 import { LinkButtonDoc } from './features/components/link-button/link-button-doc/link-button-doc';
 import { MenuTogglePlayground } from './features/components/menu-toggle/menu-toggle-playground/menu-toggle-playground';
 import { MenuToggleDoc } from './features/components/menu-toggle/menu-toggle-doc/menu-toggle-doc';
+import { ThemeTogglePlayground } from './features/components/theme-toggle/theme-toggle-playground/theme-toggle-playground';
+import { ThemeToggleDoc } from './features/components/theme-toggle/theme-toggle-doc/theme-toggle-doc';
 
 export const routes: Routes = [
   {
@@ -81,7 +83,24 @@ export const routes: Routes = [
           }
         ]
       },
-      {path: "theme-toggle", component: ComponentsPage},
+      { path: "theme-toggle",
+        component: ComponentLayout,
+        children: [
+          {
+            path: '',
+            redirectTo: 'playground',
+            pathMatch: 'full'
+          },
+          {
+            path: 'playground',
+            component: ThemeTogglePlayground
+          },
+          {
+            path: 'documentation',
+            component: ThemeToggleDoc
+          }
+        ]
+      },
       {path: "content-card", component: ComponentsPage},
       {path: "hero-carousel", component: ComponentsPage},
       {path: "content-carousel", component: ComponentsPage},
