@@ -90,7 +90,7 @@ export const contentCarouselDocCode = {
   accCode_2: {
     language: 'html',
     code: `
-    <ng-hero-carousel lang="es" />
+    <ng-content-carousel lang="es" />
     `
   },
   accCode_3: {

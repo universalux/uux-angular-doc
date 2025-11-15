@@ -20,6 +20,8 @@ import { HeroCarouselPlayground } from './features/components/hero-carousel/hero
 import { HeroCarouselDoc } from './features/components/hero-carousel/hero-carousel-doc/hero-carousel-doc';
 import { ContentCarouselPlayground } from './features/components/content-carousel/content-carousel-playground/content-carousel-playground';
 import { ContentCarouselDoc } from './features/components/content-carousel/content-carousel-doc/content-carousel-doc';
+import { ScrollNavPlayground } from './features/components/scroll-nav/scroll-nav-playground/scroll-nav-playground';
+import { ScrollNavDoc } from './features/components/scroll-nav/scroll-nav-doc/scroll-nav-doc';
 
 export const routes: Routes = [
   {
@@ -161,7 +163,24 @@ export const routes: Routes = [
           }
         ]
       },
-      {path: "scroll-nav", component: ComponentsPage},
+      { path: "scroll-nav",
+        component: ComponentLayout,
+        children: [
+          {
+            path: '',
+            redirectTo: 'playground',
+            pathMatch: 'full'
+          },
+          {
+            path: 'playground',
+            component: ScrollNavPlayground
+          },
+          {
+            path: 'documentation',
+            component: ScrollNavDoc
+          }
+        ]
+      },
     ]
   },
 
