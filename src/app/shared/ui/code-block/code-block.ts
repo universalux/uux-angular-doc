@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, inject, input, PLATFORM_ID, signal } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, inject, input, OnChanges, OnInit, PLATFORM_ID, signal, SimpleChanges } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import hljs from 'highlight.js/lib/core';
 import typescript from 'highlight.js/lib/languages/typescript';
@@ -19,13 +19,19 @@ hljs.registerLanguage('bash', bash);
   styleUrl: './code-block.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CodeBlock implements AfterViewInit {
+export class CodeBlock implements AfterViewInit, OnChanges, OnInit {
 
   language = input<string>('typescript');
-  code = input<string>('');
+  code = input<string | null>(null);
+
+  dedentedCode = signal<string>('');
 
   dedentCode(){
-    return dedent(this.code())
+    // return dedent(this.code())
+    if(this.code()){
+      this.dedentedCode.set(dedent(this.code()!));
+    }
+
   }
 
   private el = inject(ElementRef);
@@ -34,17 +40,36 @@ export class CodeBlock implements AfterViewInit {
   copied = signal<'copied' | 'copy error' | null>(null);
 
   ngAfterViewInit(): void {
-    if(this.isBrowser){
-      const codeEl = this.el.nativeElement.querySelector('code');
-      hljs.highlightElement(codeEl);
+    this.highlight();
+  };
+
+  ngOnInit(): void {
+    this.dedentCode();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['code'] && !changes['code'].firstChange || changes['dedentedCode']) {
+      this.dedentCode();
+      this.highlight();
     }
+  };
+
+  private highlight() {
+    if (!this.isBrowser) return;
+
+    const codeEl = this.el.nativeElement.querySelector('code');
+    delete codeEl.dataset.highlighted;
+    codeEl.classList.remove('hljs');
+
+    codeEl.textContent = this.dedentedCode();
+    hljs.highlightElement(codeEl);
   };
 
   copyCode() {
     if (!this.isBrowser) return; // Evita errores en SSR
 
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(this.code())
+      navigator.clipboard.writeText(this.dedentedCode())
         .then(() => {
           this.copied.set('copied');
           setTimeout(() => {

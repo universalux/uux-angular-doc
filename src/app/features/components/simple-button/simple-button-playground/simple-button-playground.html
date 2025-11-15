@@ -1,13 +1,31 @@
 <section class="simpleButtonPg__viewer">
+
   <article class="simpleButtonPg__componentView">
 
     <ng-simple-button
       (onClick)="generateRandomNumber()"
+
+      class="playgroundButton"
+
       [type]="type()"
       [class.solid]="type() === 'solid'"
       [class.minimal]="type() === 'minimal'"
+      [class.outline]="type() === 'outline'"
+
+      [square]="square()"
+
+      [hover]="hover()"
+      [class.toneHover]="hover() === 'tone'"
+      [class.scaleHover]="hover() === 'scale'"
+      [class.strokeHover]="hover() === 'stroke'"
+      [class.shadowHover]="hover() === 'shadow'"
+
+      [direction]="direction()"
+
+      [disabled]="disabled()"
     >
-      Generate Random Number
+      <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#ffffff"><path d="M300-240q25 0 42.5-17.5T360-300q0-25-17.5-42.5T300-360q-25 0-42.5 17.5T240-300q0 25 17.5 42.5T300-240Zm0-360q25 0 42.5-17.5T360-660q0-25-17.5-42.5T300-720q-25 0-42.5 17.5T240-660q0 25 17.5 42.5T300-600Zm180 180q25 0 42.5-17.5T540-480q0-25-17.5-42.5T480-540q-25 0-42.5 17.5T420-480q0 25 17.5 42.5T480-420Zm180 180q25 0 42.5-17.5T720-300q0-25-17.5-42.5T660-360q-25 0-42.5 17.5T600-300q0 25 17.5 42.5T660-240Zm0-360q25 0 42.5-17.5T720-660q0-25-17.5-42.5T660-720q-25 0-42.5 17.5T600-660q0 25 17.5 42.5T660-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
+      ROLL DICE
     </ng-simple-button>
 
     <div class="componentView__randomNumber">
@@ -16,13 +34,64 @@
 
   </article>
 
+  <article class="simpleButtonPg__codeOptions">
+
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      @if (showCode()) {
+        Hide code
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M791-55 280-566l-87 87 183 183-56 56L80-480l143-143L55-791l57-57 736 736-57 57Zm-54-282-57-57 87-87-183-183 56-56 240 240-143 143Z"/></svg>
+      }@else {
+        Show Code
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/></svg>
+      }
+    </ng-simple-button>
+  </article>
+
+</section>
+
+<section class="simpleButtonPg__code" [class.show]="showCode()">
+    <app-code-block
+      language="html"
+      [code]="currentCode()"
+    />
 </section>
 
 <section class="simpleButtonPg__componentOptions">
 
-  <select (change)="handleTypeInput($event)">
-    <option value="solid">solid</option>
-    <option value="minimal">minimal</option>
-    <option value="outline">outline</option>
-  </select>
+  <app-pg-input-selector
+    name="type"
+    description="Defines the button’s visual style."
+    [options]="['solid', 'minimal', 'outline']"
+    (changeFn)="handleTypeInput($event)"
+  />
+
+  <app-pg-input-selector
+    name="square"
+    description="Makes the button shape perfectly square instead of rounded."
+    [options]="['false', 'true']"
+    (changeFn)="handleSquareInput($event)"
+  />
+
+  <app-pg-input-selector
+    name="hover"
+    description="	Sets the hover effect style."
+    [options]="['tone', 'scale', 'stroke', 'shadow', 'none']"
+    (changeFn)="handleHoverInput($event)"
+  />
+
+  <app-pg-input-selector
+    name="direction"
+    description="Arranges the button’s inner content horizontally or vertically."
+    [options]="['row', 'column']"
+    (changeFn)="handleDirectionInput($event)"
+  />
+
+  <app-pg-input-selector
+    name="disabled"
+    description="Disables the button and prevents user interaction."
+    [options]="['false', 'true']"
+    (changeFn)="handleDisabledInput($event)"
+  />
+
+
 </section>

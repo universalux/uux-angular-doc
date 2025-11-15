@@ -4,36 +4,81 @@
 
 .simpleButtonPg__viewer{
   border: 1px solid var(--color-fg-trans);
-  padding: 2rem;
+  padding: 40px 2rem;
   min-height: 150px;
+  margin-bottom: 1rem;
 
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  position: relative;
 }
 
 .simpleButtonPg__componentView{
+  height: 100%;
   display: flex;
   align-items: center;
   column-gap: 1.2rem;
 }
 
-ng-simple-button{
-  font-size: 1rem;
-  padding: 0 1rem;
+.simpleButtonPg__componentView svg{
+  fill: var(--color-fg);
 }
 
-ng-simple-button.solid,
-ng-simple-button.minimal{
-  --simple-button-border: 2px solid transparent;
+.simpleButtonPg__codeOptions{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.simpleButtonPg__codeOptions ng-simple-button{
+  --simple-button-padding: .5rem;
+  --simple-button-transition-duration: 0s;
+}
+
+.simpleButtonPg__code{
+  display: none;
+}
+
+.simpleButtonPg__code.show{
+  display: block;
+}
+
+ng-simple-button.playgroundButton{
+  font-size: 1rem;
+  padding: 0 1rem;
+  // --simple-button-transition-duration: 0s;
+}
+
+ng-simple-button.playgroundButton.solid{
+  --simple-button-bg: var(--color-primary);
+  --simple-button-color: var(--color-light);
+}
+
+ng-simple-button.playgroundButton.toneHover{
+  --simple-button-hover-bg: var(--color-secondary);
+}
+
+ng-simple-button.playgroundButton.solid.strokeHover{
+  --simple-button-hover-stroke: 2px solid var(--color-fg);
+}
+
+ng-simple-button.playgroundButton.shadowHover{
+  --simple-button-hover-shadow: 2px 2px 10px var(--color-fg);
 }
 
 .componentView__randomNumber{
-  display: block;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
   background-color: var(--color-secondary-trans);
-  outline: 1px solid var(--color-fg-trans);
-  border-radius: 1rem;
+  // outline: 1px solid var(--color-fg-trans);
+  // border-radius: 1rem;
   padding: .5rem 1rem;
-  height: 100%;
   font-size: .9rem;
   font-weight: 700;
 }
