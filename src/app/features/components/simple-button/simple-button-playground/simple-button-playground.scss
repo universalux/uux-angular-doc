@@ -1,0 +1,39 @@
+:host{
+  display: block;
+}
+
+.simpleButtonPg__viewer{
+  border: 1px solid var(--color-fg-trans);
+  padding: 2rem;
+  min-height: 150px;
+
+  display: flex;
+  align-items: center;
+}
+
+.simpleButtonPg__componentView{
+  display: flex;
+  align-items: center;
+  column-gap: 1.2rem;
+}
+
+ng-simple-button{
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+
+ng-simple-button.solid,
+ng-simple-button.minimal{
+  --simple-button-border: 2px solid transparent;
+}
+
+.componentView__randomNumber{
+  display: block;
+  background-color: var(--color-secondary-trans);
+  outline: 1px solid var(--color-fg-trans);
+  border-radius: 1rem;
+  padding: .5rem 1rem;
+  height: 100%;
+  font-size: .9rem;
+  font-weight: 700;
+}

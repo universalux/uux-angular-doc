@@ -42,6 +42,7 @@
     "ng-link-button": "^20.0.3",
     "ng-menu-toggle": "^20.0.1",
     "ng-scroll-nav": "^20.0.0",
+    "ng-simple-button": "^20.0.1",
     "ng-theme-toggle": "^20.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

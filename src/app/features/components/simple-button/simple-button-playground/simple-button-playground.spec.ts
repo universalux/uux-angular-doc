@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SimpleButtonPlayground } from './simple-button-playground';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
 
 describe('SimpleButtonPlayground', () => {
   let component: SimpleButtonPlayground;
@@ -11,7 +10,7 @@ describe('SimpleButtonPlayground', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SimpleButtonPlayground],
-      providers: [provideZonelessChangeDetection(), provideRouter([])]
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

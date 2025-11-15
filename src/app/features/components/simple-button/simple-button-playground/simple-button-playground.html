@@ -1,1 +1,28 @@
-<p>simple-button-playground works!</p>
+<section class="simpleButtonPg__viewer">
+  <article class="simpleButtonPg__componentView">
+
+    <ng-simple-button
+      (onClick)="generateRandomNumber()"
+      [type]="type()"
+      [class.solid]="type() === 'solid'"
+      [class.minimal]="type() === 'minimal'"
+    >
+      Generate Random Number
+    </ng-simple-button>
+
+    <div class="componentView__randomNumber">
+      {{randomNumber()}}
+    </div>
+
+  </article>
+
+</section>
+
+<section class="simpleButtonPg__componentOptions">
+
+  <select (change)="handleTypeInput($event)">
+    <option value="solid">solid</option>
+    <option value="minimal">minimal</option>
+    <option value="outline">outline</option>
+  </select>
+</section>
