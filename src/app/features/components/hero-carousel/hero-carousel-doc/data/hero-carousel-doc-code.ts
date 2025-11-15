@@ -203,7 +203,7 @@ export const heroCarouselDocCode = {
             slidesRegionAriaLabel: 'Wide carousel CHANGED',
             slidesRegionRoleDescription: 'Carousel CHANGED',
             slideAriaLabel: (currentSlide: number, total: number) =>
-                \`CHANGED - Slide ' + currentSlide + 'of ' + total \`
+                'CHANGED - Slide ' + currentSlide + 'of ' + total
             slideRoleDescription: 'CHANGED - slide',
           });
         }

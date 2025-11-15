@@ -6,10 +6,10 @@
 <doc-section-title sectionCode="intro"/>
 
 <p>
-  <em>ng-hero-carousel</em> is a <em>standalone, reusable and customizable component</em> for Angular 18, 19 and 20.
+  <em>ng-content-carousel</em> is a <em>standalone, reusable and customizable component</em> for Angular 18, 19 and 20.
 </p>
 <p>
-  It is designed to work with <em>signals</em> and Angular <em>zoneless</em>, providing a lightweight, flexible, and accessible her section carousel. It is also fully compatible with <em>SSR</em>, <em>CSR</em> and <em>prerender</em>.
+  It is designed to work with <em>signals</em> and Angular <em>zoneless</em>, providing a lightweight, flexible, and accessible content carousel. It is also fully compatible with <em>SSR</em>, <em>CSR</em> and <em>prerender</em>.
 </p>
 
 <app-divider/>
@@ -43,9 +43,9 @@
 <!------------ OVERVIEW ------------>
 <doc-section-title sectionCode="ovw" />
 
-<p>Using <em>ng-hero-carousel</em> is easy:</p>
+<p>Using <em>ng-content-carousel</em> is easy:</p>
 <ul>
-  <li>The only required input for ng-hero-carousel is <em>[slides]</em> where you can add backgrounds and some predefined content for each slide.</li>
+  <li>Provide content for the carousel using de <em>contentCarouselItem</em> directive. Each element with this tag will represent one item.</li>
   <li>Configure its style, behavior, and accessibility using inputs..</li>
   <li>Style it with customizable CSS variables to match your design needs.</li>
 </ul>
@@ -62,74 +62,18 @@
 <!------------ FUNCTIONALITY ------------>
 <doc-section-title sectionCode="func" />
 
-<p>slides must be an array of objects with the type <em>HeroCarouselItem[]</em>. You can import this type directly from the library:</p>
-
-<app-code-block
-  [language]="docCode().funcCode_1.language"
-  [code]="docCode().funcCode_1.code"
-/>
-
-<h3>NgHeroCarousel Interface</h3>
-
-<p>Here is the exact declaration of the CarouselItem type:</p>
-
-<app-code-block
-  [language]="docCode().funcCode_2.language"
-  [code]="docCode().funcCode_2.code"
-/>
-
-<app-data-table
-  [tableData]="docTables().funcTable_1"
-/>
+<p>As shown in the example below, you just have the import the ContentCarouselItemDirective on your component and use contentCarouselItem on each container (this container can be any label: < a >, < div >, < section >... ).</p>
 
 <div class="note">
-  <p>💡 It´s important to know that you don´t have to add all elements. If you want, for exaple, only background and a title in one slide, you can set just image_url and title.</p>
+  <p><em>IMPORTANT:</em> All elements should have the same width so the carousel mechanism works well.</p>
 </div>
-
-<h3>Adding custom content: slide for</h3>
-
-<p>You can add the custom content you want into any slide you decide. For doing that you must use <em>ng-template</em> and the <em>SlideForDirective</em>.</p>
-
-<p>Here you have a simple example to add a button in the first slide:</p>
-
-<app-code-block
-  [language]="docCode().funcCode_3.language"
-  [code]="docCode().funcCode_3.code"
-/>
-
-<p>As you can see in the example above, to add content to a slide you just need to use ng-template and the [slideFor] directive, which receives the number of slide you want to add custom content.</p>
-
-<h3>Adding custom content: outerContent</h3>
-
-<p>You can also add content that remains visible across all slides. It will be visible even if you navigate through slides. Example of use: imagine that the carousel is opened into a modal window. You can easily add a "close button" this way.</p>
-
-<app-code-block
-  [language]="docCode().funcCode_4.language"
-  [code]="docCode().funcCode_4.code"
-/>
-
-<p>
-  As you can see in the example above, you just have to add
-  &lt;ng-template #outerContent&gt;
-  and use the template reference #outerContent.
-  IMPORTANT: You must set the content inside
-  &lt;ng-template #outerContent&gt;
-  and place it where you want.
-</p>
 
 <app-divider/>
 
 <!------------ INPUTS AND OUTPUTS ------------>
 <doc-section-title sectionCode="io" />
 
-<p>There are several inputs/outputs that allow you to customize ng-hero-carousel component.</p>
-
-<p>Here is an example:</p>
-
-<app-code-block
-  [language]="docCode().ioCode_1.language"
-  [code]="docCode().ioCode_1.code"
-/>
+<p>Here is a list of all input/ouput:</p>
 
 <h3>Style & Behavior Inputs</h3>
 
@@ -137,20 +81,10 @@
   [tableData]="docTables().ioTable_1"
 />
 
-<h3>Autoplay inputs</h3>
-
-<app-data-table
-  [tableData]="docTables().ioTable_2"
-/>
-
-<h3>Current/selected slide output</h3>
-
-<p>You can use <em>(selected)</em> output to get the current slide on screen. For example, if you want to build your own counter.</p>
-
 <h3>Accessibility Inputs</h3>
 
 <app-data-table
-  [tableData]="docTables().ioTable_3"
+  [tableData]="docTables().ioTable_2"
 />
 
 <app-divider/>
@@ -169,14 +103,37 @@
   [tableData]="docTables().styTable_1"
 />
 
+<p>When using the carouselItem directive, a predefined class is added to each element: .carousel-item. This class have some predefined properties:</p>
+
+<app-code-block
+  [language]="docCode().stylingCode_2.language"
+  [code]="docCode().stylingCode_2.code"
+/>
+
+<p>You can change this initial properties if you want simply using the class in you component:</p>
+
+<app-code-block
+  [language]="docCode().stylingCode_3.language"
+  [code]="docCode().stylingCode_3.code"
+/>
+
+<p><em>IMPORTANT:</em> the component itselfs calculate his width related to items width. If you want to give space between items, use padding.</p>
+
+<p><em>IMPORTANT:</em> Ideally you will the label with the carouselItem directive as a item container and, if you want to add several labels into it, it is appropiate to use another container inside. For example:</p>
+
+<app-code-block
+  [language]="docCode().stylingCode_4.language"
+  [code]="docCode().stylingCode_4.code"
+/>
+
 <app-divider/>
 
 <!------------ ACCESSIBILITY ------------>
 <doc-section-title sectionCode="acc" />
 
-<p>There are two ways of setting the aria-label attributes: by <em>lang</em> attribute or by <em>customAria</em> attribute (See <a routerLink="." fragment="hero-carousel-io">Accessibility Inputs</a> at Inputs and Outputs section)</p>
+<p>There are two ways of setting the aria-label attributes: by <em>lang</em> attribute or by <em>customAria</em> attribute (See <a routerLink="." fragment="content-carousel-io">Accessibility Inputs</a> at Inputs and Outputs section)</p>
 
-<p>If needed, you can import HeroCarouselLangs and HeroCarouselCustomAria types like this:</p>
+<p>If needed, you can import ContentCarouselLangs and ContentCarouselCustomAria types like this:</p>
 
 <app-code-block
   [language]="docCode().accCode_1.language"
