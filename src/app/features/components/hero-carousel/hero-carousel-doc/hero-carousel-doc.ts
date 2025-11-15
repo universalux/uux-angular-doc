@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { ComponentService } from '@app/core/services/component-service/component-service';
-import { themeToggleDocCode, ThemeToggleDocCode } from './data/theme-toggle-doc-code';
-import { themeToggleDocTables } from './data/theme-toggle-doc-tables';
+import { heroCarouselDocCode, HeroCarouselDocCode } from './data/hero-carousel-doc-code';
+import { heroCarouselDocTables } from './data/hero-carousel-doc-tables';
 import { DocSectionTitle } from '../../shared/doc/doc-section-title/doc-section-title';
 import { CodeBlock } from '@app/shared/ui/code-block/code-block';
 import { DataTable } from '@app/shared/ui/data-table/data-table';
@@ -9,14 +9,14 @@ import { RouterLink } from '@angular/router';
 import { Divider } from "@app/shared/ui/divider/divider";
 
 @Component({
-  selector: 'app-theme-toggle-doc',
+  selector: 'app-hero-carousel-doc',
   imports: [DocSectionTitle, CodeBlock, DataTable, RouterLink, Divider],
-  templateUrl: './theme-toggle-doc.html',
-  styleUrl: './theme-toggle-doc.scss',
+  templateUrl: './hero-carousel-doc.html',
+  styleUrl: './hero-carousel-doc.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ThemeToggleDoc {
+export class HeroCarouselDoc {
   componentService = inject(ComponentService);
-  docCode = signal<ThemeToggleDocCode>(themeToggleDocCode);
-  docTables = signal(themeToggleDocTables);
+  docCode = signal<HeroCarouselDocCode>(heroCarouselDocCode);
+  docTables = signal(heroCarouselDocTables);
 }

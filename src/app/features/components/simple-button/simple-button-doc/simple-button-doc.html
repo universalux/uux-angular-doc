@@ -1,6 +1,7 @@
 
 <h1>{{'ng-' + componentService.currentComponent()}}</h1>
 
+<!------------ INTRODUCTION ------------>
 <doc-section-title sectionCode="intro"/>
 
 <p>
@@ -10,6 +11,9 @@
   It is designed to work with <em>signals</em> and Angular <em>zoneless</em>, providing a lightweight, flexible, and accessible simple button. It is also fully compatible with <em>SSR</em>, <em>CSR</em> and <em>prerender</em>.
 </p>
 
+<app-divider/>
+
+<!------------ INSTALLATION ------------>
 <doc-section-title sectionCode="inst"/>
 
 <p>If you want to install the latest version (currently 20):</p>
@@ -33,9 +37,10 @@
   [code]="docCode().installationCode_3.code"
 />
 
-<doc-section-title
-  sectionCode="ovw"
-/>
+<app-divider/>
+
+<!------------ OVERVIEW ------------>
+<doc-section-title sectionCode="ovw" />
 
 <p>Using <em>ng-simple-button</em> is easy:</p>
 <ul>
@@ -51,10 +56,10 @@
   [code]="docCode().overviewCode_1.code"
 />
 
+<app-divider/>
 
-<doc-section-title
-  sectionCode="func"
-/>
+<!------------ FUNCTIONALITY ------------>
+<doc-section-title sectionCode="func" />
 
 <p>As you can see in the example bellow, you can use the <em>(onClick)</em> output to assign the action you want the button to execute.</p>
 
@@ -70,9 +75,10 @@
   [code]="docCode().functionalityCode_2.code"
 />
 
-<doc-section-title
-  sectionCode="io"
-/>
+<app-divider/>
+
+<!------------ INPUTS AND OUTPUTS ------------>
+<doc-section-title sectionCode="io" />
 
 <p>Here is a list of all input/ouput:</p>
 
@@ -94,9 +100,11 @@
   [tableData]="docTables().ioTable_3"
 />
 
-<doc-section-title
-  sectionCode="sty"
-/>
+<app-divider/>
+
+<!------------ STYLING ------------>
+<doc-section-title sectionCode="sty" />
+
 <p>You can easily customize the component’s appearance using the CSS variables listed below.</p>
 
 <app-code-block
@@ -138,8 +146,9 @@
   [code]="docCode().stylingCode_3.code"
 />
 
-<doc-section-title
-  sectionCode="acc"
-/>
+<app-divider/>
+
+<!------------ ACCESSIBILITY ------------>
+<doc-section-title sectionCode="acc" />
 
 <p>You can configure the accessibility of the component using the accessibility inputs explained in the inputs/outputs section: <a routerLink="." fragment="simple-button-io">Accessibility Inputs</a></p>

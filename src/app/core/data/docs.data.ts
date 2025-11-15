@@ -38,7 +38,8 @@ export const docTableHeaders = {
   varTableHeader: ["Variable", "Description", "Default"],
   objTableHeader: ["Property", "Description", "Type", "Required"],
   langTableHeader: ["Language", "Code", "Example"],
-  slotsTableHeader: ["slot", "Description"]
+  slotsTableHeader: ["slot", "Description"],
+  propsTableHeader: ['Property', 'Description']
 } as const satisfies DataTableHeaders;
 
 export type DocTableHeaders = typeof docTableHeaders;
