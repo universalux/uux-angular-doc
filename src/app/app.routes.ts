@@ -18,6 +18,8 @@ import { ContentCardPlayground } from './features/components/content-card/conten
 import { ContentCardDoc } from './features/components/content-card/content-card-doc/content-card-doc';
 import { HeroCarouselPlayground } from './features/components/hero-carousel/hero-carousel-playground/hero-carousel-playground';
 import { HeroCarouselDoc } from './features/components/hero-carousel/hero-carousel-doc/hero-carousel-doc';
+import { ContentCarouselPlayground } from './features/components/content-carousel/content-carousel-playground/content-carousel-playground';
+import { ContentCarouselDoc } from './features/components/content-carousel/content-carousel-doc/content-carousel-doc';
 
 export const routes: Routes = [
   {
@@ -141,7 +143,24 @@ export const routes: Routes = [
           }
         ]
       },
-      {path: "content-carousel", component: ComponentsPage},
+      { path: "content-carousel",
+        component: ComponentLayout,
+        children: [
+          {
+            path: '',
+            redirectTo: 'playground',
+            pathMatch: 'full'
+          },
+          {
+            path: 'playground',
+            component: ContentCarouselPlayground
+          },
+          {
+            path: 'documentation',
+            component: ContentCarouselDoc
+          }
+        ]
+      },
       {path: "scroll-nav", component: ComponentsPage},
     ]
   },
