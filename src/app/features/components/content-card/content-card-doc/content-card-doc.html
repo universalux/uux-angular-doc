@@ -1,6 +1,7 @@
 
 <h1>{{'ng-' + componentService.currentComponent()}}</h1>
 
+<!------------ INTRODUCTION ------------>
 <doc-section-title sectionCode="intro"/>
 
 <p>
@@ -10,6 +11,9 @@
   It is designed to work with <em>signals</em> and Angular <em>zoneless</em>, providing a lightweight, flexible, and accessible content card. It is also fully compatible with <em>SSR</em>, <em>CSR</em> and <em>prerender</em>.
 </p>
 
+<app-divider/>
+
+<!------------ INSTALLATION ------------>
 <doc-section-title sectionCode="inst"/>
 
 <p>If you want to install the latest version (currently 20):</p>
@@ -33,9 +37,10 @@
   [code]="docCode().installationCode_3.code"
 />
 
-<doc-section-title
-  sectionCode="ovw"
-/>
+<app-divider/>
+
+<!------------ OVERVIEW ------------>
+<doc-section-title sectionCode="ovw" />
 
 <p>Using <em>ng-content-card</em> is easy:</p>
 <ul>
@@ -51,9 +56,10 @@
   [code]="docCode().overviewCode_1.code"
 />
 
-<doc-section-title
-  sectionCode="func"
-/>
+<app-divider/>
+
+<!------------ FUNCTIONALITY ------------>
+<doc-section-title sectionCode="func" />
 
 <p>As shown in the example above, you can use the [isOpenSignal] input to manage your open state signal.</p>
 
@@ -72,9 +78,10 @@
   [code]="docCode().funcCode_1.code"
 />
 
-<doc-section-title
-  sectionCode="io"
-/>
+<app-divider/>
+
+<!------------ INPUTS AND OUTPUTS ------------>
+<doc-section-title sectionCode="io" />
 
 <p>Here is a list of all input/ouput:</p>
 
@@ -84,9 +91,10 @@
   [tableData]="docTables().ioTable_1"
 />
 
-<doc-section-title
-  sectionCode="sty"
-/>
+<app-divider/>
+
+<!------------ STYLING ------------>
+<doc-section-title sectionCode="sty" />
 
 <p>You can customize styles in three different ways:</p>
 
@@ -115,8 +123,9 @@
   [code]="docCode().stylingCode_3.code"
 />
 
-<doc-section-title
-  sectionCode="acc"
-/>
+<app-divider/>
+
+<!------------ ACCESSIBILITY ------------>
+<doc-section-title sectionCode="acc" />
 
 <p>Since the content within the card is entered externally, you must manage the accessibility of the entered items yourself, if necessary.</p>

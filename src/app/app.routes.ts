@@ -16,6 +16,8 @@ import { ThemeTogglePlayground } from './features/components/theme-toggle/theme-
 import { ThemeToggleDoc } from './features/components/theme-toggle/theme-toggle-doc/theme-toggle-doc';
 import { ContentCardPlayground } from './features/components/content-card/content-card-playground/content-card-playground';
 import { ContentCardDoc } from './features/components/content-card/content-card-doc/content-card-doc';
+import { HeroCarouselPlayground } from './features/components/hero-carousel/hero-carousel-playground/hero-carousel-playground';
+import { HeroCarouselDoc } from './features/components/hero-carousel/hero-carousel-doc/hero-carousel-doc';
 
 export const routes: Routes = [
   {
@@ -121,7 +123,24 @@ export const routes: Routes = [
           }
         ]
       },
-      {path: "hero-carousel", component: ComponentsPage},
+      { path: "hero-carousel",
+        component: ComponentLayout,
+        children: [
+          {
+            path: '',
+            redirectTo: 'playground',
+            pathMatch: 'full'
+          },
+          {
+            path: 'playground',
+            component: HeroCarouselPlayground
+          },
+          {
+            path: 'documentation',
+            component: HeroCarouselDoc
+          }
+        ]
+      },
       {path: "content-carousel", component: ComponentsPage},
       {path: "scroll-nav", component: ComponentsPage},
     ]
