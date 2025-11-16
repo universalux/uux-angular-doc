@@ -27,7 +27,9 @@
   class="componentLayout__content"
   [class.separeFromAside]="componentService.isDoc()"
   [class.docs]="componentService.isDoc()"
+  [class.pg]="componentService.isPlayground()"
 >
+  <h1>ng-{{componentService.currentComponent()}}</h1>
   <router-outlet/>
 </div>
 @if (componentService.isDoc()) {

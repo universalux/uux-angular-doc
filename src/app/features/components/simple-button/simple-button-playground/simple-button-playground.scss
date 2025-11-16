@@ -1,0 +1,46 @@
+:host{
+  display: block;
+}
+
+ng-simple-button.playgroundButton{
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+
+ng-simple-button.playgroundButton svg{
+  fill: var(--color-fg);
+}
+
+ng-simple-button.playgroundButton.solid{
+  --simple-button-bg: var(--color-primary);
+  --simple-button-color: var(--color-light);
+}
+
+ng-simple-button.playgroundButton.toneHover{
+  --simple-button-hover-bg: var(--color-secondary);
+}
+
+ng-simple-button.playgroundButton.solid.strokeHover{
+  --simple-button-hover-stroke: 2px solid var(--color-fg);
+}
+
+ng-simple-button.playgroundButton.shadowHover{
+  --simple-button-hover-shadow: 2px 2px 10px var(--color-fg);
+}
+
+.randomNumber{
+  height: 46px;
+  width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 2px solid var(--color-fg);
+  padding: .5rem 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+
+
+

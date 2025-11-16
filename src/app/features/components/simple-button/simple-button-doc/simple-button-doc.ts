@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ComponentService } from '@app/core/services/component-service/component-service';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { DocSectionTitle } from '../../shared/doc/doc-section-title/doc-section-title';
 import { RouterLink } from '@angular/router';
 import { CodeBlock } from '@app/shared/ui/code-block/code-block';
@@ -16,7 +15,6 @@ import { Divider } from "@app/shared/ui/divider/divider";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SimpleButtonDoc {
-  componentService = inject(ComponentService);
   docCode = signal<SimpleButtonDocCode>(simpleButtonDocCode);
   docTables = signal(simpleButtonDocTables);
 }

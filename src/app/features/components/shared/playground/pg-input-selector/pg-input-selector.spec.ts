@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SimpleButtonPlayground } from './simple-button-playground';
+import { PgInputSelector } from './pg-input-selector';
 import { provideZonelessChangeDetection } from '@angular/core';
 
-describe('SimpleButtonPlayground', () => {
-  let component: SimpleButtonPlayground;
-  let fixture: ComponentFixture<SimpleButtonPlayground>;
+describe('PgInputSelector', () => {
+  let component: PgInputSelector;
+  let fixture: ComponentFixture<PgInputSelector>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SimpleButtonPlayground],
+      imports: [PgInputSelector],
       providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SimpleButtonPlayground);
+    fixture = TestBed.createComponent(PgInputSelector);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ComponentService } from '@app/core/services/component-service/component-service';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ContentCarouselDocCode, contentCarouselDocCode } from './data/content-carousel-doc-code';
 import { contentCarouselDocTables } from './data/content-carousel-doc-tables';
 import { DocSectionTitle } from '../../shared/doc/doc-section-title/doc-section-title';
@@ -16,7 +15,6 @@ import { Divider } from '@app/shared/ui/divider/divider';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContentCarouselDoc {
-  componentService = inject(ComponentService);
   docCode = signal<ContentCarouselDocCode>(contentCarouselDocCode);
   docTables = signal(contentCarouselDocTables);
 }

@@ -1,0 +1,52 @@
+.pg h1 {
+  margin: 16px 0;
+}
+
+.pg .componentViewer{
+  border: 1px solid var(--color-fg-trans);
+  padding: 40px 2rem;
+  min-height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.pg .componentView{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 1.2rem;
+}
+
+// .pg .codeViewer{
+//   margin-bottom: 1.5rem;
+// }
+
+.pg .codeOptions{
+  display: flex;
+  justify-content: end;
+}
+
+.pg .codeOptions ng-simple-button{
+  --simple-button-hover-bg: transparent;
+  --simple-button-hover-color: var(--color-primary);
+}
+
+.pg .codeOptions ng-simple-button:hover svg{
+  fill: var(--color-primary);
+}
+
+.codeView{
+  display: none;
+}
+
+.codeView.show{
+  display: block;
+}
+
+.componentOptions h3{
+  padding: 2rem 0 1rem 0;
+}
