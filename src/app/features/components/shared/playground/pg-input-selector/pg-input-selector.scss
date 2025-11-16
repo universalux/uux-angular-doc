@@ -28,12 +28,11 @@
   // min-width: 150px;
 }
 
-.pgInputSelector__form select{
+.pgInputSelector__form select,
+.pgInputSelector__form input{
   width: 100%;
   font-size: 1rem;
   padding: .3rem;
-  // background-color: var(--color-fg);
-  // color: var(--color-bg);
 }
 
 @media screen and (max-width: 720px) {

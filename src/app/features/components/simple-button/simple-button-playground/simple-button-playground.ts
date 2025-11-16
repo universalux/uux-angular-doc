@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, effect, OnInit, signal } from '@ang
 import { NgSimpleButton } from 'ng-simple-button'
 import { PgInputSelector } from '../../shared/playground/pg-input-selector/pg-input-selector';
 import { CodeBlock } from "@app/shared/ui/code-block/code-block";
+import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
 
 type simpleButtonType = 'solid' | 'minimal' | 'outline';
 type simpleButtonHover = 'tone' | 'scale' | 'stroke' | 'shadow' | 'none';
@@ -9,7 +10,7 @@ type simpleButtonDirection = 'row' | 'column';
 
 @Component({
   selector: 'app-simple-button-playground',
-  imports: [NgSimpleButton, PgInputSelector, CodeBlock],
+  imports: [NgSimpleButton, PgInputSelector, CodeBlock, PgShowCodeIcon],
   templateUrl: './simple-button-playground.html',
   styleUrl: './simple-button-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -23,11 +24,15 @@ export class SimpleButtonPlayground implements OnInit {
   direction = signal<simpleButtonDirection>('row');
 
   ariaLabel = signal<string | null>(null);
+  title = signal<string |null>(null);
+  tabIndex = signal<number>(0);
   disabled = signal<boolean>(false);
 
+  // Functionalities
   randomNumber = signal<number>(0);
-  showCode = signal<boolean>(false);
 
+  // Code to show properties
+  showCode = signal<boolean>(false);
   currentCode = signal<string>(`
     <ng-simple-button>
         Button Example
@@ -41,15 +46,18 @@ export class SimpleButtonPlayground implements OnInit {
   constructor() {
     effect(() => {
       const attrs: string[] = [];
-
-      // solo agregamos si son distintos del valor por defecto
+      // We only add inputs to code if they are diferent form default values
       if (this.type() !== 'solid') attrs.push(`type="${this.type()}"`);
       if (this.square()) attrs.push(`[square]="${this.square()}"`);
       if (this.hover() !== 'tone') attrs.push(`hover="${this.hover()}"`);
       if (this.direction() !== 'row') attrs.push(`direction="${this.direction()}"`);
-      if (this.disabled()) attrs.push(`[disabled]="${this.disabled()}"`);
 
-      // unimos todos los atributos con un espacio, sin saltos de línea
+      if (this.disabled()) attrs.push(`[disabled]="${this.disabled()}"`);
+      if (this.ariaLabel()) attrs.push(`ariaLabel="${this.ariaLabel()}"`);
+      if (this.title()) attrs.push(`title="${this.title()}"`);
+      if (this.tabIndex() !== 0) attrs.push(`[tabIndex]="${this.tabIndex()}"`);
+
+      // We join attributes with space (no line breaks)
       const attrString = attrs.join(' ');
 
       this.currentCode.set(`
@@ -58,19 +66,6 @@ export class SimpleButtonPlayground implements OnInit {
         </ng-simple-button>
       `);
     });
-    // effect(() => {
-    //   this.currentCode.set(`
-    //       <ng-simple-button
-    //         ${this.type() !== 'solid' ? `type="${this.type()}"` : ''}
-    //         [square]="${this.square()}"
-    //         hover="${this.hover()}"
-    //         direction="${this.direction()}"
-    //         [disabled]="${this.disabled()}"
-    //       >
-    //         Button Example
-    //       </ng-simple-button>
-    //   `)
-    // })
   }
 
   updateCurrentCode(){
@@ -87,6 +82,8 @@ export class SimpleButtonPlayground implements OnInit {
     const number = Math.floor(Math.random() * 6) + 1;
     this.randomNumber.set(number);
   }
+
+  // STYLE AND BEHAVIOR INPUT OPTIONS
 
   handleTypeInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
@@ -108,12 +105,31 @@ export class SimpleButtonPlayground implements OnInit {
     this.direction.set(selectElement.value as simpleButtonDirection);
   }
 
+  // ACCESSIBILITY INPUT OPTIONS
+
   handleDisabledInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
     this.disabled.set(selectElement.value === 'true' ? true : false);
   }
 
+  handleTabIndexInput(event: Event){
+    const selectElement = event.target as HTMLSelectElement;
+    this.tabIndex.set(Number(selectElement.value));
+  }
+
+  handleAriaLabelInput(event: Event){
+    const selectElement = event.target as HTMLInputElement;
+    this.ariaLabel.set(selectElement.value);
+  }
+
+  handleTitleInput(event: Event){
+    const selectElement = event.target as HTMLInputElement;
+    this.title.set(selectElement.value);
+  }
+
   toggleShowCode(){
     this.showCode.set(!this.showCode());
   }
+
+
 }

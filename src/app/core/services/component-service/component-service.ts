@@ -11,6 +11,7 @@ export class ComponentService {
 
   currentComponent = signal<string | null>(null);
   isDoc = signal<boolean>(false);
+  isPlayground = signal<boolean>(true);
 
   constructor() {
     // Detectar ruta inicial
@@ -31,6 +32,14 @@ export class ComponentService {
     const lastSegment = segments.at(-1);
 
     this.currentComponent.set(componentName);
-    this.isDoc.set(lastSegment === 'documentation');
+
+    if(lastSegment === 'documentation'){
+      this.isDoc.set(true);
+      this.isPlayground.set(false);
+    }else if(lastSegment === 'playground'){
+      this.isDoc.set(false);
+      this.isPlayground.set(true);
+    }
+
   }
 }

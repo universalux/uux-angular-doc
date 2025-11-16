@@ -5,11 +5,16 @@
   </article>
 
   <form class="pgInputSelector__form">
-    <select (change)="handleChangeFn($event)">
-      @for (option of options(); track $index) {
-        <option [value]="option">{{option}}</option>
-      }
-    </select>
+    @if (type() === 'select') {
+      <select (change)="handleChangeFn($event)">
+        @for (option of options(); track $index) {
+          <option [value]="option">{{option}}</option>
+        }
+      </select>
+    }
+    @if (type() === 'text') {
+      <input type="text" placeholder="type something" (input)="handleChangeFn($event)">
+    }
   </form>
 </section>
 <app-divider/>

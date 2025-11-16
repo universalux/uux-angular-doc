@@ -1,6 +1,7 @@
-<section class="simpleButtonPg__viewer">
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer">
 
-  <article class="simpleButtonPg__componentView">
+  <article class="componentView">
 
     <ng-simple-button
       (onClick)="generateRandomNumber()"
@@ -23,40 +24,49 @@
       [direction]="direction()"
 
       [disabled]="disabled()"
+      [ariaLabel]="ariaLabel()"
+      [tabIndex]="tabIndex()"
+      [title]="title()"
+
     >
       <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#ffffff"><path d="M300-240q25 0 42.5-17.5T360-300q0-25-17.5-42.5T300-360q-25 0-42.5 17.5T240-300q0 25 17.5 42.5T300-240Zm0-360q25 0 42.5-17.5T360-660q0-25-17.5-42.5T300-720q-25 0-42.5 17.5T240-660q0 25 17.5 42.5T300-600Zm180 180q25 0 42.5-17.5T540-480q0-25-17.5-42.5T480-540q-25 0-42.5 17.5T420-480q0 25 17.5 42.5T480-420Zm180 180q25 0 42.5-17.5T720-300q0-25-17.5-42.5T660-360q-25 0-42.5 17.5T600-300q0 25 17.5 42.5T660-240Zm0-360q25 0 42.5-17.5T720-660q0-25-17.5-42.5T660-720q-25 0-42.5 17.5T600-660q0 25 17.5 42.5T660-600ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
       ROLL DICE
     </ng-simple-button>
 
-    <div class="componentView__randomNumber">
+    <div class="randomNumber">
       {{randomNumber()}}
     </div>
 
   </article>
 
-  <article class="simpleButtonPg__codeOptions">
+</section>
 
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
     <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
-      @if (showCode()) {
-        Hide code
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M791-55 280-566l-87 87 183 183-56 56L80-480l143-143L55-791l57-57 736 736-57 57Zm-54-282-57-57 87-87-183-183 56-56 240 240-143 143Z"/></svg>
-      }@else {
-        Show Code
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/></svg>
-      }
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
     </ng-simple-button>
-  </article>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
 
 </section>
 
-<section class="simpleButtonPg__code" [class.show]="showCode()">
-    <app-code-block
-      language="html"
-      [code]="currentCode()"
-    />
-</section>
 
-<section class="simpleButtonPg__componentOptions">
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <h3>Style & Behavior Inputs</h3>
 
   <app-pg-input-selector
     name="type"
@@ -86,6 +96,22 @@
     (changeFn)="handleDirectionInput($event)"
   />
 
+  <h3>Accessibility Inputs</h3>
+
+  <app-pg-input-selector
+    type="text"
+    name="ariaLabel"
+    description="Provides an accessible label for assistive technologies."
+    (changeFn)="handleAriaLabelInput($event)"
+  />
+
+  <app-pg-input-selector
+    type="text"
+    name="title"
+    description="Sets the native tooltip text shown on hover."
+    (changeFn)="handleTitleInput($event)"
+  />
+
   <app-pg-input-selector
     name="disabled"
     description="Disables the button and prevents user interaction."
@@ -93,5 +119,11 @@
     (changeFn)="handleDisabledInput($event)"
   />
 
+  <app-pg-input-selector
+    name="tabIndex"
+    description="Controls the button’s tab order in keyboard navigation."
+    [options]="['0', '-1']"
+    (changeFn)="handleTabIndexInput($event)"
+  />
 
 </section>
