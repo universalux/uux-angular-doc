@@ -39,14 +39,23 @@
   fill: var(--color-primary);
 }
 
-.codeView{
+.pg .codeView{
   display: none;
 }
 
-.codeView.show{
+.pg .codeView.show{
   display: block;
 }
 
-.componentOptions h3{
-  padding: 2rem 0 1rem 0;
+// .pg .componentOptions h3{
+//   padding: 2rem 0 1rem 0;
+// }
+
+// .pg .componentOptions ng-simple-button{
+//   --simple-button-width: 100%;
+//   --simple-button-justify-content: space-between;
+// }
+
+.pg .expandableOptions{
+  border: 1px solid var(--color-fg);
 }

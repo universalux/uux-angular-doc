@@ -1,0 +1,24 @@
+:host{
+  display: block;
+  border: 1px solid var(--color-fg-trans);
+  margin-bottom: 1rem;
+}
+
+ng-simple-button.expandableOptionsBtn{
+  --simple-button-width: 100%;
+  --simple-button-justify-content: space-between;
+  --simple-button-padding: 1rem;
+  --simple-button-transition-duration: 0x;
+}
+
+h3.arrow.expanded{
+  transform: rotate(180deg);
+}
+
+.expandableContent{
+  display: none;
+}
+
+.expandableContent.expanded{
+  display: block;
+}

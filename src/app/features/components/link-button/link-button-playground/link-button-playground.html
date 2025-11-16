@@ -1,1 +1,206 @@
-<p>link-button-playground works!</p>
+<!-- LINK TEST MODAL -->
+@if (linkClicked()) {
+  <div class="clickedModal__position" (click)="linkClicked.set(false)">
+    <div class="clickedModal__content">
+      <h3>Navigation Works</h3>
+      <h4>Url configured: {{currentUrl()}}</h4>
+      @if (relativeTo()) {
+        <h4>Url will be set relative to 'ActivatedRoute'</h4>
+      }
+      @if (currentState()) {
+        <h4>Configured state: {{currentState()}}</h4>
+      }
+      <ng-simple-button type="solid" (onClick)="linkClicked.set(false)">
+        Close
+      </ng-simple-button>
+    </div>
+  </div>
+}
+
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer">
+
+  <article class="componentView">
+
+    <ng-link-button
+
+      class="playgroundButton"
+
+      [routerLink]="routerLink()"
+      [activatedRoute]="activatedRoute()"
+      [queryParams]="queryParams()"
+      [fragment]="fragment()"
+      [relativeTo]="relativeTo()"
+      [queryParamsHandling]="queryParamsHandling()"
+      [state]="state()"
+
+      [href]="href()"
+      [target]="target()"
+      [rel]="rel()"
+
+      [type]="type()"
+      [class.solid]="type() === 'solid'"
+      [class.minimal]="type() === 'minimal'"
+      [class.outline]="type() === 'outline'"
+
+      [square]="square()"
+
+      [hover]="hover()"
+      [class.toneHover]="hover() === 'tone'"
+      [class.scaleHover]="hover() === 'scale'"
+      [class.strokeHover]="hover() === 'stroke'"
+      [class.shadowHover]="hover() === 'shadow'"
+
+      [direction]="direction()"
+
+      [disabled]="disabled()"
+      [ariaLabel]="ariaLabel()"
+      [tabIndex]="tabIndex()"
+      [title]="title()"
+
+    >
+      LINK BUTTON
+    </ng-link-button>
+
+  </article>
+
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+<!-- COMPONENT OPTIONS -->
+<section class="componentOptions">
+
+  <app-expandable-options title="Router Link Inputs">
+    <app-pg-input-selector
+      name="routerLink"
+      description="Defines the internal navigation route."
+      [options]="['undefined', 'Test Link']"
+      (changeFn)="handleRouterLinkInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="activatedRoute"
+      description="Enables ActivatedRoute context usage."
+      [options]="['true', 'false']"
+      (changeFn)="handleActivatedRouteInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="queryParams"
+      description="Adds query parameters to the route."
+      [options]="['null', 'Query Example']"
+      (changeFn)="handleQueryParamsInput($event)"
+    />
+
+    <app-pg-input-selector
+      type="text"
+      name="fragment"
+      description="Defines a URL fragment (anchor)."
+      (changeFn)="handleFragmentInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="relativeTo"
+      description="Sets a relative navigation based on an ActivatedRoute."
+      [options]="['null', 'ActivatedRoute']"
+      (changeFn)="handleRelativeToInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="queryParamsHandling"
+      description="Strategy for handling query params."
+      [options]="['null', 'merge', 'preserve']"
+      (changeFn)="handleQueryParamsHandlingInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="state"
+      description="Adds custom navigation state data."
+      [options]="['undefined', 'State Example']"
+      (changeFn)="handleStateInput($event)"
+    />
+  </app-expandable-options>
+
+
+  <app-expandable-options title="Style & Behavior Inputs">
+    <app-pg-input-selector
+      name="type"
+      description="Defines the button’s visual style."
+      [options]="['solid', 'minimal', 'outline']"
+      (changeFn)="handleTypeInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="square"
+      description="Makes the button shape perfectly square instead of rounded."
+      [options]="['false', 'true']"
+      (changeFn)="handleSquareInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="hover"
+      description="	Sets the hover effect style."
+      [options]="['tone', 'scale', 'stroke', 'shadow', 'none']"
+      (changeFn)="handleHoverInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="direction"
+      description="Arranges the button’s inner content horizontally or vertically."
+      [options]="['row', 'column']"
+      (changeFn)="handleDirectionInput($event)"
+    />
+
+  </app-expandable-options>
+
+  <app-expandable-options title="Accessibility Inputs">
+    <app-pg-input-selector
+      type="text"
+      name="ariaLabel"
+      description="Provides an accessible label for assistive technologies."
+      (changeFn)="handleAriaLabelInput($event)"
+    />
+
+    <app-pg-input-selector
+      type="text"
+      name="title"
+      description="Sets the native tooltip text shown on hover."
+      (changeFn)="handleTitleInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="disabled"
+      description="Disables the button and prevents user interaction."
+      [options]="['false', 'true']"
+      (changeFn)="handleDisabledInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="tabIndex"
+      description="Controls the button’s tab order in keyboard navigation."
+      [options]="['0', '-1']"
+      (changeFn)="handleTabIndexInput($event)"
+    />
+  </app-expandable-options>
+
+</section>

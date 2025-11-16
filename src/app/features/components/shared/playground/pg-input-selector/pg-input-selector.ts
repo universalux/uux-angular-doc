@@ -13,7 +13,7 @@ export class PgInputSelector {
   description = input<string | null>(null);
 
   type = input<'select' | 'text'>('select');
-  options = input<string[] | null>(null);
+  options = input<any[] | null>(null);
   changeFn = output<Event>();
 
   handleChangeFn(event: Event){

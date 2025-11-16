@@ -66,64 +66,64 @@
 <!-- CODE VIEWER -->
 <section class="componentOptions">
 
-  <h3>Style & Behavior Inputs</h3>
+  <app-expandable-options title="Style & Behavior Inputs">
+    <app-pg-input-selector
+      name="type"
+      description="Defines the button’s visual style."
+      [options]="['solid', 'minimal', 'outline']"
+      (changeFn)="handleTypeInput($event)"
+    />
 
-  <app-pg-input-selector
-    name="type"
-    description="Defines the button’s visual style."
-    [options]="['solid', 'minimal', 'outline']"
-    (changeFn)="handleTypeInput($event)"
-  />
+    <app-pg-input-selector
+      name="square"
+      description="Makes the button shape perfectly square instead of rounded."
+      [options]="['false', 'true']"
+      (changeFn)="handleSquareInput($event)"
+    />
 
-  <app-pg-input-selector
-    name="square"
-    description="Makes the button shape perfectly square instead of rounded."
-    [options]="['false', 'true']"
-    (changeFn)="handleSquareInput($event)"
-  />
+    <app-pg-input-selector
+      name="hover"
+      description="	Sets the hover effect style."
+      [options]="['tone', 'scale', 'stroke', 'shadow', 'none']"
+      (changeFn)="handleHoverInput($event)"
+    />
 
-  <app-pg-input-selector
-    name="hover"
-    description="	Sets the hover effect style."
-    [options]="['tone', 'scale', 'stroke', 'shadow', 'none']"
-    (changeFn)="handleHoverInput($event)"
-  />
+    <app-pg-input-selector
+      name="direction"
+      description="Arranges the button’s inner content horizontally or vertically."
+      [options]="['row', 'column']"
+      (changeFn)="handleDirectionInput($event)"
+    />
+  </app-expandable-options>
 
-  <app-pg-input-selector
-    name="direction"
-    description="Arranges the button’s inner content horizontally or vertically."
-    [options]="['row', 'column']"
-    (changeFn)="handleDirectionInput($event)"
-  />
+  <app-expandable-options title="Accessibility Inputs">
+    <app-pg-input-selector
+      type="text"
+      name="ariaLabel"
+      description="Provides an accessible label for assistive technologies."
+      (changeFn)="handleAriaLabelInput($event)"
+    />
 
-  <h3>Accessibility Inputs</h3>
+    <app-pg-input-selector
+      type="text"
+      name="title"
+      description="Sets the native tooltip text shown on hover."
+      (changeFn)="handleTitleInput($event)"
+    />
 
-  <app-pg-input-selector
-    type="text"
-    name="ariaLabel"
-    description="Provides an accessible label for assistive technologies."
-    (changeFn)="handleAriaLabelInput($event)"
-  />
+    <app-pg-input-selector
+      name="disabled"
+      description="Disables the button and prevents user interaction."
+      [options]="['false', 'true']"
+      (changeFn)="handleDisabledInput($event)"
+    />
 
-  <app-pg-input-selector
-    type="text"
-    name="title"
-    description="Sets the native tooltip text shown on hover."
-    (changeFn)="handleTitleInput($event)"
-  />
-
-  <app-pg-input-selector
-    name="disabled"
-    description="Disables the button and prevents user interaction."
-    [options]="['false', 'true']"
-    (changeFn)="handleDisabledInput($event)"
-  />
-
-  <app-pg-input-selector
-    name="tabIndex"
-    description="Controls the button’s tab order in keyboard navigation."
-    [options]="['0', '-1']"
-    (changeFn)="handleTabIndexInput($event)"
-  />
+    <app-pg-input-selector
+      name="tabIndex"
+      description="Controls the button’s tab order in keyboard navigation."
+      [options]="['0', '-1']"
+      (changeFn)="handleTabIndexInput($event)"
+    />
+  </app-expandable-options>
 
 </section>
