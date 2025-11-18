@@ -1,1 +1,100 @@
-<p>theme-toggle-playground works!</p>
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer componentViewer--theme-toggle" [class.isDark]="isDark()">
+
+  <article class="componentView">
+
+    <ng-theme-toggle class="playground" [class.minimal]="type() === 'minimal'"
+      [isDarkSignal]="isDark"
+
+      [type]="type()"
+      [hover]="hover()"
+      [animation]="animation()"
+      [faster]="faster()"
+
+    />
+
+  </article>
+
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <ng-expand label="Style & Behavior Inputs">
+    <app-pg-input-selector
+      name="type"
+      description="Defines the button’s visual style."
+      [options]="['minimal', 'solid', 'outline']"
+      (changeFn)="handleTypeInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="hover"
+      description="Sets the hover effect style."
+      [options]="['scale', 'tone', 'shadow', 'none']"
+      (changeFn)="handleHoverInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="animation"
+      description="Determines the toggle animation"
+      [options]="['soft', 'rotateX', 'rotateY' ]"
+      (changeFn)="handleAnimationInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="faster"
+      description="Speeds up the toggle animation when set to true (only for rotateX and rotateY)"
+      [options]="['false', 'true']"
+      (changeFn)="handleFasterInput($event)"
+    />
+  </ng-expand>
+
+  <ng-expand label="Accessibility Inputs">
+
+    <app-pg-input-selector
+      name="tabIndex"
+      description="Controls the button’s tab order in keyboard navigation."
+      [options]="['0', '-1']"
+      (changeFn)="handleTabIndexInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="lang"
+      description="Defines the language for built-in ARIA labels."
+      [options]="['en', 'es', 'it', 'fr', 'de']"
+      (changeFn)="handleLangInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="customAria"
+      description="Provides custom ARIA labels to override default accessibility text."
+      [options]="['null', 'custom aria example']"
+      (changeFn)="handleCustomAriaInput($event)"
+    />
+
+  </ng-expand>
+
+</section>
