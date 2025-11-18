@@ -39,14 +39,27 @@
   fill: var(--color-primary);
 }
 
-.codeView{
+.pg .codeView{
   display: none;
 }
 
-.codeView.show{
+.pg .codeView.show{
   display: block;
 }
 
-.componentOptions h3{
-  padding: 2rem 0 1rem 0;
+.pg ng-expand{
+  --expand-border: 1px solid var(--color-fg-trans);
+  --expand-bg: transparent;
+  --expand-border-radius: 0rem;
+
+  --expand-button-font-size: 1.05rem;
+  --expand-button-font-weight: 700;
+  --expand-button-hover-bg: var(--color-secondary-trans);
+  --expand-button-expanded-bg: var(--color-primary-trans);
+
+  margin-bottom: 1rem;
+}
+
+.pg .componentOptions{
+  margin-top: 1rem;
 }

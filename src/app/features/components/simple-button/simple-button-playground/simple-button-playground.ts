@@ -3,6 +3,7 @@ import { NgSimpleButton } from 'ng-simple-button'
 import { PgInputSelector } from '../../shared/playground/pg-input-selector/pg-input-selector';
 import { CodeBlock } from "@app/shared/ui/code-block/code-block";
 import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
+import { NgExpand } from 'ng-expand';
 
 type simpleButtonType = 'solid' | 'minimal' | 'outline';
 type simpleButtonHover = 'tone' | 'scale' | 'stroke' | 'shadow' | 'none';
@@ -10,7 +11,7 @@ type simpleButtonDirection = 'row' | 'column';
 
 @Component({
   selector: 'app-simple-button-playground',
-  imports: [NgSimpleButton, PgInputSelector, CodeBlock, PgShowCodeIcon],
+  imports: [NgSimpleButton, PgInputSelector, CodeBlock, PgShowCodeIcon, NgExpand],
   templateUrl: './simple-button-playground.html',
   styleUrl: './simple-button-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -18,6 +19,7 @@ type simpleButtonDirection = 'row' | 'column';
 export class SimpleButtonPlayground implements OnInit {
 
   // Component inputs
+
   type = signal<simpleButtonType>('solid');
   square = signal<boolean>(false);
   hover = signal<simpleButtonHover>('tone');
@@ -52,16 +54,17 @@ export class SimpleButtonPlayground implements OnInit {
       if (this.hover() !== 'tone') attrs.push(`hover="${this.hover()}"`);
       if (this.direction() !== 'row') attrs.push(`direction="${this.direction()}"`);
 
-      if (this.disabled()) attrs.push(`[disabled]="${this.disabled()}"`);
       if (this.ariaLabel()) attrs.push(`ariaLabel="${this.ariaLabel()}"`);
       if (this.title()) attrs.push(`title="${this.title()}"`);
+      if (this.disabled()) attrs.push(`[disabled]="${this.disabled()}"`);
       if (this.tabIndex() !== 0) attrs.push(`[tabIndex]="${this.tabIndex()}"`);
 
       // We join attributes with space (no line breaks)
-      const attrString = attrs.join(' ');
+      const attrString = attrs.join(' \n');
 
       this.currentCode.set(`
-        <ng-simple-button${attrString ? ' ' + attrString : ''}>
+        <ng-simple-button ${attrString ? ' \n' + attrString : ''}
+        >
           Button Example
         </ng-simple-button>
       `);

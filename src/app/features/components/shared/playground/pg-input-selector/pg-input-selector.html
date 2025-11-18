@@ -13,7 +13,12 @@
       </select>
     }
     @if (type() === 'text') {
-      <input type="text" placeholder="type something" (input)="handleChangeFn($event)">
+      <input
+        type="text"
+        [placeholder]="!placeholder() ? 'type something' : placeholder()"
+        [value]="initialText()"
+        (input)="handleChangeFn($event)"
+      >
     }
   </form>
 </section>

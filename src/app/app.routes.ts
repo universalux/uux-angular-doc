@@ -65,7 +65,13 @@ export const routes: Routes = [
           },
           {
             path: 'playground',
-            component: LinkButtonPlayground
+            component: LinkButtonPlayground,
+            children: [
+              {
+                path: 'playground-test-link',
+                component: LinkButtonPlayground
+              },
+            ]
           },
           {
             path: 'documentation',
