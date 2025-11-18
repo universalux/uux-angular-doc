@@ -1,1 +1,128 @@
-<p>menu-toggle-playground works!</p>
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer componentViewer--menu-toggle">
+
+  <article class="componentView componentView--menu-toggle">
+
+    <ng-menu-toggle class="playground"
+      [isOpenSignal]="isOpen"
+
+      [type]="type()"
+      [invert]="invert()"
+      [thin]="thin()"
+      [rounded]="rounded()"
+      [animation]="animation()"
+      [faster]="faster()"
+
+      [tabIndex]="tabIndex()"
+      [lang]="lang()"
+      [customAria]="customAria()"
+
+    />
+
+    <div class="simulatedMenu__container" [class.isOpen]="isOpen()">
+
+      <div class="simulatedMenu__content">
+        OPENED
+      </div>
+
+    </div>
+
+  </article>
+
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <ng-expand label="Style & Behavior Inputs">
+    <app-pg-input-selector
+      name="type"
+      description="Defines the button’s visual style."
+      [options]="['bars', 'dots', 'uneven']"
+      (changeFn)="handleTypeInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="invert"
+      description="Inverts the toggle colors when set to true (usefull when type is uneven)."
+      [options]="['false', 'true']"
+      (changeFn)="handleInvertInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="thin"
+      description="Makes the toggle lines thinner."
+      [options]="['false', 'true']"
+      (changeFn)="handleThinInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="rounded"
+      description="Applies rounded corners to the toggle lines."
+      [options]="['false', 'true']"
+      (changeFn)="handleRoundedInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="animation"
+      description="Determines the toggle animation"
+      [options]="['soft', 'rotateX', 'rotateY' ]"
+      (changeFn)="handleAnimationInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="faster"
+      description="Speeds up the toggle animation when set to true (only for rotateX and rotateY)"
+      [options]="['false', 'true']"
+      (changeFn)="handleFasterInput($event)"
+    />
+  </ng-expand>
+
+  <ng-expand label="Accessibility Inputs">
+
+    <app-pg-input-selector
+      name="tabIndex"
+      description="Controls the button’s tab order in keyboard navigation."
+      [options]="['0', '-1']"
+      (changeFn)="handleTabIndexInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="lang"
+      description="Defines the language for built-in ARIA labels."
+      [options]="['en', 'es', 'it', 'fr', 'de']"
+      (changeFn)="handleLangInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="customAria"
+      description="Provides custom ARIA labels to override default accessibility text."
+      [options]="['null', 'custom aria example']"
+      (changeFn)="handleCustomAriaInput($event)"
+    />
+
+  </ng-expand>
+
+</section>

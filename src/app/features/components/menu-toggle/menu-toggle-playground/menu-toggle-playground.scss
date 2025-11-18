@@ -1,0 +1,39 @@
+:host{
+  display: block;
+}
+
+ng-menu-toggle.playground{
+  --menu-toggle-color: white;
+}
+
+.simulatedMenu__container{
+  overflow: hidden;
+  background-color: var(--color-fg);
+  margin-top: .5rem;
+  color: var(--color-bg);
+  // width: 0;
+  transition: transform .3s ease-in-out, margin .3s ease-in-out;
+  transform: scaleY(0);
+}
+
+.simulatedMenu__container.isOpen{
+  // width: 126px;
+  transform: scaleY(1);
+  margin-top: 1rem;
+}
+
+.simulatedMenu__content{
+  padding: 1rem;
+  text-align: center;
+}
+
+.componentViewer--menu-toggle{
+  min-height: 186px;
+}
+
+.componentView--menu-toggle{
+  flex-direction: column;
+  gap: 0;
+  width: fit-content;
+  // min-height: 186px;
+}
