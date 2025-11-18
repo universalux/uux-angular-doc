@@ -1,8 +1,0 @@
-<ng-simple-button class="expandableOptionsBtn" type="minimal" [square]="true" hover="none" (onClick)="expanded.set(!expanded())">
-  <h3>{{title()}}</h3>
-  <h3 class="arrow" [class.expanded]="expanded()">&#9660;</h3>
-</ng-simple-button>
-
-<div class="expandableContent" [class.expanded]="expanded()">
-  <ng-content/>
-</div>

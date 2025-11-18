@@ -5,9 +5,9 @@ import { PgInputSelector } from '../../shared/playground/pg-input-selector/pg-in
 import { CodeBlock } from '@app/shared/ui/code-block/code-block';
 import { PgShowCodeIcon } from '../../shared/playground/pg-show-code-icon/pg-show-code-icon';
 import { NgSimpleButton } from 'ng-simple-button';
-import { filter } from 'rxjs';
+import { filter, Subject, takeUntil } from 'rxjs';
 import { Location } from '@angular/common';
-import { ExpandableOptions } from "../../shared/playground/expandable-options/expandable-options";
+import { NgExpand } from 'ng-expand';
 
 type LinkButtonRouterLink = string | any[] | undefined;
 type LinkButtonQueryParams = Record<string, any> | null;
@@ -19,10 +19,13 @@ type LinkButtonType = 'solid' | 'minimal' | 'outline';
 type LinkButtonHover = 'tone' | 'scale' | 'stroke' | 'shadow' | 'none';
 type LinkButtonDirection = 'row' | 'column';
 
+type AriaCurrent = 'page' | 'step' | 'true' | null;
+type Role = 'link' | 'button' | null;
+
 
 @Component({
   selector: 'app-link-button-playground',
-  imports: [NgSimpleButton, NgLinkButton, PgInputSelector, CodeBlock, PgShowCodeIcon, ExpandableOptions],
+  imports: [NgSimpleButton, NgLinkButton, PgInputSelector, CodeBlock, PgShowCodeIcon, NgExpand],
   templateUrl: './link-button-playground.html',
   styleUrl: './link-button-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -61,9 +64,9 @@ export class LinkButtonPlayground implements OnInit{
   ariaLabel = signal<string | null>(null);
   title = signal<string | null>(null);
   tabIndex = signal<number | null>(0);
-  ariaCurrent = signal<'page' | 'step' | 'true' | null>(null);
+  ariaCurrent = signal<AriaCurrent>(null);
   download = signal<string | boolean | null>(null);
-  role = signal<'link' | 'button' | null>(null);
+  role = signal<Role>(null);
   disabled = signal<boolean>(false);
 
 
@@ -73,25 +76,45 @@ export class LinkButtonPlayground implements OnInit{
     <ng-link-button>
         Button Example
       </ng-link-button>
-  `)
+  `);
+
+  private destroy$ = new Subject<void>();
 
   ngOnInit(): void {
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event) => {
+      .pipe(
+        takeUntil(this.destroy$),
+        filter(event => event instanceof NavigationEnd),
+        filter((event: NavigationEnd) => {
+          const url = event.urlAfterRedirects;
+
+          // Extract only pathname (no query or fragment)
+          const cleanPath = url.split('?')[0].split('#')[0];
+
+          return cleanPath === '/components/link-button/playground/playground-test-link';
+        })
+      )
+      .subscribe(event => {
         this.currentUrl.set(event.url);
 
         const state = this.location.getState();
-        console.log('STATE recibed:', state);
+        console.log('STATE received:', state);
 
         this.linkClicked.set(true);
       });
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  };
+
   constructor() {
     effect(() => {
       const attrs: string[] = [];
       // We only add inputs to code if they are diferent form default values
+
+      // routerLink inputs
       if(this.routerLink()) attrs.push(`routerLink="${this.routerLink()}"`);
       if(!this.activatedRoute()) attrs.push(`[routerLink]="${this.activatedRoute()}"`);
       if(this.queryParams()) attrs.push(`[queryParams]='${JSON.stringify(this.queryParams())}'`);
@@ -100,15 +123,32 @@ export class LinkButtonPlayground implements OnInit{
       if(this.queryParamsHandling()) attrs.push(`queryParamsHandling="${this.queryParamsHandling()}"`);
       if(this.state()) attrs.push(`[state]='${JSON.stringify(this.state())}'`);
 
+      // href inputs
+      if(!this.routerLink() && this.href()) attrs.push(`href="${this.href()}"`);
+      if(!this.routerLink() && this.target() !== '_blank') attrs.push(`target="${this.target()}"`);
+      if(!this.routerLink() && this.rel() !== 'noreferrer noopener' && this.rel() !== '') attrs.push(`rel="${this.rel()}"`);
+
+      // Style & Behavior Inputs
       if (this.type() !== 'solid') attrs.push(`type="${this.type()}"`);
       if (this.square()) attrs.push(`[square]="${this.square()}"`);
       if (this.hover() !== 'tone') attrs.push(`hover="${this.hover()}"`);
       if (this.direction() !== 'row') attrs.push(`direction="${this.direction()}"`);
 
+      // Accessibility Inputs
       if (this.ariaLabel()) attrs.push(`ariaLabel="${this.ariaLabel()}"`);
       if (this.title()) attrs.push(`title="${this.title()}"`);
       if (this.disabled()) attrs.push(`[disabled]="${this.disabled()}"`);
       if (this.tabIndex() !== 0) attrs.push(`[tabIndex]="${this.tabIndex()}"`);
+      if (this.ariaCurrent()) attrs.push(`ariaCurrent="${this.ariaCurrent()}"`);
+      if(this.download()){
+        if(typeof this.download() === 'string'){
+          attrs.push(`download="${this.download()}"`);
+        }else{
+          attrs.push(`download`);
+        }
+      }
+      if (this.role()) attrs.push(`role="${this.role()}"`);
+
 
       // We join attributes with space (no line breaks)
       const attrString = attrs.join(' \n');
@@ -141,12 +181,12 @@ export class LinkButtonPlayground implements OnInit{
     } else if (selectElement.value === 'undefined'){
       this.routerLink.set(undefined as LinkButtonRouterLink);
     }
-  }
+  };
 
   handleActivatedRouteInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
     this.activatedRoute.set(selectElement.value === 'true' ? true : false);
-  }
+  };
 
   handleQueryParamsInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
@@ -155,12 +195,12 @@ export class LinkButtonPlayground implements OnInit{
     }else if(selectElement.value === 'Query Example'){
       this.queryParams.set({exampleKey : 'exampleValue'});
     }
-  }
+  };
 
   handleFragmentInput(event: Event){
     const selectElement = event.target as HTMLInputElement;
     this.fragment.set(selectElement.value);
-  }
+  };
 
   handleRelativeToInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
@@ -169,7 +209,7 @@ export class LinkButtonPlayground implements OnInit{
     }else if(selectElement.value === 'ActivatedRoute'){
       this.relativeTo.set(this.ar as LinkButtonRelativeTo);
     }
-  }
+  };
 
   handleQueryParamsHandlingInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
@@ -178,7 +218,7 @@ export class LinkButtonPlayground implements OnInit{
     }else{
       this.queryParamsHandling.set(selectElement.value as LinkButtonQueryParamsHandling);
     }
-  }
+  };
 
   handleStateInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
@@ -188,51 +228,106 @@ export class LinkButtonPlayground implements OnInit{
       this.state.set({exampleStateKey : 'exampleStateValue'});
       this.currentState.set(JSON.stringify({exampleStateKey : 'exampleStateValue'}));
     }
-  }
+  };
+
+  // HREF INPUT OPTIONS
+
+  handleHrefInput(event: Event){
+    const selectElement = event.target as HTMLInputElement;
+    this.href.set(selectElement.value);
+  };
+
+  handleTargetInput(event: Event){
+    const selectElement = event.target as HTMLSelectElement;
+    this.target.set(selectElement.value);
+  };
+
+  handleRelInput(event: Event){
+    const selectElement = event.target as HTMLInputElement;
+    if(selectElement.value === ''){
+      this.rel.set(selectElement.value);
+    }else{
+      this.rel.set(selectElement.value);
+    }
+
+  };
 
   // STYLE AND BEHAVIOR INPUT OPTIONS
 
   handleTypeInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
     this.type.set(selectElement.value as LinkButtonType);
-  }
+  };
 
   handleSquareInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
     this.square.set(selectElement.value === 'true' ? true : false);
-  }
+  };
 
   handleHoverInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
     this.hover.set(selectElement.value as LinkButtonHover);
-  }
+  };
 
   handleDirectionInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
     this.direction.set(selectElement.value as LinkButtonDirection);
-  }
+  };
 
   // ACCESSIBILITY INPUT OPTIONS
 
   handleDisabledInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
     this.disabled.set(selectElement.value === 'true' ? true : false);
-  }
+  };
 
   handleTabIndexInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
     this.tabIndex.set(Number(selectElement.value));
-  }
+  };
 
   handleAriaLabelInput(event: Event){
     const selectElement = event.target as HTMLInputElement;
     this.ariaLabel.set(selectElement.value);
-  }
+  };
 
   handleTitleInput(event: Event){
     const selectElement = event.target as HTMLInputElement;
     this.title.set(selectElement.value);
-  }
+  };
+
+  handleAriaCurrentInput(event: Event){
+    const selectElement = event.target as HTMLSelectElement;
+    if(selectElement.value === 'null'){
+      this.ariaCurrent.set(null);
+    }else {
+      this.ariaCurrent.set(selectElement.value as AriaCurrent);
+    }
+  };
+
+  handleDownloadInput(event: Event){
+    const selectElement = event.target as HTMLSelectElement;
+    if(selectElement.value === 'true'){
+      this.href.set('images/components/ng-buttons-static-cover.png');
+      this.download.set(true);
+    }else if (selectElement.value === 'false'){
+      this.download.set(false);
+    }else if (selectElement.value === 'example-name.png'){
+      this.href.set('images/components/ng-buttons-static-cover.png');
+      this.download.set(selectElement.value);
+    }
+  };
+
+  handleRoleInput(event: Event){
+    const selectElement = event.target as HTMLSelectElement;
+    if(selectElement.value === 'null'){
+      this.role.set(null);
+    }else {
+      this.role.set(selectElement.value as Role);
+    }
+  };
+
+  // SHOW CODE METHOD
 
   toggleShowCode(){
     this.showCode.set(!this.showCode());

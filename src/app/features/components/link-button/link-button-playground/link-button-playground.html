@@ -1,7 +1,7 @@
 <!-- LINK TEST MODAL -->
 @if (linkClicked()) {
   <div class="clickedModal__position" (click)="linkClicked.set(false)">
-    <div class="clickedModal__content">
+    <div class="clickedModal__content" (click)="$event.stopPropagation()" >
       <h3>Navigation Works</h3>
       <h4>Url configured: {{currentUrl()}}</h4>
       @if (relativeTo()) {
@@ -57,6 +57,9 @@
       [ariaLabel]="ariaLabel()"
       [tabIndex]="tabIndex()"
       [title]="title()"
+      [download]="download()"
+      [ariaCurrent]="ariaCurrent()"
+      [role]="role()"
 
     >
       LINK BUTTON
@@ -90,117 +93,150 @@
 <!-- COMPONENT OPTIONS -->
 <section class="componentOptions">
 
-  <app-expandable-options title="Router Link Inputs">
-    <app-pg-input-selector
-      name="routerLink"
+  <ng-expand label="Router Link Inputs">
+
+    <app-pg-input-selector name="routerLink"
       description="Defines the internal navigation route."
       [options]="['undefined', 'Test Link']"
       (changeFn)="handleRouterLinkInput($event)"
     />
 
-    <app-pg-input-selector
-      name="activatedRoute"
+    <app-pg-input-selector name="activatedRoute"
       description="Enables ActivatedRoute context usage."
       [options]="['true', 'false']"
       (changeFn)="handleActivatedRouteInput($event)"
     />
 
-    <app-pg-input-selector
-      name="queryParams"
+    <app-pg-input-selector name="queryParams"
       description="Adds query parameters to the route."
       [options]="['null', 'Query Example']"
       (changeFn)="handleQueryParamsInput($event)"
     />
 
-    <app-pg-input-selector
+    <app-pg-input-selector name="fragment"
       type="text"
-      name="fragment"
       description="Defines a URL fragment (anchor)."
       (changeFn)="handleFragmentInput($event)"
     />
 
-    <app-pg-input-selector
-      name="relativeTo"
+    <app-pg-input-selector name="relativeTo"
       description="Sets a relative navigation based on an ActivatedRoute."
       [options]="['null', 'ActivatedRoute']"
       (changeFn)="handleRelativeToInput($event)"
     />
 
-    <app-pg-input-selector
-      name="queryParamsHandling"
+    <app-pg-input-selector name="queryParamsHandling"
       description="Strategy for handling query params."
       [options]="['null', 'merge', 'preserve']"
       (changeFn)="handleQueryParamsHandlingInput($event)"
     />
 
-    <app-pg-input-selector
-      name="state"
+    <app-pg-input-selector name="state"
       description="Adds custom navigation state data."
       [options]="['undefined', 'State Example']"
       (changeFn)="handleStateInput($event)"
     />
-  </app-expandable-options>
 
+  </ng-expand>
 
-  <app-expandable-options title="Style & Behavior Inputs">
-    <app-pg-input-selector
-      name="type"
+  <ng-expand label="Href Inputs">
+
+    <app-pg-input-selector name="href"
+      type="text"
+      initialText="https://"
+      description="Defines the external link URL."
+      (changeFn)="handleHrefInput($event)"
+    />
+
+    <app-pg-input-selector name="target"
+      description="Specifies where to open the link."
+      [options]="['_blank', '_self', '_parent', '_top']"
+      (changeFn)="handleTargetInput($event)"
+    />
+
+    <app-pg-input-selector name="rel"
+      type="text"
+      initialText="noreferrer noopener"
+      placeholder="noreferrer noopener"
+      description="Defines the link relation attribute for security."
+      (changeFn)="handleRelInput($event)"
+    />
+
+  </ng-expand>
+
+  <ng-expand label="Style & Behavior Inputs">
+
+    <app-pg-input-selector name="type"
       description="Defines the button’s visual style."
       [options]="['solid', 'minimal', 'outline']"
       (changeFn)="handleTypeInput($event)"
     />
 
-    <app-pg-input-selector
-      name="square"
+    <app-pg-input-selector name="square"
       description="Makes the button shape perfectly square instead of rounded."
       [options]="['false', 'true']"
       (changeFn)="handleSquareInput($event)"
     />
 
-    <app-pg-input-selector
-      name="hover"
+    <app-pg-input-selector name="hover"
       description="	Sets the hover effect style."
       [options]="['tone', 'scale', 'stroke', 'shadow', 'none']"
       (changeFn)="handleHoverInput($event)"
     />
 
-    <app-pg-input-selector
-      name="direction"
+    <app-pg-input-selector name="direction"
       description="Arranges the button’s inner content horizontally or vertically."
       [options]="['row', 'column']"
       (changeFn)="handleDirectionInput($event)"
     />
 
-  </app-expandable-options>
+  </ng-expand>
 
-  <app-expandable-options title="Accessibility Inputs">
-    <app-pg-input-selector
+  <ng-expand label="Accessibility Inputs">
+
+    <app-pg-input-selector name="ariaLabel"
       type="text"
-      name="ariaLabel"
       description="Provides an accessible label for assistive technologies."
       (changeFn)="handleAriaLabelInput($event)"
     />
 
-    <app-pg-input-selector
+    <app-pg-input-selector name="title"
       type="text"
-      name="title"
       description="Sets the native tooltip text shown on hover."
       (changeFn)="handleTitleInput($event)"
     />
 
-    <app-pg-input-selector
-      name="disabled"
+    <app-pg-input-selector name="disabled"
       description="Disables the button and prevents user interaction."
       [options]="['false', 'true']"
       (changeFn)="handleDisabledInput($event)"
     />
 
-    <app-pg-input-selector
-      name="tabIndex"
+    <app-pg-input-selector name="tabIndex"
       description="Controls the button’s tab order in keyboard navigation."
       [options]="['0', '-1']"
       (changeFn)="handleTabIndexInput($event)"
     />
-  </app-expandable-options>
+
+    <app-pg-input-selector name="ariaCurrent"
+      description="Indicates the current item in a set (only in activelink at routerLink mode)."
+      [options]="['null', 'page', 'step', 'true']"
+      (changeFn)="handleAriaCurrentInput($event)"
+    />
+
+    <app-pg-input-selector name="download"
+      description="Suggests that the link should be downloaded as a file (only in href mode)."
+      [options]="['false', 'true', 'example-name.png']"
+      (changeFn)="handleDownloadInput($event)"
+    />
+
+    <app-pg-input-selector name="role"
+      description="Defines the ARIA role."
+      [options]="['null', 'link', 'button']"
+      (changeFn)="handleRoleInput($event)"
+    />
+
+
+  </ng-expand>
 
 </section>

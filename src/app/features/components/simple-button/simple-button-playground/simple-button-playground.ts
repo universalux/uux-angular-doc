@@ -3,7 +3,7 @@ import { NgSimpleButton } from 'ng-simple-button'
 import { PgInputSelector } from '../../shared/playground/pg-input-selector/pg-input-selector';
 import { CodeBlock } from "@app/shared/ui/code-block/code-block";
 import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
-import { ExpandableOptions } from "../../shared/playground/expandable-options/expandable-options";
+import { NgExpand } from 'ng-expand';
 
 type simpleButtonType = 'solid' | 'minimal' | 'outline';
 type simpleButtonHover = 'tone' | 'scale' | 'stroke' | 'shadow' | 'none';
@@ -11,7 +11,7 @@ type simpleButtonDirection = 'row' | 'column';
 
 @Component({
   selector: 'app-simple-button-playground',
-  imports: [NgSimpleButton, PgInputSelector, CodeBlock, PgShowCodeIcon, ExpandableOptions],
+  imports: [NgSimpleButton, PgInputSelector, CodeBlock, PgShowCodeIcon, NgExpand],
   templateUrl: './simple-button-playground.html',
   styleUrl: './simple-button-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

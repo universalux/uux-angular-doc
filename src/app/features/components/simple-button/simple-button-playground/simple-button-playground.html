@@ -66,7 +66,7 @@
 <!-- CODE VIEWER -->
 <section class="componentOptions">
 
-  <app-expandable-options title="Style & Behavior Inputs">
+  <ng-expand label="Style & Behavior Inputs">
     <app-pg-input-selector
       name="type"
       description="Defines the button’s visual style."
@@ -94,9 +94,9 @@
       [options]="['row', 'column']"
       (changeFn)="handleDirectionInput($event)"
     />
-  </app-expandable-options>
+  </ng-expand>
 
-  <app-expandable-options title="Accessibility Inputs">
+  <ng-expand label="Accessibility Inputs">
     <app-pg-input-selector
       type="text"
       name="ariaLabel"
@@ -124,6 +124,6 @@
       [options]="['0', '-1']"
       (changeFn)="handleTabIndexInput($event)"
     />
-  </app-expandable-options>
+  </ng-expand>
 
 </section>
