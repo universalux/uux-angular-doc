@@ -59,8 +59,7 @@ export class HeroCarouselPlayground {
   customAria = signal<HeroCarouselCustomAria | null>(null);
 
   // Needed functionalities
-  // themeService = inject(ThemeService);
-  // isDark = signal<boolean>(this.themeService.isDark());
+
 
   // Code to show properties
   showCode = signal<boolean>(false);
