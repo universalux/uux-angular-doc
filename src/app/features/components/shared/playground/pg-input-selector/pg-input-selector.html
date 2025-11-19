@@ -20,6 +20,13 @@
         (input)="handleChangeFn($event)"
       >
     }
+    @if (type() === 'number') {
+      <input
+        type="number"
+        [placeholder]="!placeholder() ? '000' : placeholder()"
+        (input)="handleChangeFn($event)"
+      >
+    }
   </form>
 </section>
 <app-divider/>
