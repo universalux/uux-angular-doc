@@ -14,7 +14,7 @@ export const contentCardDocCode = {
   overviewCode_1: {
     language: 'html',
     code: `
-    <ng-content-card hover="both">
+      <ng-content-card hover="both">
         <header card-header>
           Header Content
         </header>
@@ -36,7 +36,7 @@ export const contentCardDocCode = {
   funcCode_1: {
     language: 'html',
     code: `
-    <section card-image>
+      <section card-image>
         <img class="scaleHover" src="images/card/dog_post.png" alt="Dog">
       </section>
     `,
@@ -44,7 +44,7 @@ export const contentCardDocCode = {
   stylingCode_1: {
     language: 'css',
     code: `
-    ng-content-card {
+      ng-content-card {
         max-width: 280px;
         min-height: 400px;
         border: 3px solid white;
@@ -55,7 +55,7 @@ export const contentCardDocCode = {
   stylingCode_2: {
     language: 'css',
     code: `
-    ng-content-card {
+      ng-content-card {
         --card-bg: white;
         --card-fg: black;
       }
@@ -64,7 +64,7 @@ export const contentCardDocCode = {
   stylingCode_3: {
     language: 'css',
     code: `
-    ng-content-card [card-header] {
+      ng-content-card [card-header] {
         display: flex;
         align-items: center;
         column-gap: 1rem;

@@ -71,16 +71,6 @@ export class SimpleButtonPlayground implements OnInit {
     });
   }
 
-  updateCurrentCode(){
-    this.currentCode.set(`
-    <ng-simple-button
-        type="${this.type()}"
-      >
-        Button Example
-      </ng-simple-button>
-  `)
-  }
-
   generateRandomNumber(){
     const number = Math.floor(Math.random() * 6) + 1;
     this.randomNumber.set(number);

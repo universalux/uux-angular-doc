@@ -42,10 +42,6 @@ export class MenuTogglePlayground {
     <ng-menu-toggle/>
   `)
 
-  ngOnInit(): void {
-
-  }
-
   constructor() {
     effect(() => {
       const attrs: string[] = [];
@@ -54,8 +50,8 @@ export class MenuTogglePlayground {
       if (this.invert()) attrs.push(`[square]="${this.invert()}"`);
       if (this.thin()) attrs.push(`[thin]="${this.thin()}"`);
       if (this.rounded()) attrs.push(`[rounded]="${this.rounded()}"`);
-      if (this.animation() !== 'soft') attrs.push(`type="${this.animation()}"`);
-      if (this.faster()) attrs.push(`[rounded]="${this.faster()}"`);
+      if (this.animation() !== 'soft') attrs.push(`animation="${this.animation()}"`);
+      if (this.faster()) attrs.push(`[faster]="${this.faster()}"`);
 
       if (this.tabIndex() !== 0) attrs.push(`[tabIndex]="${this.tabIndex()}"`);
       if (this.lang() !== 'en') attrs.push(`lang="${this.lang()}"`);
@@ -65,21 +61,12 @@ export class MenuTogglePlayground {
       const attrString = attrs.join(' \n');
 
       this.currentCode.set(`
-        <ng-menu-toggle ${attrString ? ' \n' + attrString : ''}
+        <ng-menu-toggle
+          isOpenSignal="yourIsOpenSignal" ${attrString ? ' \n' + attrString : ''}
         />
 
       `);
     });
-  }
-
-  updateCurrentCode(){
-    this.currentCode.set(`
-    <ng-menu-toggle
-        isOpenSignal="yourIsOpenSignal"
-      >
-        Button Example
-      </ng-menu-toggle>
-  `)
   }
 
   // STYLE AND BEHAVIOR INPUT OPTIONS
