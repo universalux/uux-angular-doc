@@ -14,7 +14,7 @@ export const linkButtonDocCode = {
   overviewCode_1: {
     language: 'ts',
     code: `
-    import { Component, signal } from '@angular/core';
+      import { Component, signal } from '@angular/core';
       import { NgLinkButton } from 'ng-link-button';
 
       @Component({
@@ -41,7 +41,7 @@ export const linkButtonDocCode = {
   functionalityCode_1: {
     language: 'ts',
     code: `
-    import { Component, inject } from '@angular/core';
+      import { Component, inject } from '@angular/core';
       import { ActivatedRoute } from '@angular/router';
       import { NgLinkButton } from 'ng-link-button';
 
@@ -71,7 +71,7 @@ export const linkButtonDocCode = {
   functionalityCode_2: {
     language: 'html',
     code: `
-    <ng-link-button
+      <ng-link-button
         href="https://universalux.dev"
         target="_blank"
         rel="noreferrer noopener"
@@ -83,7 +83,7 @@ export const linkButtonDocCode = {
   stylingCode_1: {
     language: 'css',
     code: `
-    ng-link-button {
+      ng-link-button {
         --link-button-bg: orange;
         --link-button-hover-bg: red;
       }
@@ -92,7 +92,7 @@ export const linkButtonDocCode = {
   stylingCode_2: {
     language: 'css',
     code: `
-    ng-link-button[type="solid"] {
+      ng-link-button[type="solid"] {
         --link-button-bg: orange;
       }
     `
@@ -100,7 +100,7 @@ export const linkButtonDocCode = {
   stylingCode_3: {
     language: 'css',
     code: `
-    ng-link-button.myClass {
+      ng-link-button.myClass {
         --link-button-outline: 2px solid orange;
       }
     `

@@ -1,25 +1,28 @@
 :host{
   display: block;
   width: 100%;
-  max-width: calc(100dvw - 50px);
-  overflow-x: auto;
 }
 
-table {
+.dataTable__container{
+  overflow-x: auto;
+  // background-color: aqua;
   width: 100%;
-  border-collapse: collapse;
-  min-width: fit-content;
   margin: 1rem 0 2rem 0;
 }
 
+table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
 table th {
-  // border-bottom: 2px solid #ccc;
   padding: 10px 8px;
   text-align: left;
 }
 
 table td{
-  // border-bottom: 1px solid #ccc;
   padding: 10px 8px;
 }
 

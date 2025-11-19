@@ -162,16 +162,6 @@ export class LinkButtonPlayground implements OnInit{
     });
   }
 
-  updateCurrentCode(){
-    this.currentCode.set(`
-    <ng-simple-button
-        type="${this.type()}"
-      >
-        Button Example
-      </ng-simple-button>
-  `)
-  }
-
   // ROUTERLINK INPUT OPTIONS
 
   handleRouterLinkInput(event: Event){

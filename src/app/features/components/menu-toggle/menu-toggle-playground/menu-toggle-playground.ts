@@ -69,14 +69,6 @@ export class MenuTogglePlayground {
     });
   }
 
-  updateCurrentCode(){
-    this.currentCode.set(`
-    <ng-menu-toggle
-      isOpenSignal="yourIsOpenSignal"
-    />
-  `)
-  }
-
   // STYLE AND BEHAVIOR INPUT OPTIONS
 
   handleTypeInput(event: Event){

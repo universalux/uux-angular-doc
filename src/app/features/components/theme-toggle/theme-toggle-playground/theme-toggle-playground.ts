@@ -59,7 +59,7 @@ export class ThemeTogglePlayground {
       const attrString = attrs.join(' \n');
 
       this.currentCode.set(`
-        <ng-menu-toggle
+        <ng-theme-toggle
           isDarkSignal="yourIsDarkSignal" ${attrString ? ' \n' + attrString : ''}
         />
 
@@ -70,15 +70,6 @@ export class ThemeTogglePlayground {
       this.themeService.isDark();
       this.isDark.set(this.themeService.isDark());
     });
-  }
-
-  updateCurrentCode(){
-    this.currentCode.set(`
-    <ng-theme-toggle
-      isDarkSignal="yourIsDarkSignal"
-    />
-
-  `)
   }
 
   // STYLE AND BEHAVIOR INPUT OPTIONS

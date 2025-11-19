@@ -9,6 +9,8 @@
   grid-template-columns: 1fr auto;
 
   padding: 0 1rem;
+
+  min-width: 0;
 }
 
 .componentLayout__nav{
@@ -82,6 +84,7 @@ ng-link-button ::ng-deep .linkButton.active::after {
   height: 100%;
   grid-area: content;
   // border: 1px solid #cdd653;
+  min-width: 0;
 }
 
 .componentLayout__content.separeFromAside{
@@ -89,7 +92,7 @@ ng-link-button ::ng-deep .linkButton.active::after {
 }
 
 app-doc-nav{
-  grid-area: 'aside';
+  grid-area: aside;
 }
 
 @media screen and (max-width: 1200px) {

@@ -14,7 +14,7 @@ export const scrollNavDocCode = {
   overviewCode_1: {
     language: 'ts',
     code: `
-    import { NgScrollNav } from 'ng-scroll-nav';
+      import { NgScrollNav } from 'ng-scroll-nav';
       import { NgLinkButton } from 'ng-link-button';
 
       @Component({
@@ -42,7 +42,7 @@ export const scrollNavDocCode = {
   funcCode_1: {
     language: 'html',
     code: `
-    <ng-scroll-nav [scrollStep]="200" scrollBehavior="auto">
+      <ng-scroll-nav [scrollStep]="200" scrollBehavior="auto">
         <ng-link-button>
           Link 1
         </ng-link-button>
@@ -55,7 +55,7 @@ export const scrollNavDocCode = {
   stylingCode_1: {
     language: 'css',
     code: `
-    ng-scroll-nav{
+      ng-scroll-nav{
         --scroll-nav-justify-content: center;
         --scroll-nav-arrow-size: 1rem;
       }
@@ -64,19 +64,19 @@ export const scrollNavDocCode = {
   accCode_1: {
     language: 'ts',
     code: `
-    import { ScrollNavLangs, ScrollNavCustomAria } from 'ng-scoll-nav';
+      import { ScrollNavLangs, ScrollNavCustomAria } from 'ng-scoll-nav';
     `
   },
   accCode_2: {
     language: 'html',
     code: `
-    <ng-scroll-nav lang="es" />
+      <ng-scroll-nav lang="es" />
     `
   },
   accCode_3: {
     language: 'ts',
     code: `
-    export interface ScrollNavCustomAria {
+      export interface ScrollNavCustomAria {
         navAriaLabel?: string;
         prevBtnAriaLabel?: string;
         nextBtnAriaLabel?: string;
@@ -87,29 +87,29 @@ export const scrollNavDocCode = {
   accCode_4: {
     language: 'ts',
     code: `
-    import { NgScrollNav, ScrollNavCustomAria } from 'ng-scroll-nav';
+      import { NgScrollNav, ScrollNavCustomAria } from 'ng-scroll-nav';
 
-        @Component({
-          imports: [NgScrollNav],
-          template: \`
-            <ng-scroll-nav lang="en" [customAria]="accOpts()">
-              <ng-link-button [square]="true">
-                Link 1
-              </ng-link-button>
-              <ng-link-button [square]="true">
-                This is Link 2
-              </ng-link-button>
-            </ng-scroll-nav>
-          \`
-        })
-        class App {
-          accOpts = signal<ScrollNavCustomAria>({
-            navAriaLabel: 'EDITED navAriaLabel',
-            prevBtnAriaLabel: 'EDITED prevBtnAriaLabel',
-            nextBtnAriaLabel: 'EDITED nextBtnAriaLabel',
-            linksGroupAriaLabel: 'EDITED linksGroupAriaLabel',
-          });
-        }
+      @Component({
+        imports: [NgScrollNav],
+        template: \`
+          <ng-scroll-nav lang="en" [customAria]="accOpts()">
+            <ng-link-button [square]="true">
+              Link 1
+            </ng-link-button>
+            <ng-link-button [square]="true">
+              This is Link 2
+            </ng-link-button>
+          </ng-scroll-nav>
+        \`
+      })
+      class App {
+        accOpts = signal<ScrollNavCustomAria>({
+          navAriaLabel: 'EDITED navAriaLabel',
+          prevBtnAriaLabel: 'EDITED prevBtnAriaLabel',
+          nextBtnAriaLabel: 'EDITED nextBtnAriaLabel',
+          linksGroupAriaLabel: 'EDITED linksGroupAriaLabel',
+        });
+      }
     `
   },
 } as const;

@@ -14,7 +14,7 @@ export const simpleButtonDocCode = {
   overviewCode_1: {
     language: 'ts',
     code: `
-    import { Component, signal } from '@angular/core';
+      import { Component, signal } from '@angular/core';
       import { NgSimpleButton } from 'ng-simple-button';
 
       @Component({
@@ -47,7 +47,7 @@ export const simpleButtonDocCode = {
   functionalityCode_1: {
     language: 'html',
     code: `
-    <ng-simple-button (onClick)="handleClick($event)">
+      <ng-simple-button (onClick)="handleClick($event)">
         Click me
       </ng-simple-button>
     `
@@ -55,7 +55,7 @@ export const simpleButtonDocCode = {
   functionalityCode_2: {
     language: 'ts',
     code: `
-    handleClick(event: MouseEvent) {
+      handleClick(event: MouseEvent) {
         console.log(event.clientX, event.clientY);
       }
     `
@@ -63,7 +63,7 @@ export const simpleButtonDocCode = {
   stylingCode_1: {
     language: 'css',
     code: `
-    ng-simple-button {
+      ng-simple-button {
         --simple-button-bg: orange;
         --simple-button-hover-bg: red;
       }
@@ -72,7 +72,7 @@ export const simpleButtonDocCode = {
   stylingCode_2: {
     language: 'css',
     code: `
-    ng-simple-button[type="solid"] {
+      ng-simple-button[type="solid"] {
         --simple-button-bg: orange;
       }
     `
@@ -80,7 +80,7 @@ export const simpleButtonDocCode = {
   stylingCode_3: {
     language: 'css',
     code: `
-    ng-simple-button.myClass {
+      ng-simple-button.myClass {
         --simple-button-outline: 2px solid orange;
       }
     `

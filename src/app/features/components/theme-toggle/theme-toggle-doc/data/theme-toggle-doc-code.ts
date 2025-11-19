@@ -14,7 +14,7 @@ export const themeToggleDocCode = {
   overviewCode_1: {
     language: 'ts',
     code: `
-    import { Component, signal } from '@angular/core';
+      import { Component, signal } from '@angular/core';
       import { NgThemeToggle } from 'ng-theme-toggle';
 
       @Component({
@@ -35,7 +35,7 @@ export const themeToggleDocCode = {
   stylingCode_1: {
     language: 'css',
     code: `
-    ng-theme-toggle {
+      ng-theme-toggle {
         --theme-toggle-bg: var(--global-color-from-theme);
         --theme-toggler-padding: 8px 16px;
       }
@@ -44,19 +44,19 @@ export const themeToggleDocCode = {
   accCode_1: {
     language: 'ts',
     code: `
-    import { NgThemeButton, ThemeToggleLangs, ThemeToggleCustomAria } from 'ng-theme-toggle';
+      import { NgThemeButton, ThemeToggleLangs, ThemeToggleCustomAria } from 'ng-theme-toggle';
     `
   },
   accCode_2: {
     language: 'html',
     code: `
-    <ng-theme-toggle lang="es" />
+      <ng-theme-toggle lang="es" />
     `
   },
   accCode_3: {
     language: 'html',
     code: `
-    <ng-theme-toggle
+      <ng-theme-toggle
         [customAria]="{
           ariaLabelDark: 'Custom - set light mode',
           ariaLabelLight: 'Custom - set dark mode'

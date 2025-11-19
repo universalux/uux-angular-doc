@@ -3,16 +3,16 @@
 }
 
 ng-theme-toggle.playground{
-  --theme-toggle-bg-dark: var(--color-primary);
-  --theme-toggle-bg-light: var(--color-primary-trans);
+  // --theme-toggle-bg-dark: var(--color-primary);
+  // --theme-toggle-bg-light: var(--color-primary-trans);
 
-  --theme-toggle-hover-scale: 1.1;
-  --theme-toggle-hover-bg-dark: var(--color-secondary);
-  --theme-toggle-hover-bg-light: var(--color-secondary-trans);
+  // --theme-toggle-hover-scale: 1.1;
+  // --theme-toggle-hover-bg-dark: var(--color-secondary);
+  // --theme-toggle-hover-bg-light: var(--color-secondary-trans);
   --theme-toggle-color-transition: 0s;
 
-  --theme-toggle-hover-shadow-color-dark: white;
-  --theme-toggle-hover-shadow-color-light: black;
+  // --theme-toggle-hover-shadow-color-dark: white;
+  // --theme-toggle-hover-shadow-color-light: black;
 }
 
 ng-theme-toggle.playground.minimal{
