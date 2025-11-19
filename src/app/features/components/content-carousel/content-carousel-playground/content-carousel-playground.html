@@ -1,1 +1,152 @@
-<p>content-carousel-playground works!</p>
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer">
+
+  @if (reloadComponent()) {
+  <ng-content-carousel
+    [transition]="transition()"
+    [advanceMode]="advanceMode()"
+    [arrowStyle]="arrowStyle()"
+    [hideArrowsOnEdges]="hideArrowsOnEdges()"
+    [hideArrowsWhenNoOverflow]="hideArrowsWhenNoOverflow()"
+
+    [lang]="lang()"
+    [customAria]="customAria()"
+  >
+    <div
+      contentCarouselItem
+      style="width: 200px; height: 150px; display: flex; align-items: center; justify-content: center; background-color: red; color: white;"
+    >
+      Item 1
+    </div>
+
+    <div
+      contentCarouselItem
+      style="width: 200px; height: 150px; display: flex; align-items: center; justify-content: center; background-color: green; color: white;"
+    >
+      Item 2
+    </div>
+
+    <div
+      contentCarouselItem
+      style="width: 200px; height: 150px; display: flex; align-items: center; justify-content: center; background-color: blue; color: white;"
+    >
+      Item 3
+    </div>
+
+    @if (!reduceItems()) {
+      <div
+        contentCarouselItem
+        style="width: 200px; height: 150px; display: flex; align-items: center; justify-content: center; background-color: rgb(255, 0, 212); color: white;"
+      >
+        Item 4
+      </div>
+
+      <div
+        contentCarouselItem
+        style="width: 200px; height: 150px; display: flex; align-items: center; justify-content: center; background-color: rgb(33, 128, 192); color: white;"
+      >
+        Item 5
+      </div>
+      <div
+        contentCarouselItem
+        style="width: 200px; height: 150px; display: flex; align-items: center; justify-content: center; background-color: rgb(99, 15, 116); color: white;"
+      >
+        Item 6
+      </div>
+
+      <div
+        contentCarouselItem
+        style="width: 200px; height: 150px; display: flex; align-items: center; justify-content: center; background-color: rgb(15, 94, 87); color: white;"
+      >
+        Item 7
+      </div>
+    }
+
+  </ng-content-carousel>
+  }
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <ng-expand label="Style & Behavior Inputs">
+
+    <app-pg-input-selector name="transition"
+      description="Enables or disables slide transition animation."
+      [options]="['true', 'false']"
+      (changeFn)="handleTransitionInput($event)"
+    />
+
+    <app-pg-input-selector name="advanceMode"
+      description="Defines how the carousel advances."
+      [options]="['page', 'single' ]"
+      (changeFn)="handleAdvanceModeInput($event)"
+    />
+
+    <app-pg-input-selector name="arrowStyle"
+      description="Sets the arrow appearance."
+      [options]="['minimal', 'solid' ]"
+      (changeFn)="handleArrowStyleInput($event)"
+    />
+
+    <app-pg-input-selector name="hideArrowsOnEdges"
+      description="Hides navigation arrows when at the first or last slide."
+      [options]="['true', 'false']"
+      (changeFn)="handleHideArrowsOnEdgesInput($event)"
+    />
+
+    <app-pg-input-selector name="hideArrowsWhenNoOverflow"
+      description="Hides arrows if all items fit within the carousel width. (Force it with the option below)"
+      [options]="['true', 'false']"
+      (changeFn)="handleHideArrowsWhenNoOverflowInput($event)"
+    />
+
+    <app-pg-input-selector name="Force no overflow"
+      description="Force no overflow to hide arrows when content fits"
+      [options]="['false', 'true']"
+      (changeFn)="handleForceNoOverflow($event)"
+    />
+
+  </ng-expand>
+
+  <ng-expand label="Accessibility Inputs">
+
+    <app-pg-input-selector
+      name="lang"
+      description="Defines the language for built-in ARIA labels."
+      [options]="['en', 'es', 'it', 'fr', 'de']"
+      (changeFn)="handleLangInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="customAria"
+      description="Provides custom ARIA labels to override default accessibility text."
+      [options]="['null', 'custom aria example']"
+      (changeFn)="handleCustomAriaInput($event)"
+    />
+
+  </ng-expand>
+
+</section>
