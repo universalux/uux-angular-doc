@@ -120,9 +120,10 @@ export class SimpleButtonPlayground implements OnInit {
     this.title.set(selectElement.value);
   }
 
+  // SHOW CODE METHOD
+
   toggleShowCode(){
     this.showCode.set(!this.showCode());
   }
-
 
 }

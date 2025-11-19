@@ -1,0 +1,10 @@
+:host{
+  display: block;
+}
+
+ng-content-card.playground{
+  min-width: 350px;
+  --card-bg: var(--color-fg);
+  --card-fg: var(--color-bg);
+  --card-shadow: 2px 2px 20px grey;
+}
