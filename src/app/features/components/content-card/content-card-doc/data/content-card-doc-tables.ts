@@ -37,7 +37,7 @@ export const contentCardDocTables = {
       ],
       [
         "hover",
-        "Hover effect: 'scale', 'color', 'both', 'none'",
+        "Hover effect: 'scale', 'tone', 'both', 'none'",
         "'scale'"
       ],
       [

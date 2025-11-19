@@ -1,1 +1,139 @@
-<p>content-card-playground works!</p>
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer">
+
+  <article class="componentView">
+
+    <ng-content-card class="playground"
+      [animation]="animation()"
+      [hover]="hover()"
+      [shadow]="shadow()"
+    >
+      @if (hasHeader()) {
+        <header card-header>
+          Header Content
+        </header>
+      }
+
+      @if (hasImage()) {
+        <section card-image>
+          <img [class.scaleHover]="hasImageHoverClass()"
+            src="images/examples/ng-content-card_example-img.png" alt="NgContentCard Example image">
+        </section>
+      }
+
+      @if (hasBody()) {
+        <section card-body>
+          Body content
+        </section>
+      }
+
+      @if (hasFooter()) {
+        <footer card-footer>
+          Footer content
+        </footer>
+      }
+
+      @if (hasAbsolute()) {
+        <div absolute-content
+          style="top: .5rem; right: .7rem; padding: .5rem; background: red; color: white; border-radius: 10px;"
+        >
+          Absolute content
+        </div>
+      }
+
+    </ng-content-card>
+
+  </article>
+
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <ng-expand label="Content Options">
+
+    <app-pg-input-selector name="card-header"
+      description="Content to show in the header"
+      [options]="['true', 'false']"
+      (changeFn)="handleHasHeaderInput($event)"
+    />
+
+    <app-pg-input-selector name="card-image"
+      description="Main image section"
+      [options]="['true', 'false']"
+      (changeFn)="handleHasImageInput($event)"
+    />
+
+    <app-pg-input-selector name="card-image hover class"
+      description="Smooth scale transition when hovering over the card"
+      [options]="['true', 'false']"
+      (changeFn)="handleHasImageHoverClassInput($event)"
+    />
+
+    <app-pg-input-selector name="card-body"
+      description="Main body content"
+      [options]="['true', 'false']"
+      (changeFn)="handleHasBodyInput($event)"
+    />
+
+    <app-pg-input-selector name="card-footer"
+      description="Footer content"
+      [options]="['true', 'false']"
+      (changeFn)="handleHasFooterInput($event)"
+    />
+
+    <app-pg-input-selector name="absolute-content"
+      description="Extra content with position absolute"
+      [options]="['true', 'false']"
+      (changeFn)="handleHasAbsoluteInput($event)"
+    />
+
+  </ng-expand>
+
+  <ng-expand label="Style & Behavior Inputs">
+
+    <app-pg-input-selector name="animation"
+      description="Entrance animation effect."
+      [options]="['translateY', 'fadeIn', 'none']"
+      (changeFn)="handleAnimationInput($event)"
+    />
+
+    <app-pg-input-selector name="hover"
+      description="Hover effect."
+      [options]="['scale', 'tone', 'both', 'none']"
+      (changeFn)="handleHoverInput($event)"
+    />
+
+    <app-pg-input-selector name="shadow"
+      description="Enable/disable card shadow."
+      [options]="['true', 'false']"
+      (changeFn)="handleShadowInput($event)"
+    />
+
+  </ng-expand>
+
+
+
+</section>
