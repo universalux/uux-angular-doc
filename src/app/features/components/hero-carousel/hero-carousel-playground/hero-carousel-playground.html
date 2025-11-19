@@ -1,1 +1,125 @@
-<p>hero-carousel-playground works!</p>
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer">
+    <ng-hero-carousel [slides]="slidesObject()"
+
+      [hasOverlay]="hasOverlay()"
+      [transitionTime]="transitionTime()"
+      [arrowsPlacement]="arrowsPlacement()"
+      [hasCounter]="hasCounter()"
+      [indicators]="indicators()"
+
+      [hasAutoplay]="hasAutoplay()"
+      [autoplayTime]="autoplayTime()"
+      [autoplayResumeTime]="autoplayResumeTime()"
+
+      [lang]="lang()"
+      [customAria]="customAria()"
+    >
+
+    </ng-hero-carousel>
+
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <ng-expand label="Style & Behavior Inputs">
+
+    <app-pg-input-selector name="hasOverlay"
+      description="Add an overlay on top of the background image."
+      [options]="['true', 'false']"
+      (changeFn)="handleHasOverlayInput($event)"
+    />
+
+    <app-pg-input-selector name="transitionTime"
+      type="number"
+      description="Time in ms of the transition between slides"
+      placeholder="800"
+      (changeFn)="handleTransitionTimeInput($event)"
+    />
+
+    <app-pg-input-selector name="arrowsPlacement"
+      description="Position of arrows (Auto: up for desktop, down for mobile)"
+      [options]="['auto', 'up', 'down' ]"
+      (changeFn)="handleArrowsPlacementInput($event)"
+    />
+
+    <app-pg-input-selector name="hasCounter"
+      description="Add a counter (Ex: 1/5)."
+      [options]="['false', 'true']"
+      (changeFn)="handleHasCounterInput($event)"
+    />
+
+    <app-pg-input-selector name="indicators"
+      description="Select the type of indicator for the slides"
+      [options]="['bars', 'circles', 'none' ]"
+      (changeFn)="handleIndicatorsInput($event)"
+    />
+
+  </ng-expand>
+
+  <ng-expand label="Autplay Inputs">
+
+    <app-pg-input-selector name="hasAutoplay"
+      description="Select whether you want autoplay or not"
+      [options]="['true', 'false']"
+      (changeFn)="handleHasAutoplayInput($event)"
+    />
+
+    <app-pg-input-selector name="autoplayTime"
+      type="number"
+      description="Time in ms in which the slide is automatically changed"
+      placeholder="7000"
+      (changeFn)="handleAutoplayTimeInput($event)"
+    />
+
+    <app-pg-input-selector name="autoplayResumeTime"
+      type="number"
+      description="	Time in ms to resume autoplay when it stops (e.g. clicking on a slide)"
+      placeholder="15000"
+      (changeFn)="handleAutoplayResumeTimeInput($event)"
+    />
+
+  </ng-expand>
+
+  <ng-expand label="Accessibility Inputs">
+
+    <app-pg-input-selector
+      name="lang"
+      description="Defines the language for built-in ARIA labels."
+      [options]="['en', 'es', 'it', 'fr', 'de']"
+      (changeFn)="handleLangInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="customAria"
+      description="Provides custom ARIA labels to override default accessibility text."
+      [options]="['null', 'custom aria example']"
+      (changeFn)="handleCustomAriaInput($event)"
+    />
+
+  </ng-expand>
+
+</section>

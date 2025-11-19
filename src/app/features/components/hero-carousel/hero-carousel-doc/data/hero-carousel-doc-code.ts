@@ -20,12 +20,12 @@ export const heroCarouselDocCode = {
         imports: [NgHeroCarousel],
         template: \`
           <ng-hero-carousel
-            [slides]="items()"
+            [slides]="slidesObject()"
           />
         \`
       })
       class App {
-        items = signal<HeroCarouselItem[]>([
+        slidesObject = signal<HeroCarouselItem[]>([
         {
           image_url: 'img1.jpg',
           title: 'First Slide',
