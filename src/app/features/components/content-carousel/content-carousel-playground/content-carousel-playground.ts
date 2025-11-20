@@ -9,8 +9,6 @@ import { PgInputSelector } from "../../shared/playground/pg-input-selector/pg-in
 type ContentCarouselAdvanceMode = 'single' |'page';
 type ContentCarouselArrowStyle = 'minimal' |'solid';
 
-
-
 @Component({
   selector: 'app-content-carousel-playground',
   imports: [NgContentCarousel, ContentCarouselItemDirective, NgSimpleButton, PgShowCodeIcon, CodeBlock, NgExpand, PgInputSelector],
@@ -19,6 +17,22 @@ type ContentCarouselArrowStyle = 'minimal' |'solid';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContentCarouselPlayground {
+
+  // Content to render
+
+  contentToRender = signal<string[]>([
+    'Content 1',
+    'Content 2',
+    'Content 3'
+  ]);
+
+  extraContent = signal<string[]>([
+    'Content 4',
+    'Content 5',
+    'Content 6',
+    'Content 7'
+  ]);
+
   // ----- Component inputs -----
 
   // Style & Behavior Inputs
@@ -68,6 +82,15 @@ export class ContentCarouselPlayground {
       this.currentCode.set(`
         <ng-content-carousel ${attrString ? ' \n' + attrString : ''}
         >
+          // We recomend you using "contentCarouselItem" as a container
+          <div contentCarouselItem style="width: 200px;">
+            <div>
+              Content of item 1...
+            </div>
+          </div>
+
+          //More items...
+
         </ng-content-carousel>
 
       `);
@@ -111,8 +134,7 @@ export class ContentCarouselPlayground {
       this.reduceItems.set(false);
       this.forceReload();
     }
-  }
-
+  };
 
   // ACCESSIBILITY INPUT OPTIONS
 
