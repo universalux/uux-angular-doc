@@ -59,6 +59,11 @@ ng-link-button.playgroundButton.shadowHover{
 }
 
 .clickedModal__content ng-simple-button{
+  margin-top: 1rem;
   --simple-button-bg: var(--color-primary-trans);
   --simple-button-hover-bg: var(--color-primary);
+  --simple-button-color: var(--color-bg);
+  --simple-button-padding: .7rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
 }

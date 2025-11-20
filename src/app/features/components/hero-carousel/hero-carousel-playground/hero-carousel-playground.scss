@@ -5,4 +5,20 @@
 
 ng-hero-carousel{
   height: 500px;
+  --carousel-text-color: var(--color-light);
+}
+
+.slideForExample{
+  width: 100%;
+  display: flex;
+  justify-content:
+  center;
+  margin-top: 2rem;
+}
+
+.slideForExample ng-simple-button{
+  --simple-button-hover-bg: var(--color-primary-trans);
+  --simple-button-bg: var(--color-primary);
+  --simple-button-color: var(--color-light);
+  font-size: 1.2rem;
 }

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
-import { HeroCarouselCustomAria, HeroCarouselItem, HeroCarouselLangs, NgHeroCarousel } from "ng-hero-carousel";
+import { HeroCarouselCustomAria, HeroCarouselItem, HeroCarouselLangs, NgHeroCarousel, SlideForDirective } from "ng-hero-carousel";
 import { NgSimpleButton } from "ng-simple-button";
 import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
 import { CodeBlock } from "@app/shared/ui/code-block/code-block";
@@ -12,7 +12,7 @@ type HeroCarouselIndicators = 'bars'| 'circles' | 'none';
 
 @Component({
   selector: 'app-hero-carousel-playground',
-  imports: [NgHeroCarousel, NgSimpleButton, PgShowCodeIcon, CodeBlock, NgExpand, PgInputSelector],
+  imports: [NgHeroCarousel, NgSimpleButton, PgShowCodeIcon, CodeBlock, NgExpand, PgInputSelector, SlideForDirective],
   templateUrl: './hero-carousel-playground.html',
   styleUrl: './hero-carousel-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -29,13 +29,13 @@ export class HeroCarouselPlayground {
     },
     {
       image_url: 'images/examples/ng-hero-carousel-slides/ng-hero-carousel_slide-2.webp',
-      title: 'Second Slide',
-      subtitle: '2nd slide subtitle'
+      title: 'ng-template + slideForDirective',
+      subtitle: 'Here is an example of a button added as slide custom content'
     },
     {
       image_url: 'images/examples/ng-hero-carousel-slides/ng-hero-carousel_slide-3.webp',
-      title: 'Third Slide',
-      subtitle: '3nd slide subtitle'
+      title: 'ng-template + #outerContent',
+      subtitle: 'You can also add custom content that remains visible across all slides (see doc)'
     },
   ]);
 

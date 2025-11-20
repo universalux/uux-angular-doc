@@ -3,7 +3,7 @@
 }
 
 ng-menu-toggle.playground{
-  --menu-toggle-color: white;
+  --menu-toggle-color: var(--color-fg);
 }
 
 .simulatedMenu__container{
@@ -11,13 +11,11 @@ ng-menu-toggle.playground{
   background-color: var(--color-fg);
   margin-top: .5rem;
   color: var(--color-bg);
-  // width: 0;
   transition: transform .3s ease-in-out, margin .3s ease-in-out;
   transform: scaleY(0);
 }
 
 .simulatedMenu__container.isOpen{
-  // width: 126px;
   transform: scaleY(1);
   margin-top: 1rem;
 }
@@ -35,5 +33,4 @@ ng-menu-toggle.playground{
   flex-direction: column;
   gap: 0;
   width: fit-content;
-  // min-height: 186px;
 }
