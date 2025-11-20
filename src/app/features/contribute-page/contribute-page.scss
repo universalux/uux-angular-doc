@@ -10,7 +10,6 @@
   text-wrap: pretty;
   text-align: center;
   font-size: 1.2rem;
-  // letter-spacing: 1.3px;
   margin: 2rem 0 .5rem;
 }
 
@@ -42,6 +41,11 @@ ng-content-card {
 ng-content-card [card-header]{
   display: flex;
   justify-content: center;
+  min-height: 150px;
+}
+
+ng-content-card [card-header] img{
+  width: 70px;
 }
 
 ng-content-card [card-footer]{
@@ -84,43 +88,53 @@ ng-content-card [card-footer]{
 }
 
 .contributePage__repositoryLink{
-  max-width: 150px;
-  min-width: 50px;
-  width: 100%;
+  min-width: 129px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .contributePage__repositoryLink:hover{
   transform: scale(1.05);
 }
 
-.repository__imageContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
 
-.repository__imageContainer svg{
+.contributePage__repositoryLink svg{
   width: 100%;
-  max-width: 100px;
-  min-width: 50px;
+  max-width: 90px;
+  min-width: 40px;
   fill: var(--color-fg);
 }
 
 .repoDescription{
   background-color: var(--color-fg);
   color: var(--color-bg);
-  padding: 1rem;
   width: 100%;
-  text-align: center;
+  height: 0;
   max-width: 700px;
   margin: 2rem auto 0;
   font-size: 1rem;
   border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: height .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.repoDescription.visible{
+  height: 80px;
+  opacity: 1;
+}
+
+.repoDescription p{
+  padding: 1rem;
+}
+
+@media screen and (max-width: 600px ) {
+  .repoDescription{
+    display: none;
+  }
 }

@@ -10,7 +10,7 @@
       rel="noreferrer noopener"
       class="contributePage__optionLink"
     >
-      <ng-content-card>
+      <ng-content-card animation="none">
         <section card-header>
           <img [src]="option.icon" [alt]="option.alt">
         </section>
@@ -32,12 +32,10 @@
 <div class="contributePage__repositoriesContainer">
   <section class="contributePage__repositories">
     @for (repository of repositories(); track $index) {
-      <div class="contributePage__repositoryLink">
-        <a
+        <a class="contributePage__repositoryLink"
           [href]="repository.url"
           target="_blank"
           rel="noreferrer noopener"
-          class="repository__imageContainer"
           (mouseenter)="currentDescription.set(repository.description)"
           (mouseleave)="currentDescription.set(null)"
         >
@@ -47,11 +45,12 @@
           </svg>
           <h3>{{repository.name}}</h3>
         </a>
-      </div>
     }
   </section>
-  @if (currentDescription()) {
-    <div class="repoDescription">{{currentDescription()}}</div>
-  }
+
+  <div class="repoDescription" [class.visible]="currentDescription()">
+    <p>{{currentDescription()}}</p>
+  </div>
+
 </div>
 

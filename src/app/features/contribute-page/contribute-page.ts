@@ -48,7 +48,7 @@ export class ContributePage {
   repositories = signal<Repositories[]>([
     {
       name: 'uux-angular-doc',
-      description: 'Documentation and interactive playgrounds for the UniversalUX Angular component library (this app).',
+      description: 'Documentation and interactive playgrounds for the Universal UX Angular component library (this app).',
       url: 'https://github.com/universalux/uux-angular-doc'
     },
     {
