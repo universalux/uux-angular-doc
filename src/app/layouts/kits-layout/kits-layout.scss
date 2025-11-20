@@ -1,3 +1,4 @@
+
 @use '../../shared/styles/scrollbar' as *;
 
 :host{
@@ -11,24 +12,20 @@
   @include custom-scrollbar;
 }
 
-.componentsLayout__header{
-  display: none;
-}
-
-.componentsLayout__container{
+.kitsLayout__container{
   min-height: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
 }
 
-.componentsLayout__main{
+.kitsLayout__main{
   background-color: var(--color-bg);
-  padding: 30px 20px 100px 20px;
+  padding: 1rem 20px 100px 20px;
 }
 
 @media screen and (max-width: 960px) {
 
-  .componentsLayout__container{
+  .kitsLayout__container{
     grid-template-columns: 1fr;
   }
 
@@ -36,4 +33,10 @@
     display: none;
   }
 
+}
+
+@media screen and (max-width: 720px) {
+  .kitsLayout__main{
+    padding-top: 0;
+  }
 }

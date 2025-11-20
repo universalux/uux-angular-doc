@@ -1,0 +1,140 @@
+:host{
+  display: block;
+  margin: 0 auto;
+  max-width: 1080px;
+  height: calc(100% + 200px);
+  padding: 1rem 20px 100px 20px;
+}
+
+.contributePage__subtitle{
+  text-wrap: pretty;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 2rem 0 .5rem;
+}
+
+.contributePage__options{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contributePage__optionLink{
+  margin: 1rem;
+  width: 300px;
+}
+
+ng-content-card {
+  --card-header-bg: var(--main-gradient);
+}
+
+.contributePage__optionLink:nth-child(2) ng-content-card {
+  --card-animation-delay: .2s;
+}
+
+.contributePage__optionLink:nth-child(3) ng-content-card {
+  --card-animation-delay: .3s;
+}
+
+ng-content-card [card-header]{
+  display: flex;
+  justify-content: center;
+  min-height: 150px;
+}
+
+ng-content-card [card-header] img{
+  width: 70px;
+}
+
+ng-content-card [card-footer]{
+  min-height: 80px;
+}
+
+.contributePage__formSelector{
+  padding: 1.1rem;
+  font-size: 1rem;
+  border-radius: .5rem;
+  margin: 0 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-wrap: pretty;
+}
+
+.contributePage__formSelector a{
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.contributePage__formSelector a:hover{
+  color: var(--color-secondary);
+}
+
+.contributePage__repositoriesContainer{
+  min-height: calc(100% + 250px);
+}
+
+.contributePage__repositories{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 3rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.contributePage__repositoryLink{
+  min-width: 129px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contributePage__repositoryLink:hover{
+  transform: scale(1.05);
+}
+
+
+.contributePage__repositoryLink svg{
+  width: 100%;
+  max-width: 90px;
+  min-width: 40px;
+  fill: var(--color-fg);
+}
+
+.repoDescription{
+  background-color: var(--color-fg);
+  color: var(--color-bg);
+  width: 100%;
+  height: 0;
+  max-width: 700px;
+  margin: 2rem auto 0;
+  font-size: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: height .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.repoDescription.visible{
+  height: 80px;
+  opacity: 1;
+}
+
+.repoDescription p{
+  padding: 1rem;
+}
+
+@media screen and (max-width: 600px ) {
+  .repoDescription{
+    display: none;
+  }
+}
