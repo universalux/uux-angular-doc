@@ -22,6 +22,7 @@ import { ContentCarouselPlayground } from './features/components/content-carouse
 import { ContentCarouselDoc } from './features/components/content-carousel/content-carousel-doc/content-carousel-doc';
 import { ScrollNavPlayground } from './features/components/scroll-nav/scroll-nav-playground/scroll-nav-playground';
 import { ScrollNavDoc } from './features/components/scroll-nav/scroll-nav-doc/scroll-nav-doc';
+import { ContributePage } from './features/contribute-page/contribute-page';
 
 export const routes: Routes = [
   {
@@ -29,7 +30,7 @@ export const routes: Routes = [
     component: MainLayout,
     children: [
       { path: "", component: HomePage },
-      { path: "contribute", component: HomePage },
+      { path: "contribute", component: ContributePage },
     ],
   },
   {
@@ -189,7 +190,6 @@ export const routes: Routes = [
       },
     ]
   },
-
   {
     path: "kits",
     component: KitsLayout,
