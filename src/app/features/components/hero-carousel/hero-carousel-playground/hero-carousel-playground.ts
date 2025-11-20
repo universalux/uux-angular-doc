@@ -91,6 +91,20 @@ export class HeroCarouselPlayground {
       this.currentCode.set(`
         <ng-hero-carousel [slides]=slidesObject() ${attrString ? ' \n' + attrString : ''}
         >
+          // You can add custom content for each slide this way
+          <ng-template [slideFor]="0">
+            <button>
+                Button in first slide
+            </button>
+          </ng-template>
+
+          // Also, You can add custom content that remains visible across all slides
+          <ng-template #outerContent>
+            <button style="position: absolute; top: 1rem; right: 1.5rem;">
+                X
+            </button>
+          </ng-template>
+
         </ng-hero-carousel>
 
       `);

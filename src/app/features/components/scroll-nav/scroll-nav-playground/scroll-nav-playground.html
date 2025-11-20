@@ -1,1 +1,113 @@
-<p>scroll-nav-playground works!</p>
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer">
+
+  @if (reloadComponent()) {
+  <ng-scroll-nav
+
+    [scrollStep]="scrollStep()"
+    [scrollBehavior]="scrollBehavior()"
+
+    [lang]="lang()"
+    [customAria]="customAria()"
+  >
+    <ng-link-button>
+      THIS IS LINK 1
+    </ng-link-button>
+
+    <ng-link-button>
+      LINK 2
+    </ng-link-button>
+
+    <ng-link-button>
+      ANOTHER LINK 3
+    </ng-link-button>
+
+    @if (!reduceItems()) {
+      <ng-link-button>
+        HERE IS LINK 4
+      </ng-link-button>
+
+      <ng-link-button>
+        A 5TH LINK
+      </ng-link-button>
+
+      <ng-link-button>
+        LINK 6
+      </ng-link-button>
+
+      <ng-link-button>
+        LAST LINK 7
+      </ng-link-button>
+    }
+
+  </ng-scroll-nav>
+  }
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <ng-expand label="Style & Behavior Inputs">
+
+    <app-pg-input-selector name="scrollStep"
+      type="number"
+      description="Pixels that the scroll moves when you press an arrow."
+      placeholder="150"
+      (changeFn)="handleScrollStepInput($event)"
+    />
+
+    <app-pg-input-selector name="scrollBehavior"
+      description="Defines the scroll behavior."
+      [options]="['smooth', 'auto' ]"
+      (changeFn)="handleScrollBehaviorInput($event)"
+    />
+
+    <app-pg-input-selector name="Force no overflow"
+      description="Force no overflow reducing items to 3 to hide arrows when content fits"
+      [options]="['false', 'true']"
+      (changeFn)="handleForceNoOverflow($event)"
+    />
+
+  </ng-expand>
+
+  <ng-expand label="Accessibility Inputs">
+
+    <app-pg-input-selector
+      name="lang"
+      description="Defines the language for built-in ARIA labels."
+      [options]="['en', 'es', 'it', 'fr', 'de']"
+      (changeFn)="handleLangInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="customAria"
+      description="Provides custom ARIA labels to override default accessibility text."
+      [options]="['null', 'custom aria example']"
+      (changeFn)="handleCustomAriaInput($event)"
+    />
+
+  </ng-expand>
+
+</section>
