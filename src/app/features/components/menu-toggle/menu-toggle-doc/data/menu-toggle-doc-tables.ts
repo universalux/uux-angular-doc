@@ -1,9 +1,9 @@
 import { DataTableDataList } from '@app/shared/ui/data-table/data-table.types';
-import { docTableHeaders } from '@app/core/data/docs.data';
+import { componentDocTableHeaders } from '@app/core/data/component-docs.data';
 
 export const menuToggleDocTables = {
   ioTable_1: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "isOpenSignal",
@@ -13,7 +13,7 @@ export const menuToggleDocTables = {
     ]
   },
   ioTable_2: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "type",
@@ -49,7 +49,7 @@ export const menuToggleDocTables = {
 
   },
   ioTable_3: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "tabIndex",
@@ -69,7 +69,7 @@ export const menuToggleDocTables = {
     ]
   },
   styTable_1: {
-    tableHeader: docTableHeaders.varTableHeader,
+    tableHeader: componentDocTableHeaders.varTableHeader,
     tableRows: [
       [
         "--menu-toggle-size",
@@ -84,7 +84,7 @@ export const menuToggleDocTables = {
     ]
   },
   accTable_1: {
-    tableHeader: docTableHeaders.langTableHeader,
+    tableHeader: componentDocTableHeaders.langTableHeader,
     tableRows: [
       [
         "English (default)",

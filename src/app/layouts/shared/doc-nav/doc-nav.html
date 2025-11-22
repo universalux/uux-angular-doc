@@ -1,9 +1,9 @@
 <nav class="docNav">
-  @for (section of docService.docSections(); track $index) {
+  @for (section of docSections(); track $index) {
     <ng-link-button
-      routerLink="documentation"
+      [routerLink]="type() === 'component' ? 'documentation' : kitName()!"
       [relativeTo]="activatedRoute"
-      [fragment]="component() + '-' + section.code"
+      [fragment]="name() + '-' + section.code"
       [activatedRoute]="false"
       type="minimal"
       [square]="true"

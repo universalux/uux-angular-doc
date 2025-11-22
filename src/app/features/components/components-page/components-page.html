@@ -1,8 +1,8 @@
 <h1 class="pageTitle__gradient">Component List</h1>
 
-@if (components()) {
+@if (componentService.componentList()) {
   <section class="componentsPage__cardList">
-  @for (component of components(); track $index) {
+  @for (component of componentService.componentList(); track $index) {
     <a [routerLink]="component.url" class="cardList__itemLink">
       <ng-content-card hover="tone">
         <section card-image>

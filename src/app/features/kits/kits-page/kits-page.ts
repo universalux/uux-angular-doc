@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CatalogItem } from '@app/core/data/data.types';
-import { kitList } from '@app/core/data/kits.data';
+import { KitService } from '@app/core/services/kit-service/kit-service';
 import { NgContentCard } from 'ng-content-card';
 
 
@@ -13,5 +12,5 @@ import { NgContentCard } from 'ng-content-card';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class KitsPage {
-  kits = signal<CatalogItem[]>(kitList);
+  kitService = inject(KitService);
 }

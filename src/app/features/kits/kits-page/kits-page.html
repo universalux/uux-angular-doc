@@ -1,8 +1,8 @@
 <h1 class="pageTitle__gradient">Kit List</h1>
 
-@if (kits()) {
+@if (kitService.kitList()) {
 <section class="kitsPage__cardList">
-  @for (kit of kits(); track $index) {
+  @for (kit of kitService.kitList(); track $index) {
   <a
     carouselItem
     [routerLink]="kit.url"

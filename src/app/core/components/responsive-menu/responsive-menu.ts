@@ -3,6 +3,7 @@ import { CatalogItem } from '@app/core/data/data.types';
 import { MenuService } from '@app/core/services/menu-service/menu-service';
 import { NgMenuToggle } from 'ng-menu-toggle';
 import { NgLinkButton } from "ng-link-button";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-responsive-menu',
@@ -14,4 +15,6 @@ import { NgLinkButton } from "ng-link-button";
 export class ResponsiveMenu {
   menuService = inject(MenuService);
   menuItems = input<CatalogItem[]>();
+
+  activatedRoute = inject(ActivatedRoute);
 }

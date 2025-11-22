@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { componentList } from '@app/core/data/components.data';
-import { CatalogItem } from '@app/core/data/data.types';
+import { ComponentService } from '@app/core/services/component-service/component-service';
 import { NgContentCard } from 'ng-content-card';
 
 @Component({
@@ -12,5 +11,5 @@ import { NgContentCard } from 'ng-content-card';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentsPage {
-  components = signal<CatalogItem[]>(componentList);
+  componentService = inject(ComponentService);
 }

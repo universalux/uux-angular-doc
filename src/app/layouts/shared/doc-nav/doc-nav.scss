@@ -1,14 +1,14 @@
 :host{
   display: block;
   height: 100%;
-  width: 200px;
+  width: var(--doc-nav-width, 200px);
 }
 
 .docNav{
   // position: relative;
   padding: 1rem .5rem .5rem 1rem;
   position: sticky;
-  top: 48px;
+  top: var(--doc-nav-sticky-top, 48px);
   left: 0;
 }
 

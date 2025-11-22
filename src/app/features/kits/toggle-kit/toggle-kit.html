@@ -1,0 +1,76 @@
+<!------------ INTRODUCTION ------------>
+<doc-section-title sectionCode="intro" type="kit"/>
+
+<p>
+  <em>ng-toggle-kit</em> is a <em>standalone, reusable and customizable components kit</em> for Angular 18, 19 and 20.
+</p>
+<p>
+  It is designed to work with <em>signals</em> and Angular <em>zoneless</em>, providing a lightweight, flexible, and accessible menu and theme toggle buttons. It is also fully compatible with <em>SSR</em>, <em>CSR</em> and <em>prerender</em>.
+</p>
+
+<p>The main purpose of this kit is to allow you to obtain different components with a single installation.</p>
+
+<app-divider/>
+
+<doc-section-title sectionCode="incl" type="kit"/>
+
+@if (includedComponents()) {
+<ng-content-carousel advanceMode="single" [hideArrowsOnEdges]="false">
+  @for (component of includedComponents(); track $index) {
+      <ng-link-button
+        contentCarouselItem
+        [routerLink]="component.url"
+        [aria-label]="'Go to ' + component.name + ' page'" hover="none" type="minimal"
+      >
+        <ng-content-card hover="tone">
+          <section card-image>
+            <img class="scaleHover" [src]="component.image" [alt]="component.name + ' image'">
+          </section>
+          <section card-footer>
+            {{component.name}}
+          </section>
+        </ng-content-card>
+      </ng-link-button>
+  }
+</ng-content-carousel>
+}
+
+<app-divider/>
+
+<doc-section-title sectionCode="inst" type="kit"/>
+
+<p>If you want to install the latest version (currently 20):</p>
+
+<app-code-block
+  [language]="docCode().installationCode_1.language"
+  [code]="docCode().installationCode_1.code"
+/>
+
+<p>Angular 19:</p>
+
+<app-code-block
+  [language]="docCode().installationCode_2.language"
+  [code]="docCode().installationCode_2.code"
+/>
+
+<p>Angular 18:</p>
+
+<app-code-block
+  [language]="docCode().installationCode_3.language"
+  [code]="docCode().installationCode_3.code"
+/>
+
+<app-divider/>
+
+<doc-section-title sectionCode="imp" type="kit"/>
+
+<p>You can import components of this kit lke this:</p>
+
+<app-code-block
+  [language]="docCode().importCode_1.language"
+  [code]="docCode().importCode_1.code"
+/>
+
+<div class="note">
+  <p>See the documentation for each component to learn more about the elements in the example.</p>
+</div>

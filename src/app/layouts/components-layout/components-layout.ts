@@ -1,10 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AppFooter } from "@app/core/components/app-footer/app-footer";
 import { Router, RouterOutlet } from '@angular/router';
-import { componentList } from '@app/core/data/components.data';
-import { CatalogItem } from '@app/core/data/data.types';
 import { AppAside } from "../shared/app-aside/app-aside";
 import { ScrollService } from '@app/core/services/scroll-service/scroll-service';
+import { ComponentService } from '@app/core/services/component-service/component-service';
 
 @Component({
   selector: 'app-components-layout',
@@ -14,12 +13,12 @@ import { ScrollService } from '@app/core/services/scroll-service/scroll-service'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentsLayout {
-  components = signal<CatalogItem[]>(componentList);
 
+  componentService = inject(ComponentService);
   router = inject(Router);
   scrollService = inject(ScrollService);
 
   ngAfterViewInit() {
     this.scrollService.enableAnchorNavigation('app-components-layout');
-  }
+  };
 }

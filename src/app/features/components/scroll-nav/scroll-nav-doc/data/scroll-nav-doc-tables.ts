@@ -1,9 +1,9 @@
 import { DataTableDataList } from '@app/shared/ui/data-table/data-table.types';
-import { docTableHeaders } from '@app/core/data/docs.data';
+import { componentDocTableHeaders } from '@app/core/data/component-docs.data';
 
 export const scrollNavDocTables = {
   ioTable_1: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "scrollStep",
@@ -18,7 +18,7 @@ export const scrollNavDocTables = {
     ]
   },
   ioTable_2: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "lang",
@@ -33,7 +33,7 @@ export const scrollNavDocTables = {
     ]
   },
   styTable_1: {
-    tableHeader: docTableHeaders.varTableHeader,
+    tableHeader: componentDocTableHeaders.varTableHeader,
     tableRows: [
       [
         "--scroll-nav-bg",
@@ -63,7 +63,7 @@ export const scrollNavDocTables = {
     ]
   },
   accTable_1: {
-    tableHeader: docTableHeaders.propsTableHeader,
+    tableHeader: componentDocTableHeaders.propsTableHeader,
     tableRows: [
       [
         "globalAriaLabel",

@@ -16,7 +16,12 @@
   <ul>
     @for (component of menuItems(); track $index) {
           <li>
-            <ng-link-button type="minimal" [routerLink]="component.url" [ariaLabel]="'Go to ' + component.name + ' page'">
+            <ng-link-button
+              type="minimal"
+              [routerLink]="component.url"
+              [relativeTo]="activatedRoute"
+              [ariaLabel]="'Go to ' + component.name + ' page'"
+            >
               {{component.name}}
             </ng-link-button>
           </li>

@@ -1,9 +1,9 @@
 import { DataTableDataList } from '@app/shared/ui/data-table/data-table.types';
-import { docTableHeaders } from '@app/core/data/docs.data';
+import { componentDocTableHeaders } from '@app/core/data/component-docs.data';
 
 export const heroCarouselDocTables = {
   funcTable_1: {
-    tableHeader: docTableHeaders.objTableHeader,
+    tableHeader: componentDocTableHeaders.objTableHeader,
     tableRows: [
       ['image_url', 'Image URL for the slide', 'string', 'No'],
       ['backgroundColor', '	Background color or gradient for the slide, if needed', 'string', 'No'],
@@ -12,7 +12,7 @@ export const heroCarouselDocTables = {
     ],
   },
   ioTable_1: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "[hasOverlay]",
@@ -42,7 +42,7 @@ export const heroCarouselDocTables = {
     ]
   },
   ioTable_2: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "[hasAutoplay]",
@@ -62,7 +62,7 @@ export const heroCarouselDocTables = {
     ]
   },
   ioTable_3: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "lang",
@@ -77,7 +77,7 @@ export const heroCarouselDocTables = {
     ]
   },
   styTable_1: {
-    tableHeader: docTableHeaders.varTableHeader,
+    tableHeader: componentDocTableHeaders.varTableHeader,
     tableRows: [
       [
         "--carousel-width",
@@ -167,7 +167,7 @@ export const heroCarouselDocTables = {
     ]
   },
   accTable_1: {
-    tableHeader: docTableHeaders.propsTableHeader,
+    tableHeader: componentDocTableHeaders.propsTableHeader,
     tableRows: [
       [
         "hostAriaLabel",

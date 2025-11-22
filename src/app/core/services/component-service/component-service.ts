@@ -1,6 +1,8 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { CatalogItem } from '@app/core/data/data.types';
 import { filter } from 'rxjs';
+import { componentList } from '@app/core/data/components.data';
 
 @Injectable({
   providedIn: 'root'
@@ -8,16 +10,16 @@ import { filter } from 'rxjs';
 export class ComponentService {
 
   router = inject(Router);
-
+  componentList = signal<CatalogItem[]>(componentList);
   currentComponent = signal<string | null>(null);
   isDoc = signal<boolean>(false);
   isPlayground = signal<boolean>(true);
 
   constructor() {
-    // Detectar ruta inicial
+    // Detecting initial route
     this.updateFromUrl(this.router.url);
 
-    // Escuchar navegaciones
+    // Listen navigations
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -25,6 +27,7 @@ export class ComponentService {
       });
   }
 
+  // Determine current component and doc or pg section by url
   private updateFromUrl(url: string): void {
     const cleanUrl = url.split('#')[0];
     const segments = cleanUrl.split('/').filter(Boolean);
@@ -41,5 +44,5 @@ export class ComponentService {
       this.isPlayground.set(true);
     }
 
-  }
+  };
 }

@@ -23,6 +23,10 @@ import { ContentCarouselDoc } from './features/components/content-carousel/conte
 import { ScrollNavPlayground } from './features/components/scroll-nav/scroll-nav-playground/scroll-nav-playground';
 import { ScrollNavDoc } from './features/components/scroll-nav/scroll-nav-doc/scroll-nav-doc';
 import { ContributePage } from './features/contribute-page/contribute-page';
+import { ToggleKit } from './features/kits/toggle-kit/toggle-kit';
+import { KitLayout } from './layouts/kit-layout/kit-layout';
+import { ButtonKit } from './features/kits/button-kit/button-kit';
+import { UuxKit } from './features/kits/uux-kit/uux-kit';
 
 export const routes: Routes = [
   {
@@ -195,6 +199,15 @@ export const routes: Routes = [
     component: KitsLayout,
     children: [
       {path: "", component: KitsPage},
+      {
+        path: "",
+        component: KitLayout,
+        children: [
+          {path: "toggle-kit", component: ToggleKit},
+          {path: "button-kit", component: ButtonKit},
+          {path: "uux-kit", component: UuxKit},
+        ]
+      },
     ]
   },
 ];

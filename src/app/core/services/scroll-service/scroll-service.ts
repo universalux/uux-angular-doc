@@ -14,7 +14,9 @@ export class ScrollService {
       | 'app-components-layout'
       | 'app-kits-layout' = 'app-components-layout'
   ) {
-    const margin = layout === 'app-main-layout' ? 0 : 64;
+    let margin : number = 0;
+    if(layout === 'app-components-layout') margin = 64;
+    if(layout === 'app-kits-layout') margin = 20;
 
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
