@@ -1,9 +1,9 @@
 import { DataTableDataList } from '@app/shared/ui/data-table/data-table.types';
-import { docTableHeaders } from '@app/core/data/docs.data';
+import { componentDocTableHeaders } from '@app/core/data/component-docs.data';
 
 export const themeToggleDocTables = {
   ioTable_1: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "isDarkSignal",
@@ -13,7 +13,7 @@ export const themeToggleDocTables = {
     ]
   },
   ioTable_2: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "type",
@@ -38,7 +38,7 @@ export const themeToggleDocTables = {
     ]
   },
   ioTable_3: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "tabIndex",
@@ -58,7 +58,7 @@ export const themeToggleDocTables = {
     ]
   },
   styTable_1: {
-    tableHeader: docTableHeaders.varTableHeader,
+    tableHeader: componentDocTableHeaders.varTableHeader,
     tableRows: [
       [
         "--theme-toggle-size",
@@ -183,7 +183,7 @@ export const themeToggleDocTables = {
     ]
   },
   accTable_1: {
-    tableHeader: docTableHeaders.langTableHeader,
+    tableHeader: componentDocTableHeaders.langTableHeader,
     tableRows: [
       [
         "English (default)",

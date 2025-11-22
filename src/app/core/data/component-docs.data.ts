@@ -1,7 +1,7 @@
 import { DocSectionItem } from "./data.types";
 import { DataTableHeaders } from "@app/shared/ui/data-table/data-table.types";
 
-export const docSectionList : DocSectionItem[] = [
+export const componentDocSectionList : DocSectionItem[] = [
   {
     name: "Introduction",
     code: "intro"
@@ -32,7 +32,7 @@ export const docSectionList : DocSectionItem[] = [
   }
 ];
 
-export const docTableHeaders = {
+export const componentDocTableHeaders = {
   inputTableHeader : ["Input", "Description", "Default"],
   outputTableHeader : ["Output", "Description", "Default"],
   varTableHeader: ["Variable", "Description", "Default"],
@@ -42,4 +42,4 @@ export const docTableHeaders = {
   propsTableHeader: ['Property', 'Description']
 } as const satisfies DataTableHeaders;
 
-export type DocTableHeaders = typeof docTableHeaders;
+export type ComponentDocTableHeaders = typeof componentDocTableHeaders;

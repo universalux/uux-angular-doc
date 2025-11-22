@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, input, OnInit, signal } from '@angular/core';
+import { DocSectionItem } from '@app/core/data/data.types';
 import { ComponentService } from '@app/core/services/component-service/component-service';
 import { DocService } from '@app/core/services/doc-service/doc-service';
 
@@ -20,13 +21,24 @@ export class DocSectionTitle implements OnInit {
 
   sectionCode = input<string | null>(null);
   sectionName = signal<string | null>(null);
+  type = input<'component' | 'kit'>('component');
 
   ngOnInit(): void {
     this.getSectionData();
   }
 
   getSectionData(){
-    const sectionObj = this.docService.docSections().find(section => section.code === this.sectionCode());
+    let sections : DocSectionItem[] = [];
+
+    if(this.type() === 'component'){
+      sections = this.docService.componentDocSections();
+    };
+
+    if(this.type() === 'kit'){
+      sections = this.docService.kitDocSections();
+    };
+
+    const sectionObj = sections.find(section => section.code === this.sectionCode());
     if(!sectionObj) return;
     this.sectionName.set(sectionObj.name);
   }

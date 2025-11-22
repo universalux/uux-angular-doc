@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeFeatKits } from './home-feat-kits';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { kitList } from '@app/core/data/kits.data';
 
 describe('HomeFeatComponents', () => {
   let component: HomeFeatKits;
@@ -18,7 +17,6 @@ describe('HomeFeatComponents', () => {
 
     fixture = TestBed.createComponent(HomeFeatKits);
     component = fixture.componentInstance;
-    component.featuredKits.set(kitList);
     fixture.whenStable();
   });
 

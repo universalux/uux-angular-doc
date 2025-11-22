@@ -1,9 +1,8 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NgContentCarousel, ContentCarouselItemDirective } from 'ng-content-carousel';
-import { CatalogItem } from '@app/core/data/data.types';
 import { NgLinkButton } from "ng-link-button";
-import { kitList } from '@app/core/data/kits.data';
 import { NgContentCard } from 'ng-content-card';
+import { KitService } from '@app/core/services/kit-service/kit-service';
 
 @Component({
   selector: 'app-home-feat-kits',
@@ -13,5 +12,5 @@ import { NgContentCard } from 'ng-content-card';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeFeatKits {
-  featuredKits = signal<CatalogItem[] | null>(kitList);
+  kitService = inject(KitService);
 }

@@ -1,5 +1,5 @@
 <div class="kitsLayout__container">
-  <app-aside [menuItems]="components()"/>
+  <app-aside [menuItems]="kitService.kitList()"/>
   <main class="kitsLayout__main">
     <router-outlet/>
   </main>

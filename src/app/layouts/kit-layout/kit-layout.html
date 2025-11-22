@@ -1,0 +1,13 @@
+<div
+  class="kitLayout__content"
+  [class.separeFromAside]="kitService.currentKit()"
+  [class.docs]="kitService.currentKit()"
+>
+  @if (kitService.currentKit()) {
+    <h1>ng-{{kitService.currentKit()}}</h1>
+  }
+  <router-outlet/>
+</div>
+@if (kitService.currentKit()) {
+  <app-doc-nav [name]="kitService.currentKit()!" type="kit"/>
+}

@@ -1,15 +1,15 @@
 import { DataTableDataList } from '@app/shared/ui/data-table/data-table.types';
-import { docTableHeaders } from '@app/core/data/docs.data';
+import { componentDocTableHeaders } from '@app/core/data/component-docs.data';
 
 export const simpleButtonDocTables = {
   ioTable_1: {
-    tableHeader: docTableHeaders.outputTableHeader,
+    tableHeader: componentDocTableHeaders.outputTableHeader,
     tableRows: [
       ['onClick', 'Emits a MouseEvent when the button is clicked.', '-'],
     ],
   },
   ioTable_2: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         'type',
@@ -34,7 +34,7 @@ export const simpleButtonDocTables = {
     ],
   },
   ioTable_3: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         'ariaLabel',
@@ -55,7 +55,7 @@ export const simpleButtonDocTables = {
     ],
   },
   styTable_1: {
-    tableHeader: docTableHeaders.varTableHeader,
+    tableHeader: componentDocTableHeaders.varTableHeader,
     tableRows: [
       [
         '--simple-button-width',
@@ -94,7 +94,7 @@ export const simpleButtonDocTables = {
     ],
   },
   styTable_2: {
-    tableHeader: docTableHeaders.varTableHeader,
+    tableHeader: componentDocTableHeaders.varTableHeader,
     tableRows: [
       [
         "--simple-button-bg",
@@ -124,7 +124,7 @@ export const simpleButtonDocTables = {
     ]
   },
   styTable_3: {
-    tableHeader: docTableHeaders.varTableHeader,
+    tableHeader: componentDocTableHeaders.varTableHeader,
     tableRows: [
       [
         "--simple-button-hover-color",

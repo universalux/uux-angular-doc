@@ -1,9 +1,9 @@
 import { DataTableDataList } from '@app/shared/ui/data-table/data-table.types';
-import { docTableHeaders } from '@app/core/data/docs.data';
+import { componentDocTableHeaders } from '@app/core/data/component-docs.data';
 
 export const contentCardDocTables = {
   funcTable_1: {
-    tableHeader: docTableHeaders.slotsTableHeader,
+    tableHeader: componentDocTableHeaders.slotsTableHeader,
     tableRows: [
       [
         "card-header",
@@ -28,7 +28,7 @@ export const contentCardDocTables = {
     ]
   },
   ioTable_1: {
-    tableHeader: docTableHeaders.inputTableHeader,
+    tableHeader: componentDocTableHeaders.inputTableHeader,
     tableRows: [
       [
         "animation",
@@ -48,7 +48,7 @@ export const contentCardDocTables = {
     ]
   },
   styTable_1: {
-    tableHeader: docTableHeaders.varTableHeader,
+    tableHeader: componentDocTableHeaders.varTableHeader,
     tableRows: [
       [
         "--card-bg",

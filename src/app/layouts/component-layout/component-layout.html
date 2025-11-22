@@ -33,6 +33,6 @@
   <router-outlet/>
 </div>
 @if (componentService.isDoc()) {
-  <app-doc-nav [component]="componentService.currentComponent()!"/>
+  <app-doc-nav [name]="componentService.currentComponent()!"/>
 }
 

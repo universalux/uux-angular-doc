@@ -7,9 +7,9 @@
     </ng-link-button>
   </header>
 
-  @if (featuredKits()) {
+  @if (kitService.kitList()) {
   <ng-content-carousel advanceMode="single" [hideArrowsOnEdges]="false">
-    @for (kit of featuredKits(); track $index) {
+    @for (kit of kitService.kitList(); track $index) {
         <ng-link-button contentCarouselItem [routerLink]="kit.url" [aria-label]="'Go to ' + kit.name + ' page'" hover="none" type="minimal">
           <ng-content-card hover="tone">
             <section card-header>
