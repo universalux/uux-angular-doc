@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
@@ -34,5 +34,13 @@ export class ScrollService {
           }
         }
       });
+  };
+
+  activeSection = signal<string | null>(null);
+
+  updateActive(sectionId: string, isVisible: boolean) {
+    if (isVisible) {
+      this.activeSection.set(sectionId);
+    }
   }
 }

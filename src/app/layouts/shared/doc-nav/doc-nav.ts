@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DocSectionItem } from '@app/core/data/data.types';
 import { DocService } from '@app/core/services/doc-service/doc-service';
 import { KitService } from '@app/core/services/kit-service/kit-service';
+import { ScrollService } from '@app/core/services/scroll-service/scroll-service';
 import { NgLinkButton } from 'ng-link-button';
 
 @Component({
@@ -15,6 +16,7 @@ import { NgLinkButton } from 'ng-link-button';
 export class DocNav implements OnInit {
 
   activatedRoute = inject(ActivatedRoute);
+  scrollService = inject(ScrollService);
 
   name = input<string>();
   type = input<'component' |'kit'>('component');
