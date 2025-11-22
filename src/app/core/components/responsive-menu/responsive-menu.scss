@@ -19,13 +19,11 @@
   opacity: .5;
   z-index: 888;
 
-  // transition: opacity .3s ease-in-out, z-index .3s ease-in-out;
   transition: opacity .3s ease-in-out;
 }
 
 .resMenu__wrapper.hidden{
   transition: opacity .3s ease-in-out, z-index 0s .3s ease-in-out;
-  // transition: opacity .3s ease-in-out, z-index .3s ease-in-out;
   opacity: 0;
   z-index: -1;
 }

@@ -27,7 +27,6 @@ export class CodeBlock implements AfterViewInit, OnChanges, OnInit {
   dedentedCode = signal<string>('');
 
   dedentCode(){
-    // return dedent(this.code())
     if(this.code()){
       this.dedentedCode.set(dedent(this.code()!));
     }

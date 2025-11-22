@@ -8,6 +8,7 @@
     [routerLink]="kit.url"
     [aria-label]="'Go to ' + kit.name + ' page'"
     class="cardList__itemLink"
+    [class.uux]="kit.id === 'uux-kit'"
   >
     <ng-content-card hover="tone">
       <section card-header>

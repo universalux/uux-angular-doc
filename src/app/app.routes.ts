@@ -212,17 +212,3 @@ export const routes: Routes = [
   },
 ];
 
-// export const routes: Routes = [
-//   {path: "", component: MainLayout},
-
-//   {
-//     path: "components",
-//     component: ComponentsLayout,
-//     children: [
-//       {path: "menu-button", component: MainLayout},
-//       {path: "theme-toggle", component: MainLayout},
-//     ]
-//   },
-
-//   {path: "kits", component: ComponentsLayout},
-// ];

@@ -1,6 +1,5 @@
 @mixin custom-scrollbar {
   /* Firefox */
-  // scrollbar-width: thin;
   scrollbar-color: var(--color-fg) var(--color-bg);
 
   /* Chrome, Edge, Safari */

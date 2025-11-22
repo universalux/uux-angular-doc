@@ -25,7 +25,6 @@ export class ThemeService {
         effect(() => {
           const mode = this.isDark();
           document.documentElement.classList.toggle('light', !mode);
-          // this.setThemeColor(mode === 'light' ? '#ffffff' : '#000000');
           this.firstRender = false;
         })
       }
@@ -38,11 +37,5 @@ export class ThemeService {
     this.theme.set(this.theme() === 'dark' ? 'light' : 'dark');
   }
 
-  // private setThemeColor(color: string) {
-  //   let themeMeta = this.document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
-  //   if (themeMeta) {
-  //     themeMeta.setAttribute('content', color);
-  //   }
-  // }
 
 }

@@ -23,7 +23,6 @@
   display: flex;
   align-items: center;
 
-  // position: relative;
   position: sticky;
   top: 0;
   left: 0;
@@ -47,7 +46,6 @@ ng-scroll-nav{
 ng-scroll-nav ng-link-button{
   font-weight: 500;
 
-  // max-width: 156px;
   --link-button-width: 156px;
   --link-button-height: 100%;
   --link-button-padding: 16px;
@@ -60,7 +58,6 @@ ng-scroll-nav ng-link-button{
 
 ng-link-button ::ng-deep .linkButton.active{
   position: relative;
-  // border-bottom: 3px solid var(--color-primary);
 }
 
 ng-link-button ::ng-deep .linkButton::after {
@@ -83,7 +80,6 @@ ng-link-button ::ng-deep .linkButton.active::after {
 .componentLayout__content{
   height: 100%;
   grid-area: content;
-  // border: 1px solid #cdd653;
   min-width: 0;
 }
 
