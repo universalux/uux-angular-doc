@@ -3,7 +3,7 @@
 @if (componentService.componentList()) {
   <section class="componentsPage__cardList">
   @for (component of componentService.componentList(); track $index) {
-    <a [routerLink]="component.url" class="cardList__itemLink">
+    <a [routerLink]="component.url" class="cardList__itemLink" [aria-label]="'Go to ' + component.name + ' page' ">
       <ng-content-card hover="tone">
         <section card-image>
           <img class="scaleHover" [src]="component.image" [alt]="'Universal UX ' + component.name + ' cover image'">

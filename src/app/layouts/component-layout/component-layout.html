@@ -1,7 +1,6 @@
 <ng-scroll-nav [scrollStep]="160">
   <ng-link-button
     routerLink="playground"
-    [relativeTo]="activatedRoute"
     [square]="true"
   >
     PLAYGROUND
@@ -9,7 +8,6 @@
 
   <ng-link-button
     routerLink="documentation"
-    [relativeTo]="activatedRoute"
     [square]="true"
   >
     DOCUMENTATION
@@ -23,6 +21,10 @@
   </ng-link-button>
 </ng-scroll-nav>
 
+@if (componentService.isDoc()) {
+  <app-doc-nav [name]="componentService.currentComponent()!"/>
+}
+
 <div
   class="componentLayout__content"
   [class.separeFromAside]="componentService.isDoc()"
@@ -32,7 +34,5 @@
   <h1>ng-{{componentService.currentComponent()}}</h1>
   <router-outlet/>
 </div>
-@if (componentService.isDoc()) {
-  <app-doc-nav [name]="componentService.currentComponent()!"/>
-}
+
 

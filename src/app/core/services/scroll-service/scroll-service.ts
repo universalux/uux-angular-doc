@@ -25,6 +25,7 @@ export class ScrollService {
         if (fragment) {
           const el = document.getElementById(fragment);
           const container = document.querySelector(layout);
+          el?.focus();
           if (el && container) {
             container.scrollTo({
               top: el.offsetTop - margin,

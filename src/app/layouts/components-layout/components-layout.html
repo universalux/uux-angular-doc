@@ -1,6 +1,6 @@
 <div class="componentsLayout__container">
   <app-aside [menuItems]="componentService.componentList()"/>
-  <main class="componentsLayout__main">
+  <main class="componentsLayout__main" [tabIndex]="-1">
     <router-outlet/>
   </main>
 </div>

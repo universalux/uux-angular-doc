@@ -1,7 +1,5 @@
 <app-header />
 @if (menuService.renderMenu()) {
-  <app-responsive-menu
-    [menuItems]="menuService.menuItems()"
-  />
+  <app-responsive-menu/>
 }
 <router-outlet />
