@@ -17,6 +17,10 @@
   vertical-align: top;
 }
 
+.cardList__itemLink.uux{
+  flex-basis: calc(80%);
+}
+
 ng-content-card{
   width: 100%;
   transition: color 0s ease-in-out;
@@ -38,6 +42,10 @@ ng-content-card [card-footer]{
 
 @media screen and (max-width: 670px) {
   .cardList__itemLink{
+    flex-basis: 100%;
+  }
+
+  .cardList__itemLink.uux{
     flex-basis: 100%;
   }
 }

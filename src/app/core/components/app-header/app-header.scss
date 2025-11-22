@@ -29,26 +29,12 @@ ng-link-button.brandLink svg{
   fill: var(--color-fg);
 }
 
-.leftHeader__brand{
-  display: flex;
-  align-items: center;
-  padding: .5rem 1rem;
-  border-radius: 1.5rem;
-}
-
-.leftHeader__brand:hover{
-  background-color: var(--color-bg-trans);
-}
-
-.leftHeader__brand svg{
-  fill: var(--color-fg);
-}
-
 .leftHeader__navList{
   height: 100%;
   display: flex;
   align-items: center;
   column-gap: .3rem;
+  color: var(--color-fg);
 }
 
 ng-link-button{
@@ -83,6 +69,7 @@ ng-link-button{
 
 ng-link-button.extLink{
   --link-button-padding: .5rem 1rem;
+  --link-button-color: var(--color-fg);
 }
 
 ng-link-button.extLink .linkIcon{
@@ -93,7 +80,7 @@ ng-theme-toggle{
   --theme-toggle-hover-transition: 0s linear;
   --theme-toggle-color-transition: 0s linear;
 
-  --theme-toggle-color: var(--color-fg);
+  --theme-toggle-color: var(--color-fb);
   --theme-toggle-size: 40px;
   --theme-toggle-padding: 8px;
   --theme-toggle-bg: transparent;

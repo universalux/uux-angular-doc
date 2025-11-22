@@ -16,7 +16,7 @@
 <doc-section-title sectionCode="incl" type="kit"/>
 
 @if (componentService.componentList()) {
-<ng-content-carousel advanceMode="single" [hideArrowsOnEdges]="false">
+<ng-content-carousel advanceMode="single" [hideArrowsOnEdges]="false" advanceMode="page">
   @for (component of componentService.componentList(); track $index) {
       <ng-link-button
         contentCarouselItem
