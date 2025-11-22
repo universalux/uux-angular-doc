@@ -1,0 +1,30 @@
+:host{
+  display: block;
+}
+
+ng-link-button.carousel-item{
+  --link-button-padding: 0;
+  --link-button-bg: transparent;
+  --link-button-focus-ring: 3px solid var(--color-fg);
+  --link-button-radius: 1rem;
+}
+
+ng-content-card{
+  width: 250px;
+}
+
+ng-content-card [card-footer]{
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1100px) {
+  ng-content-card{
+    min-width: 220px;
+    height: auto;
+  }
+
+  ng-content-card [card-image]{
+    min-height: unset !important;
+    height: auto;
+  }
+}

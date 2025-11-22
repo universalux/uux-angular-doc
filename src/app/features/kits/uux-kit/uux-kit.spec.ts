@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UuxKit } from './uux-kit';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
 describe('UuxKit', () => {
   let component: UuxKit;
@@ -10,7 +11,7 @@ describe('UuxKit', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [UuxKit],
-      providers: [provideZonelessChangeDetection()]
+      providers: [provideZonelessChangeDetection(), provideRouter([])]
     })
     .compileComponents();
 
