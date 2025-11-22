@@ -11,6 +11,8 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+app.use(express.json());
+
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -23,6 +25,44 @@ const angularApp = new AngularNodeAppEngine();
  * });
  * ```
  */
+
+let npmCache: any = null;
+let lastUpdated = 0;
+const WEEK = 7 * 24 * 60 * 60 * 1000;
+
+async function getNpmData( packages : string[]) {
+  const now = Date.now();
+
+  // Si el cache es válido, devuélvelo
+  if (npmCache && (now - lastUpdated) < WEEK) {
+    return npmCache;
+  }
+
+  console.log('Haciendo peticiones');
+  const results = await Promise.all(
+    packages.map(p =>
+      fetch(`${p}`)
+        .then(r => r.json())
+        .catch(() => ({ downloads: 0 }))
+    )
+  );
+
+  npmCache = {
+    total: results.reduce((sum, x) => sum + x.downloads, 0),
+    updated: new Date().toISOString()
+  };
+
+  lastUpdated = now;
+  return npmCache;
+}
+
+// === ENDPOINT REAL ===
+app.post("/npm-stats", async (req, res) => {
+  const { urls } = req.body;
+  const data = await getNpmData(urls);
+  res.json(data);
+});
+
 
 /**
  * Serve static files from /browser
