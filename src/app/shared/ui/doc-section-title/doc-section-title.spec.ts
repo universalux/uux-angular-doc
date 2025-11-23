@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DocSectionTitle } from './doc-section-title';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
 describe('DocSectionTitle', () => {
   let component: DocSectionTitle;
@@ -10,7 +11,10 @@ describe('DocSectionTitle', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DocSectionTitle],
-      providers: [provideZonelessChangeDetection()]
+      providers: [
+        provideZonelessChangeDetection(),
+        provideRouter([])
+      ]
     })
     .compileComponents();
 

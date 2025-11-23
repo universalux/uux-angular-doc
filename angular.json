@@ -86,13 +86,15 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss",
+              "src/styles/docs.scss",
+              "src/styles/playgrounds.scss",
+              "node_modules/highlight.js/styles/github-dark.css",
+              "src/assets/fonts/fonts.css"
             ]
           }
         }
