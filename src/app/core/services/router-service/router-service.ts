@@ -83,11 +83,12 @@ export class RouterService {
         // ANCHOR NAVIGATION HANDLER
         if(fragment && this.routeChange() === 'fragment'){
           this.scrollService.enableAnchorNavigations(page, fragment);
-        }
+        };
 
         if(this.isBrowser && this.routeChange() === 'item'){
+          console.log('reset scroll');
           this.scrollService.resetScroll(page);
-        }
+        };
 
         // ----- FOCUS HANDLER
         if(this.isBrowser && this.lastUrl !== url && !fragment && this.routeChange() !== 'section'){
