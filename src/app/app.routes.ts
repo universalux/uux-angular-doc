@@ -173,6 +173,7 @@ export const routes: Routes = [
 
     ]
   },
+
   { path: "kits",
     component: KitsLayout,
     children: [
