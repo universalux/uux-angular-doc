@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
-import { DocSectionTitle } from "@app/features/components/shared/doc/doc-section-title/doc-section-title";
+import { DocSectionTitle } from "@app/shared/ui/doc-section-title/doc-section-title";
 import { Divider } from "@app/shared/ui/divider/divider";
 import { ContentCarouselItemDirective, NgContentCarousel } from "ng-content-carousel";
 import { KitService } from '@app/core/services/kit-service/kit-service';

@@ -6,6 +6,7 @@ import { MenuService } from '../menu-service/menu-service';
 import { ComponentService } from '../component-service/component-service';
 import { KitService } from '../kit-service/kit-service';
 import { ScrollService } from '../scroll-service/scroll-service';
+import { DocService } from '../doc-service/doc-service';
 
 type RouterSignals = {
   page: string | null;
@@ -25,19 +26,26 @@ export class RouterService {
   private componentService = inject(ComponentService);
   private kitService = inject(KitService);
   private scrollService = inject(ScrollService);
+  private docService = inject(DocService);
 
   // Current router data
-  page = signal<string | null>(null);
-  item = signal<string | null>(null);
-  section = signal<string | null>(null);
-  fragment = signal<string | null>(null);
+  routePage = signal<string | null>(null);
+  routeItem = signal<string | null>(null);
+  routeSection = signal<string | null>(null);
+  routeFragment = signal<string | null>(null);
+  routeChange = signal<'page' | 'item' | 'section' |'fragment' | null>(null);
 
   // Last router data
   private lastUrl: string | null = null;
   private lastPage: string | null = null;
   private lastItem: string | null = null;
   private lastSection: string | null = null;
+  private lastFragment: string | null = null;
+
+  private pageChange : boolean = false;
   private sectionChange : boolean = false;
+  private itemChange : boolean = false;
+
 
   constructor() {
     this.router.events
@@ -59,10 +67,13 @@ export class RouterService {
         this.setRouterSignals({page, item, section, fragment});
 
         // COMPONENTS HANDLER
-        this.componentService.updateComponentFromUrl(item, section);
+        if(page === 'components') this.componentService.updateComponentFromUrl(item, section);
 
         // KITS HANDLER
-        this.kitService.currentKit.set(item);
+        if(page === 'kits') this.kitService.currentKit.set(item);
+
+        //DOC SECTIONS
+        if(page === 'components' || page === 'kits')this.docService.setDocSections(page);
 
         // ----- MENU HANDLERS
         this.menuService.isOpenMenu.set(false);
@@ -70,12 +81,16 @@ export class RouterService {
         this.menuService.setMenuSignals(page);
 
         // ANCHOR NAVIGATION HANDLER
-        if(fragment){
+        if(fragment && this.routeChange() === 'fragment'){
           this.scrollService.enableAnchorNavigations(page, fragment);
-        };
+        }
+
+        if(this.isBrowser && this.routeChange() === 'item'){
+          this.scrollService.resetScroll(page);
+        }
 
         // ----- FOCUS HANDLER
-        if(this.isBrowser && this.lastUrl !== url && !fragment && !this.sectionChange){
+        if(this.isBrowser && this.lastUrl !== url && !fragment && this.routeChange() !== 'section'){
           const el = document.querySelector('main');
           setTimeout(() =>  el?.focus(), 0);
         };
@@ -85,19 +100,31 @@ export class RouterService {
         this.lastItem = item;
         this.lastPage = page;
         this.lastSection = section;
+        this.lastFragment = fragment;
 
       });
   };
 
   setRouterSignals({page, item, section, fragment} : RouterSignals) {
-    this.page.set(page);
-    this.item.set(item);
-    this.section.set(section);
-    this.fragment.set(fragment);
+    this.routePage.set(page);
+    this.routeItem.set(item);
+    this.routeSection.set(section);
+    this.routeFragment.set(fragment);
+
+    if(this.lastPage !== page){
+      this.routeChange.set('page');
+    }else if(this.lastItem !== item){
+      this.routeChange.set('item');
+    }else if(this.lastSection !== section){
+      this.routeChange.set('section');
+    }else if(this.lastFragment !== fragment){
+      this.routeChange.set('fragment');
+    }
 
     if(this.lastItem === item && this.lastSection !== section){
       this.sectionChange = true;
     };
+
   };
 
 }

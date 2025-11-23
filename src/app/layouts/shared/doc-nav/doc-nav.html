@@ -1,12 +1,13 @@
 <nav class="docNav">
-  @for (section of docSections(); track $index) {
+  @for (section of docService.docSections(); track $index) {
     <ng-link-button
-      [routerLink]="type() === 'component' ? 'documentation' : kitName()!"
+      [routerLink]="routerService.routePage() === 'components' ? 'documentation' : kitService.currentKit()!"
       [fragment]="name() + '-' + section.code"
       [activatedRoute]="true"
       type="minimal"
       [square]="true"
       hover="tone"
+      [tabIndex]="-1"
       [class.active]="scrollService.activeSection() === name() + '-' + section.code"
     >
       {{section.name}}

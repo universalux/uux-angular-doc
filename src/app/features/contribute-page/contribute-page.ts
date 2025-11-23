@@ -28,19 +28,19 @@ export class ContributePage {
     {
       label: 'Report a bug',
       url: 'https://github.com/universalux/uux-hub/issues/new?assignees=aldaydev&labels=bug&template=angular_bug_report.yml',
-      icon: 'images/icons/bug.svg',
+      icon: 'assets/images/icons/bug.svg',
       alt: 'Bug icon'
     },
     {
       label: 'Request an improvement for an existing component',
       url: 'https://github.com/universalux/uux-hub/issues/new?assignees=aldaydev&labels=bug&template=angular_feature_request.yml',
-      icon: 'images/icons/lightbulb.svg',
+      icon: 'assets/images/icons/lightbulb.svg',
       alt: 'Lightbulb icon'
     },
     {
       label: 'Suggest a new component',
       url: 'https://github.com/universalux/uux-hub/issues/new?assignees=aldaydev&labels=bug&template=new_component_request.yml',
-      icon: 'images/icons/bolt.svg',
+      icon: 'assets/images/icons/bolt.svg',
       alt: 'Bolt icon'
     }
   ]);

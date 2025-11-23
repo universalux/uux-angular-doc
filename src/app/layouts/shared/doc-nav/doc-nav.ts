@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject, input, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, input, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DocSectionItem } from '@app/core/data/data.types';
 import { DocService } from '@app/core/services/doc-service/doc-service';
 import { KitService } from '@app/core/services/kit-service/kit-service';
+import { RouterService } from '@app/core/services/router-service/router-service';
 import { ScrollService } from '@app/core/services/scroll-service/scroll-service';
 import { NgLinkButton } from 'ng-link-button';
 
@@ -13,28 +14,18 @@ import { NgLinkButton } from 'ng-link-button';
   styleUrl: './doc-nav.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DocNav implements OnInit {
+export class DocNav {
 
   activatedRoute = inject(ActivatedRoute);
   scrollService = inject(ScrollService);
+  routerService = inject(RouterService);
 
   name = input<string>();
-  type = input<'component' |'kit'>('component');
 
   docService = inject(DocService);
   kitService = inject(KitService);
 
-  docSections = signal<DocSectionItem[]>([]);
-  kitName = signal<string | null>(this.kitService.currentKit());
+  itemName = signal<string | null>(this.routerService.routeItem());
 
-  ngOnInit(): void {
-    if(this.type() === 'component'){
-      this.docSections.set(this.docService.componentDocSections());
-    }
-
-    if(this.type() === 'kit'){
-      this.docSections.set(this.docService.kitDocSections());
-    }
-  }
 
 }

@@ -3,7 +3,7 @@ import { CatalogItem } from '@app/core/data/data.types';
 import { ComponentService } from '@app/core/services/component-service/component-service';
 import { KitService } from '@app/core/services/kit-service/kit-service';
 import { ButtonKitDocCode, buttonKitDocCode } from './data/button-kit-doc-code';
-import { DocSectionTitle } from "@app/features/components/shared/doc/doc-section-title/doc-section-title";
+import { DocSectionTitle } from "@app/shared/ui/doc-section-title/doc-section-title";
 import { Divider } from "@app/shared/ui/divider/divider";
 import { ContentCarouselItemDirective, NgContentCarousel } from "ng-content-carousel";
 import { NgLinkButton } from "ng-link-button";

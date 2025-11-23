@@ -7,6 +7,16 @@ import { kitDocSectionList } from '@app/core/data/kit-docs.data';
   providedIn: 'root'
 })
 export class DocService {
-  componentDocSections = signal<DocSectionItem[]>(componentDocSectionList);
-  kitDocSections = signal<DocSectionItem[]>(kitDocSectionList);
+
+  docSections = signal<DocSectionItem[]>([]);
+
+  setDocSections(page : string){
+    if(page === 'components'){
+      this.docSections.set(componentDocSectionList);
+    }
+
+    if(page === 'kits'){
+      this.docSections.set(kitDocSectionList);
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ContentCarouselDocCode, contentCarouselDocCode } from './data/content-carousel-doc-code';
 import { contentCarouselDocTables } from './data/content-carousel-doc-tables';
-import { DocSectionTitle } from '../../shared/doc/doc-section-title/doc-section-title';
+import { DocSectionTitle } from '@app/shared/ui/doc-section-title/doc-section-title';
 import { CodeBlock } from '@app/shared/ui/code-block/code-block';
 import { DataTable } from '@app/shared/ui/data-table/data-table';
 import { RouterLink } from '@angular/router';

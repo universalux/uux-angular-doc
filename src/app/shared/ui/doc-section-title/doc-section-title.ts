@@ -1,19 +1,20 @@
-import { ChangeDetectionStrategy, Component, inject, input, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, input, OnInit, signal } from '@angular/core';
 import { DocSectionItem } from '@app/core/data/data.types';
 import { ComponentService } from '@app/core/services/component-service/component-service';
 import { DocService } from '@app/core/services/doc-service/doc-service';
 import { ScrollService } from '@app/core/services/scroll-service/scroll-service';
 import { SectionInViewDirective } from '@app/core/directives/section-in-view.directive';
+import { RouterService } from '@app/core/services/router-service/router-service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'doc-section-title',
-  imports: [SectionInViewDirective],
+  imports: [SectionInViewDirective, RouterLink],
   template: `
-    <h2 [id]="componentService.currentComponent() + '-' + sectionCode()"
-      sectionInView (visibleChange)="scrollService.updateActive(componentService.currentComponent() + '-' + sectionCode(), $event)"
-      [tabIndex]="-1"
+    <h2 sectionInView (visibleChange)="scrollService.updateActive(currentItem() + '-' + sectionCode(), $event)"
     >
-      {{sectionName()}}
+      <a [id]="currentItem() + '-' + sectionCode()" routerLink="." [fragment]="currentItem() + '-' + sectionCode()">{{sectionName()}}</a>
+
     </h2>
   `,
   styleUrl: './doc-section-title.scss',
@@ -24,25 +25,31 @@ export class DocSectionTitle implements OnInit {
   componentService = inject(ComponentService);
   docService = inject(DocService);
   scrollService = inject(ScrollService);
+  routerService = inject(RouterService);
 
   sectionCode = input<string | null>(null);
+
+  currentItem = signal<string | null>(this.routerService.routeItem());
   sectionName = signal<string | null>(null);
-  type = input<'component' | 'kit'>('component');
 
   ngOnInit(): void {
     this.getSectionData();
+    this.getCurrentItem();
   }
 
+  constructor(){
+    effect(() => {
+      this.routerService.routeItem();
+      this.getCurrentItem();
+    })
+  }
+
+  getCurrentItem(){
+    this.currentItem.set(this.routerService.routeItem());
+  };
+
   getSectionData(){
-    let sections : DocSectionItem[] = [];
-
-    if(this.type() === 'component'){
-      sections = this.docService.componentDocSections();
-    };
-
-    if(this.type() === 'kit'){
-      sections = this.docService.kitDocSections();
-    };
+    let sections : DocSectionItem[] = this.docService.docSections();
 
     const sectionObj = sections.find(section => section.code === this.sectionCode());
     if(!sectionObj) return;

@@ -23,17 +23,17 @@ export class HeroCarouselPlayground {
   // Slides input
   slidesObject = signal<HeroCarouselItem[]>([
     {
-      image_url: 'images/examples/ng-hero-carousel-slides/ng-hero-carousel_slide-1.webp',
+      image_url: 'assets/images/examples/ng-hero-carousel-slides/ng-hero-carousel_slide-1.webp',
       title: 'First Slide',
       subtitle: '1st slide subtitle'
     },
     {
-      image_url: 'images/examples/ng-hero-carousel-slides/ng-hero-carousel_slide-2.webp',
+      image_url: 'assets/images/examples/ng-hero-carousel-slides/ng-hero-carousel_slide-2.webp',
       title: 'ng-template + slideForDirective',
       subtitle: 'Here is an example of a button added as slide custom content'
     },
     {
-      image_url: 'images/examples/ng-hero-carousel-slides/ng-hero-carousel_slide-3.webp',
+      image_url: 'assets/images/examples/ng-hero-carousel-slides/ng-hero-carousel_slide-3.webp',
       title: 'ng-template + #outerContent',
       subtitle: 'You can also add custom content that remains visible across all slides (see doc)'
     },
