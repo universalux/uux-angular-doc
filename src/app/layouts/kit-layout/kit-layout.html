@@ -1,3 +1,7 @@
+@if (kitService.currentKit()) {
+  <app-doc-nav [name]="kitService.currentKit()!" type="kit"/>
+}
+
 <div
   class="kitLayout__content"
   [class.separeFromAside]="kitService.currentKit()"
@@ -8,6 +12,4 @@
   }
   <router-outlet/>
 </div>
-@if (kitService.currentKit()) {
-  <app-doc-nav [name]="kitService.currentKit()!" type="kit"/>
-}
+

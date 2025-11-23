@@ -11,6 +11,7 @@ import { SectionInViewDirective } from '@app/core/directives/section-in-view.dir
   template: `
     <h2 [id]="componentService.currentComponent() + '-' + sectionCode()"
       sectionInView (visibleChange)="scrollService.updateActive(componentService.currentComponent() + '-' + sectionCode(), $event)"
+      [tabIndex]="-1"
     >
       {{sectionName()}}
     </h2>

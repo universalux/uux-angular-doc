@@ -32,7 +32,6 @@ export class ScrollNavPlayground {
   reloadComponent = signal<boolean>(true);
 
   forceReload() {
-    console.log("Forcing");
     this.reloadComponent.set(false);
     setTimeout(() => {
       this.reloadComponent.set(true)

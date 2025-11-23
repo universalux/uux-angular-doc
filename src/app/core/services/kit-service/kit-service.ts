@@ -13,25 +13,25 @@ export class KitService {
   kitList = signal<CatalogItem[]>(kitList);
   currentKit= signal<string | null>(null);
 
-  constructor() {
-    // Detectar ruta inicial
-    this.updateFromUrl(this.router.url);
+  // constructor() {
+  //   // Detectar ruta inicial
+  //   this.updateFromUrl(this.router.url);
 
-    // Escuchar navegaciones
-    this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.updateFromUrl(this.router.url);
-      });
-  }
+  //   // Escuchar navegaciones
+  //   this.router.events
+  //     .pipe(filter(event => event instanceof NavigationEnd))
+  //     .subscribe(() => {
+  //       this.updateFromUrl(this.router.url);
+  //     });
+  // }
 
-  private updateFromUrl(url: string): void {
-    const cleanUrl = url.split('#')[0];
-    const segments = cleanUrl.split('/').filter(Boolean);
-    const kitName = segments[1] ?? null;
+  // private updateFromUrl(url: string): void {
+  //   const cleanUrl = url.split('#')[0];
+  //   const segments = cleanUrl.split('/').filter(Boolean);
+  //   const kitName = segments[1] ?? null;
 
-    this.currentKit.set(kitName);
+  //   this.currentKit.set(kitName);
 
-  }
+  // }
 
 }

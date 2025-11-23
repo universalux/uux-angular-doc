@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AppFooter } from "@app/core/components/app-footer/app-footer";
 import { Router, RouterOutlet } from '@angular/router';
 import { AppAside } from "../shared/app-aside/app-aside";
-import { ScrollService } from '@app/core/services/scroll-service/scroll-service';
 import { ComponentService } from '@app/core/services/component-service/component-service';
 
 @Component({
@@ -13,12 +12,6 @@ import { ComponentService } from '@app/core/services/component-service/component
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentsLayout {
-
   componentService = inject(ComponentService);
   router = inject(Router);
-  scrollService = inject(ScrollService);
-
-  ngAfterViewInit() {
-    this.scrollService.enableAnchorNavigation('app-components-layout');
-  };
 }

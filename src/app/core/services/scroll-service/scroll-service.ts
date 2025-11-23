@@ -1,6 +1,5 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -8,32 +7,28 @@ import { filter } from 'rxjs';
 export class ScrollService {
   router = inject(Router);
 
-  enableAnchorNavigation(
-    layout:
-      | 'app-main-layout'
-      | 'app-components-layout'
-      | 'app-kits-layout' = 'app-components-layout'
-  ) {
+  enableAnchorNavigations(page: string, fragment: string){
+    let layout : string;
     let margin : number = 0;
-    if(layout === 'app-components-layout') margin = 64;
-    if(layout === 'app-kits-layout') margin = 20;
+    if(page === 'components'){
+      layout = 'app-components-layout';
+      margin = 64;
+    }else if(page === 'kits'){
+      layout = 'app-kits-layout';
+      margin = 20;
+    }else{
+      layout = 'app-main-layout';
+    };
 
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        const fragment = this.router.parseUrl(this.router.url).fragment;
-        if (fragment) {
-          const el = document.getElementById(fragment);
-          const container = document.querySelector(layout);
-          el?.focus();
-          if (el && container) {
-            container.scrollTo({
-              top: el.offsetTop - margin,
-              behavior: 'smooth',
-            });
-          }
-        }
+    const el = document.getElementById(fragment);
+    const container = document.querySelector(layout);
+    el?.focus();
+    if (el && container) {
+      container.scrollTo({
+        top: el.offsetTop - margin,
+        behavior: 'smooth',
       });
+    }
   };
 
   activeSection = signal<string | null>(null);

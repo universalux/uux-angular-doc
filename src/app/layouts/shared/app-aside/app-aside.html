@@ -9,6 +9,7 @@
             type="minimal"
             [routerLink]="component.url"
             [ariaLabel]="'Go to ' + component.name + ' page'"
+            [tabIndex]="routerService.item() ? 0 : -1"
           >
             {{component.name}}
           </ng-link-button>

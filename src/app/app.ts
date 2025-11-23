@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { AppHeader } from "./core/components/app-header/app-header";
 import { MenuService } from './core/services/menu-service/menu-service';
 import { ResponsiveMenu } from "./core/components/responsive-menu/responsive-menu";
+import { RouterService } from './core/services/router-service/router-service';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,5 @@ import { ResponsiveMenu } from "./core/components/responsive-menu/responsive-men
 })
 export class App  {
   menuService = inject(MenuService);
+  routerService = inject(RouterService);
 }
