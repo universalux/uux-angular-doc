@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExpandDoc } from './expand-doc';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
 describe('ExpandDoc', () => {
   let component: ExpandDoc;
@@ -10,7 +11,10 @@ describe('ExpandDoc', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ExpandDoc],
-      providers: [provideZonelessChangeDetection()]
+      providers: [
+        provideZonelessChangeDetection(),
+        provideRouter([]),
+      ]
     })
     .compileComponents();
 

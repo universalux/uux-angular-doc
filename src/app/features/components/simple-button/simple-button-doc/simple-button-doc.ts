@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { DocSectionTitle } from '../../shared/doc/doc-section-title/doc-section-title';
+import { DocSectionTitle } from '@app/shared/ui/doc-section-title/doc-section-title';
 import { RouterLink } from '@angular/router';
 import { CodeBlock } from '@app/shared/ui/code-block/code-block';
 import { SimpleButtonDocCode, simpleButtonDocCode } from './data/simple-button-doc-code';

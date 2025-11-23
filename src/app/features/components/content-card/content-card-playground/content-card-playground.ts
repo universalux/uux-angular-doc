@@ -57,7 +57,7 @@ export class ContentCardPlayground {
       if (this.hasImage()) content.push(`
         <section card-image>
           <img ${this.hasImageHoverClass() ? 'class="scaleHover"' : ''}
-            src="images/examples/ng-content-card_example-img.png"
+            src="assets/images/examples/ng-content-card_example-img.png"
             alt="NgContentCard Example image"
           >
         </section>

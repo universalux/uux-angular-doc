@@ -8,3 +8,11 @@ h2{
 
   margin: 32px 0 16px;
 }
+
+h2 a{
+  pointer-events: none;
+}
+
+h2 a:focus-visible{
+  outline: 2px solid var(--color-fg);
+}
