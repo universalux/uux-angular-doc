@@ -1,18 +1,13 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
-import { DocSectionTitle } from "@app/shared/ui/doc-section-title/doc-section-title";
-import { Divider } from "@app/shared/ui/divider/divider";
-import { ContentCarouselItemDirective, NgContentCarousel } from "ng-content-carousel";
 import { KitService } from '@app/core/services/kit-service/kit-service';
 import { CatalogItem } from '@app/core/data/data.types';
 import { ComponentService } from '@app/core/services/component-service/component-service';
-import { NgContentCard } from "ng-content-card";
-import { NgLinkButton } from "ng-link-button";
-import { CodeBlock } from "@app/shared/ui/code-block/code-block";
 import { ToggleKitDocCode, toggleKitDocCode } from './data/toggle-kit-doc-code';
+import { kitSharedImports } from '../shared/kitSharedImports';
 
 @Component({
   selector: 'app-toggle-kit',
-  imports: [DocSectionTitle, Divider, NgContentCarousel, NgContentCard, NgLinkButton, ContentCarouselItemDirective, CodeBlock],
+  imports: [ ...kitSharedImports ],
   templateUrl: './toggle-kit.html',
   styleUrl: './toggle-kit.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

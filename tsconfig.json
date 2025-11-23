@@ -18,6 +18,18 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@app/shared/*": ["src/app/shared/*"],
+      "@components/*": ["src/app/features/components/*"],
+      "@kits/*": ["src/app/features/kits/*"],
+
+      "@simple-button/*": ["src/app/features/components/simple-button/*"],
+      "@link-button/*": ["src/app/features/components/link-button/*"],
+      "@menu-toggle/*": ["src/app/features/components/menu-toggle/*"],
+      "@theme-toggle/*": ["src/app/features/components/theme-toggle/*"],
+      "@content-card/*": ["src/app/features/components/content-card/*"],
+      "@hero-carousel/*": ["src/app/features/components/hero-carousel/*"],
+      "@content-carousel/*": ["src/app/features/components/content-carousel/*"],
+      "@scroll-nav/*": ["src/app/features/components/scroll-nav/*"],
+      "@expand/*": ["src/app/features/components/expand/*"],
     }
   },
   "angularCompilerOptions": {
