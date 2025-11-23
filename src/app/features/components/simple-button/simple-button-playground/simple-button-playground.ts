@@ -5,9 +5,9 @@ import { CodeBlock } from "@app/shared/ui/code-block/code-block";
 import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
 import { NgExpand } from 'ng-expand';
 
-type simpleButtonType = 'solid' | 'minimal' | 'outline';
-type simpleButtonHover = 'tone' | 'scale' | 'stroke' | 'shadow' | 'none';
-type simpleButtonDirection = 'row' | 'column';
+type SimpleButtonType = 'solid' | 'minimal' | 'outline';
+type SimpleButtonHover = 'tone' | 'scale' | 'stroke' | 'shadow' | 'none';
+type SimpleButtonDirection = 'row' | 'column';
 
 @Component({
   selector: 'app-simple-button-playground',
@@ -20,10 +20,10 @@ export class SimpleButtonPlayground implements OnInit {
 
   // Component inputs
 
-  type = signal<simpleButtonType>('solid');
+  type = signal<SimpleButtonType>('solid');
   square = signal<boolean>(false);
-  hover = signal<simpleButtonHover>('tone');
-  direction = signal<simpleButtonDirection>('row');
+  hover = signal<SimpleButtonHover>('tone');
+  direction = signal<SimpleButtonDirection>('row');
 
   ariaLabel = signal<string | null>(null);
   title = signal<string |null>(null);
@@ -80,7 +80,7 @@ export class SimpleButtonPlayground implements OnInit {
 
   handleTypeInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
-    this.type.set(selectElement.value as simpleButtonType);
+    this.type.set(selectElement.value as SimpleButtonType);
   }
 
   handleSquareInput(event: Event){
@@ -90,12 +90,12 @@ export class SimpleButtonPlayground implements OnInit {
 
   handleHoverInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
-    this.hover.set(selectElement.value as simpleButtonHover);
+    this.hover.set(selectElement.value as SimpleButtonHover);
   }
 
   handleDirectionInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
-    this.direction.set(selectElement.value as simpleButtonDirection);
+    this.direction.set(selectElement.value as SimpleButtonDirection);
   }
 
   // ACCESSIBILITY INPUT OPTIONS
