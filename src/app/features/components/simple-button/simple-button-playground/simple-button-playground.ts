@@ -1,9 +1,5 @@
 import { ChangeDetectionStrategy, Component, effect, OnInit, signal } from '@angular/core';
-import { NgSimpleButton } from 'ng-simple-button'
-import { PgInputSelector } from '../../shared/playground/pg-input-selector/pg-input-selector';
-import { CodeBlock } from "@app/shared/ui/code-block/code-block";
-import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
-import { NgExpand } from 'ng-expand';
+import { pgSharedImports } from '../../shared/playgroundSharedImports';
 
 type SimpleButtonType = 'solid' | 'minimal' | 'outline';
 type SimpleButtonHover = 'tone' | 'scale' | 'stroke' | 'shadow' | 'none';
@@ -11,7 +7,7 @@ type SimpleButtonDirection = 'row' | 'column';
 
 @Component({
   selector: 'app-simple-button-playground',
-  imports: [NgSimpleButton, PgInputSelector, CodeBlock, PgShowCodeIcon, NgExpand],
+  imports: [...pgSharedImports],
   templateUrl: './simple-button-playground.html',
   styleUrl: './simple-button-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

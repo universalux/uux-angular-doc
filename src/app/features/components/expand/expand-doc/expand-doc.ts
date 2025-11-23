@@ -1,14 +1,11 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { DocSectionTitle } from "@app/shared/ui/doc-section-title/doc-section-title";
-import { Divider } from "@app/shared/ui/divider/divider";
-import { CodeBlock } from "@app/shared/ui/code-block/code-block";
-import { DataTable } from "@app/shared/ui/data-table/data-table";
 import { expandDocCode, ExpandDocCode } from './data/expand-doc-code';
 import { ExpandDocTables, expandDocTables } from './data/expand-doc-tables';
+import { docSharedImports } from '../../shared/docSharedImports';
 
 @Component({
   selector: 'app-expand-doc',
-  imports: [DocSectionTitle, Divider, CodeBlock, DataTable],
+  imports: [...docSharedImports],
   templateUrl: './expand-doc.html',
   styleUrl: './expand-doc.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,16 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { DocSectionTitle } from "@app/shared/ui/doc-section-title/doc-section-title";
-import { Divider } from "@app/shared/ui/divider/divider";
-import { ContentCarouselItemDirective, NgContentCarousel } from "ng-content-carousel";
-import { NgLinkButton } from "ng-link-button";
-import { NgContentCard } from "ng-content-card";
-import { CodeBlock } from "@app/shared/ui/code-block/code-block";
 import { ComponentService } from '@app/core/services/component-service/component-service';
 import { UuxKitDocCode, uuxKitDocCode } from './data/uux-kit-doc-code';
+import { kitSharedImports } from '../shared/kitSharedImports';
 
 @Component({
   selector: 'app-uux-kit',
-  imports: [DocSectionTitle, Divider, NgContentCarousel, NgLinkButton, NgContentCard, CodeBlock, ContentCarouselItemDirective],
+  imports: [ ...kitSharedImports ],
   templateUrl: './uux-kit.html',
   styleUrl: './uux-kit.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

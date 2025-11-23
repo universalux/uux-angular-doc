@@ -1,15 +1,11 @@
 import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
-import { NgExpand } from "ng-expand";
-import { NgSimpleButton } from "ng-simple-button";
-import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
-import { CodeBlock } from "@app/shared/ui/code-block/code-block";
-import { PgInputSelector } from "../../shared/playground/pg-input-selector/pg-input-selector";
+import { pgSharedImports } from '../../shared/playgroundSharedImports';
 
 type ExpandIconType = 'arrow' | 'plus';
 
 @Component({
   selector: 'app-expand-playground',
-  imports: [NgExpand, NgSimpleButton, PgShowCodeIcon, CodeBlock, PgInputSelector],
+  imports: [...pgSharedImports],
   templateUrl: './expand-playground.html',
   styleUrl: './expand-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
