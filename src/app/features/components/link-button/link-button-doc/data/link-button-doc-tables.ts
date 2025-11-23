@@ -187,7 +187,7 @@ export const linkButtonDocTables = {
       [
         "--simple-button-focus-ring",
         "Outline shown when focused.",
-        "0 0 0 2px rgba(0, 0, 0, 0.2)"
+        "2px solid currentColor"
       ],
       [
         "--simple-button-transition-duration",

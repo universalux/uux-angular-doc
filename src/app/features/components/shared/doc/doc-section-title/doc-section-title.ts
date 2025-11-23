@@ -2,12 +2,16 @@ import { ChangeDetectionStrategy, Component, inject, input, OnInit, signal } fro
 import { DocSectionItem } from '@app/core/data/data.types';
 import { ComponentService } from '@app/core/services/component-service/component-service';
 import { DocService } from '@app/core/services/doc-service/doc-service';
+import { ScrollService } from '@app/core/services/scroll-service/scroll-service';
+import { SectionInViewDirective } from '@app/core/directives/section-in-view.directive';
 
 @Component({
   selector: 'doc-section-title',
-  imports: [],
+  imports: [SectionInViewDirective],
   template: `
-    <h2 [id]="componentService.currentComponent() + '-' + sectionCode()">
+    <h2 [id]="componentService.currentComponent() + '-' + sectionCode()"
+      sectionInView (visibleChange)="scrollService.updateActive(componentService.currentComponent() + '-' + sectionCode(), $event)"
+    >
       {{sectionName()}}
     </h2>
   `,
@@ -18,6 +22,7 @@ export class DocSectionTitle implements OnInit {
 
   componentService = inject(ComponentService);
   docService = inject(DocService);
+  scrollService = inject(ScrollService);
 
   sectionCode = input<string | null>(null);
   sectionName = signal<string | null>(null);

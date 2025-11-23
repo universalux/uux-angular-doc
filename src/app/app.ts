@@ -11,7 +11,5 @@ import { ResponsiveMenu } from "./core/components/responsive-menu/responsive-men
   styleUrl: './app.scss'
 })
 export class App  {
-
   menuService = inject(MenuService);
-
 }

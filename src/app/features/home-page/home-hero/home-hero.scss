@@ -19,6 +19,7 @@ ng-link-button{
   --link-button-padding: .7rem 1rem;
   --link-button-hover-bg: color-mix(in srgb, var(--color-fg) 90%, rgb(85, 85, 85));
   --link-button-transition-duration: 0;
+  --link-button-focus-ring: 2px solid var(--color-light);
 }
 
 ng-link-button.kitsLink{

@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { CatalogItem } from '@app/core/data/data.types';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MenuService } from '@app/core/services/menu-service/menu-service';
 import { NgMenuToggle } from 'ng-menu-toggle';
 import { NgLinkButton } from "ng-link-button";
@@ -14,7 +13,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResponsiveMenu {
   menuService = inject(MenuService);
-  menuItems = input<CatalogItem[]>();
-
   activatedRoute = inject(ActivatedRoute);
+
 }

@@ -64,6 +64,11 @@ button{
   cursor: pointer;
 }
 
+main:focus-visible{
+  outline: none;
+  border: none;
+}
+
 ng-link-button{
   --link-button-transition-duration: 0;
 }

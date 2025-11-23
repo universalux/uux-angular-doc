@@ -3,6 +3,7 @@
     [class.opened]="menuService.isOpenMenu()"
     [isOpenSignal]="menuService.isOpenMenu"
     animation="rotateX"
+    [customAria]="menuService.menuCustomAria()"
   />
 </header>
 <div
@@ -14,13 +15,13 @@
 
 <nav class="resMenu__asideNav" [class.shown]="menuService.isOpenMenu()">
   <ul>
-    @for (component of menuItems(); track $index) {
+    @for (component of menuService.menuItems(); track $index) {
           <li>
             <ng-link-button
               type="minimal"
               [routerLink]="component.url"
-              [relativeTo]="activatedRoute"
               [ariaLabel]="'Go to ' + component.name + ' page'"
+              [tabIndex]="menuService.isOpenMenu() ? 0 : -1"
             >
               {{component.name}}
             </ng-link-button>

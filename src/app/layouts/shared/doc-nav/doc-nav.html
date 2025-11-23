@@ -2,12 +2,12 @@
   @for (section of docSections(); track $index) {
     <ng-link-button
       [routerLink]="type() === 'component' ? 'documentation' : kitName()!"
-      [relativeTo]="activatedRoute"
       [fragment]="name() + '-' + section.code"
-      [activatedRoute]="false"
+      [activatedRoute]="true"
       type="minimal"
       [square]="true"
       hover="tone"
+      [class.active]="scrollService.activeSection() === name() + '-' + section.code"
     >
       {{section.name}}
     </ng-link-button>

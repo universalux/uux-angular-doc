@@ -24,3 +24,7 @@ ng-link-button{
   --link-button-hover-bg: transparent;
   --link-button-hover-color: var(--color-primary);
 }
+
+ng-link-button.active{
+  --link-button-color: var(--color-primary);
+}
