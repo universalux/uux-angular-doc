@@ -5,6 +5,7 @@
 ng-scroll-nav{
   width: 90%;
   min-width: 300px;
+  max-width: 1000px;
   --scroll-nav-justify-content: center;
   --scroll-nav-gap: .7rem;
 }

@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { AppFooter } from "@app/core/components/app-footer/app-footer";
-import { ScrollService } from '@app/core/services/scroll-service/scroll-service';
 
 @Component({
   selector: 'app-main-layout',
@@ -12,9 +11,4 @@ import { ScrollService } from '@app/core/services/scroll-service/scroll-service'
 })
 export class MainLayout {
   router = inject(Router);
-  scrollService = inject(ScrollService);
-
-  ngAfterViewInit() {
-    this.scrollService.enableAnchorNavigation('app-main-layout');
-  }
 }
