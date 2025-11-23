@@ -69,5 +69,13 @@ export const componentList : CatalogItem[] = [
     image: "images/components/ng-scroll-nav-static-cover.png",
     featured: true
   },
+  {
+    id: "expand",
+    name: "Expand",
+    url: "/components/expand",
+    description: "Anuglar expandable item",
+    image: "images/components/ng-expand-static-cover.png",
+    featured: true
+  },
 ];
 

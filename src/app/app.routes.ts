@@ -27,6 +27,8 @@ import { ToggleKit } from './features/kits/toggle-kit/toggle-kit';
 import { KitLayout } from './layouts/kit-layout/kit-layout';
 import { ButtonKit } from './features/kits/button-kit/button-kit';
 import { UuxKit } from './features/kits/uux-kit/uux-kit';
+import { ExpandPlayground } from './features/components/expand/expand-playground/expand-playground';
+import { ExpandDoc } from './features/components/expand/expand-doc/expand-doc';
 
 export const routes: Routes = [
   {
@@ -189,6 +191,24 @@ export const routes: Routes = [
           {
             path: 'documentation',
             component: ScrollNavDoc
+          }
+        ]
+      },
+      { path: "expand",
+        component: ComponentLayout,
+        children: [
+          {
+            path: '',
+            redirectTo: 'playground',
+            pathMatch: 'full'
+          },
+          {
+            path: 'playground',
+            component: ExpandPlayground
+          },
+          {
+            path: 'documentation',
+            component: ExpandDoc
           }
         ]
       },

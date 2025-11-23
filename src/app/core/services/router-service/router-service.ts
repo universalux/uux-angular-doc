@@ -55,10 +55,6 @@ export class RouterService {
         const section = segments[2] ?? null;
         const fragment = this.router.parseUrl(this.router.url).fragment;
 
-        if(fragment){
-          console.log(fragment);
-        }
-
         // Setting router signals from url data
         this.setRouterSignals({page, item, section, fragment});
 

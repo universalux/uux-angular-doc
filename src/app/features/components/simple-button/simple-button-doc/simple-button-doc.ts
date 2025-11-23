@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { CodeBlock } from '@app/shared/ui/code-block/code-block';
 import { SimpleButtonDocCode, simpleButtonDocCode } from './data/simple-button-doc-code';
 import { DataTable } from '@app/shared/ui/data-table/data-table';
-import { simpleButtonDocTables } from './data/simple-button-doc-tables';
+import { SimpleButtonDocTables, simpleButtonDocTables } from './data/simple-button-doc-tables';
 import { Divider } from "@app/shared/ui/divider/divider";
 
 @Component({
@@ -16,5 +16,5 @@ import { Divider } from "@app/shared/ui/divider/divider";
 })
 export class SimpleButtonDoc {
   docCode = signal<SimpleButtonDocCode>(simpleButtonDocCode);
-  docTables = signal(simpleButtonDocTables);
+  docTables = signal<SimpleButtonDocTables>(simpleButtonDocTables);
 }

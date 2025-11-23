@@ -1,0 +1,145 @@
+<!------------ INTRODUCTION ------------>
+<doc-section-title sectionCode="intro"/>
+
+<p>
+  <em>ng-expand</em> is a <em>standalone, reusable and customizable component</em> for Angular 18, 19 and 20.
+</p>
+<p>
+  It is designed to work with <em>signals</em> and Angular <em>zoneless</em>,  providing a lightweight, flexible, and accessible expandable item. It is also fully compatible with <em>SSR</em>, <em>CSR</em> and <em>prerender</em>.
+</p>
+
+<app-divider/>
+
+<!------------ INSTALLATION ------------>
+<doc-section-title sectionCode="inst"/>
+
+<p>If you want to install the latest version (currently 20):</p>
+
+<app-code-block
+  [language]="docCode().installationCode_1.language"
+  [code]="docCode().installationCode_1.code"
+/>
+
+<p>Angular 19:</p>
+
+<app-code-block
+  [language]="docCode().installationCode_2.language"
+  [code]="docCode().installationCode_2.code"
+/>
+
+<p>Angular 18:</p>
+
+<app-code-block
+  [language]="docCode().installationCode_3.language"
+  [code]="docCode().installationCode_3.code"
+/>
+
+<app-divider/>
+
+<!------------ OVERVIEW ------------>
+<doc-section-title sectionCode="ovw" />
+
+<p>Using <em>ng-expand</em> is easy:</p>
+<ul>
+  <li>Define the expansor button <em>label</em> using the label input.</li>
+  <li>Set expandable content as children of the component.</li>
+  <li>Configure it using inputs.</li>
+  <li>Style it with customizable CSS variables to match your design needs.</li>
+</ul>
+
+<p>Here’s a basic usage example:</p>
+
+<app-code-block
+  [language]="docCode().overviewCode_1.language"
+  [code]="docCode().overviewCode_1.code"
+/>
+
+<app-divider/>
+
+<!------------ FUNCTIONALITY ------------>
+<doc-section-title sectionCode="func" />
+
+<p>As you can see in the example bellow, you can use the <em>label</em> input to assign text to the expand/collapse button.</p>
+
+<p>You can also use <em>startExpanded</em> input to decide the initial state and iconType input to choose between two different icon types (arrow or plus).</p>
+
+<app-divider/>
+
+<!------------ INPUTS AND OUTPUTS ------------>
+<doc-section-title sectionCode="io" />
+
+<p>Here is a list of all input/ouput:</p>
+
+<h3>Functionality Inputs</h3>
+
+<app-data-table
+  [tableData]="docTables().ioTable_1"
+/>
+
+<h3>Style & Behavior Inputs</h3>
+
+<app-data-table
+  [tableData]="docTables().ioTable_2"
+/>
+
+<h3>Accessibility Inputs</h3>
+
+<app-data-table
+  [tableData]="docTables().ioTable_3"
+/>
+
+<app-divider/>
+
+<!------------ STYLING ------------>
+<doc-section-title sectionCode="sty" />
+
+<p>You can easily customize the component’s appearance using the CSS variables listed below.</p>
+
+<app-code-block
+  [language]="docCode().stylingCode_1.language"
+  [code]="docCode().stylingCode_1.code"
+/>
+
+<h3>General</h3>
+
+<app-data-table
+  [tableData]="docTables().styTable_1"
+/>
+
+<h3>Expand button</h3>
+
+<app-data-table
+  [tableData]="docTables().styTable_2"
+/>
+
+<h3>Expandable content</h3>
+
+<app-data-table
+  [tableData]="docTables().styTable_3"
+/>
+
+<h3>Styling considerations:</h3>
+
+<p>If you have multiple expand items and need different custom styles, you can add a class to target them more precisely:</p>
+
+<app-code-block
+  [language]="docCode().stylingCode_2.language"
+  [code]="docCode().stylingCode_2.code"
+/>
+
+<h3>Variable inheritance</h3>
+
+<p>The component uses a cascading system of CSS variables where some are general and others are more specific. Setting a general variable like --expand-bg or --expand-color applies the value to the entire component (both button and content).</p>
+
+<p>However, specific variables such as --expand-button-bg or --expand-button-color override the general ones for their respective parts.</p>
+
+<p>In short: General variables apply to the whole component, while specific variables take priority in their own area.</p>
+
+<app-divider/>
+
+<!------------ ACCESSIBILITY ------------>
+<doc-section-title sectionCode="acc" />
+
+<p>This component is fully accessible. All functional accessibility features are already built in. The only input you can configure is [tabIndex], in case you need to remove the component from the tab flow for any reason.</p>
+
+<p>Keep in mind that you are responsible for configuring the accessibility of any content you place inside the component.</p>
