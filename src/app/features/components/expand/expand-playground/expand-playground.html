@@ -1,1 +1,79 @@
-<p>expand-playground works!</p>
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer">
+
+  <article class="componentView">
+
+    <ng-expand
+      class="playground"
+      [label]="label()"
+      [startExpanded]="startExpanded()"
+      [iconType]="iconType()"
+
+      [tabIndex]="tabIndex()"
+    >
+      <p>Expandable content example</p>
+    </ng-expand>
+
+  </article>
+
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <ng-expand label="Style & Functionality Inputs">
+
+    <app-pg-input-selector name="label"
+      type="text"
+      description="Choose the text for the expand/collapse button."
+      (changeFn)="handleLabelInput($event)"
+    />
+
+    <app-pg-input-selector name="startExpanded"
+      description="Set the initial state (expanded or collapsed) for the component."
+      [options]="['false', 'true']"
+      (changeFn)="handleStartExpandedInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="iconType"
+      description="Choose between two different icon types: arrow or plus (+)."
+      [options]="['arrow', 'plus']"
+      (changeFn)="handleIconTypeInput($event)"
+    />
+
+  </ng-expand>
+
+  <ng-expand label="Accessibility Inputs">
+
+    <app-pg-input-selector
+      name="tabIndex"
+      description="Controls the button’s tab order in keyboard navigation."
+      [options]="['0', '-1']"
+      (changeFn)="handleTabIndexInput($event)"
+    />
+  </ng-expand>
+
+</section>

@@ -59,3 +59,9 @@
 .pg .componentOptions{
   margin-top: 1rem;
 }
+
+@media screen and (max-width: 500px) {
+  .pg .componentViewer{
+    padding: 40px 1rem;
+  }
+}

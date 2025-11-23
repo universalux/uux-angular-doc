@@ -4,6 +4,7 @@
 }
 
 .pgInputSelector{
+  text-wrap: nowrap;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -18,23 +19,25 @@
 
 .pgInputSelector__description{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: 1.5rem;
 }
 
 .pgInputSelector__form{
   width: 100%;
-  max-width: 200px;
+  max-width: 250px;
 }
 
 .pgInputSelector__form select,
 .pgInputSelector__form input{
-  width: 100%;
+  width: 250px;
+  // min-width: 300px;
   font-size: 1rem;
   padding: .3rem;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1100px) {
   .pgInputSelector{
     flex-wrap: wrap;
   }
@@ -44,7 +47,16 @@
     max-width: unset;
   }
 
+  .pgInputSelector__form select,
+  .pgInputSelector__form input{
+    width: 100%;
+  }
+
   .pgInputSelector__description{
     align-items: baseline;
   }
+}
+
+@media screen and (max-width: 50px) {
+
 }
