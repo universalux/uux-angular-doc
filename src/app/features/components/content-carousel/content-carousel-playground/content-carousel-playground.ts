@@ -1,17 +1,16 @@
 import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
 import { NgContentCarousel, ContentCarouselItemDirective, ContentCarouselLangs, ContentCarouselCustomAria } from "ng-content-carousel";
-import { NgSimpleButton } from "ng-simple-button";
-import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
-import { CodeBlock } from "@app/shared/ui/code-block/code-block";
-import { NgExpand } from "ng-expand";
-import { PgInputSelector } from "../../shared/playground/pg-input-selector/pg-input-selector";
+import { pgSharedImports } from '../../shared/playgroundSharedImports';
 
 type ContentCarouselAdvanceMode = 'single' |'page';
 type ContentCarouselArrowStyle = 'minimal' |'solid';
 
 @Component({
   selector: 'app-content-carousel-playground',
-  imports: [NgContentCarousel, ContentCarouselItemDirective, NgSimpleButton, PgShowCodeIcon, CodeBlock, NgExpand, PgInputSelector],
+  imports: [
+    ...pgSharedImports,
+    NgContentCarousel, ContentCarouselItemDirective
+  ],
   templateUrl: './content-carousel-playground.html',
   styleUrl: './content-carousel-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

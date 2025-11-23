@@ -5,13 +5,17 @@ import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-sho
 import { CodeBlock } from "@app/shared/ui/code-block/code-block";
 import { NgExpand } from "ng-expand";
 import { PgInputSelector } from "../../shared/playground/pg-input-selector/pg-input-selector";
+import { pgSharedImports } from '../../shared/playgroundSharedImports';
 
 type MenuToggleType = 'dots' | 'bars' | 'uneven';
 type MenuToggleAnimation = 'rotateX' | 'rotateY' | 'soft';
 
 @Component({
   selector: 'app-menu-toggle-playground',
-  imports: [NgMenuToggle, NgSimpleButton, PgShowCodeIcon, CodeBlock, NgExpand, PgInputSelector],
+  imports: [
+    ...pgSharedImports,
+    NgMenuToggle
+  ],
   templateUrl: './menu-toggle-playground.html',
   styleUrl: './menu-toggle-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

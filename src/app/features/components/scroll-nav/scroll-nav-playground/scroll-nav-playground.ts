@@ -1,17 +1,16 @@
 import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
 import { NgScrollNav, ScrollNavCustomAria, ScrollNavLangs } from "ng-scroll-nav";
-import { NgSimpleButton } from "ng-simple-button";
-import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
-import { CodeBlock } from "@app/shared/ui/code-block/code-block";
-import { PgInputSelector } from "../../shared/playground/pg-input-selector/pg-input-selector";
-import { NgExpand } from "ng-expand";
 import { NgLinkButton } from "ng-link-button";
+import { pgSharedImports } from '../../shared/playgroundSharedImports';
 
 type ScrollNavScrollBehavior = 'smooth' |'auto';
 
 @Component({
   selector: 'app-scroll-nav-playground',
-  imports: [NgScrollNav, NgSimpleButton, PgShowCodeIcon, CodeBlock, PgInputSelector, NgExpand, NgLinkButton],
+  imports: [
+    ...pgSharedImports,
+    NgScrollNav, NgLinkButton
+  ],
   templateUrl: './scroll-nav-playground.html',
   styleUrl: './scroll-nav-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

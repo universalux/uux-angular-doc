@@ -39,8 +39,7 @@ export const routes: Routes = [
       { path: "contribute", component: ContributePage },
     ],
   },
-  {
-    path: "components",
+  { path: "components",
     component: ComponentsLayout,
     children: [
       {path: "", component: ComponentsPage},
@@ -214,8 +213,7 @@ export const routes: Routes = [
       },
     ]
   },
-  {
-    path: "kits",
+  { path: "kits",
     component: KitsLayout,
     children: [
       {path: "", component: KitsPage},

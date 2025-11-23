@@ -1,13 +1,9 @@
 import { ChangeDetectionStrategy, Component, effect, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { NgLinkButton } from 'ng-link-button';
-import { PgInputSelector } from '../../shared/playground/pg-input-selector/pg-input-selector';
-import { CodeBlock } from '@app/shared/ui/code-block/code-block';
-import { PgShowCodeIcon } from '../../shared/playground/pg-show-code-icon/pg-show-code-icon';
-import { NgSimpleButton } from 'ng-simple-button';
 import { filter, Subject, takeUntil } from 'rxjs';
 import { Location } from '@angular/common';
-import { NgExpand } from 'ng-expand';
+import { pgSharedImports } from '../../shared/playgroundSharedImports';
 
 type LinkButtonRouterLink = string | any[] | undefined;
 type LinkButtonQueryParams = Record<string, any> | null;
@@ -25,7 +21,10 @@ type Role = 'link' | 'button' | null;
 
 @Component({
   selector: 'app-link-button-playground',
-  imports: [NgSimpleButton, NgLinkButton, PgInputSelector, CodeBlock, PgShowCodeIcon, NgExpand],
+  imports: [
+    ...pgSharedImports,
+    NgLinkButton
+  ],
   templateUrl: './link-button-playground.html',
   styleUrl: './link-button-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

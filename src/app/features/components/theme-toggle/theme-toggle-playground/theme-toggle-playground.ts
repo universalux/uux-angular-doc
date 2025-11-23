@@ -6,6 +6,7 @@ import { PgInputSelector } from "../../shared/playground/pg-input-selector/pg-in
 import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
 import { NgSimpleButton } from "ng-simple-button";
 import { ThemeService } from '@app/core/services/theme-service/theme-service';
+import { pgSharedImports } from '../../shared/playgroundSharedImports';
 
 type ThemeToggleType = 'solid' | 'minimal' | 'outline';
 type ThemeToggleHover = 'tone' | 'scale' | 'shadow' | 'none';
@@ -13,7 +14,10 @@ type ThemeToggleAnimation = 'rotateX' | 'rotateY' | 'soft';
 
 @Component({
   selector: 'app-theme-toggle-playground',
-  imports: [NgThemeToggle, CodeBlock, NgExpand, PgInputSelector, PgShowCodeIcon, NgSimpleButton],
+  imports: [
+    ...pgSharedImports,
+    NgThemeToggle
+  ],
   templateUrl: './theme-toggle-playground.html',
   styleUrl: './theme-toggle-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

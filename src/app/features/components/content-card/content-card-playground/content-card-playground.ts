@@ -1,17 +1,16 @@
 import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
 import { NgContentCard } from "ng-content-card";
-import { NgSimpleButton } from "ng-simple-button";
-import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
-import { CodeBlock } from "@app/shared/ui/code-block/code-block";
-import { NgExpand } from "ng-expand";
-import { PgInputSelector } from "../../shared/playground/pg-input-selector/pg-input-selector";
+import { pgSharedImports } from '../../shared/playgroundSharedImports';
 
 type ContentCardAnimation = 'translateY' | 'fadeIn';
 type ContentCardHover = 'scale'| 'tone'| 'both'| 'none';
 
 @Component({
   selector: 'app-content-card-playground',
-  imports: [NgContentCard, NgSimpleButton, PgShowCodeIcon, CodeBlock, NgExpand, PgInputSelector],
+  imports: [
+    ...pgSharedImports,
+    NgContentCard
+  ],
   templateUrl: './content-card-playground.html',
   styleUrl: './content-card-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
