@@ -21,7 +21,7 @@ export class UuxKit implements OnInit{
     this.metaTagsService.setMetaTags({
       title: 'UUX Kit • UUX Angular',
       description: 'UUX Complete Kit documentation',
-      image: '/assets/thumbnails/uux-kit_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/uux-kit_thumbnail_1200px.webp',
       url: '/kits/uux-kit'
     });
   };

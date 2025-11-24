@@ -20,7 +20,7 @@ export class ContentCardDoc implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Content Card • UUX Angular',
       description: 'UUX Content Card component documentation',
-      image: '/assets/thumbnails/content-card_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/content-card_thumbnail_1200px.webp',
       url: '/components/content-card/documentation',
       type: 'article'
     });

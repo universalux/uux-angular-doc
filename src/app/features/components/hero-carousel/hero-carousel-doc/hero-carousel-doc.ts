@@ -20,7 +20,7 @@ export class HeroCarouselDoc {
     this.metaTagsService.setMetaTags({
       title: 'Hero Carousel • UUX Angular',
       description: 'UUX Hero Carousel component documentation',
-      image: '/assets/thumbnails/hero-carousel_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/hero-carousel_thumbnail_1200px.webp',
       url: '/components/hero-carousel/documentation',
       type: 'article'
     });

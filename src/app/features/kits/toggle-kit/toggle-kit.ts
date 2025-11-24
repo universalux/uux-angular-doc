@@ -30,7 +30,7 @@ export class ToggleKit implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Toggle Kit • UUX Angular',
       description: 'UUX Toggle Kit documentation',
-      image: '/assets/thumbnails/toggle-kit_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/toggle-kit_thumbnail_1200px.webp',
       url: '/kits/toggle-kit'
     });
   }

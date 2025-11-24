@@ -20,7 +20,7 @@ export class ContentCarouselDoc implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Content Carousel • UUX Angular',
       description: 'UUX Content Carousel component documentation',
-      image: '/assets/thumbnails/content-carousel_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/content-carousel_thumbnail_1200px.webp',
       url: '/components/content-carousel/documentation',
       type: 'article'
     });

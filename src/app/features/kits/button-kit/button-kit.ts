@@ -30,7 +30,7 @@ export class ButtonKit implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Button Kit • UUX Angular',
       description: 'UUX Button Kit documentation',
-      image: '/assets/thumbnails/button-kit_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/button-kit_thumbnail_1200px.webp',
       url: '/kits/button-kit'
     });
   };

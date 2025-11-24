@@ -19,7 +19,7 @@ export class ComponentsPage implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Components • UUX Angular',
       description: 'Explore UUX Angular components',
-      image: '/assets/thumbnails/components_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/components_thumbnail_1200px.webp',
       url: '/components'
     });
   };

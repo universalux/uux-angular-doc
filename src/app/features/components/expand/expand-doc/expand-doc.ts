@@ -20,7 +20,7 @@ export class ExpandDoc {
     this.metaTagsService.setMetaTags({
       title: 'Expand • UUX Angular',
       description: 'UUX Expand component documentation',
-      image: '/assets/thumbnails/expand_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/expand_thumbnail_1200px.webp',
       url: '/components/expand/documentation',
       type: 'article'
     });

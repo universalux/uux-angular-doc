@@ -174,7 +174,7 @@ export class ContentCarouselPlayground {
     this.metaTagsService.setMetaTags({
       title: 'Content Carousel • UUX Angular',
       description: 'UUX Content Carousel component playground',
-      image: '/assets/thumbnails/content-carousel_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/content-carousel_thumbnail_1200px.webp',
       url: '/components/content-carousel/playground',
       type: 'website'
     });

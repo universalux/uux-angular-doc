@@ -20,7 +20,7 @@ export class LinkButtonDoc {
     this.metaTagsService.setMetaTags({
       title: 'Link Button • UUX Angular',
       description: 'UUX Link Button component documentation',
-      image: '/assets/thumbnails/link-button_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/link-button_thumbnail_1200px.webp',
       url: '/components/link-button/documentation',
       type: 'article'
     });

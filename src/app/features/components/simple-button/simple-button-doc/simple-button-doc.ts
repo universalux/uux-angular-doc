@@ -20,7 +20,7 @@ export class SimpleButtonDoc {
     this.metaTagsService.setMetaTags({
       title: 'Simple Button • UUX Angular',
       description: 'UUX Simple Button component documentation',
-      image: '/assets/thumbnails/simple-button_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/simple-button_thumbnail_1200px.webp',
       url: '/components/simple-button/documentation',
       type: 'article'
     });

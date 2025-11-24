@@ -134,7 +134,7 @@ export class ScrollNavPlayground implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Scroll Nav • UUX Angular',
       description: 'UUX Scroll Nav component playground',
-      image: '/assets/thumbnails/scroll-nav_thumbnail_1200px.webp',
+      image: '/assets/images/thumbnails/scroll-nav_thumbnail_1200px.webp',
       url: '/components/scroll-nav/playground',
       type: 'website'
     });
