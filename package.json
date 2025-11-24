@@ -12,7 +12,7 @@
     "test:husky": "ng test --watch=false --browsers=ChromeHeadless",
     "server": "ng build & node dist/uux-angular-doc/server/server.mjs",
     "share": "ng serve --host 0.0.0.0 --port 4200",
-    "build:prod": "ng build --output-path docs --base-href /uux-angular-doc/"
+    "build:prod": "ng build --output-path docs --base-href /"
   },
   "prettier": {
     "overrides": [
