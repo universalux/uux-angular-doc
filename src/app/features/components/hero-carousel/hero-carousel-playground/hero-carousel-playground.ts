@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, OnInit, signal } from '@angular/core';
 import { HeroCarouselCustomAria, HeroCarouselItem, HeroCarouselLangs, NgHeroCarousel, SlideForDirective } from "ng-hero-carousel";
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type HeroCarouselArrowsPlacement = 'auto'| 'down' | 'up';
 type HeroCarouselIndicators = 'bars'| 'circles' | 'none';
@@ -16,7 +17,7 @@ type HeroCarouselIndicators = 'bars'| 'circles' | 'none';
   styleUrl: './hero-carousel-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeroCarouselPlayground {
+export class HeroCarouselPlayground implements OnInit {
   // ----- Component inputs -----
 
   // Slides input
@@ -190,4 +191,16 @@ export class HeroCarouselPlayground {
   toggleShowCode(){
     this.showCode.set(!this.showCode());
   }
+
+  metaTagsService = inject(MetaTagsService);
+
+  ngOnInit() {
+    this.metaTagsService.setMetaTags({
+      title: 'Hero Carousel • UUX Angular',
+      description: 'UUX Hero Carousel component playground',
+      image: '/assets/images/thumbnails/hero-carousel_thumbnail_1200px.webp',
+      url: '/components/hero-carousel/playground',
+      type: 'website'
+    });
+  };
 }

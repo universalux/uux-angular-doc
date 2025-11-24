@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, OnInit, signal } from '@angular/core';
 import { NgScrollNav, ScrollNavCustomAria, ScrollNavLangs } from "ng-scroll-nav";
 import { NgLinkButton } from "ng-link-button";
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type ScrollNavScrollBehavior = 'smooth' |'auto';
 
@@ -15,7 +16,7 @@ type ScrollNavScrollBehavior = 'smooth' |'auto';
   styleUrl: './scroll-nav-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ScrollNavPlayground {
+export class ScrollNavPlayground implements OnInit {
   // ----- Component inputs -----
 
   // Style & Behavior Inputs
@@ -126,4 +127,16 @@ export class ScrollNavPlayground {
   toggleShowCode(){
     this.showCode.set(!this.showCode());
   }
+
+  metaTagsService = inject(MetaTagsService);
+
+  ngOnInit() {
+    this.metaTagsService.setMetaTags({
+      title: 'Scroll Nav • UUX Angular',
+      description: 'UUX Scroll Nav component playground',
+      image: '/assets/images/thumbnails/scroll-nav_thumbnail_1200px.webp',
+      url: '/components/scroll-nav/playground',
+      type: 'website'
+    });
+  };
 }

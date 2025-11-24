@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { NgContentCarousel, ContentCarouselItemDirective, ContentCarouselLangs, ContentCarouselCustomAria } from "ng-content-carousel";
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type ContentCarouselAdvanceMode = 'single' |'page';
 type ContentCarouselArrowStyle = 'minimal' |'solid';
@@ -166,4 +167,16 @@ export class ContentCarouselPlayground {
   toggleShowCode(){
     this.showCode.set(!this.showCode());
   }
+
+  metaTagsService = inject(MetaTagsService);
+
+  ngOnInit() {
+    this.metaTagsService.setMetaTags({
+      title: 'Content Carousel • UUX Angular',
+      description: 'UUX Content Carousel component playground',
+      image: '/assets/images/thumbnails/content-carousel_thumbnail_1200px.webp',
+      url: '/components/content-carousel/playground',
+      type: 'website'
+    });
+  };
 }

@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, effect, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, OnInit, signal } from '@angular/core';
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type SimpleButtonType = 'solid' | 'minimal' | 'outline';
 type SimpleButtonHover = 'tone' | 'scale' | 'stroke' | 'shadow' | 'none';
@@ -37,7 +38,18 @@ export class SimpleButtonPlayground implements OnInit {
       </ng-simple-button>
   `)
 
+  metaTagsService = inject(MetaTagsService);
+
   ngOnInit(): void {
+
+    this.metaTagsService.setMetaTags({
+      title: 'Simple Button • UUX Angular',
+      description: 'UUX Simple Button component playground',
+      image: '/assets/images/thumbnails/simple-button_thumbnail_1200px.webp',
+      url: '/components/simple-button/playground',
+      type: 'website'
+    });
+
     this.generateRandomNumber();
   }
 

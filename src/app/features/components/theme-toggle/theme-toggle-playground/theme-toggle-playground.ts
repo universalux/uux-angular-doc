@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, OnInit, signal } from '@angular/core';
 import { NgThemeToggle, ThemeToggleCustomAria, ThemeToggleLangs } from "ng-theme-toggle";
 import { CodeBlock } from "@app/shared/ui/code-block/code-block";
 import { NgExpand } from "ng-expand";
@@ -7,6 +7,7 @@ import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-sho
 import { NgSimpleButton } from "ng-simple-button";
 import { ThemeService } from '@app/core/services/theme-service/theme-service';
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type ThemeToggleType = 'solid' | 'minimal' | 'outline';
 type ThemeToggleHover = 'tone' | 'scale' | 'shadow' | 'none';
@@ -22,7 +23,7 @@ type ThemeToggleAnimation = 'rotateX' | 'rotateY' | 'soft';
   styleUrl: './theme-toggle-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ThemeTogglePlayground {
+export class ThemeTogglePlayground implements OnInit {
   // ----- Component inputs -----
 
   // Style & Behavior Inputs
@@ -130,4 +131,18 @@ export class ThemeTogglePlayground {
   toggleShowCode(){
     this.showCode.set(!this.showCode());
   }
+
+  metaTagsService = inject(MetaTagsService);
+
+    ngOnInit(): void {
+
+      this.metaTagsService.setMetaTags({
+        title: 'Theme Toggle • UUX Angular',
+        description: 'UUX Theme Toggle component playground',
+        image: '/assets/images/thumbnails/theme-toggle_thumbnail_1200px.webp',
+        url: '/components/theme-toggle/playground',
+        type: 'website'
+      });
+
+    }
 }

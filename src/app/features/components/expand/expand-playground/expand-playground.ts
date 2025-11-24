@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, OnInit, signal } from '@angular/core';
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type ExpandIconType = 'arrow' | 'plus';
 
@@ -10,7 +11,7 @@ type ExpandIconType = 'arrow' | 'plus';
   styleUrl: './expand-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExpandPlayground {
+export class ExpandPlayground implements OnInit {
   // Component inputs
 
   label = signal<string>('Expand button label example');
@@ -79,4 +80,16 @@ export class ExpandPlayground {
   toggleShowCode(){
     this.showCode.set(!this.showCode());
   }
+
+  metaTagsService = inject(MetaTagsService);
+
+  ngOnInit() {
+    this.metaTagsService.setMetaTags({
+      title: 'Expand • UUX Angular',
+      description: 'UUX Expand component playground',
+      image: '/assets/images/thumbnails/expand_thumbnail_1200px.webp',
+      url: '/components/expand/playground',
+      type: 'website'
+    });
+  };
 }

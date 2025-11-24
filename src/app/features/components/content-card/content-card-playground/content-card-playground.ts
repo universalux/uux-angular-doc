@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, OnInit, signal } from '@angular/core';
 import { NgContentCard } from "ng-content-card";
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type ContentCardAnimation = 'translateY' | 'fadeIn';
 type ContentCardHover = 'scale'| 'tone'| 'both'| 'none';
@@ -15,7 +16,7 @@ type ContentCardHover = 'scale'| 'tone'| 'both'| 'none';
   styleUrl: './content-card-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContentCardPlayground {
+export class ContentCardPlayground implements OnInit {
 
   //Component slots
   hasHeader = signal<boolean>(true);
@@ -145,5 +146,17 @@ export class ContentCardPlayground {
   toggleShowCode(){
     this.showCode.set(!this.showCode());
   }
+
+  metaTagsService = inject(MetaTagsService);
+
+  ngOnInit() {
+    this.metaTagsService.setMetaTags({
+      title: 'Content Card • UUX Angular',
+      description: 'UUX Content Card component playground',
+      image: '/assets/images/thumbnails/content-card_thumbnail_1200px.webp',
+      url: '/components/content-card/playground',
+      type: 'website'
+    });
+  };
 
 }
