@@ -86,7 +86,6 @@ export class RouterService {
         };
 
         if(this.isBrowser && this.routeChange() === 'item'){
-          console.log('reset scroll');
           this.scrollService.resetScroll(page);
         };
 

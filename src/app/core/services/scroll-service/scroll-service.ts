@@ -23,7 +23,6 @@ export class ScrollService {
 
     const container = document.querySelector(layout);
 
-    console.log(container);
     if (container) {
       setTimeout(() => {
         container.scrollTo({ top: 0, behavior: 'smooth' });

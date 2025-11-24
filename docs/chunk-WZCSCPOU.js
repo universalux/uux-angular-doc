@@ -1,4 +1,4 @@
-import{a as v}from"./chunk-CGC2ESI4.js";import{e as s,h}from"./chunk-FG5VSDBU.js";import{e as u}from"./chunk-TQKFHUXZ.js";import{Ab as b,Bb as g,Cb as y,Ha as l,Ia as t,Ja as o,Ka as i,Q as p,ba as r,cb as e,la as a,sa as m}from"./chunk-X2F53U56.js";var C={installationCode_1:{language:"bash",code:"npm install ng-simple-button"},installationCode_2:{language:"bash",code:"npm install ng-simple-button@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-simple-button@v18-lts"},overviewCode_1:{language:"ts",code:`
+import{a as v}from"./chunk-NP7TIR3N.js";import{e as s,h}from"./chunk-CIYC6JQE.js";import{e as u}from"./chunk-5JG6NEMX.js";import{Ab as b,Bb as g,Cb as y,Ha as l,Ia as t,Ja as o,Ka as i,Q as p,ba as r,cb as e,la as a,sa as m}from"./chunk-VWLHZTRG.js";var C={installationCode_1:{language:"bash",code:"npm install ng-simple-button"},installationCode_2:{language:"bash",code:"npm install ng-simple-button@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-simple-button@v18-lts"},overviewCode_1:{language:"ts",code:`
       import { Component, signal } from '@angular/core';
       import { NgSimpleButton } from 'ng-simple-button';
 

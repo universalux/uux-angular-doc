@@ -17,7 +17,7 @@ export class MetaTagsService {
   private meta = inject(Meta);
   private title = inject(Title);
 
-  baseUrl = signal<string>('https://universalux.github.io/uux-angular-doc');
+  baseUrl = signal<string>('https://universalux.dev');
 
   setMetaTags(config: MetaTagsConfig){
     if (config.title) {

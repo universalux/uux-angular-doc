@@ -1,4 +1,4 @@
-import{a as h}from"./chunk-CGC2ESI4.js";import{e as d,h as x}from"./chunk-FG5VSDBU.js";import"./chunk-TQKFHUXZ.js";import{Ab as b,Bb as u,Cb as g,Ha as l,Ia as n,Ja as t,Ka as o,Q as c,ba as p,cb as e,la as i,sa as m}from"./chunk-X2F53U56.js";var f={installationCode_1:{language:"bash",code:"npm install ng-expand"},installationCode_2:{language:"bash",code:"npm install ng-expand@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-expand@v18-lts"},overviewCode_1:{language:"ts",code:`
+import{a as h}from"./chunk-NP7TIR3N.js";import{e as d,h as x}from"./chunk-CIYC6JQE.js";import"./chunk-5JG6NEMX.js";import{Ab as b,Bb as u,Cb as g,Ha as l,Ia as n,Ja as t,Ka as o,Q as c,ba as p,cb as e,la as i,sa as m}from"./chunk-VWLHZTRG.js";var f={installationCode_1:{language:"bash",code:"npm install ng-expand"},installationCode_2:{language:"bash",code:"npm install ng-expand@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-expand@v18-lts"},overviewCode_1:{language:"ts",code:`
       import { Component, signal } from '@angular/core';
       import { NgExpand } from 'ng-expand';
 

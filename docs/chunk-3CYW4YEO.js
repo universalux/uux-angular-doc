@@ -1,4 +1,4 @@
-import{a as C}from"./chunk-CGC2ESI4.js";import{e as c,h as u}from"./chunk-FG5VSDBU.js";import"./chunk-TQKFHUXZ.js";import{Ab as p,Bb as h,Cb as b,Ha as d,Ia as o,Ja as t,Ka as a,Q as m,ba as l,cb as e,la as i,sa as g}from"./chunk-X2F53U56.js";var f={installationCode_1:{language:"bash",code:"npm install ng-content-card"},installationCode_2:{language:"bash",code:"npm install ng-content-card@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-content-card@v18-lts"},overviewCode_1:{language:"html",code:`
+import{a as C}from"./chunk-NP7TIR3N.js";import{e as c,h as u}from"./chunk-CIYC6JQE.js";import"./chunk-5JG6NEMX.js";import{Ab as p,Bb as h,Cb as b,Ha as d,Ia as o,Ja as t,Ka as a,Q as m,ba as l,cb as e,la as i,sa as g}from"./chunk-VWLHZTRG.js";var f={installationCode_1:{language:"bash",code:"npm install ng-content-card"},installationCode_2:{language:"bash",code:"npm install ng-content-card@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-content-card@v18-lts"},overviewCode_1:{language:"html",code:`
       <ng-content-card hover="both">
         <header card-header>
           Header Content
