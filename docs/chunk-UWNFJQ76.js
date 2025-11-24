@@ -1,4 +1,4 @@
-import{a as f}from"./chunk-NP7TIR3N.js";import{e as r,h}from"./chunk-RHLAEQF4.js";import{e as m}from"./chunk-5JG6NEMX.js";import{Ab as b,Bb as g,Cb as v,Ha as l,Ia as n,Ja as t,Ka as i,Q as c,ba as d,cb as e,la as a,sa as p}from"./chunk-VWLHZTRG.js";var k={installationCode_1:{language:"bash",code:"npm install ng-link-button"},installationCode_2:{language:"bash",code:"npm install ng-link-button@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-link-button@v18-lts"},overviewCode_1:{language:"ts",code:`
+import{a as f}from"./chunk-NP7TIR3N.js";import{e as r,h}from"./chunk-CIYC6JQE.js";import{e as m}from"./chunk-5JG6NEMX.js";import{Ab as b,Bb as g,Cb as v,Ha as l,Ia as n,Ja as t,Ka as i,Q as c,ba as d,cb as e,la as a,sa as p}from"./chunk-VWLHZTRG.js";var k={installationCode_1:{language:"bash",code:"npm install ng-link-button"},installationCode_2:{language:"bash",code:"npm install ng-link-button@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-link-button@v18-lts"},overviewCode_1:{language:"ts",code:`
       import { Component, signal } from '@angular/core';
       import { NgLinkButton } from 'ng-link-button';
 

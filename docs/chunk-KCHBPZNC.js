@@ -1,4 +1,4 @@
-import{a as y}from"./chunk-NP7TIR3N.js";import{e as r,h}from"./chunk-RHLAEQF4.js";import{e as p}from"./chunk-5JG6NEMX.js";import{Ab as g,Bb as b,Cb as C,Ha as n,Ia as o,Ja as t,Ka as i,Q as c,ba as d,cb as e,la as l,sa as m}from"./chunk-VWLHZTRG.js";var f={installationCode_1:{language:"bash",code:"npm install ng-hero-carousel"},installationCode_2:{language:"bash",code:"npm install ng-hero-carousel@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-hero-carousel@v18-lts"},overviewCode_1:{language:"ts",code:`
+import{a as y}from"./chunk-NP7TIR3N.js";import{e as r,h}from"./chunk-CIYC6JQE.js";import{e as p}from"./chunk-5JG6NEMX.js";import{Ab as g,Bb as b,Cb as C,Ha as n,Ia as o,Ja as t,Ka as i,Q as c,ba as d,cb as e,la as l,sa as m}from"./chunk-VWLHZTRG.js";var f={installationCode_1:{language:"bash",code:"npm install ng-hero-carousel"},installationCode_2:{language:"bash",code:"npm install ng-hero-carousel@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-hero-carousel@v18-lts"},overviewCode_1:{language:"ts",code:`
       import { NgHeroCarousel, HeroCarouselItem } from 'ng-hero-carousel';
 
       @Component({

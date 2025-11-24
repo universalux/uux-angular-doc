@@ -1,4 +1,4 @@
-import{a as f}from"./chunk-NP7TIR3N.js";import{e as r,h as v}from"./chunk-RHLAEQF4.js";import{e as p}from"./chunk-5JG6NEMX.js";import{Ab as g,Bb as b,Cb as h,Ha as l,Ia as a,Ja as t,Ka as i,Q as m,ba as c,cb as e,la as o,sa as u}from"./chunk-VWLHZTRG.js";var C={installationCode_1:{language:"bash",code:"npm install ng-scroll-nav"},installationCode_2:{language:"bash",code:"npm install ng-scroll-nav@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-scroll-nav@v18-lts"},overviewCode_1:{language:"ts",code:`
+import{a as f}from"./chunk-NP7TIR3N.js";import{e as r,h as v}from"./chunk-CIYC6JQE.js";import{e as p}from"./chunk-5JG6NEMX.js";import{Ab as g,Bb as b,Cb as h,Ha as l,Ia as a,Ja as t,Ka as i,Q as m,ba as c,cb as e,la as o,sa as u}from"./chunk-VWLHZTRG.js";var C={installationCode_1:{language:"bash",code:"npm install ng-scroll-nav"},installationCode_2:{language:"bash",code:"npm install ng-scroll-nav@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-scroll-nav@v18-lts"},overviewCode_1:{language:"ts",code:`
       import { NgScrollNav } from 'ng-scroll-nav';
       import { NgLinkButton } from 'ng-link-button';
 

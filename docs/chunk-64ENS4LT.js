@@ -1,4 +1,4 @@
-import{a as v}from"./chunk-NP7TIR3N.js";import{e as r,h as b}from"./chunk-RHLAEQF4.js";import{e as h}from"./chunk-5JG6NEMX.js";import{Ab as p,Bb as u,Cb as f,Ha as l,Ia as o,Ja as t,Ka as i,Q as m,ba as s,cb as e,la as n,sa as c}from"./chunk-VWLHZTRG.js";var C={installationCode_1:{language:"bash",code:"npm install ng-theme-toggle"},installationCode_2:{language:"bash",code:"npm install ng-theme-toggle@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-theme-toggle@v18-lts"},overviewCode_1:{language:"ts",code:`
+import{a as v}from"./chunk-NP7TIR3N.js";import{e as r,h as b}from"./chunk-CIYC6JQE.js";import{e as h}from"./chunk-5JG6NEMX.js";import{Ab as p,Bb as u,Cb as f,Ha as l,Ia as o,Ja as t,Ka as i,Q as m,ba as s,cb as e,la as n,sa as c}from"./chunk-VWLHZTRG.js";var C={installationCode_1:{language:"bash",code:"npm install ng-theme-toggle"},installationCode_2:{language:"bash",code:"npm install ng-theme-toggle@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-theme-toggle@v18-lts"},overviewCode_1:{language:"ts",code:`
       import { Component, signal } from '@angular/core';
       import { NgThemeToggle } from 'ng-theme-toggle';
 
