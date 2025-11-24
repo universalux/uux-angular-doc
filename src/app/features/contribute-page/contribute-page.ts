@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 import { NgContentCard } from 'ng-content-card';
 
 type ContributeOptions = {
@@ -22,7 +23,9 @@ type Repositories = {
   styleUrl: './contribute-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContributePage {
+export class ContributePage implements OnInit {
+
+  metaTagsService = inject(MetaTagsService);
 
   contributeOptions = signal<ContributeOptions[]>([
     {
@@ -65,4 +68,12 @@ export class ContributePage {
 
   currentDescription = signal<string | null>(null);
 
+  ngOnInit() {
+    this.metaTagsService.setMetaTags({
+      title: 'Contribute • UUX Angular',
+      description: 'Learn how to contribute with Universal UX',
+      image: '/assets/thumbnails/contribute_thumbnail_1200px.webp',
+      url: '/contribute'
+    });
+  };
 }

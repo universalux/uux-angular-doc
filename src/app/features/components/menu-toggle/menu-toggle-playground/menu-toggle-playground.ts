@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, input, OnInit, signal } from '@angular/core';
 import { MenuToggleCustomAria, MenuToggleLangs, NgMenuToggle } from "ng-menu-toggle";
 import { NgSimpleButton } from 'ng-simple-button';
 import { PgShowCodeIcon } from "../../shared/playground/pg-show-code-icon/pg-show-code-icon";
@@ -6,6 +6,7 @@ import { CodeBlock } from "@app/shared/ui/code-block/code-block";
 import { NgExpand } from "ng-expand";
 import { PgInputSelector } from "../../shared/playground/pg-input-selector/pg-input-selector";
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type MenuToggleType = 'dots' | 'bars' | 'uneven';
 type MenuToggleAnimation = 'rotateX' | 'rotateY' | 'soft';
@@ -20,7 +21,7 @@ type MenuToggleAnimation = 'rotateX' | 'rotateY' | 'soft';
   styleUrl: './menu-toggle-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MenuTogglePlayground {
+export class MenuTogglePlayground implements OnInit {
 
   // ----- Component inputs -----
 
@@ -137,4 +138,16 @@ export class MenuTogglePlayground {
   toggleShowCode(){
     this.showCode.set(!this.showCode());
   }
+
+  metaTagsService = inject(MetaTagsService);
+
+  ngOnInit() {
+    this.metaTagsService.setMetaTags({
+      title: 'Menu Toggle • UUX Angular',
+      description: 'UUX Menu Toggle component playground',
+      image: '/assets/thumbnails/menu-toggle_thumbnail_1200px.webp',
+      url: '/components/menu-toggle/playground',
+      type: 'website'
+    });
+  };
 }

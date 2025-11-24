@@ -4,6 +4,7 @@ import { NgLinkButton } from 'ng-link-button';
 import { filter, Subject, takeUntil } from 'rxjs';
 import { Location } from '@angular/common';
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
+import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type LinkButtonRouterLink = string | any[] | undefined;
 type LinkButtonQueryParams = Record<string, any> | null;
@@ -79,7 +80,18 @@ export class LinkButtonPlayground implements OnInit{
 
   private destroy$ = new Subject<void>();
 
+  metaTagsService = inject(MetaTagsService);
+
   ngOnInit(): void {
+
+    this.metaTagsService.setMetaTags({
+      title: 'Link Buttonl • UUX Angular',
+      description: 'UUX Link Button component playground',
+      image: '/assets/thumbnails/link-button_thumbnail_1200px.webp',
+      url: '/components/link-button/playground',
+      type: 'website'
+    });
+
     this.router.events
       .pipe(
         takeUntil(this.destroy$),
