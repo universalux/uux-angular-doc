@@ -30,6 +30,7 @@
       "@content-carousel/*": ["src/app/features/components/content-carousel/*"],
       "@scroll-nav/*": ["src/app/features/components/scroll-nav/*"],
       "@expand/*": ["src/app/features/components/expand/*"],
+      "@expand-group/*": ["src/app/features/components/expand-group/*"],
     }
   },
   "angularCompilerOptions": {

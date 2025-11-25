@@ -1,0 +1,22 @@
+:host{
+  display: block;
+}
+
+.componentView--expand-group{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+ng-expand-group.playground{
+  --expand-group-gap: .5rem;
+}
+
+ng-expand.playground{
+  margin: 0;
+  --expand-width: 100%;
+  --expand-content-bg: var(--color-fg);
+  --expand-content-color: var(--color-bg);
+  min-width: 300px;
+}

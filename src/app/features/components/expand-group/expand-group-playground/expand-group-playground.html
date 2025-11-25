@@ -1,0 +1,59 @@
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer">
+
+  <article class="componentView componentView--expand-group">
+
+    @if (getCurrentExpanded()) {
+      <span>Current Expanded item: {{expandedItemSignal() === null ? 'none' : expandedItemSignal()}}</span>
+    }
+
+    <ng-expand-group class="playground" (expandedItem)="expandedItemSignal.set($event)">
+      <ng-expand class="playground" label="Expand button label 1">
+        <p>This is the content 1</p>
+      </ng-expand>
+      <ng-expand class="playground" label="Expand button label 2">
+        <p>This is the content 2</p>
+      </ng-expand>
+    </ng-expand-group>
+
+  </article>
+
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <ng-expand label="Functionality options">
+
+    <app-pg-input-selector name="label"
+      description="Set ot not the (expandedItem) outpu.t"
+      [options]="['true', 'false']"
+      (changeFn)="handleGetCurrentExpandedInput($event)"
+    />
+
+  </ng-expand>
+
+
+</section>

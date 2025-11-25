@@ -170,7 +170,22 @@ export const routes: Routes = [
           }
         ]
       },
-
+      { path: "expand-group",
+        component: ComponentLayout,
+        children: [
+          { path: '', redirectTo: 'playground', pathMatch: 'full' },
+          {
+            path: 'playground',
+            loadComponent: () => import('@expand-group/expand-group-playground/expand-group-playground')
+              .then(m => m.ExpandGroupPlayground)
+          },
+          {
+            path: 'documentation',
+            loadComponent: () => import('@expand-group/expand-group-doc/expand-group-doc')
+              .then(m => m.ExpandGroupDoc)
+          }
+        ]
+      },
     ]
   },
 

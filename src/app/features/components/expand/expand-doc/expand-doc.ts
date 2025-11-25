@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { expandDocCode, ExpandDocCode } from './data/expand-doc-code';
 import { ExpandDocTables, expandDocTables } from './data/expand-doc-tables';
 import { docSharedImports } from '../../shared/docSharedImports';
@@ -11,7 +11,7 @@ import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-
   styleUrl: './expand-doc.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExpandDoc {
+export class ExpandDoc implements OnInit {
   docCode = signal<ExpandDocCode>(expandDocCode);
   docTables = signal<ExpandDocTables>(expandDocTables);
   metaTagsService = inject(MetaTagsService);

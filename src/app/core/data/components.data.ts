@@ -6,7 +6,7 @@ export const componentList : CatalogItem[] = [
     name: "Simple button",
     url: "/components/simple-button",
     description: "Customizable and easy-to-use simple button",
-    image: "assets/images/components/ng-buttons-static-cover.png",
+    image: "assets/images/components/ng-buttons-static-cover.webp",
     featured: false,
     kitId: 'button-kit'
   },
@@ -15,7 +15,7 @@ export const componentList : CatalogItem[] = [
     name: "Link button",
     url: "/components/link-button",
     description: "Customizable and easy-to-use link button",
-    image: "assets/images/components/ng-buttons-static-cover.png",
+    image: "assets/images/components/ng-buttons-static-cover.webp",
     featured: true,
     kitId: 'button-kit'
   },
@@ -24,7 +24,7 @@ export const componentList : CatalogItem[] = [
     name: "Menu toggle",
     url: "/components/menu-toggle",
     description: "Customizable and easy-to-use menu toggle",
-    image: "assets/images/components/ng-menu-toggle-static-cover.png",
+    image: "assets/images/components/ng-menu-toggle-static-cover.webp",
     featured: true,
     kitId: 'toggle-kit'
   },
@@ -33,7 +33,7 @@ export const componentList : CatalogItem[] = [
     name: "Theme toggle",
     url: "/components/theme-toggle",
     description: "Toggle button to handle dark/light theme",
-    image: "assets/images/components/ng-theme-toggle-static-cover.png",
+    image: "assets/images/components/ng-theme-toggle-static-cover.webp",
     featured: true,
     kitId: 'toggle-kit'
   },
@@ -42,7 +42,7 @@ export const componentList : CatalogItem[] = [
     name: "Content Card",
     url: "/components/content-card",
     description: "Easy-to-use customizable card",
-    image: "assets/images/components/ng-content-card-static-cover.png",
+    image: "assets/images/components/ng-content-card-static-cover.webp",
     featured: true
   },
   {
@@ -50,7 +50,7 @@ export const componentList : CatalogItem[] = [
     name: "Hero Carousel",
     url: "/components/hero-carousel",
     description: "Anuglar hero carousel",
-    image: "assets/images/components/ng-hero-carousel-static-cover.png",
+    image: "assets/images/components/ng-hero-carousel-static-cover.webp",
     featured: true
   },
   {
@@ -58,7 +58,7 @@ export const componentList : CatalogItem[] = [
     name: "Content Carousel",
     url: "/components/content-carousel",
     description: "Anuglar content carousel",
-    image: "assets/images/components/ng-content-carousel-static-cover.png",
+    image: "assets/images/components/ng-content-carousel-static-cover.webp",
     featured: true
   },
   {
@@ -66,7 +66,7 @@ export const componentList : CatalogItem[] = [
     name: "Scroll Nav",
     url: "/components/scroll-nav",
     description: "Anuglar scrollabe nav",
-    image: "assets/images/components/ng-scroll-nav-static-cover.png",
+    image: "assets/images/components/ng-scroll-nav-static-cover.webp",
     featured: true
   },
   {
@@ -74,7 +74,15 @@ export const componentList : CatalogItem[] = [
     name: "Expand",
     url: "/components/expand",
     description: "Anuglar expandable item",
-    image: "assets/images/components/ng-expand-static-cover.png",
+    image: "assets/images/components/ng-expand-static-cover.webp",
+    featured: true
+  },
+  {
+    id: "expand-group",
+    name: "Expand Group",
+    url: "/components/expand-group",
+    description: "Anuglar expand group (accordion)",
+    image: "assets/images/components/ng-expand-group-static-cover.webp",
     featured: true
   },
 ];
