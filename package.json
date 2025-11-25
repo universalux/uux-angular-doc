@@ -13,7 +13,7 @@
     "server": "ng build & node dist/uux-angular-doc/server/server.mjs",
     "share": "ng serve --host 0.0.0.0 --port 4200",
     "build:prod": "ng build --output-path docs --base-href /",
-    "doc": "start docs/index.html"
+    "doc": "http-server docs -p 4201 -o"
   },
   "prettier": {
     "overrides": [
@@ -59,6 +59,7 @@
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
+    "http-server": "^14.1.1",
     "husky": "^9.1.7",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
