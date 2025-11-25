@@ -19,7 +19,7 @@ export const contentCardDocCode = {
           Header Content
         </header>
         <section card-image>
-          <img class="scaleHover" src="assets/images/card/dog_post.png" alt="Dog">
+          <img class="scaleHover" src="assets/images/card/example-img.webp" alt="Example image">
         </section>
         <section card-body>
           Body content
@@ -37,7 +37,7 @@ export const contentCardDocCode = {
     language: 'html',
     code: `
       <section card-image>
-        <img class="scaleHover" src="images/card/dog_post.png" alt="Dog">
+        <img class="scaleHover" src="images/card/example-image.webp" alt="Example image">
       </section>
     `,
   },

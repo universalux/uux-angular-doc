@@ -309,12 +309,12 @@ export class LinkButtonPlayground implements OnInit{
   handleDownloadInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
     if(selectElement.value === 'true'){
-      this.href.set('assets/images/components/ng-buttons-static-cover.png');
+      this.href.set('assets/images/components/ng-buttons-static-cover.webp');
       this.download.set(true);
     }else if (selectElement.value === 'false'){
       this.download.set(false);
-    }else if (selectElement.value === 'example-name.png'){
-      this.href.set('assets/images/components/ng-buttons-static-cover.png');
+    }else if (selectElement.value === 'example-name.webp'){
+      this.href.set('assets/images/components/ng-buttons-static-cover.webp');
       this.download.set(selectElement.value);
     }
   };

@@ -85,7 +85,7 @@ export class RouterService {
           this.scrollService.enableAnchorNavigations(page, fragment);
         };
 
-        if(this.isBrowser && this.routeChange() === 'item'){
+        if(this.isBrowser && (this.routeChange() === 'item' || this.routeChange() === 'section')){
           this.scrollService.resetScroll(page);
         };
 

@@ -20,9 +20,6 @@ export class ExpandPlayground implements OnInit {
 
   tabIndex = signal<number>(0);
 
-  // Functionalities
-  randomNumber = signal<number>(0);
-
   // Code to show properties
   showCode = signal<boolean>(false);
   currentCode = signal<string>('');
