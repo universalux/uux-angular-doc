@@ -1,37 +1,21 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
+interface ScrollOptions {
+  layout: string;
+  margin: number;
+  behavior:  ScrollBehavior | undefined;
+};
+
 @Injectable({
   providedIn: 'root',
 })
 export class ScrollService {
   router = inject(Router);
 
-  getPageLayer(page: string) : string{
-    if(page === 'components'){
-      return 'app-components-layout';
-    }else if(page === 'kits'){
-      return 'app-kits-layout';
-    }else{
-      return 'app-main-layout';
-    };
-  };
+  getScrollOptions(page: string) : ScrollOptions{
 
-  resetScroll(page: string){
-
-    const layout = this.getPageLayer(page);
-
-    const container = document.querySelector(layout);
-
-    if (container) {
-      setTimeout(() => {
-        container.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 20);
-    }
-  };
-
-  enableAnchorNavigations(page: string, fragment: string){
-    let layout : string;
+    let layout = 'app-components-layout';
     let margin : number = 0;
     let behavior : ScrollBehavior | undefined = 'auto';
     if(page === 'components'){
@@ -43,15 +27,34 @@ export class ScrollService {
     }else{
       layout = 'app-main-layout';
       behavior = 'smooth';
+      margin = 25;
     };
 
+    return {layout, margin, behavior};
+  };
+
+  resetScroll(page: string){
+    const scrollOptions = this.getScrollOptions(page);
+
+    const container = document.querySelector(scrollOptions.layout);
+
+    if (container) {
+      setTimeout(() => {
+        container.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 20);
+    }
+  };
+
+  enableAnchorNavigations(page: string, fragment: string){
+    const scrollOptions = this.getScrollOptions(page);
+
     const el = document.getElementById(fragment);
-    const container = document.querySelector(layout);
+    const container = document.querySelector(scrollOptions.layout);
     el?.focus();
     if (el && container) {
       container.scrollTo({
-        top: el.offsetTop - margin,
-        behavior: behavior,
+        top: el.offsetTop - scrollOptions.margin,
+        behavior: scrollOptions.behavior,
       });
     }
   };
@@ -62,5 +65,5 @@ export class ScrollService {
     if ( isVisible) {
       this.activeSection.set(sectionId);
     }
-  }
+  };
 }
