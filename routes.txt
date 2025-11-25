@@ -19,6 +19,8 @@
 /components/scroll-nav/documentation
 /components/expand/playground
 /components/expand/documentation
+/components/expand-group/playground
+/components/expand-group/documentation
 /kits
 /kits/toggle-kit
 /kits/button-kit

@@ -1,4 +1,4 @@
-import{a as h}from"./chunk-NP7TIR3N.js";import{e as r,h as x}from"./chunk-H5ONKM3Y.js";import"./chunk-5JG6NEMX.js";import{Ab as u,Bb as g,Cb as b,Ha as d,Ia as n,Ja as t,Ka as i,Q as m,ba as p,cb as e,la as o,sa as c}from"./chunk-VWLHZTRG.js";var y={installationCode_1:{language:"bash",code:"npm install ng-expand-group"},installationCode_2:{language:"bash",code:"npm install ng-expand-group@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-expand-group@v18-lts"},overviewCode_1:{language:"ts",code:`
+import{a as h}from"./chunk-NP7TIR3N.js";import{e as r,h as x}from"./chunk-AYL274CR.js";import"./chunk-5JG6NEMX.js";import{Ab as u,Bb as g,Cb as b,Ha as d,Ia as n,Ja as t,Ka as i,Q as m,ba as p,cb as e,la as o,sa as c}from"./chunk-VWLHZTRG.js";var y={installationCode_1:{language:"bash",code:"npm install ng-expand-group"},installationCode_2:{language:"bash",code:"npm install ng-expand-group@v19-lts"},installationCode_3:{language:"bash",code:"npm install ng-expand-group@v18-lts"},overviewCode_1:{language:"ts",code:`
       @Component({
         selector: 'app',
         standalone: true,
