@@ -1,0 +1,20 @@
+:host{
+  display: block;
+  padding: 2rem 0;
+}
+
+h2{
+  margin: 1rem 2rem 2rem 2rem;
+}
+
+ng-expand-group{
+  --expand-group-gap: 1rem;
+}
+
+ng-expand{
+  box-shadow: 2px 3px 10px var(--color-fg-trans);
+  --expand-button-bg: var(--main-gradient);
+  --expand-button-color: var(--color-light);
+  --expand-content-bg: var(--color-bg);
+  --expand-content-color: var(--color-fg);
+}
