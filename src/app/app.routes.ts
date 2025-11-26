@@ -49,7 +49,14 @@ export const routes: Routes = [
           {
             path: 'playground',
             loadComponent: () => import('@link-button/link-button-playground/link-button-playground')
-              .then(m => m.LinkButtonPlayground)
+              .then(m => m.LinkButtonPlayground),
+            children: [
+              {
+                path: 'playground-test-link',
+                loadComponent: () => import('@link-button/link-button-playground/link-button-playground')
+                  .then(m => m.LinkButtonPlayground),
+              },
+            ]
           },
           {
             path: 'documentation',
