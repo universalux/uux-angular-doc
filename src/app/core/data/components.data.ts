@@ -85,5 +85,13 @@ export const componentList : CatalogItem[] = [
     image: "assets/images/components/ng-expand-group-static-cover.webp",
     featured: true
   },
+  {
+    id: "rate",
+    name: "Rate",
+    url: "/components/rate",
+    description: "Anuglar rating component",
+    image: "assets/images/components/ng-rate-static-cover.webp",
+    featured: true
+  },
 ];
 

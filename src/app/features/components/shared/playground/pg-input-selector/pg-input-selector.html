@@ -27,6 +27,20 @@
         (input)="handleChangeFn($event)"
       >
     }
+    @if(type() === 'checkbox'){
+      @for (option of options(); track $index) {
+        <label class="checkboxLabel">
+          <span>{{option}}</span>
+          <input
+            type="checkbox"
+            [value]="option"
+            (input)="handleChangeFn($event)"
+            [checked]="checked() === option ? checked() : null"
+          />
+        </label>
+
+      }
+    }
   </form>
 </section>
 <app-divider/>

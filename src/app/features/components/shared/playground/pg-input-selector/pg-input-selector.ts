@@ -12,10 +12,11 @@ export class PgInputSelector {
   name = input<string | null>(null);
   description = input<string | null>(null);
 
-  type = input<'select' | 'text' | 'number'>('select');
+  type = input<'select' | 'text' | 'number' |'checkbox'>('select');
   placeholder = input<string | null>(null);
   initialText = input<string | null>(null);
   options = input<any[] | null>(null);
+  checked = input<string |null>(null);
   changeFn = output<Event>();
 
   handleChangeFn(event: Event){
