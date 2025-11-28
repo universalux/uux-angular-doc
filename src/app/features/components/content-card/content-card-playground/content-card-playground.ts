@@ -153,7 +153,7 @@ export class ContentCardPlayground implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Content Card • UUX Angular',
       description: 'UUX Content Card component playground',
-      image: '/assets/images/thumbnails/content-card_thumbnail_1200px.webp',
+      image: '/components/content-card',
       url: '/components/content-card/playground',
       type: 'website'
     });

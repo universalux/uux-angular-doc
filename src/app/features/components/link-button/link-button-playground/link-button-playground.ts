@@ -87,7 +87,7 @@ export class LinkButtonPlayground implements OnInit{
     this.metaTagsService.setMetaTags({
       title: 'Link Buttonl • UUX Angular',
       description: 'UUX Link Button component playground',
-      image: '/assets/images/thumbnails/link-button_thumbnail_1200px.webp',
+      image: '/components/link-button',
       url: '/components/link-button/playground',
       type: 'website'
     });

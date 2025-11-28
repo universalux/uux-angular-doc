@@ -61,7 +61,7 @@ export class ExpandGroupPlayground implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Expand Group • UUX Angular',
       description: 'UUX Expand Group (accordion) component playground',
-      image: '/assets/images/thumbnails/expand_thumbnail_1200px.webp',
+      image: '/components/expand-group',
       url: '/components/expand-group/playground',
       type: 'website'
     });

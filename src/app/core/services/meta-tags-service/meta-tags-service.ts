@@ -37,8 +37,14 @@ export class MetaTagsService {
     }
 
     if (config.image) {
-      this.meta.updateTag({ property: 'og:image', content: `${this.baseUrl()}${config.image}` });
-      this.meta.updateTag({ name: 'twitter:image', content: `${this.baseUrl()}${config.image}` });
+      this.meta.updateTag({
+        property: 'og:image',
+        content: `${this.baseUrl()}/assets/images/og${config.image}_og_1200px.webp`
+      });
+      this.meta.updateTag({
+        name: 'twitter:image',
+        content: `${this.baseUrl()}/assets/images/og${config.image}_og_1200px.webp`
+      });
     }
 
     if (config.url) {

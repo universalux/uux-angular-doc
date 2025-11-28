@@ -21,7 +21,7 @@ export class KitsPage implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Kits • UUX Angular',
       description: 'Explore UUX Angular kits',
-      image: '/assets/images/thumbnails/kits_thumbnail_1200px.webp',
+      image: '/kits',
       url: '/kits'
     });
   };

@@ -72,7 +72,7 @@ export class ContributePage implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Contribute • UUX Angular',
       description: 'Learn how to contribute with Universal UX',
-      image: '/assets/images/thumbnails/contribute_thumbnail_1200px.webp',
+      image: '/contribute',
       url: '/contribute'
     });
   };

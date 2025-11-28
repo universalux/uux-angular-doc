@@ -21,7 +21,7 @@ export class MenuToggleDoc {
     this.metaTagsService.setMetaTags({
       title: 'Menu Toggle • UUX Angular',
       description: 'UUX Menu Toggle component documentation',
-      image: '/assets/images/thumbnails/menu-toggle_thumbnail_1200px.webp',
+      image: '/components/menu-toggle',
       url: '/components/menu-toggle/documentation',
       type: 'article'
     });

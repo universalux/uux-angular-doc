@@ -139,7 +139,7 @@ export class ThemeTogglePlayground implements OnInit {
       this.metaTagsService.setMetaTags({
         title: 'Theme Toggle • UUX Angular',
         description: 'UUX Theme Toggle component playground',
-        image: '/assets/images/thumbnails/theme-toggle_thumbnail_1200px.webp',
+        image: '/components/theme-toggle',
         url: '/components/theme-toggle/playground',
         type: 'website'
       });

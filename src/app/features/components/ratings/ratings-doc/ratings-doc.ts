@@ -20,7 +20,7 @@ export class RatingsDoc {
     this.metaTagsService.setMetaTags({
       title: 'Ratings • UUX Angular',
       description: 'UUX Rating component documentation',
-      image: '/assets/images/thumbnails/theme-toggle_thumbnail_1200px.webp',
+      image: '/components/ratings',
       url: '/components/ratings/documentation',
       type: 'article'
     });
