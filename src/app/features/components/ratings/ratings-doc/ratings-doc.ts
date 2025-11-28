@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-rate-doc',
+  selector: 'app-ratings-doc',
   imports: [],
-  templateUrl: './rate-doc.html',
-  styleUrl: './rate-doc.scss',
+  templateUrl: './ratings-doc.html',
+  styleUrl: './ratings-doc.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RateDoc {
+export class RatingsDoc {
 
 }

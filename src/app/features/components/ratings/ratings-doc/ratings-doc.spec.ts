@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RateDoc } from './rate-doc';
+import { RatingsDoc } from './ratings-doc';
 import { provideZonelessChangeDetection } from '@angular/core';
 
-describe('RateDoc', () => {
-  let component: RateDoc;
-  let fixture: ComponentFixture<RateDoc>;
+describe('RatingsDoc', () => {
+  let component: RatingsDoc;
+  let fixture: ComponentFixture<RatingsDoc>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RateDoc],
+      imports: [RatingsDoc],
       providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RateDoc);
+    fixture = TestBed.createComponent(RatingsDoc);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

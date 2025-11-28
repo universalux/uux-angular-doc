@@ -32,11 +32,7 @@ export class SimpleButtonPlayground implements OnInit {
 
   // Code to show properties
   showCode = signal<boolean>(false);
-  currentCode = signal<string>(`
-    <ng-simple-button>
-        Button Example
-      </ng-simple-button>
-  `)
+  currentCode = signal<string>('');
 
   metaTagsService = inject(MetaTagsService);
 
@@ -71,7 +67,7 @@ export class SimpleButtonPlayground implements OnInit {
       const attrString = attrs.join(' \n');
 
       this.currentCode.set(`
-        <ng-simple-button ${attrString ? ' \n' + attrString : ''}
+        <ng-simple-button (onClick)="clickFunction()" ${attrString ? ' \n' + attrString : ''}
         >
           Button Example
         </ng-simple-button>

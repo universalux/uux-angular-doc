@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RatePlayground } from './rate-playground';
+import { RatingsPlayground } from './ratings-playground';
 import { provideZonelessChangeDetection } from '@angular/core';
 
-describe('RatePlayground', () => {
-  let component: RatePlayground;
-  let fixture: ComponentFixture<RatePlayground>;
+describe('RatingsPlayground', () => {
+  let component: RatingsPlayground;
+  let fixture: ComponentFixture<RatingsPlayground>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RatePlayground],
+      imports: [RatingsPlayground],
       providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RatePlayground);
+    fixture = TestBed.createComponent(RatingsPlayground);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

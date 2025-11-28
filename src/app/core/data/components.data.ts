@@ -86,11 +86,11 @@ export const componentList : CatalogItem[] = [
     featured: true
   },
   {
-    id: "rate",
-    name: "Rate",
-    url: "/components/rate",
+    id: "ratings",
+    name: "Ratings",
+    url: "/components/ratings",
     description: "Anuglar rating component",
-    image: "assets/images/components/ng-rate-static-cover.webp",
+    image: "assets/images/components/ng-ratings-static-cover.webp",
     featured: true
   },
 ];

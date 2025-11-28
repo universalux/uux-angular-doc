@@ -1,5 +1,5 @@
 <!-- COMPONENT VIEWER -->
-<section class="componentViewer componentViewer--rate">
+<section class="componentViewer componentViewer--ratings">
 
 
   <h3>{{
@@ -9,7 +9,7 @@
 
 
   <div class="componentView">
-    <ng-rate
+    <ng-ratings
       [items]="items()"
       [average]="voteOutput() && currentVote() ? currentVote()! : average()"
       [readOnly]="readOnly()"

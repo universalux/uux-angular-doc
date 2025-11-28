@@ -11,6 +11,8 @@ ng-expand.playground{
   --expand-content-bg: var(--color-fg);
   --expand-content-color: var(--color-bg);
   min-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 

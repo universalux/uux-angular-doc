@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { pgSharedImports } from '../../shared/playgroundSharedImports';
-import { NgRate, RateCustomAria, RateLangs} from 'ng-rate';
+import { NgRatings, RatingCustomAria, RatingLangs} from 'ng-ratings';
 import { MetaTagsService } from '@app/core/services/meta-tags-service/meta-tags-service';
 
 type ItemsValues = 3 | 4 | 5 | 7 | 10;
@@ -8,13 +8,13 @@ type IconValues = 'star' | 'heart';
 type HoverValues = Array<'scale' | 'rotateX' | 'translateY'> |'none';
 
 @Component({
-  selector: 'app-rate-playground',
-  imports: [...pgSharedImports, NgRate],
-  templateUrl: './rate-playground.html',
-  styleUrl: './rate-playground.scss',
+  selector: 'app-rating-playground',
+  imports: [...pgSharedImports, NgRatings],
+  templateUrl: './ratings-playground.html',
+  styleUrl: './ratings-playground.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RatePlayground {
+export class RatingsPlayground {
 
   // ----- Component inputs -----
 
@@ -28,8 +28,8 @@ export class RatePlayground {
   hover = signal<HoverValues>(['scale']);
 
   // Accessibility Inputs
-  lang = signal<RateLangs>('en');
-  customAria = signal<RateCustomAria | null>(null);
+  lang = signal<RatingLangs>('en');
+  customAria = signal<RatingCustomAria | null>(null);
 
   // Needed functionalities
 
@@ -66,7 +66,7 @@ export class RatePlayground {
       const attrString = attrs.join(' \n');
 
       this.currentCode.set(`
-        <ng-rate ${attrString ? ' \n' + attrString : ''}
+        <ng-ratings ${attrString ? ' \n' + attrString : ''}
         />
       `);
     });
@@ -133,7 +133,7 @@ export class RatePlayground {
 
   handleLangInput(event: Event){
     const selectElement = event.target as HTMLSelectElement;
-    this.lang.set(selectElement.value as RateLangs);
+    this.lang.set(selectElement.value as RatingLangs);
   }
 
   handleCustomAriaInput(event: Event){
@@ -147,7 +147,7 @@ export class RatePlayground {
           containerInteractiveAriaLabel: 'CUSTOM - Rating selector',
           buttonInteractiveAriaLabel: (value: number, total: number) =>
             `CUSTOM - Select ${value} of ${total}`,
-        } as RateCustomAria);
+        } as RatingCustomAria);
     }
 
   }
@@ -162,10 +162,10 @@ export class RatePlayground {
 
   ngOnInit() {
     this.metaTagsService.setMetaTags({
-      title: 'Rate • UUX Angular',
+      title: 'Ratings • UUX Angular',
       description: 'UUX Rating component playground',
       image: '/assets/images/thumbnails/hero-carousel_thumbnail_1200px.webp',
-      url: '/components/rate/playground',
+      url: '/components/ratings/playground',
       type: 'website'
     });
   };
