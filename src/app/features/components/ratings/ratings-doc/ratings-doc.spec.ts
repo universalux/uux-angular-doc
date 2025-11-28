@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RatingsDoc } from './ratings-doc';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
 describe('RatingsDoc', () => {
   let component: RatingsDoc;
@@ -10,7 +11,7 @@ describe('RatingsDoc', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RatingsDoc],
-      providers: [provideZonelessChangeDetection()]
+      providers: [provideZonelessChangeDetection(), provideRouter([])]
     })
     .compileComponents();
 

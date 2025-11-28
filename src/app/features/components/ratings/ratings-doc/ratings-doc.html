@@ -1,1 +1,162 @@
-<p>ratings-doc works!</p>
+<!------------ INTRODUCTION ------------>
+<doc-section-title sectionCode="intro"/>
+
+<p>
+  <em>ng-ratings</em> is a <em>standalone, reusable and customizable component</em> for Angular 18, 19 and 20.
+</p>
+<p>
+  It is designed to work with <em>signals</em> and Angular <em>zoneless</em>, providing a lightweight, flexible, and accessible rating component. It is also fully compatible with <em>SSR</em>, <em>CSR</em> and <em>prerender</em>.
+</p>
+
+<app-divider/>
+
+<!------------ INSTALLATION ------------>
+<doc-section-title sectionCode="inst"/>
+
+<p>If you want to install the latest version (currently 20):</p>
+
+<app-code-block
+  [language]="docCode().installationCode_1.language"
+  [code]="docCode().installationCode_1.code"
+/>
+
+<p>Angular 19:</p>
+
+<app-code-block
+  [language]="docCode().installationCode_2.language"
+  [code]="docCode().installationCode_2.code"
+/>
+
+<p>Angular 18:</p>
+
+<app-code-block
+  [language]="docCode().installationCode_3.language"
+  [code]="docCode().installationCode_3.code"
+/>
+
+<app-divider/>
+
+<!------------ OVERVIEW ------------>
+<doc-section-title sectionCode="ovw" />
+
+<p>Using <em>ng-ratings</em> is easy:</p>
+<ul>
+  <li>Set the average you want to show at <em>(average)</em> input and/or able the component to generate votes using the <em>[readOnly]</em> input (you will get the vote value through (vote) output) .</li>
+  <li>Configure its type, icon, hover behavior and accessibility using inputs.</li>
+  <li>Style it with customizable CSS variables to match your design needs.</li>
+</ul>
+
+<p>Here’s a basic usage example:</p>
+
+<app-code-block
+  [language]="docCode().overviewCode_1.language"
+  [code]="docCode().overviewCode_1.code"
+/>
+
+<app-divider/>
+
+<!------------ FUNCTIONALITY ------------>
+<doc-section-title sectionCode="func" />
+
+<p>First of all, the <em>[items]</em> input specifies the total number of selectable units in the rating component. For example, if you choose [items]="3", you will have a rating of three stars/hearts.</p>
+
+<p>With the <em>[average]</em> input, you can provide the value that the component should display as the current rating. The icons will be filled according to this value.</p>
+
+<div class="note">
+  <p>It is important to ensure that the [average] you provide matches the scale defined by [items]. For example, if items="3", the average should always be a value between 0 and 3.</p>
+</div>
+
+<h3>readOnly</h3>
+
+<p>The component supports two usage modes: one for displaying an average value, and another that also allows the user to submit a rating.</p>
+
+<p>When <em>[readOnly]="false", the component becomes eminteractive</em>. Users can move their pointer or focus with the keyboard to select a rating, and when they click or press Enter, the component emits the selected value through the <em>(vote) output</em>.</p>
+
+<p><em>readOnly is false by default</em>. If you only intend to use the component to display averages, you can enable the read-only mode by setting readOnly to true.</p>
+
+<app-divider/>
+
+<!------------ INPUTS AND OUTPUTS ------------>
+<doc-section-title sectionCode="io" />
+
+<p>Here is a list of all input/ouput:</p>
+
+<h3>Functionality Inputs</h3>
+
+<app-data-table
+  [tableData]="docTables().ioTable_1"
+/>
+
+<h3>Functionality Output</h3>
+
+<app-data-table
+  [tableData]="docTables().ioTable_2"
+/>
+
+<h3>Style & Behavior Inputs</h3>
+
+<app-data-table
+  [tableData]="docTables().ioTable_3"
+/>
+
+<h3>Accessibility Inputs</h3>
+
+<app-data-table
+  [tableData]="docTables().ioTable_4"
+/>
+
+<app-divider/>
+
+<!------------ STYLING ------------>
+<doc-section-title sectionCode="sty" />
+
+<p>You can easily customize the component’s appearance using the CSS variables listed below.</p>
+
+<app-code-block
+  [language]="docCode().stylingCode_1.language"
+  [code]="docCode().stylingCode_1.code"
+/>
+
+<app-data-table
+  [tableData]="docTables().styTable_1"
+/>
+
+<app-divider/>
+
+<!------------ ACCESSIBILITY ------------>
+<doc-section-title sectionCode="acc" />
+
+<p>This component includes five default languages (en, es, it, fr, de). When you choose one using the lang input, all accessibility settings are configured in that language, so you don't have to do anything else.</p>
+
+<p>*** We recommend using the lang input if you don't need any other languages than the ones provided by default. It's simple and compliant with WAI-ARIA standards. ***</p>
+
+<p>If you want to set up your own custom aria attributes, you should use the RatingCustomAria interface. You can import it directly from the component:</p>
+
+<app-code-block
+  [language]="docCode().accCode_1.language"
+  [code]="docCode().accCode_1.code"
+/>
+
+Here is the exact declaration of the RatingCustomAria type:
+
+<app-code-block
+  [language]="docCode().accCode_2.language"
+  [code]="docCode().accCode_2.code"
+/>
+
+<p>Here you can see a description of every field in RatingCustomAria interface. Every field is type string (except buttonInteractiveAriaLabel) and non-required</p>
+
+<app-data-table
+  [tableData]="docTables().accTable_1"
+/>
+
+<div class="note">
+  <p><em>IMPORTANT: </em>All fields are optional, so you can customize only the ones you want. Fields that have not been entered in "AccessibilityOptions" will retain their values ​​based on the selected "lang" (remember, default lang is "en")</p>
+</div>
+
+Here you have an example of use:
+
+<app-code-block
+  [language]="docCode().accCode_3.language"
+  [code]="docCode().accCode_3.code"
+/>
