@@ -84,7 +84,7 @@ export class ExpandPlayground implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Expand • UUX Angular',
       description: 'UUX Expand component playground',
-      image: '/assets/images/thumbnails/expand_thumbnail_1200px.webp',
+      image: '/components/expand',
       url: '/components/expand/playground',
       type: 'website'
     });

@@ -41,7 +41,7 @@ export class SimpleButtonPlayground implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Simple Button • UUX Angular',
       description: 'UUX Simple Button component playground',
-      image: '/assets/images/thumbnails/simple-button_thumbnail_1200px.webp',
+      image: '/components/simple-button',
       url: '/components/simple-button/playground',
       type: 'website'
     });

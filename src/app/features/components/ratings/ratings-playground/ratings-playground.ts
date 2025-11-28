@@ -164,7 +164,7 @@ export class RatingsPlayground {
     this.metaTagsService.setMetaTags({
       title: 'Ratings • UUX Angular',
       description: 'UUX Rating component playground',
-      image: '/assets/images/thumbnails/hero-carousel_thumbnail_1200px.webp',
+      image: '/components/ratings',
       url: '/components/ratings/playground',
       type: 'website'
     });

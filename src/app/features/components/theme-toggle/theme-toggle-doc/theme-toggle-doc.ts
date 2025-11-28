@@ -20,7 +20,7 @@ export class ThemeToggleDoc {
     this.metaTagsService.setMetaTags({
       title: 'Theme Toggle • UUX Angular',
       description: 'UUX Theme Toggle component documentation',
-      image: '/assets/images/thumbnails/theme-toggle_thumbnail_1200px.webp',
+      image: '/components/theme-toggle',
       url: '/components/theme-toggle/documentation',
       type: 'article'
     });

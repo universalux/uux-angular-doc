@@ -198,7 +198,7 @@ export class HeroCarouselPlayground implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Hero Carousel • UUX Angular',
       description: 'UUX Hero Carousel component playground',
-      image: '/assets/images/thumbnails/hero-carousel_thumbnail_1200px.webp',
+      image: '/components/hero-carousel',
       url: '/components/hero-carousel/playground',
       type: 'website'
     });

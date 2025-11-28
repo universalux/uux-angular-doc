@@ -145,7 +145,7 @@ export class MenuTogglePlayground implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Menu Toggle • UUX Angular',
       description: 'UUX Menu Toggle component playground',
-      image: '/assets/images/thumbnails/menu-toggle_thumbnail_1200px.webp',
+      image: '/components/menu-toggle',
       url: '/components/menu-toggle/playground',
       type: 'website'
     });

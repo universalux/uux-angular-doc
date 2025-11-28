@@ -20,7 +20,7 @@ export class ExpandDoc implements OnInit {
     this.metaTagsService.setMetaTags({
       title: 'Expand • UUX Angular',
       description: 'UUX Expand component documentation',
-      image: '/assets/images/thumbnails/expand_thumbnail_1200px.webp',
+      image: '/components/expand',
       url: '/components/expand/documentation',
       type: 'article'
     });
