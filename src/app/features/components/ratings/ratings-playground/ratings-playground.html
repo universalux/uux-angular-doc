@@ -1,0 +1,124 @@
+<!-- COMPONENT VIEWER -->
+<section class="componentViewer componentViewer--ratings">
+
+
+  <h3>{{
+    currentVote() && voteOutput() ? `Current average: ${currentVote()}` : `Average: ${average()}`}}
+  </h3>
+
+
+
+  <div class="componentView">
+    <ng-ratings
+      [items]="items()"
+      [average]="voteOutput() && currentVote() ? currentVote()! : average()"
+      [readOnly]="readOnly()"
+
+      (vote)="voteOutput() ? currentVote.set($event) : null"
+
+      [icon]="icon()"
+      [hover]="hover()"
+
+      [lang]="lang()"
+      [customAria]="customAria()"
+    />
+    <ng-simple-button (onClick)="handleReset()">
+      Reset
+    </ng-simple-button>
+  </div>
+
+
+
+</section>
+
+<!-- CODE VIEWER -->
+<section class="codeViewer">
+
+  <!-- CODE OPTIONS -->
+  <section class="codeOptions">
+    <ng-simple-button type="minimal" hover="tone" [square]="true" (onClick)="toggleShowCode()">
+      {{showCode() ? 'Hide code' : 'Show Code'}}
+      <app-pg-show-code-icon [showCode]="showCode()"/>
+    </ng-simple-button>
+  </section>
+
+  <!-- CODE VIEW -->
+  <section class="codeView" [class.show]="showCode()">
+      <app-code-block
+        language="html"
+        [code]="currentCode()"
+      />
+  </section>
+
+</section>
+
+
+<!-- CODE VIEWER -->
+<section class="componentOptions">
+
+  <ng-expand label="Functionality inputs / outputs">
+
+    <app-pg-input-selector name="items"
+      description="Select how many items conforms the average"
+      [options]="['5', '3', '4', '7', '10']"
+      (changeFn)="handleItemsInput($event)"
+    />
+
+    <app-pg-input-selector name="average"
+      type="number"
+      description="Set the average to show (only if not showVote)"
+      placeholder="2.5"
+      (changeFn)="handleAverageInput($event)"
+    />
+
+    <app-pg-input-selector name="readOnly"
+      description="Choose if the component only shows average or admits voting."
+      [options]="['false', 'true']"
+      (changeFn)="handleReadOnlyInput($event)"
+    />
+
+    <app-pg-input-selector name="vote output"
+      description="The (vote) output value turns into [average] input to show you its value"
+      [options]="['true', 'false']"
+      (changeFn)="handleVoteOuputInput($event)"
+    />
+
+  </ng-expand>
+
+  <ng-expand label="Style and behavior Inputs">
+
+    <app-pg-input-selector name="icon"
+      description="Choose between 'star' or 'heart' icon"
+      [options]="['star', 'heart']"
+      (changeFn)="handleIconInput($event)"
+    />
+
+    <app-pg-input-selector name="hover"
+      type="checkbox"
+      description="Choose one or more hover effects"
+      [options]="['scale', 'rotateX', 'translateY']"
+      checked="scale"
+      (changeFn)="handleHoverInput($event)"
+    />
+
+  </ng-expand>
+
+  <ng-expand label="Accessibility Inputs">
+
+    <app-pg-input-selector
+      name="lang"
+      description="Defines the language for built-in ARIA labels."
+      [options]="['en', 'es', 'it', 'fr', 'de']"
+      (changeFn)="handleLangInput($event)"
+    />
+
+    <app-pg-input-selector
+      name="customAria"
+      description="Provides custom ARIA labels to override default accessibility text."
+      [options]="['null', 'custom aria example']"
+      (changeFn)="handleCustomAriaInput($event)"
+    />
+
+  </ng-expand>
+
+</section>

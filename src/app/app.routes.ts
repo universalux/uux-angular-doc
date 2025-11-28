@@ -193,6 +193,22 @@ export const routes: Routes = [
           }
         ]
       },
+      { path: "ratings",
+        component: ComponentLayout,
+        children: [
+          { path: '', redirectTo: 'playground', pathMatch: 'full' },
+          {
+            path: 'playground',
+            loadComponent: () => import('@ratings/ratings-playground/ratings-playground')
+              .then(m => m.RatingsPlayground)
+          },
+          {
+            path: 'documentation',
+            loadComponent: () => import('@ratings/ratings-doc/ratings-doc')
+              .then(m => m.RatingsDoc)
+          }
+        ]
+      },
     ]
   },
 

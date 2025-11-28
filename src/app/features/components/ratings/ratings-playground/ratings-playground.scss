@@ -1,0 +1,24 @@
+:host{
+  display: block;
+  width: 100%;
+}
+
+.componentViewer--ratings{
+  flex-direction: column;
+  // height: 50px;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.componentView{
+  height: 100px;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+ng-ratings{
+  max-width: 600px;
+  max-height: 50px;
+}

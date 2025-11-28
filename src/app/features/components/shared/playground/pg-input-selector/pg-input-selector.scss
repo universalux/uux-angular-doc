@@ -29,6 +29,21 @@
   max-width: 250px;
 }
 
+.pgInputSelector__form:has(input[type="checkbox"]){
+  display: flex;
+  gap: 1rem;
+}
+
+label.checkboxLabel{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.pgInputSelector__form input[type="checkbox"]{
+  width: fit-content;
+}
+
 .pgInputSelector__form select,
 .pgInputSelector__form input{
   width: 250px;
